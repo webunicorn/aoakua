@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-  
     <link rel="stylesheet" href="../css/reset.css" type="text/css">
-    <link rel="stylesheet" href="../css/viewScroller.css" type="text/css">
     <style>
+        body {touch-action: none;}
         .shopby { margin:20px auto; display:block; position: absolute; top:100px; right:100px;}
         .shopby polyline {
             fill:none;
@@ -55,12 +54,13 @@
         
         /* .cont1 {visibility: hidden; height:800px;} */
         /* .cont1.cont1_inner {background:royalblue; opacity:0; width:100%; height:100%; animation: ani1 .3s ease-in-out forwards;} */
+     
         .cont1 {background:royalblue; opacity:0.5;}
-        .cont2 {background:seagreen;}
+        .cont2 {background:seagreen; }
         .cont3 {background:salmon;}
         .cont4 {visibility: hidden;}
-        .fix_main {width:100%; height:800px; position:fixed; top:0; left:0; transition:all 0.8s ease-out; transition-delay: 0.3s !important;}
-        .mainbag {position:absolute; transition-delay: 0.3s !important;}
+        .fix_main {width:100%; height:800px;/* position:fixed; top:0; left:0;*/}
+        .mainbag {position:relative;height:1000px;}
         
    </style>
  
@@ -75,37 +75,32 @@
                 <div class="img1"></div>
                 <svg width="500" height="500" xmlns="http://www.w3.org/2000/svg" class="final">
                     <path class="outlined" d="M 100 450 L 100 150 L 400 150 L 400 370 L 200 370 L 105 448" 
-                    style="stroke-linecap:square; stroke-linejoin:miter; animation: brush 1.8s cubic-bezier(0.550, 0.055, 0.675, 0.190) forwards; animation-delay:0.2s; stroke-width:10px; stroke:white;  fill:none; stroke-dasharray:2000; stroke-dashoffset: 2000;"/>
+                    style="stroke-linecap:square; stroke-linejoin:miter; animation: brush 1.2s cubic-bezier(0.550, 0.055, 0.675, 0.190) forwards; animation-delay:0.5s; stroke-width:10px; stroke:white;  fill:none; stroke-dasharray:2000; stroke-dashoffset: 2000;"/>
                 </svg>
                 <div class="img2"></div>
             </div>
         </div>
     </div>
-    <div class="mainbag">
-
-        <div vs-anchor="" class="mainview cont1">
-            
-           
+    <div class="mainbag container">
+        <div class="section cont1">
             <!-- <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
                 <path class="outlined" d="M 0 200 V 0 H 200 V 160 H40 z " style="animation: brush 1s ease-in-out forwards; stroke-width:15px; stroke:deeppink;  fill:black; stroke-dasharray:800; stroke-dashoffset: 800;"/>
             </svg> -->
         </div>
-        <div vs-anchor="" class="mainview cont2">
+        <div class="section cont2">
             section2
         </div>
-        <div vs-anchor="" class="mainview cont3">
+        <div class="section cont3">
             section3
         </div>
-        <div vs-anchor="" class="mainview cont4">
-            section4
+        <div class="section cont4">
+                section4
         
         </div>
     </div>
     <script src="../js/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-    <script src="../js/jquery.easing.min.js"></script>
-    <script src="../js/jquery.mousewheel.min.js"></script>
-    <script src="../js/viewScroller.js"></script>
+    <script src="../js/jquery.partialScroll.js"></script>
     <script>
         $(function(){
 
@@ -158,35 +153,24 @@
                 });
             }
 
-            //onepage scroll
-            var p_h = $('.mainview').innerHeight();
-            $('.mainbag').css('top', p_h);
-            var myScroll = $('.mainbag').viewScroller({
-                animSpeedMainView: 600, 
-                animEffectMainViewCss3: 'cubic-bezier(0.550, 0.055, 0.675, 0.200)',
-                useScrollbar: false, // Use scrollbar to change views
-                changeWhenAnim: false, // Change views when they are changing
-                loopMainViews: false, // Change horizontal views (mainviews) in loop mode
-                //loopSubViews: true	// Change vertical views (subviews) in loop mode
-                afterChange: function() { // Defines own callback after views change
-                  
+            
+            var scroll1 = $('.container').partialScroll({
+                mode: 'vertical',
+                footer: true,
+                globalWheel: true,
+                sliderBefore: function (oldIndex, newIndex) {
+                // console.log('BEFORE - old: ' + oldIndex + ', new: ' + newIndex);
                 },
-                beforeChange: function() { // Defines own callback after views change
-                    // var locationHash = location.hash;
-                    // console.log(locationHash);
-                    // if(locationHash == '#secondview'){
-                    //     $('.fix_main').css('top',-1000);
-                    // }else{
-                    //     $('.fix_main').css('top',0);
-                    // }
-                },
-                beforeResize: function() { // Defines own callback before browser window resize
-                },
-                afterResize: function() { // Defines own callback after browser window resize
-                    var p_h = $('.mainview').innerHeight();
-                    $('.mainbag').css('top', p_h);
+                sliderAfter: function (oldIndex, newIndex) {
+                // console.log('AFTER - old: ' + oldIndex + ', new: ' + newIndex);
                 }
             });
+	
+      
+            
+            
+
+
         });
     </script>
 </body>
