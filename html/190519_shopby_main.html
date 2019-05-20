@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <link rel="stylesheet" href="../css/reset.css" type="text/css">
     <style>
         .shopby { margin:20px auto; display:block; position: absolute; top:100px; right:100px;}
@@ -28,10 +29,7 @@
             /* animation: brush 1s ease-in-out forwards; */
             stroke-dasharray:800;
             stroke-dashoffset: 800;
-         
-        
             /* animation-fill-mode:both; */
-           
         }
 
        
@@ -54,30 +52,8 @@
         .inner {width:500px; height:500px; overflow: hidden;}
    
    </style>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script>
         $(function(){
-            // var movementStrength = 30;
-            // var w = $('.inner').width();
-            // var h = $('.inner').height();
-
-            // $('.inner').mousemove(function(e) {
-            //     var pageX = (e.pageX - w / 2) / w / 2;
-            //     var pageY = (e.pageY - h / 2) / h / 2;
-            //     var newvalueX = pageX * movementStrength;
-            //     var newvalueY = pageY * movementStrength;
-            //     $('.img1').css({
-            //         left: newvalueX + 'px',
-            //         top: newvalueY + 'px'
-            //     });
-            // });
-
-            // var lFollowX = 0,
-            // lFollowY = 0,
-       
-            // x = 0,
-            // y = 0,
-            // friction = 1 / 30;
 
             // function moveBackground() {
             //     x += (lFollowX - x) * friction;
@@ -108,16 +84,15 @@
             // });
 
             // moveBackground();
-
-
-
-            $("#container").mousemove(function(e) {
-                parallaxIt(e, ".slide", -100);
-                parallaxIt(e, "img", -30);
+            
+            //move with mouse
+            $(".inner").mousemove(function(e) {
+                parallaxIt(e, ".img2", -100);
+                parallaxIt(e, ".img1", -30);
                 });
 
                 function parallaxIt(e, target, movement) {
-                var $this = $("#container");
+                var $this = $(".bg");
                 var relX = e.pageX - $this.offset().left;
                 var relY = e.pageY - $this.offset().top;
 
@@ -127,23 +102,13 @@
                 });
             }
 
-
-
         });
     </script>
 </head>
 <body>
-    <!-- <svg xmlns="http://www.w3.org/2000/svg" height="200" width="200">
-        <mask id="mask" maskUnits="userSpaceOnUse">
-          <path d="M 137.923,52.0955 C 197.547,117.297 120.785,171.431 77.8931,158.984 16.6083,141.199 39.0066,84.7602 83.9134,34.9954" />
-        </mask>
-        <path mask="url(#mask)" d="M 71.8654,57.7571 C 67.7486,63.0074 63.1483,68.1642 59.3235,74.3017 55.4987,80.4392 52.4299,87.4218 50.1172,95.2493 49.1388,98.9851 48.6941,102.877 48.783,106.924 48.8719,110.971 49.5168,114.907 50.7177,118.732 51.9185,122.557 53.6752,126.07 55.9879,129.272 58.3006,132.475 61.1914,135.099 64.6605,137.144 69.019,139.546 73.8,141.214 79.0035,142.148 84.207,143.082 89.544,143.438 95.0144,143.215 100.485,142.993 105.933,142.215 111.359,140.88 116.785,139.546 121.922,137.767 126.769,135.543 131.617,133.32 136.065,130.718 140.112,127.738 144.159,124.758 147.517,121.489 150.185,117.931 150.185,109.837 148.962,102.299 146.516,95.316 144.07,88.3335 140.712,81.5066 136.443,74.8354 137.154,69.4985 138.6,64.3172 140.779,59.2915 142.958,54.2659 145.338,49.4849 147.917,44.9484 148.628,43.6142 149.407,42.9693 150.252,43.0138 151.097,43.0583 151.919,43.4808 152.72,44.2813 153.521,45.0818 154.277,46.038 154.989,47.1499 155.7,48.2618 156.323,49.218 156.856,50.0185 158.101,51.9754 159.547,54.7774 161.193,58.4243 162.838,62.0712 164.506,66.9634 166.196,73.1009 167.886,79.2384 168.331,88.9338 167.53,102.187 166.819,103.877 166.085,106.679 165.329,110.593 164.573,114.507 163.239,118.977 161.326,124.002 159.414,129.028 156.59,134.321 152.854,139.88 149.118,145.439 143.914,150.665 137.243,155.557 131.639,159.56 125.924,163.073 120.098,166.097 114.272,169.122 108.312,171.457 102.219,173.102 96.1262,174.748 89.8554,175.615 83.4065,175.704 76.9577,175.793 70.2643,174.903 63.3262,173.035 56.7439,171.078 51.3403,168.432 47.1152,165.097 42.8901,161.761 39.6212,157.914 37.3085,153.556 34.9958,149.197 33.5282,144.416 32.9055,139.212 32.2829,134.009 32.3274,128.605 33.039,123.001 33.8395,115.44 35.9743,106.501 39.4433,96.1832 41.2223,90.8463 43.4905,85.2647 46.2479,79.4385 49.0054,73.6124 52.4299,67.4971 56.5216,61.0927 60.6133,54.4215 64.7716,48.1951 68.9967,42.4134 70.8673,40.3316 72.9819,37.3648 75.5539,34.6022 76.9771,33.1791 77.9777,32.5787 78.5559,32.801 79.1341,33.0234 79.69,33.4904 80.2237,34.202 81.6469,36.2478 84.9311,39.3336 84.9963,42.3304 79.8043,48.214 76.2939,52.1092 71.8654,57.7571 Z" />
-      </svg> -->
       <div class="bg">
           <svg xmlns="http://www.w3.org/2000/svg" height="400" width="400" class="shopby" style="display:none;">
-            <!-- <line x1="0" y1="200" x2="0" y2="0"/> -->
             <polyline points="0,200 0,0 200,0 200,160 60,160 0,200"/>
-  <!-- <polygon points="220,10 300,210 170,250 123,234" /> -->
           </svg>
         <div class="inner">
             <div class="img1"></div>
@@ -154,14 +119,8 @@
             <div class="img2"></div>
         </div>
       </div>
-
       <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-
         <path class="outlined" d="M 0 200 V 0 H 200 V 160 H40 z " style="animation: brush 1s ease-in-out forwards; stroke-width:15px; stroke:deeppink;  fill:black; stroke-dasharray:800; stroke-dashoffset: 800;"/>
-      
       </svg>
-
-    
-     
 </body>
 </html>
