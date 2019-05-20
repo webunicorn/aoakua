@@ -60,6 +60,7 @@
         .cont3 {background:salmon;}
         .cont4 {visibility: hidden;}
         .fix_main {width:100%; height:800px; position:fixed; top:0; left:0; transition:all 0.8s ease-out; transition-delay: 0.3s !important;}
+        .fix_main.on {top:-1000px;}
         .mainbag {position:absolute; transition-delay: 0.3s !important;}
         
    </style>
@@ -90,7 +91,7 @@
                 <path class="outlined" d="M 0 200 V 0 H 200 V 160 H40 z " style="animation: brush 1s ease-in-out forwards; stroke-width:15px; stroke:deeppink;  fill:black; stroke-dasharray:800; stroke-dashoffset: 800;"/>
             </svg> -->
         </div>
-        <div vs-anchor="" class="mainview cont2">
+        <div vs-anchor="2" class="mainview cont2">
             section2
         </div>
         <div vs-anchor="" class="mainview cont3">
@@ -172,13 +173,19 @@
                   
                 },
                 beforeChange: function() { // Defines own callback after views change
-                    // var locationHash = location.hash;
-                    // console.log(locationHash);
-                    // if(locationHash == '#secondview'){
-                    //     $('.fix_main').css('top',-1000);
-                    // }else{
-                    //     $('.fix_main').css('top',0);
-                    // }
+                    var locationHash = location.hash;
+                    console.log(locationHash);
+                    if(locationHash == '#2'){
+                      
+                        if($('.fix_main').hasClass('on')){
+                            $('.fix_main').removeClass('on'); 
+                        }else{
+                            $('.fix_main').addClass('on');
+                        }
+                        $('.fix_main').addClass('on');
+                    }else{
+                        $('.fix_main').removeClass('on');
+                    }
                 },
                 beforeResize: function() { // Defines own callback before browser window resize
                 },
