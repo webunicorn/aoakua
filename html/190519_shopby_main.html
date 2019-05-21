@@ -176,12 +176,15 @@
                     var locationHash = location.hash;
                     console.log(locationHash);
                     if(locationHash == '#2'){
-                      
                         if($('.fix_main').hasClass('on')){
                             $('.fix_main').removeClass('on'); 
                         }else{
                             $('.fix_main').addClass('on');
                         }
+                        if($('.fix_main').css('top') == 0){
+                            console.log('fix_main');
+                        };
+
                         $('.fix_main').addClass('on');
                     }else{
                         $('.fix_main').removeClass('on');
