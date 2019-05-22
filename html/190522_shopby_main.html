@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/reset.css" type="text/css">
     <link rel="stylesheet" href="../css/slick.css" type="text/css"> 
     <style>
+        
         .shopby { margin:20px auto; display:block; position: absolute; top:100px; right:100px;}
         .shopby polyline {
             fill:none;
@@ -73,16 +74,17 @@
             } */
             to{
                opacity:1;
-               right:200px;
+               right:1200px;
             }
         }
-        
-        .bg {background:black; width:1900px; height:1000px; position:relative;}
+
+        .wrap { min-width:1200px;}
+        .bg {background:black; max-width:2000px; min-width:1200px; height:1000px; margin:0 auto; text-align:center; position:relative;}
         .final {position:absolute; top:10px; left:30px; }
-        .final path {stroke-linecap:square; stroke-linejoin:miter; stroke-width:10px; stroke:white;  fill:none; stroke-dasharray:2000; stroke-dashoffset: 2000;}
-        .final.on path {animation: brush 1.3s cubic-bezier(0.550, 0.055, 0.675, 0.190) forwards; animation-delay:0.2s;}
-        .img1 {width:400px; height:500px; position:absolute; top:30px; left:70px; background:url('../images/bg1.jpg')no-repeat 0 0;}
-        .img2 {width:200px; height:200px; position:absolute; top:160px; left:170px; background:url('../images/planet2.png')no-repeat 0 0; background-size:contain;}
+        .final path {stroke-linecap:square; stroke-linejoin:miter; stroke-width:10px; stroke:white;  fill:none; stroke-dasharray:5000; stroke-dashoffset: 5000;}
+        .final.on path {animation: brush 1s cubic-bezier(0.550, 0.055, 0.675, 0.190) forwards; animation-delay:0.2s;}
+        .img1 {width:1041px; height:849px; position:absolute; top:30px; left:70px; background:url('../images/obj2.png')no-repeat 0 0;}
+        .img2 {width:381px; height:430px; position:absolute; top:160px; left:170px; background:url('../images/obj1.png')no-repeat 0 0; background-size:contain;}
         .inner {width:500px; height:500px; position:absolute; top:200px; opacity:0; right:-2000px;}
         .inner.on {animation: slidein2 0.3s ease-out forwards;}
         /* .cont1 {visibility: hidden; height:800px;} */
@@ -91,7 +93,7 @@
         .cont2 {background:seagreen;}
         .cont3 {background:salmon;}
         .cont4 {visibility: hidden;}
-        .fix_main { filter:blur(3px) saturate(1.11576); opacity:0.5; width:100%; height:800px; position:fixed; top:0; left:0; transition:all 0.8s ease-out; transition-delay: 0.3s !important;}
+        .fix_main {/* filter:blur(3px) saturate(1.11576); opacity:0.5;*/ width:100%; height:800px; position:fixed; top:0; left:0; transition:all 0.8s ease-out; transition-delay: 0.3s !important;}
         
         .fix_main.on {top:-1000px;}
         .mainbag {position:absolute; transition-delay: 0.3s !important;}
@@ -102,54 +104,56 @@
  
 </head>
 <body>
-    <div class="fix_main">
-        <div class="slick_slider">
-            <div class="bg">
-                <div class="txt">
-                    Make it easy<br>
-                    쉽게 시작하세요
+    <div class="wrap">
+        <div class="fix_main">
+            <div class="slick_slider">
+                <div class="bg" style="background:url('../images/bg1.png') no-repeat 0 0;">
+                    <div class="txt">
+                        Make it easy<br>
+                        쉽게 시작하세요
+                    </div>
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" height="400" width="400" class="shopby" style="display:none;">
+                        <polyline points="0,200 0,0 200,0 200,160 60,160 0,200"/>
+                    </svg> -->
+                    <div class="inner">
+                        <div class="img1"></div>
+                        <svg width="1400" height="800" xmlns="http://www.w3.org/2000/svg" class="final">
+                            <path class="outlined" d="M 50 609 L 50 50 L 1240 50 L 1240 513 L 180 513 L 52.2 615.5" />
+                        </svg>
+                        <div class="img2"></div>
+                    </div>
                 </div>
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" height="400" width="400" class="shopby" style="display:none;">
-                    <polyline points="0,200 0,0 200,0 200,160 60,160 0,200"/>
-                </svg> -->
-                <div class="inner">
-                    <div class="img1"></div>
-                    <svg width="500" height="500" xmlns="http://www.w3.org/2000/svg" class="final">
-                        <path class="outlined" d="M 100 450 L 100 150 L 400 150 L 400 370 L 200 370 L 105 448" />
-                    </svg>
-                    <div class="img2"></div>
+                <div class="bg"  style="background:url('../images/bg2.png') no-repeat 0 0;">
+                    <div class="txt">
+                        Make it easy<br>
+                        쉽게 시작하세요
+                    </div>
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" height="400" width="400" class="shopby" style="display:none;">
+                        <polyline points="0,200 0,0 200,0 200,160 60,160 0,200"/>
+                    </svg> -->
+                    <div class="inner">
+                        <div class="img1"></div>
+                        <svg width="1400" height="800" xmlns="http://www.w3.org/2000/svg" class="final">
+                            <path class="outlined" d="M 50 609 L 50 50 L 1240 50 L 1240 513 L 180 513 L 52.2 615.5" />
+                        </svg>
+                        <div class="img2"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="bg" style="background:orchid;">
-                <div class="txt">
-                    Make it easy<br>
-                    쉽게 시작하세요
-                </div>
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" height="400" width="400" class="shopby" style="display:none;">
-                    <polyline points="0,200 0,0 200,0 200,160 60,160 0,200"/>
-                </svg> -->
-                <div class="inner">
-                    <div class="img1"></div>
-                    <svg width="500" height="500" xmlns="http://www.w3.org/2000/svg" class="final">
-                        <path class="outlined" d="M 100 450 L 100 150 L 400 150 L 400 370 L 200 370 L 105 448" />
-                    </svg>
-                    <div class="img2"></div>
-                </div>
-            </div>
-            <div class="bg" style="background:pink;">
-                <div class="txt">
-                    Make it easy<br>
-                    쉽게 시작하세요
-                </div>
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" height="400" width="400" class="shopby" style="display:none;">
-                    <polyline points="0,200 0,0 200,0 200,160 60,160 0,200"/>
-                </svg> -->
-                <div class="inner">
-                    <div class="img1"></div>
-                    <svg width="500" height="500" xmlns="http://www.w3.org/2000/svg" class="final">
-                        <path class="outlined" d="M 100 450 L 100 150 L 400 150 L 400 370 L 200 370 L 105 448" />
-                    </svg>
-                    <div class="img2"></div>
+                <div class="bg" style="background:pink;">
+                    <div class="txt">
+                        Make it easy<br>
+                        쉽게 시작하세요
+                    </div>
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" height="400" width="400" class="shopby" style="display:none;">
+                        <polyline points="0,200 0,0 200,0 200,160 60,160 0,200"/>
+                    </svg> -->
+                    <div class="inner">
+                        <div class="img1"></div>
+                        <svg width="1400" height="800" xmlns="http://www.w3.org/2000/svg" class="final">
+                            <path class="outlined" d="M 50 609 L 50 50 L 1240 50 L 1240 513 L 180 513 L 52.2 615.5" />
+                        </svg>
+                        <div class="img2"></div>
+                    </div>
                 </div>
             </div>
         </div>
