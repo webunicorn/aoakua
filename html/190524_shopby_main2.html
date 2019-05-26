@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 <head>
-	<title>shop by | 내 이름으로 완성되는 쇼핑몰(샵바이)</title>
+	<title>shop by | ?? ??????? ?????? ???θ?(??????)</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta http-equiv="imagetoolbar" content="no" />
@@ -10,7 +10,7 @@
 	<meta HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
 	<meta HTTP-EQUIV="Expires" CONTENT="-1"/>
 
-	<meta name="description" content="상품 1개로 시작하는 쉬운 쇼핑몰(샵바이)"/>
+	<meta name="description" content="??? 1???? ??????? ???? ???θ?(??????)"/>
 	<meta name="naver-site-verification" content="f0f3fa240a340044b4171667d244f914eeda8a20"/>
 
 	<!-- START OPEN GRAPH -->
@@ -20,8 +20,8 @@
 	<meta property="og:image:height" content="315"/>
 	<meta property="og:type" content="website"/>
 	<meta property="og:url" content="https://godocjadev.godo.co.kr/shopby/main.gd"/>
-	<meta property="og:title" content="shop by | 내 이름으로 완성되는 쇼핑몰(샵바이)"/>
-	<meta property="og:description" content="상품 1개로 시작하는 쉬운 쇼핑몰(샵바이)"/>
+	<meta property="og:title" content="shop by | ?? ??????? ?????? ???θ?(??????)"/>
+	<meta property="og:description" content="??? 1???? ??????? ???? ???θ?(??????)"/>
 	<!-- END OPEN GRAPH -->
 
 	<link type="text/css" rel="stylesheet" href="//static-final.godo.co.kr/css/common.css" />
@@ -81,7 +81,7 @@
 
 	document.domain = "godo.co.kr";
 
-	// 로그인 플러그인 등록
+	// ?α??? ?÷????? ???
 	jQuery.godo.loginLayer = function(callback,returnUrl,domain) {
 
 		domain = typeof domain !== 'undefined' ? domain : 'godo';
@@ -136,7 +136,7 @@
 		};
 	}
 
-	// 1:1문의하기 플러그인 등록
+	// 1:1??????? ?÷????? ???
 	jQuery.godo.memberInquiry = function(refcd,catcd) {
 		$("body").css("overflow","hidden");
 		$("body").append("<div id='backgroundBusinessConsult'></div>");
@@ -174,7 +174,7 @@
 		};
 	}
 
-	// 창업상담
+	// ??????
 	jQuery.godo.businessConsult = function() {
 		$("body").css("overflow","hidden");
 		$("body").append("<div id='backgroundBusinessConsult'></div>");
@@ -225,7 +225,7 @@
 		};
 	}
 
-	// 글로벌 서비스 통합안내 레이어
+	// ??ι? ???? ?????? ?????
 	jQuery.godo.globalService = function() {
 		$("body").css("overflow","hidden");
 		$("body").append("<div id='backgroundGlobalService'></div>");
@@ -381,7 +381,7 @@
     
     var displayRandomBanner = function () {
         var $isRandom = $('div.is-random-banner');
-        // 해당 클래스가 존재하는 경우만 실행
+        // ??? ??????? ??????? ??츸 ????
         if ($isRandom.length > 0) {
             $isRandom.children().hide();
             $.each($isRandom, function () {
@@ -416,8 +416,8 @@
 			if($(this).scrollTop() >= 300){
 				$('.shopby_main_wrap .cont1').addClass('active');
 				/*
-				var position = $('.cont1').offset(); // 위치값
-				$('html,body').animate({ scrollTop : position.top }, 1000); // 이동
+				var position = $('.cont1').offset(); // ?????
+				$('html,body').animate({ scrollTop : position.top }, 1000); // ???
 				*/
 			}else{
 
@@ -462,7 +462,7 @@ $(function(){
 				url = "/shopby/echost/shop-data-ajax.gd",
 				_el = $(".select_func span.adminList");
 
-			// 서브GNB 유무 체크
+			// ????GNB ???? ??
 			if(!_el.length){
 				return;
 			}
@@ -478,14 +478,14 @@ $(function(){
 						var
 							domainList = response.data,
 							addData = '<ul>';
-						addData += '<li><a href="javascript:void(0);" data-type="none">쇼핑몰을 선택해주세요</a></li>';
+						addData += '<li><a href="javascript:void(0);" data-type="none">???θ??? ???????????</a></li>';
 						for (i = 0; i < domainList.length; i++) {
 							addData += '<li><a href="javascript:void(0);">'+domainList[i]+'</a></li>';
 						}
 						addData += '</ul>';
 						_el.html(addData);
 					} else {
-						var addData = '<ul><li><a href="javascript:void(0);" data-type="none">신청한 쇼핑몰이 없습니다</a></li></ul>';
+						var addData = '<ul><li><a href="javascript:void(0);" data-type="none">????? ???θ??? ???????</a></li></ul>';
 						_el.html(addData);
 					}
 				}, error:function( request, status, error ) {
@@ -556,11 +556,11 @@ $(function(){
 			</a></h1>
 			<ul>
 				
-											<li><a href="https://godocjadev.godo.co.kr/member/login.gd" id="btn-gnb-login">로그인</a></li>
-						<li class="bar"><a href="https://godocjadev.godo.co.kr/member/join.gd" target="_blank">회원가입</a></li>
+											<li><a href="https://godocjadev.godo.co.kr/member/login.gd" id="btn-gnb-login">?α???</a></li>
+						<li class="bar"><a href="https://godocjadev.godo.co.kr/member/join.gd" target="_blank">???????</a></li>
 									
-				<li class="start on"><a href="https://godocjadev.godo.co.kr/echost/solution/godo-solution-regist.gd?smode=rfree">지금 시작하기</a></li>
-				<li class="admin"><a href="https://www.godo.co.kr/mygodo/admin-browser-chk.gd" target="_blank">쇼핑몰 관리자</a></li>
+				<li class="start on"><a href="https://godocjadev.godo.co.kr/echost/solution/godo-solution-regist.gd?smode=rfree">???? ???????</a></li>
+				<li class="admin"><a href="https://www.godo.co.kr/mygodo/admin-browser-chk.gd" target="_blank">???θ? ??????</a></li>
 			</ul>
 		</div>
 	</div>
@@ -570,19 +570,19 @@ $(function(){
 									<h2><a href="https://godocjadev.godo.co.kr/shopby/main.gd"><img src="//img.godo.co.kr/shopby/gnb/1903/logo_shopby_wh.png" class="logo_wh" alt="shopby"></a></h2>
 							<ul>
 									<li>
-						<a href="https://godocjadev.godo.co.kr/shopby/shopby-intro.gd" class="" target="">주요 기능</a>
+						<a href="https://godocjadev.godo.co.kr/shopby/shopby-intro.gd" class="" target="">??? ???</a>
 					</li>
 									<li>
-						<a href="https://godocjadev.godo.co.kr/shopby/shopby-feature.gd" class="" target="">기본 사양</a>
+						<a href="https://godocjadev.godo.co.kr/shopby/shopby-feature.gd" class="" target="">?? ???</a>
 					</li>
 									<li>
-						<a href="https://godocjadev.godo.co.kr/shopby/shopby-utilities.gd" class="" target="">활용 방법</a>
+						<a href="https://godocjadev.godo.co.kr/shopby/shopby-utilities.gd" class="" target="">??? ???</a>
 					</li>
 									<li>
-						<a href="https://godocjadev.godo.co.kr/shopby/customer/main.gd" class="" target="">고객 지원</a>
+						<a href="https://godocjadev.godo.co.kr/shopby/customer/main.gd" class="" target="">???? ????</a>
 					</li>
 									<li>
-						<a href="https://godocjadev.godo.co.kr/shopby/promotion/event.gd" class="" target="">이벤트</a>
+						<a href="https://godocjadev.godo.co.kr/shopby/promotion/event.gd" class="" target="">????</a>
 					</li>
 							</ul>
 			
@@ -600,8 +600,8 @@ $(function(){
 			<li class="type1">
 				<div class="txt_box">
 					<strong>Make it easy</strong>
-					<span>쉽게 시작하세요</span>
-					<em>가장 쉽고 간편한 쇼핑몰 <img src="//img.godo.co.kr/shopby/main/renew/img_shopby_logo5.png" alt="- shop by"/></em>
+					<span>???? ?????????</span>
+					<em>???? ???? ?????? ???θ? <img src="//img.godo.co.kr/shopby/main/renew/img_shopby_logo5.png" alt="- shop by"/></em>
 				</div>
 				<span><img src="//img.godo.co.kr/shopby/main/renew/img_obj1.png" alt=""/></span>
 				<span><img src="//img.godo.co.kr/shopby/main/renew/img_obj2.png" alt=""/></span>
@@ -609,8 +609,8 @@ $(function(){
 			<li class="type2">
 				<div class="txt_box">
 					<strong>Make it simple</strong>
-					<span>간편하게 만드세요</span>
-					<em>가장 쉽고 간편한 쇼핑몰 <img src="//img.godo.co.kr/shopby/main/renew/img_shopby_logo5.png" alt="- shop by"/></em>
+					<span>??????? ???弼??</span>
+					<em>???? ???? ?????? ???θ? <img src="//img.godo.co.kr/shopby/main/renew/img_shopby_logo5.png" alt="- shop by"/></em>
 				</div>
 				<span><img src="//img.godo.co.kr/shopby/main/renew/img_obj3.png" alt=""/></span>
 				<span><img src="//img.godo.co.kr/shopby/main/renew/img_obj4.png" alt=""/></span>
@@ -619,8 +619,8 @@ $(function(){
 			<li class="type3">
 				<div class="txt_box">
 					<strong>Make it smart</strong>
-					<span>똑똑하게 만드세요</span>
-					<em>가장 쉽고 간편한 쇼핑몰 <img src="//img.godo.co.kr/shopby/main/renew/img_shopby_logo5.png" alt="- shop by"/></em>
+					<span>?????? ???弼??</span>
+					<em>???? ???? ?????? ???θ? <img src="//img.godo.co.kr/shopby/main/renew/img_shopby_logo5.png" alt="- shop by"/></em>
 				</div>
 				<span><img src="//img.godo.co.kr/shopby/main/renew/img_obj6.png" alt=""/></span>
 				<span><img src="//img.godo.co.kr/shopby/main/renew/img_obj7.png" alt=""/></span>
@@ -632,158 +632,158 @@ $(function(){
 	</div>
 	<!-- //main_visual -->
 	<div class="cont1">
-		<strong>상품 1개로 시작하는 쇼핑몰 <img src="//img.godo.co.kr/shopby/main/renew/img_shopby_logo1.png" alt="shop by"/></strong>
+		<strong>??? 1???? ??????? ???θ? <img src="//img.godo.co.kr/shopby/main/renew/img_shopby_logo1.png" alt="shop by"/></strong>
 		<p>
-		더 이상 쇼핑몰을 어렵게 생각하지 마세요.<br>
-		판매 상품이 무엇이든, 상품 종류가 몇 개이든 상관없이<br>
-		shop by로 쉽게 시작 가능하니까요.<br><br>
+		?? ??? ???θ??? ???? ???????? ??????.<br>
+		??? ????? ???????, ??? ?????? ?? ????? ???????<br>
+		shop by?? ???? ???? ?????????.<br><br>
 
-		설정만 하면 되는 아름다운 스킨과 마우스로 하는 디자인 편집은<br>
-		편리한 시작에 품격을 올려줄 거예요.
+		?????? ??? ??? ?????? ????? ???콺?? ??? ?????? ??????<br>
+		?????? ????? ????? ?÷??? ?????.
 		</p>
-		<a href="" target="_blank" class="btn_start">지금 시작하기</a>
+		<a href="" target="_blank" class="btn_start">???? ???????</a>
 	</div>
 	<!-- //cont1 -->
 	<div class="cont2">
 		<div class="sec_tit">
-			<strong>무엇이든 가능한 자유로움</strong>
+			<strong>??????? ?????? ?????ο?</strong>
 			<p>
-			처음 시작하는 초보자부터 경험 있는 운영자까지<br>
-			shop by를 통해서 쇼핑몰의 모든 것을 할 수 있어요.
+			??? ??????? ???????? ???? ??? ???????<br>
+			shop by?? ????? ???θ??? ??? ???? ?? ?? ????.
 			</p>
 		</div>
 		<div class="section">
 			<div class="box">
 				<span>01</span>
 				<span><img src="//img.godo.co.kr/shopby/main/renew/img_shopby_logo2.png" alt="shop by"/><em>EASY</em></span>
-				<strong># 가장 쉬운 쇼핑몰</strong>
+				<strong># ???? ???? ???θ?</strong>
 				<p>
-					더 이상 망설이지 마세요.<br>
-					상품 1개만 있으면 무료로 요금제 걱정 없이<br>
-					쇼핑몰 운영과 상품판매가 가능하니까요.
+					?? ??? ???????? ??????.<br>
+					??? 1???? ?????? ????? ????? ???? ????<br>
+					???θ? ???? ??????? ?????????.
 				</p>
 			</div>
 			<div class="box">
 				<span>02</span>
 				<span><img src="//img.godo.co.kr/shopby/main/renew/img_shopby_logo2.png" alt="shop by"/><em>SPEED</em></span>
-				<strong># 가장 빠른 쇼핑몰</strong>
+				<strong># ???? ???? ???θ?</strong>
 				<p>
-					개발소스를 몰라도 걱정하지 마세요.<br>
-					간단한 기본 설정과 마우스 드래그만으로<br>
-					빠르게 쇼핑몰을 만들 수 있으니까요.
+					???????? ???? ???????? ??????.<br>
+					?????? ?? ?????? ???콺 ?巡???????<br>
+					?????? ???θ??? ???? ?? ????????.
 				</p>
 			</div>
 			<div class="box">
 				<span>03</span>
 				<span><img src="//img.godo.co.kr/shopby/main/renew/img_shopby_logo2.png" alt="shop by"/><em>TRENDY</em></span>
-				<strong># 가장 트렌디한 쇼핑몰</strong>
+				<strong># ???? ??????? ???θ?</strong>
 				<p>
-					쉽지만 트렌디 한 쇼핑몰이에요.<br>
-					인스타그램 연동부터<br>
-					스타일리쉬한 디자인 스킨까지<br>
-					나만의 매력 있는 쇼핑몰을 만들어 보세요.
+					?????? ????? ?? ???θ??????.<br>
+					?ν????? ????????<br>
+					?????????? ?????? ???????<br>
+					?????? ??? ??? ???θ??? ????? ??????.
 				</p>
 			</div>
 			<div class="box">
 				<span>04</span>
 				<span><img src="//img.godo.co.kr/shopby/main/renew/img_shopby_logo2.png" alt="shop by"/><em>SMART</em></span>
-				<strong># 가장 똑똑한 쇼핑몰</strong>
+				<strong># ???? ????? ???θ?</strong>
 				<p>
-					PC 쇼핑몰만 만들어보세요.<br>
-					모바일과 태블릿 등 모든 환경에 알맞게<br>
-					쇼핑몰이 보여지니까요.
+					PC ???θ??? ?????????.<br>
+					?????? ?º??? ?? ??? ??濡 ??°?<br>
+					???θ??? ??????????.
 				</p>
 			</div>
 		</div>
 		<!-- //cont2 -->
 		<div class="cont3">
 			<div class="pl_box">
-				<img src="//img.godo.co.kr/shopby/main/renew/txt_start.png" alt="내 이름으로 시작하는 쇼핑몰" class="img1"/><br>
+				<img src="//img.godo.co.kr/shopby/main/renew/txt_start.png" alt="?? ??????? ??????? ???θ?" class="img1"/><br>
 				<img src="//img.godo.co.kr/shopby/main/renew/img_shopby_logo3.png" alt="shop by you" class="img2"/>
 				<p>
-				누구에게나 쉽고 간편한 쇼핑몰.<br>
-				인스타그램, 블로그와 같은 간단한 마켓부터 모든 것이 가능하죠.
+				????????? ???? ?????? ???θ?.<br>
+				?ν?????, ???α?? ???? ?????? ??????? ??? ???? ????????.
 				</p>
 			</div>
 		</div>
 		<!-- //cont3 -->
 		<div class="cont4">
 			<div class="sec_tit">
-				<strong>우리와 함께하는 사람들</strong>
+				<strong>?츮?? ?????? ?????</strong>
 				<p>
-				많은 분들이 간단한 판매부터 쇼핑몰 운영까지 하고 있어요.<br>
-				편하게 즐기면서 시작해보세요.
+				???? ?е??? ?????? ?????? ???θ? ?????? ??? ????.<br>
+				????? ???? ???????????.
 				</p>
 			</div>
 			<ul>
 				<li>
 					<a href="https://jujube.shopby.co.kr/" target="_blank">
-						<img src="//img.godo.co.kr/shopby/main/renew/img_shop01.png" alt="쥬쥬베"/>
+						<img src="//img.godo.co.kr/shopby/main/renew/img_shop01.png" alt="???꺣"/>
 					</a>
 				</li>
 				<li>
 					<a href="http://syspangpet.com/" target="_blank">
-						<img src="//img.godo.co.kr/shopby/main/renew/img_shop02.png" alt="멍멍팔팔"/>
+						<img src="//img.godo.co.kr/shopby/main/renew/img_shop02.png" alt="???????"/>
 					</a>
 				</li>
 				<li>
 					<a href="https://byrabbit.shopby.co.kr/" target="_blank">
-						<img src="//img.godo.co.kr/shopby/main/renew/img_shop03.png" alt="바이래빗프로젝트"/>
+						<img src="//img.godo.co.kr/shopby/main/renew/img_shop03.png" alt="??????????????"/>
 					</a>
 				</li>
 				<li>
 					<a href="https://realbeeboy.shopby.co.kr/" target="_blank">
-						<img src="//img.godo.co.kr/shopby/main/renew/img_shop04.png" alt="리얼비보이"/>
+						<img src="//img.godo.co.kr/shopby/main/renew/img_shop04.png" alt="???????"/>
 					</a>
 				</li>
 				<li>
 					<a href="https://musroomall.shopby.co.kr/" target="_blank">
-						<img src="//img.godo.co.kr/shopby/main/renew/img_shop05.png" alt="헬씨팜"/>
+						<img src="//img.godo.co.kr/shopby/main/renew/img_shop05.png" alt="????"/>
 					</a>
 				</li>
 				<li>
 					<a href="https://baboyunu.shopby.co.kr/" target="_blank">
-						<img src="//img.godo.co.kr/shopby/main/renew/img_shop06.png" alt="바보연어"/>
+						<img src="//img.godo.co.kr/shopby/main/renew/img_shop06.png" alt="???????"/>
 					</a>
 				</li>
 			</ul>
-			<a href="" target="_blank" class="btn_start">지금 시작하기</a>
+			<a href="" target="_blank" class="btn_start">???? ???????</a>
 		</div>
 		<!-- //cont4 -->
 		<div class="cont5">
 			<div class="sec_tit">
-				<strong><img src="//img.godo.co.kr/shopby/main/renew/img_shopby_logo4.png" alt="shop by"/> 이벤트</strong>
+				<strong><img src="//img.godo.co.kr/shopby/main/renew/img_shopby_logo4.png" alt="shop by"/> ????</strong>
 				<p>
-				지금 진행되고 있는 이벤트를 만나보세요.
+				???? ?????? ??? ?????? ??????????.
 				</p>
 			</div>
 			<span class="sec_banner"><a href="www.godo.co.kr/shopby/main.gd"><img src="//img.godo.co.kr/shopby/main/renew/banner_event.png" alt=""/></a></span>
 			<ul class="sec_guide_list">
 				<li>
 					<a href="www.godo.co.kr/shopby/shopby-intro.gd">
-						<strong>자세히 알고 싶다면</strong>
-						알고 있으면 유용한<br>기능들을 만나보세요.
+						<strong>????? ??? ????</strong>
+						??? ?????? ??????<br>?????? ??????????.
 						<span class="arrow"></span>
 					</a>
 				</li>
 				<li class="type2">
 					<a href="www.godo.co.kr/shopby/shopby-utilities.gd?tab=skin">
-						<strong>체험해보고 싶다면</strong>
-						shop by로 만들어진<br>쇼핑몰을 경험해보세요.
+						<strong>???????? ????</strong>
+						shop by?? ???????<br>???θ??? ???????????.
 						<span class="arrow"></span>
 					</a>
 				</li>
 				<li class="type3">
 					<a href="www.godo.co.kr/shopby/shopby-utilities.gd?tab=lecture">
-						<strong>도움이 필요하다면</strong>
-						동영상을 통해 shop by를<br>더 쉽게 해보세요.
+						<strong>?????? ???????</strong>
+						???????? ???? shop by??<br>?? ???? ???????.
 						<span class="arrow"></span>
 					</a>
 				</li>
 				<li class="type4">
 					<a href="www.godo.co.kr/shopby/customer/main.gd">
-						<strong>궁금한 점이 있다면</strong>
-						고객지원에서<br>친절한 안내를 받으세요.
+						<strong>????? ???? ????</strong>
+						????????????<br>????? ????? ????????.
 						<span class="arrow"></span>
 					</a>
 				</li>
@@ -800,31 +800,31 @@ $(function(){
 	<div class="footer-wrap resetOld">
 	<div class="contents">
 		<div class="link">
-			<a href="https://godocjadev.godo.co.kr/company/main.gd" target="_blank">회사소개</a>
-			<a href="https://godocjadev.godo.co.kr/etc/agreement/join-agreement.gd" target="_blank">약관</a>
-			<a class="privacy" href="https://godocjadev.godo.co.kr/etc/agreement/privacy-agreement.gd" target="_blank">개인정보처리방침</a>
-			<a href="https://godocjadev.godo.co.kr/reseller/" target="_blank">리셀러</a>
-			<a href="https://godocjadev.godo.co.kr/etc/partner.gd" onclick="window.open(this.href,'pop','width=820px,height=870px,scrollbars=yes');return false;">제휴문의</a>
-			<a href="https://godocjadev.godo.co.kr/etc/sitemap.gd" target="_blank">사이트맵</a>
+			<a href="https://godocjadev.godo.co.kr/company/main.gd" target="_blank">?????</a>
+			<a href="https://godocjadev.godo.co.kr/etc/agreement/join-agreement.gd" target="_blank">???</a>
+			<a class="privacy" href="https://godocjadev.godo.co.kr/etc/agreement/privacy-agreement.gd" target="_blank">?????????????ħ</a>
+			<a href="https://godocjadev.godo.co.kr/reseller/" target="_blank">??????</a>
+			<a href="https://godocjadev.godo.co.kr/etc/partner.gd" onclick="window.open(this.href,'pop','width=820px,height=870px,scrollbars=yes');return false;">???????</a>
+			<a href="https://godocjadev.godo.co.kr/etc/sitemap.gd" target="_blank">???????</a>
 			
 							
 		</div>
 		<div class="about">
 			<address>
-				엔에이치엔고도(주) <span>대표 : 이윤식</span><span>서울시 구로구 디지털로26길 72</span><br />
-				사업자등록번호 : 120-86-46911<span>통신판매업신고 : 2015-서울구로-0049</span><span><a href="http://www.ftc.go.kr/info/bizinfo/communicationView.jsp?apv_perm_no=2015316015930200049&area1=&area2=&currpage=1&searchKey=04&searchVal=1208646911&stdate=&enddate=" target="_blank">사업자 정보확인</a></span><br />
-				개인정보보호책임자 : 문창재 (<a href="mailto:privacy1@godo.co.kr">privacy1@godo.co.kr</a>)<span>전화 : 1688-7662</span><span>팩스 : 02-567-3744</span><span>호스팅 제공 : 엔에이치엔고도(주)</span><br/>
-				ⓒ NHN godo<strong>:</strong> Corp. All Rights Reserved.			</address>
+				?????????????(??) <span>??? : ??????</span><span>????? ???α? ?????з?26?? 72</span><br />
+				????????? : 120-86-46911<span>?????????? : 2015-??????-0049</span><span><a href="http://www.ftc.go.kr/info/bizinfo/communicationView.jsp?apv_perm_no=2015316015930200049&area1=&area2=&currpage=1&searchKey=04&searchVal=1208646911&stdate=&enddate=" target="_blank">????? ???????</a></span><br />
+				???????????????? : ????? (<a href="mailto:privacy1@godo.co.kr">privacy1@godo.co.kr</a>)<span>??? : 1688-7662</span><span>??? : 02-567-3744</span><span>????? ???? : ?????????????(??)</span><br/>
+				?? NHN godo<strong>:</strong> Corp. All Rights Reserved.			</address>
 		</div>
 		<div class="icon">
-			<a href="https://www.facebook.com/nhngodo" target="_blank"><img src="//img.godo.co.kr/godomall/footer/j_04_facebook.png" onmouseover="this.src='//img.godo.co.kr/godomall/footer/j_04_facebook_on.png'" onmouseout="this.src='//img.godo.co.kr/godomall/footer/j_04_facebook.png'" alt="고도 페이스북"/></a>
-			<a href="http://blog.naver.com/godomallnews" target="_blank"><img src="//img.godo.co.kr/godomall/footer/j_04_blog.png" onmouseover="this.src='//img.godo.co.kr/godomall/footer/j_04_blog_on.png'" onmouseout="this.src='//img.godo.co.kr/godomall/footer/j_04_blog.png'" alt="고도 블로그"/></a>
-			<a href="https://www.instagram.com/nhngodo/" target="_blank"><img src="//img.godo.co.kr/godomall/footer/j_04_insta.png" onmouseover="this.src='//img.godo.co.kr/godomall/footer/j_04_insta_on.png'" onmouseout="this.src='//img.godo.co.kr/godomall/footer/j_04_insta.png'" alt="고도 인스타그램"/></a>
+			<a href="https://www.facebook.com/nhngodo" target="_blank"><img src="//img.godo.co.kr/godomall/footer/j_04_facebook.png" onmouseover="this.src='//img.godo.co.kr/godomall/footer/j_04_facebook_on.png'" onmouseout="this.src='//img.godo.co.kr/godomall/footer/j_04_facebook.png'" alt="???? ???????"/></a>
+			<a href="http://blog.naver.com/godomallnews" target="_blank"><img src="//img.godo.co.kr/godomall/footer/j_04_blog.png" onmouseover="this.src='//img.godo.co.kr/godomall/footer/j_04_blog_on.png'" onmouseout="this.src='//img.godo.co.kr/godomall/footer/j_04_blog.png'" alt="???? ???α?"/></a>
+			<a href="https://www.instagram.com/nhngodo/" target="_blank"><img src="//img.godo.co.kr/godomall/footer/j_04_insta.png" onmouseover="this.src='//img.godo.co.kr/godomall/footer/j_04_insta_on.png'" onmouseout="this.src='//img.godo.co.kr/godomall/footer/j_04_insta.png'" alt="???? ?ν?????"/></a>
 		</div>
 		<div class="footer-clear"></div>
 		<div class="isms">
             
-			<a href="https://godocjadev.godo.co.kr/etc/isms.gd" onclick="window.open(this.href,'pop','width=820px,height=870px,scrollbars=yes');return false;"><img src="//img.godo.co.kr/godomall/footer/j_03_img.png" alt="정보보호관리체계 ISMS 인증 획득" /></a>
+			<a href="https://godocjadev.godo.co.kr/etc/isms.gd" onclick="window.open(this.href,'pop','width=820px,height=870px,scrollbars=yes');return false;"><img src="//img.godo.co.kr/godomall/footer/j_03_img.png" alt="?????????????? ISMS ???? ???" /></a>
 		</div>
 	</div>
 </div>

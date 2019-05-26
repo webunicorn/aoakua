@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/jquery.pagepiling.css" type="text/css">
+    <style>
+     
+   </style>
+</head>
+<body>
+    <div id="wrap">
+        <ul class="fade_container">
+            <li class="section">
+                <img src="../images/sb/bg_visual1.png" alt="image1" />
+            </li>
+            <li class="section">
+                <img src="../images/sb/bg_visual2.png" alt="image2" />
+            </li>
+            <li class="section">
+                <img src="../images/sb/bg_visual3.png" alt="image3" />
+            </li>
+        </i;>
+    </div>
+
+    <div id="pagePiling">
+        <div class="section">One<img src="../images/sb/bg_visual1.png" alt="image1" /></div>
+        <div class="section">Two<img src="../images/sb/bg_visual2.png" alt="image2" /></div>
+        <div class="section">Three <img src="../images/sb/bg_visual3.png" alt="image3" /></div>
+        
+    </div>
+    
+      
+    <script type="text/javascript" src="../js/godo/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.pagepiling.js"></script>
+    <script>
+        $(function(){
+            var interval;
+            var autoPlayDuration = 1000;
+
+            $('#pagePiling').pagepiling({
+                sectionsColor: ['yellow', 'orange', '#C0C0C0'],
+                loopBottom: true,
+                afterLoad: function (anchorLink, index) {
+                    clearInterval(interval);
+
+                    setTimeout(function () {
+                        interval = getInterval();
+                    },autoPlayDuration);
+                },
+                afterRender: function () {
+                    interval = getInterval();
+                }
+            });
+
+            function getInterval() {
+                return setInterval(function () {
+                    $.fn.pagepiling.moveSectionDown();
+                }, autoPlayDuration);
+            }
+
+            
+        });
+    </script>
+</body>
+</html>

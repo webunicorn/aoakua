@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/jquery.pagepiling.css" type="text/css">
+    <style>
+        body {
+            font-family: sans-serif, arial, helvetica;
+        }
+        /* Navigaton bullets styles
+        * --------------------------------------- */
+        #pp-nav li .active span, .pp-slidesNav .active span {
+            background: #bbb;
+        }
+        #pp-nav span, .pp-slidesNav span {
+            border-color: #bbb !important;
+        }
+        /* Sections
+            * --------------------------------------- */
+        .section {
+            background-attachment: fixed;
+            background-size: auto 80%;
+            background-position: 50% 0%;
+            background-repeat: no-repeat;
+        }
+        #section1 {
+            background-image: url(https://dgt5r4zz5sach.cloudfront.net/~/media/images/modules/large/hbr_h_gif_final.gif?as=1&t=635549701220714646);
+        }
+        #section2 {
+            background-image: url(https://dgt5r4zz5sach.cloudfront.net/~/media/images/modules/large/nike%20making%20large.jpg?as=1&t=635616687017735022);
+        }
+        #section3 {
+            background-image: url(https://dgt5r4zz5sach.cloudfront.net/~/media/images/modules/large/homepage_h_05-notext.jpg?as=1&t=635588424878366703);
+        }
+        #section4 .content {
+            top: 100%;
+            position: absolute;
+            left: 0;
+        }
+        /* Arrow
+            * --------------------------------------- */
+        #arrow {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            cursor: pointer;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            border: 0;
+            outline: 0;
+            z-index: 100;
+            color: #BBB;
+            background: transparent;
+            -moz-transition: all 0.2s cubic-bezier(0.7, 0.01, 0.3, 1);
+            -o-transition: all 0.2s cubic-bezier(0.7, 0.01, 0.3, 1);
+            -webkit-transition: all 0.2s cubic-bezier(0.7, 0.01, 0.3, 1);
+            transition: all 0.2s cubic-bezier(0.7, 0.01, 0.3, 1);
+            font: 36px Heiti, 'Lucida Grande', Arial;
+            font-weight: bold;
+        }
+        #arrow span {
+            display: inline-block;
+            position: relative;
+            top: -18px;
+            -moz-transition: all 0.7s cubic-bezier(0.7, 0.01, 0.3, 1);
+            -o-transition: all 0.7s cubic-bezier(0.7, 0.01, 0.3, 1);
+            -webkit-transition: all 0.7s cubic-bezier(0.7, 0.01, 0.3, 1);
+            transition: all 0.7s cubic-bezier(0.7, 0.01, 0.3, 1);
+        }
+        #arrow:hover {
+            background: #EC008C;
+        }
+        #arrow:hover span {
+            top: 0;
+            color: #FFF;
+        }
+        /* Intro texts
+            * --------------------------------------- */
+        .intro {
+            position: absolute;
+            bottom: 100px;
+            text-align: center;
+            width: 100%;
+        }
+        .intro h1 {
+            font-size: 5em;
+            font-weight: bold;
+            color: #000;
+        }
+        #section4 .intro {
+            color: #000;
+        }
+        /* Content page
+            * --------------------------------------- */
+        .header {
+            padding-top: 80px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 5em;
+            font-weight: bold;
+            color: #fff;
+        }
+        .header p {
+            color: #f2f2f2;
+            font-size: 1.7em;
+        }
+        .page {
+            width: 80%;
+            margin: 60px auto;
+            background:white;
+            padding: 60px;
+            -webkit-box-sizing: border-box;
+            /* Safari<=5 Android<=3 */
+            -moz-box-sizing: border-box;
+            /* <=28 */
+            box-sizing: border-box;
+        }
+        .page p {
+            font-style: 12px;
+            margin: 20px 0 0 0;
+            line-height: 1.35em;
+            color: #333;
+        }
+   </style>
+</head>
+<body>
+    
+
+    <!-- <div id="pagePiling">
+        <div class="section">One<img src="../images/sb/bg_visual1.png" alt="image1" /></div>
+        <div class="section">Two<img src="../images/sb/bg_visual2.png" alt="image2" /></div>
+        <div class="section">Three <img src="../images/sb/bg_visual3.png" alt="image3" /></div>
+        
+    </div>
+     -->
+
+     <button id="arrow">	<span>↓</span>
+
+     </button>
+     <div id="pagepiling">
+         <div class="section" id="section1">
+             <div class="intro">
+                     <h1>All business.</h1>
+     
+                 <p>A new home for the word's most influencial management magazine.</p>
+             </div>
+         </div>
+         <div class="section" id="section2">
+             <div class="intro">
+                     <h1>Nike Making.</h1>
+     
+                 <p>Inspiring the creative community to make sustainable design choices.</p>
+             </div>
+         </div>
+         <div class="section" id="section3">
+             <div class="intro">
+                  <h1>Floored.</h1>
+     
+                 <p>Clean, modern, and fast. Introducing the new Lexus.com.</p>
+             </div>
+         </div>
+         <div class="section pp-scrollable" id="section4">
+             <div class="content">
+                 <div class="header">
+                         <h1>pagePiling.js</h1>
+     
+                     <p>Pile your sections one over another and access them scrolling or by URL!</p>
+                 </div>
+                 <div class="page">
+                     <p>Eos ex tale consul phaedrum. Ex mel enim delectus. An stet vide copiosae mei. Ne ferri oportere accusamus sit, eum an stet solet. Ex maiestatis dissentiet eum. An pro recteque intellegam, eum convenire contentiones te. Cum id nobis mediocritatem. Brute dicta putent no vel. Pro ad verear eripuit vituperatoribus. Vim ad utamur accusata recteque, an cum iriure scriptorem. Ei suas democritum sed, ceteros omittam eos et. Case eius ne vix, duo ne autem saperet insolens, mel posse aperiam labores no. Alienum accusamus an est. Qui iudicabit intellegat percipitur in, est in agam fugit assueverit. Pro cu mazim oporteat, soluta vituperata instructior mei ea, an vix sonet vocent laboramus. Vis vocent ocurreret ad. Congue causae iisque no mei, vim fastidii platonem iracundia ei, detraxit sadipscing usu eu. Est ei sonet tempor dicunt. In tota regione blandit sea, at nec numquam dissentias, eu sit sapientem evertitur. Suas mediocrem incorrupte vel ei, intellegebat reprehendunt eum ad.</p>
+                     <p>Probo latine iudicabit ad quo, nec adhuc nonumy adipiscing ea. Pro labore recusabo at. Tamquam electram constituam ut vel, assum omnes te ius. An mea illum petentium salutatus, vix et erat sapientem comprehensam. Movet tacimates ut mei, id sea minim graeco antiopam, te solet melius tibique his. Dicam graecis volumus has te. Amet affert menandri ex has. Per ei malis legendos principes, et duo movet deterruisset. Et cum possim vivendo, no mea animal saperet disputando. Ex legere facilisis mei. Quo primis everti disputando at, nam ut quis copiosae. Salutatus forensibus in qui. Ut usu zril referrentur, consequat vulputate intellegat sed cu. Est at imperdiet reprehendunt. Singulis mnesarchum contentiones eos an, ex mea stet vocibus. Recteque inciderint nec et. Eam at putent disputando, ad summo aperiri philosophia quo, natum mundi malorum te cum. Id modus aliquid definitiones est.</p>
+                     <p>Ex sint percipitur pro, dolor mentitum sea an. Vel simul alienum ex, vim debitis antiopam id. Ponderum luptatum te eum. Idque dicant theophrastus ea pri. Eum hinc choro ut, et qui habemus iracundia similique. Mei numquam platonem definitiones id. Per at nusquam vivendum suscipiantur, te mei nibh offendit singulis. Aperiri recusabo persequeris duo cu. Ex justo rationibus complectitur cum. Ad mucius salutatus mnesarchum mei, et dicit probatus similique qui. Malis vivendum consequuntur id sed. Vix ei fuisset perpetua, partem audire pericula nec no. Partem putant philosophia id est. Et vel nibh munere, vis numquam nusquam forensibus ad, in mazim mundi vitae eam. Ea usu exerci audire intellegam. Sit iuvaret corrumpit laboramus cu, autem mazim ea sed, sit tacimates elaboraret ut.</p>
+                     <p>Eos ex tale consul phaedrum. Ex mel enim delectus. An stet vide copiosae mei. Ne ferri oportere accusamus sit, eum an stet solet. Ex maiestatis dissentiet eum. An pro recteque intellegam, eum convenire contentiones te. Cum id nobis mediocritatem. Brute dicta putent no vel. Pro ad verear eripuit vituperatoribus. Vim ad utamur accusata recteque, an cum iriure scriptorem. Ei suas democritum sed, ceteros omittam eos et. Case eius ne vix, duo ne autem saperet insolens, mel posse aperiam labores no. Alienum accusamus an est. Qui iudicabit intellegat percipitur in, est in agam fugit assueverit. Pro cu mazim oporteat, soluta vituperata instructior mei ea, an vix sonet vocent laboramus. Vis vocent ocurreret ad. Congue causae iisque no mei, vim fastidii platonem iracundia ei, detraxit sadipscing usu eu. Est ei sonet tempor dicunt. In tota regione blandit sea, at nec numquam dissentias, eu sit sapientem evertitur. Suas mediocrem incorrupte vel ei, intellegebat reprehendunt eum ad. Probo latine iudicabit ad quo, nec adhuc nonumy adipiscing ea. Pro labore recusabo at. Tamquam electram constituam ut vel, assum omnes te ius. An mea illum petentium salutatus, vix et erat sapientem comprehensam. Movet tacimates ut mei, id sea minim graeco antiopam, te solet melius tibique his. Dicam graecis volumus has te. Amet affert menandri ex has. Per ei malis legendos principes, et duo movet deterruisset. Et cum possim vivendo, no mea animal saperet disputando. Ex legere facilisis mei. Quo primis everti disputando at, nam ut quis copiosae. Salutatus forensibus in qui. Ut usu zril referrentur, consequat vulputate intellegat sed cu. Est at imperdiet reprehendunt. Singulis mnesarchum contentiones eos an, ex mea stet vocibus. Recteque inciderint nec et. Eam at putent disputando, ad summo aperiri philosophia quo, natum mundi malorum te cum. Id modus aliquid definitiones est. Ex sint percipitur pro, dolor mentitum sea an. Vel simul alienum ex, vim debitis antiopam id. Ponderum luptatum te eum. Idque dicant theophrastus ea pri. Eum hinc choro ut, et qui habemus iracundia similique. Mei numquam platonem definitiones id. Per at nusquam vivendum suscipiantur, te mei nibh offendit singulis. Aperiri recusabo persequeris duo cu. Ex justo rationibus complectitur cum. Ad mucius salutatus mnesarchum mei, et dicit probatus similique qui. Malis vivendum consequuntur id sed. Vix ei fuisset perpetua, partem audire pericula nec no. Partem putant philosophia id est. Et vel nibh munere, vis numquam nusquam forensibus ad, in mazim mundi vitae eam. Ea usu exerci audire intellegam. Sit iuvaret corrumpit laboramus cu, autem mazim ea sed, sit tacimates elaboraret ut.</p>
+                 </div>
+             </div>
+         </div>
+     </div>
+      
+    <script type="text/javascript" src="../js/godo/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.pagepiling.js"></script>
+    <script>
+        $(function(){
+            /*
+            * Plugin intialization
+            */
+            $('#pagepiling').pagepiling({
+                verticalCentered: false,
+                css3: false,
+                sectionsColor: ['white', '#E8E8E8', '#f2f2f2', '#EC008C'],
+                onLeave: function (index, nextIndex, direction) {
+                    //fading out the txt of the leaving section
+                    $('.section').eq(index - 1).find('h1, p').fadeOut(700, 'easeInQuart');
+                    //fading in the text of the destination (in case it was fadedOut)
+                    $('.section').eq(nextIndex - 1).find('h1, p').fadeIn(700, 'easeInQuart');
+                    //reaching our last section? The one with our normal site?
+                    if (nextIndex == 4) {
+                        $('#arrow').hide();
+
+                        //fading out navigation bullets
+                        $('#pp-nav').fadeOut();
+
+                        $('#section4').find('.content').animate({
+                            top: '0%'
+                        }, 700, 'easeInQuart');
+                    }
+
+                    //leaving our last section? The one with our normal site?
+                    if (index == 4) {
+                        $('#arrow').show();
+
+                        //fadding in navigation bullets
+                        $('#pp-nav').fadeIn();
+
+                        $('#section4 .content').animate({
+                            top: '100%'
+                        }, 700, 'easeInQuart');
+                    }
+                },
+            });
+
+            $('#arrow').click(function () {
+                $.fn.pagepiling.moveSectionDown();
+            });
+            
+        });
+    </script>
+</body>
+</html>

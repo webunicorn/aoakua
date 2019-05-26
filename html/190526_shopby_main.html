@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="euc-kr">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="../css/godo/common.css" />
+    <link type="text/css" rel="stylesheet" href="../css/godo/gnb.css" />
+    <link type="text/css" rel="stylesheet" href="../css/godo/page.css" />
+    <link type="text/css" rel="stylesheet" href="../css/godo/shopby.css" />
+    <script type="text/javascript" src="../js/godo/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../js/godo/jquery.cookie-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/skrollr.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script>
+      $(function(){
+          
+          //current position
+          var pos = 0;
+          //number of slides
+          var totalSlides = $('.main_visual ul li').length;
+          //get the slide height
+          var sliderHeight = $('.main_visual').height();
+
+
+          $(document).ready(function(){
+              /*****************
+               BUILD THE SLIDER
+              *****************/
+              //set width to be 'x' times the number of slides
+              $('.main_visual ul').height(sliderHeight*totalSlides);
+              
+              //next slide 	
+            //   $('#next').click(function(){
+            //       slideRight();
+            //   });
+              
+              //previous slide
+            //   $('#previous').click(function(){
+            //       slideLeft();
+            //   });
+              
+              
+              
+              /*************************
+               //*> OPTIONAL SETTINGS
+              ************************/
+              //automatic slider
+              var autoSlider = setInterval(slideRight, 5000);
+              
+              //for each slide 
+              $.each($('.main_visual ul li'), function() { 
+
+                //create a pagination
+                var li = document.createElement('li');
+                $('.main_visual ul').append(li);	   
+               
+              });
+              
+              //counter
+            //  countSlides();
+              
+              //pagination
+           //   pagination();
+                effect();
+              //hide/show controls/btns when hover
+              //pause automatic slide when hover
+              $('.main_visual').hover(
+              function(){ $(this).addClass('active'); clearInterval(autoSlider); }, 
+              function(){ $(this).removeClass('active'); autoSlider = setInterval(slideRight, 5000); }
+              );
+              
+              
+
+          });//DOCUMENT READY
+              
+
+
+          /***********
+           SLIDE LEFT
+          ************/
+          function slideLeft(){
+              pos--;
+              if(pos==-1){ pos = totalSlides-1; }
+              $('.main_visual ul').css('top', -(sliderHeight*pos)); 	
+              
+              effect();
+              
+              //*> optional
+           //   countSlides();
+            // pagination();
+          }
+
+
+          /************
+           SLIDE RIGHT
+          *************/
+          function slideRight(){
+              pos++;
+              if(pos==totalSlides){ pos = 0; }
+              $('.main_visual ul').css('top', -(sliderHeight*pos)); 
+              effect();
+              //*> optional 
+             // countSlides();
+             // pagination();
+          }
+
+
+
+              
+          /************************
+           //*> OPTIONAL SETTINGS
+          ************************/
+        //   function countSlides(){
+        //       $('#counter').html(pos+1 + ' / ' + totalSlides);
+        //   }
+
+        //   function pagination(){
+        //       $('#pagination-wrap ul li').removeClass('active');
+        //       $('#pagination-wrap ul li:eq('+pos+')').addClass('active');
+        //   }
+
+            function effect(){
+                $('.main_visual ul li .txt_box').removeClass('active');
+                $('.main_visual ul li:eq('+pos+') .txt_box').addClass('active');    
+            }
+      
+  
+      });
+
+      $(window).scroll(function() { 
+            var position = $(window).scrollTop(); 
+            console.log(position);
+            if(position >= 2000 && position <= 2800) { 
+                $('.shopby_main_wrap .cont2 .scroll_sec .img_area').addClass('fix');
+                $('.shopby_main_wrap .cont2 .scroll_sec .img_area').css('top','192px');
+            } else if(position > 2801){ 
+                $('.shopby_main_wrap .cont2 .scroll_sec .img_area').removeClass('fix');
+                $('.shopby_main_wrap .cont2 .scroll_sec .img_area').css('top','820px');
+            }else{
+                $('.shopby_main_wrap .cont2 .scroll_sec .img_area').removeClass('fix');
+                $('.shopby_main_wrap .cont2 .scroll_sec .img_area').css('top','0px');
+            }
+        });
+
+        // var flag = false;
+        // // DOMMouseScroll event is for firefox
+        //     // 이벤트 'e'는 마우스 이벤트를 의미한다. 
+        // $("html, body").on('mousewheel DOMMouseScroll', function(e) {
+        //     var E = e.originalEvent;
+        //     eventValues = 0;
+        //     // E.detail is for firefox
+        //     if (E.detail) {
+        //         eventValues = E.detail * -40;
+        //     }else{
+        //         eventValues = E.wheelDelta;
+        //     };
+        //     // minus nav height(50px) 
+        //     var scmove = $(this).height() - 900;
+            
+        //         // -120이면 마우스 휠을 아래로 내린 것
+        //     if(eventValues == -120 && !flag){
+        //         // roll down mouse wheel
+        //         flag = true;
+        //         $('html, body').animate( { scrollTop : 900 }, 800 ,function(){
+        //             flag = false;
+        //         });
+        //     };
+        //     if(eventValues == 120 && !flag){
+        //         // roll up mouse wheel
+        //         flag = true;
+        //         $('html, body').animate( { scrollTop : '-='+scmove }, 800 ,function(){
+        //             flag = false;
+        //         });
+        //     };
+        // });
+
+
+        $(function(){
+            skrollr.init();
+
+            $('.main_visual').mousemove(function(e) {
+                parallaxIt(e, ".img2", -100);
+                parallaxIt(e, ".img1", -30);
+                });
+
+                function parallaxIt(e, target, movement) {
+                var $this = $('.main_visual');
+                var relX = e.pageX - $this.offset().left;
+                var relY = e.pageY - $this.offset().top;
+
+                TweenMax.to(target, 1, {
+                    x: (relX - $this.width() / 2) / $this.width() * movement,
+                    y: (relY - $this.height() / 2) / $this.height() * movement
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    
+    <div class="shopby_main_wrap">
+        <div class="main_visual">
+            <ul class="slider">
+                <li class="type1">
+                    <div class="txt_box">
+                        <strong>Make it easy</strong><br>
+                        <span>쉽게 시작하세요</span><br>
+                        <em>가장 쉽고 간편한 쇼핑몰<img src="../images/sb/img_shopby_logo5.png" alt="- shop by"/></em>
+                    </div>
+                    <img src="../images/obj1.png" alt="" class="img2"/>
+                    <img src="../images/obj2.png" alt="" class="img1"/>
+                </li>
+                <li class="type2">
+                    <div class="txt_box">
+                        <strong>Make it easy</strong><br>
+                        <span>쉽게 시작하세요</span><br>
+                        <em>가장 쉽고 간편한 쇼핑몰<img src="../images/sb/img_shopby_logo5.png" alt="- shop by"/></em>
+                    </div>
+                    <img src="../images/obj1.png" alt="" class="img2"/>
+                    <img src="../images/obj2.png" alt="" class="img1"/>
+                </li>
+                <li class="type3">
+                    <div class="txt_box">
+                        <strong>Make it easy</strong><br>
+                        <span>쉽게 시작하세요</span><br>
+                        <em>가장 쉽고 간편한 쇼핑몰<img src="../images/sb/img_shopby_logo5.png" alt="- shop by"/></em>
+                    </div>
+                    <img src="../images/obj1.png" alt="" class="img2"/>
+                    <img src="../images/obj2.png" alt="" class="img1"/>
+                </li>
+            </ul>
+            <div class="btn_scroll">
+                <img src="../images/sb/icon_scroll.png" alt=""/>
+            </div>
+        </div>
+        <!-- //main_visual -->
+        <div class="cont1">
+            <strong>상품 1개로 시작하는 쇼핑몰 <img src="../images/sb/img_shopby_logo1.png" alt="shop by"/></strong>
+            <p>
+            더 이상 쇼핑몰을 어렵게 생각하지 마세요. <br>
+            판매 상품이 무엇이든, 상품 종류가 몇 개이든 상관없이<br>
+            shop by로 쉽게 시작 가능하니까요<br><br>
+            설정말 하면 되는 아름다운 스킨과 마우스로 하는 디자인 편집은<br>
+            편리한 시작에 품격을 올려줄 거예요.
+            </p>
+            <a href="" target="_blank" class="btn_start">지금 시작하기</a>
+        </div>
+        <!-- //cont1 -->
+        <div class="cont2">
+            <div class="sec_tit" data-1500="transform:translate3d(0,0%,0); opacity:1;" data-2500="transform:translate3d(0,-150%,0); opacity:0;">
+                <strong>무엇이든 가능한 자유로움</strong>
+                <p>
+                처음 시작하는 초보자부터 경험 있는 운영자까지<br>
+                shop by를 통해서 쇼핑몰의 모든 것을 할 수 있어요.
+                </p>
+            </div>
+            <!-- //sec_tit -->
+            <div class="scroll_sec">
+                <div class="inner">
+                    <div class="txt_area">
+                        <!-- <div class="box">
+                            <span class="num">01</span>
+                            <span class="point"><img src="../images/sb/img_shopby_logo2.png" alt="shop by"/><em>EASY</em></span>
+                            <strong># 가장 쉬운 쇼핑몰</strong>
+                            <p>
+                                더 이상 망설이지 마세요.<br>
+                                상품 1개만 있으면 무료로 요금제 걱정 없이<br>
+                                쇼핑몰 운영과 상품판매가 가능하니까요.<br>
+                            </p>
+                        </div>
+                        <div class="box">
+                            <span class="num">02</span>
+                            <span class="point"><img src="../images/sb/img_shopby_logo2.png" alt="shop by"/><em>SPEED</em></span>
+                            <strong># 가장 쉬운 쇼핑몰</strong>
+                            <p>
+                                더 이상 망설이지 마세요.<br>
+                                상품 1개만 있으면 무료로 요금제 걱정 없이<br>
+                                쇼핑몰 운영과 상품판매가 가능하니까요.<br>
+                            </p>
+                        </div>
+                        <div class="box">
+                            <span class="num">03</span>
+                            <span class="point"><img src="../images/sb/img_shopby_logo2.png" alt="shop by"/><em>TRENDY</em></span>
+                            <strong># 가장 쉬운 쇼핑몰</strong>
+                            <p>
+                                더 이상 망설이지 마세요.<br>
+                                상품 1개만 있으면 무료로 요금제 걱정 없이<br>
+                                쇼핑몰 운영과 상품판매가 가능하니까요.<br>
+                            </p>
+                        </div>
+                        <div class="box">
+                            <span class="num">04</span>
+                            <span class="point"><img src="../images/sb/img_shopby_logo2.png" alt="shop by"/><em>SMART</em></span>
+                            <strong># 가장 쉬운 쇼핑몰</strong>
+                            <p>
+                                더 이상 망설이지 마세요.<br>
+                                상품 1개만 있으면 무료로 요금제 걱정 없이<br>
+                                쇼핑몰 운영과 상품판매가 가능하니까요.<br>
+                            </p>
+                        </div> -->
+                        <ul>
+                            <li data-2000="transform:translate3d(0,0%,0); opacity:1;" data-2200="transform:translate3d(0,-150%,0); opacity:0;">
+                                <span class="num">01</span>
+                                <span class="point"><img src="../images/sb/img_shopby_logo2.png" alt="shop by"/><em>EASY</em></span>
+                                <strong># 가장 쉬운 쇼핑몰</strong>
+                                <p>
+                                    더 이상 망설이지 마세요.<br>
+                                    상품 1개만 있으면 무료로 요금제 걱정 없이<br>
+                                    쇼핑몰 운영과 상품판매가 가능하니까요.<br>
+                                </p>
+                            </li>
+                            <li data-1950="transform:translate3d(0,-10%,0); opacity:0;"  data-2220="opacity:1;" data-2250="transform:translate3d(0,-10%,0); opacity:1;" data-2400="transform:translate3d(0,-150%,0); opacity:0;">
+                                <span class="num">02</span>
+                                <span class="point"><img src="../images/sb/img_shopby_logo2.png" alt="shop by"/><em>SPEED</em></span>
+                                <strong># 가장 쉬운 쇼핑몰</strong>
+                                <p>
+                                    더 이상 망설이지 마세요.<br>
+                                    상품 1개만 있으면 무료로 요금제 걱정 없이<br>
+                                    쇼핑몰 운영과 상품판매가 가능하니까요.<br>
+                                </p>
+                            </li>
+                            <li data-2220="transform:translate3d(0,-10%,0); opacity:0;"  data-2350="opacity:1;" data-2550="transform:translate3d(0,-10%,0); opacity:1;" data-2700="transform:translate3d(0,-150%,0); opacity:0;">
+                                <span class="num">03</span>
+                                <span class="point"><img src="../images/sb/img_shopby_logo2.png" alt="shop by"/><em>TRENDY</em></span>
+                                <strong># 가장 쉬운 쇼핑몰</strong>
+                                <p>
+                                    더 이상 망설이지 마세요.<br>
+                                    상품 1개만 있으면 무료로 요금제 걱정 없이<br>
+                                    쇼핑몰 운영과 상품판매가 가능하니까요.<br>
+                                </p>
+                            </li>
+                            <li data-2500="transform:translate3d(0,-10%,0); opacity:0;" data-2650="opacity:1;" >
+                                <span class="num">04</span>
+                                <span class="point"><img src="../images/sb/img_shopby_logo2.png" alt="shop by"/><em>SMART</em></span>
+                                <strong># 가장 쉬운 쇼핑몰</strong>
+                                <p>
+                                    더 이상 망설이지 마세요.<br>
+                                    상품 1개만 있으면 무료로 요금제 걱정 없이<br>
+                                    쇼핑몰 운영과 상품판매가 가능하니까요.<br>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //txt_area -->
+                    <div class="img_area">
+                        <ul>
+                            <li>
+                                <div class="img">
+                                    <img src="../images/sb/img_shop02.png" alt="" data-2000="opacity:1;"/>
+                                    <img src="../images/sb/img_shop04.png" alt="" data-2000="opacity:0;" data-2150="opacity:1;"/>
+                                    <img src="../images/sb/img_shop05.png" alt="" data-2200="opacity:0;" data-2450="opacity:1;"/>
+                                    <img src="../images/sb/img_shop06.png" alt="" data-2500="opacity:0;" data-2700="opacity:1;"/>
+                                </div>
+                                <span class="btn_play">
+                                    <a href="#1" data-1500="display:block;" data-2100="display:none;"><img src="../images/sb/btn_play.png" alt=""/></a>
+                                    <a href="#2" data-2000="display:none;" data-2100="display:block;" data-2400="display:none;"><img src="../images/sb/btn_play.png" alt=""/></a>
+                                    <a href="#3" data-2000="display:none;" data-2400="display:block;" data-2650="display:none;"><img src="../images/sb/btn_play.png" alt=""/></a>
+                                    <a href="#4" data-2000="display:none;" data-2650="display:block;"><img src="../images/sb/btn_play.png" alt=""/></a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //img_area -->
+                </div>
+                <!-- //inner -->
+            </div>
+            <!-- //section -->
+        </div>
+        <!-- //cont2 -->
+        <div class="cont3">
+            <div class="pl_box">
+                <img src="../images/sb/txt_start.png" alt="?? ??????? ??????? ???θ?" class="img1"/><br>
+                <img src="../images/sb/img_shopby_logo3.png" alt="shop by you" class="img2"/>
+                <p>
+                누구에게나 쉽고 간편한 쇼핑몰. <br>
+                인스타그램, 블로그와 같은 간단한 마켓부터 모든 것이 가능하죠
+                </p>
+            </div>
+        </div>
+        <!-- //cont3 -->
+        <div class="cont4">
+            <div class="sec_tit">
+                <strong>우리와 함께하는 사람들</strong>
+                <p>
+                많은 문들이 간단한 판매부터 쇼핑몰 운영까지 하고 있어요. <br>
+                편하게 즐기면서 시작해보세요.
+                </p>
+            </div>
+            <ul>
+                <li>
+                    <a href="https://jujube.shopby.co.kr/" target="_blank">
+                        <img src="../images/sb/img_shop01.png" alt="???꺣"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://syspangpet.com/" target="_blank">
+                        <img src="../images/sb/img_shop02.png" alt="???????"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://byrabbit.shopby.co.kr/" target="_blank">
+                        <img src="../images/sb/img_shop03.png" alt="??????????????"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://realbeeboy.shopby.co.kr/" target="_blank">
+                        <img src="../images/sb/img_shop04.png" alt="???????"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://musroomall.shopby.co.kr/" target="_blank">
+                        <img src="../images/sb/img_shop05.png" alt="????"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://baboyunu.shopby.co.kr/" target="_blank">
+                        <img src="../images/sb/img_shop06.png" alt="???????"/>
+                    </a>
+                </li>
+            </ul>
+            <a href="" target="_blank" class="btn_start">???? ???????</a>
+        </div>
+        <!-- //cont4 -->
+        <div class="cont5">
+            <div class="sec_tit">
+                <strong><img src="../images/sb/img_shopby_logo4.png" alt="shop by"/> ????</strong>
+                <p>
+                ???? ?????? ??? ?????? ??????????.
+                </p>
+            </div>
+            <span class="sec_banner"><a href="www.godo.co.kr/shopby/main.gd"><img src="../images/sb/banner_event.png" alt=""/></a></span>
+            <ul class="sec_guide_list">
+                <li>
+                    <a href="www.godo.co.kr/shopby/shopby-intro.gd">
+                        <strong>????? ??? ????</strong>
+                        ??? ?????? ??????<br>?????? ??????????.
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+                <li class="type2">
+                    <a href="www.godo.co.kr/shopby/shopby-utilities.gd?tab=skin">
+                        <strong>???????? ????</strong>
+                        shop by?? ???????<br>???θ??? ???????????.
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+                <li class="type3">
+                    <a href="www.godo.co.kr/shopby/shopby-utilities.gd?tab=lecture">
+                        <strong>?????? ???????</strong>
+                        ???????? ???? shop by??<br>?? ???? ???????.
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+                <li class="type4">
+                    <a href="www.godo.co.kr/shopby/customer/main.gd">
+                        <strong>????? ???? ????</strong>
+                        ????????????<br>????? ????? ????????.
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+            
+            </ul>
+        </div>
+        <!-- //cont5 -->
+    
+    </div>
+</body>
+</html>
