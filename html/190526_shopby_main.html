@@ -22,8 +22,6 @@
           var totalSlides = $('.main_visual ul li').length;
           //get the slide height
           var sliderHeight = $('.main_visual').height();
-
-
           $(document).ready(function(){
               /*****************
                BUILD THE SLIDER
@@ -51,7 +49,6 @@
               
               //for each slide 
               $.each($('.main_visual ul li'), function() { 
-
                 //create a pagination
                 var li = document.createElement('li');
                 $('.main_visual ul').append(li);	   
@@ -72,11 +69,8 @@
               );
               
               
-
           });//DOCUMENT READY
               
-
-
           /***********
            SLIDE LEFT
           ************/
@@ -91,8 +85,6 @@
            //   countSlides();
             // pagination();
           }
-
-
           /************
            SLIDE RIGHT
           *************/
@@ -105,9 +97,6 @@
              // countSlides();
              // pagination();
           }
-
-
-
               
           /************************
            //*> OPTIONAL SETTINGS
@@ -115,12 +104,10 @@
         //   function countSlides(){
         //       $('#counter').html(pos+1 + ' / ' + totalSlides);
         //   }
-
         //   function pagination(){
         //       $('#pagination-wrap ul li').removeClass('active');
         //       $('#pagination-wrap ul li:eq('+pos+')').addClass('active');
         //   }
-
             function effect(){
                 $('.main_visual ul li .txt_box').removeClass('active');
                 $('.main_visual ul li:eq('+pos+') .txt_box').addClass('active');    
@@ -128,7 +115,6 @@
       
   
       });
-
       $(window).scroll(function() { 
             var position = $(window).scrollTop(); 
             console.log(position);
@@ -143,7 +129,6 @@
                 $('.shopby_main_wrap .cont2 .scroll_sec .img_area').css('top','0px');
             }
         });
-
         // var flag = false;
         // // DOMMouseScroll event is for firefox
         //     // 이벤트 'e'는 마우스 이벤트를 의미한다. 
@@ -175,21 +160,16 @@
         //         });
         //     };
         // });
-
-
         $(function(){
             skrollr.init();
-
             $('.main_visual').mousemove(function(e) {
                 parallaxIt(e, ".img2", -100);
                 parallaxIt(e, ".img1", -30);
-                });
-
-                function parallaxIt(e, target, movement) {
+            });
+            function parallaxIt(e, target, movement) {
                 var $this = $('.main_visual');
                 var relX = e.pageX - $this.offset().left;
                 var relY = e.pageY - $this.offset().top;
-
                 TweenMax.to(target, 1, {
                     x: (relX - $this.width() / 2) / $this.width() * movement,
                     y: (relY - $this.height() / 2) / $this.height() * movement
@@ -391,7 +371,7 @@
             <ul>
                 <li>
                     <a href="https://jujube.shopby.co.kr/" target="_blank">
-                        <img src="../images/sb/img_shop01.png" alt="???꺣"/>
+                        <img src="../images/sb/img_shop01.png" alt="????"/>
                     </a>
                 </li>
                 <li>

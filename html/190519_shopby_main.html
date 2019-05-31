@@ -52,7 +52,7 @@
            }
         }
         
-        .bg {background:black; width:100%; height:1000px; position:relative;}
+        .bg {background:#b3b6c9; width:100%; height:1000px; position:relative;}
         .final {position:absolute; top:10px; left:30px;}
         .img1 {width:400px; height:500px; position:absolute; top:30px; left:70px; background:url('../images/bg1.jpg')no-repeat 0 0;}
         .img2 {width:200px; height:200px; position:absolute; top:160px; left:170px; background:url('../images/planet2.png')no-repeat 0 0; background-size:contain;}
@@ -67,6 +67,10 @@
         .fix_main {width:100%; height:800px; position:fixed; top:0; left:0; transition:all 0.8s ease-out; transition-delay: 0.3s !important;}
         .fix_main.on {top:-1000px;}
         .mainbag {position:absolute; transition-delay: 0.3s !important;}
+        .dim {background:#000; width:12px; height:22px; position:absolute; left:74px; top:619px; display:none;}
+        .dim.active {height:0; transition:all 0.2s ease-out;}
+        .svg_arrow {height:0; width:25px; transform: rotate( 180deg );}
+        .svg_arrow.active {height:22px; transition:height 0.6s ease-out;}
         
    </style>
  
@@ -77,24 +81,33 @@
             <svg xmlns="http://www.w3.org/2000/svg" height="400" width="400" class="shopby" style="display:none;">
                 <polyline points="0,200 0,0 200,0 200,160 60,160 0,200"/>
             </svg>
-            <div class="inner" style="position:relative;">
+            <div class="inner" style="position:relative; width:1400px; height:800px;">
                 <div class="img1"></div>
-                <svg height="100" width="100"  xmlns="http://www.w3.org/2000/svg" style="position:absolute; top: 625px; left: 75px;">
-                    <polygon points="0,0 16,0 0,15" style="fill:#fff;stroke:#fff;stroke-width:1;" />
-                  </svg>
-                <!-- <svg width="500" height="500" xmlns="http://www.w3.org/2000/svg" class="final">
-                    <path class="outlined" d="M 100 450 L 100 150 L 400 150 L 400 370 L 200 370 L 105 448" 
-                    style="stroke-linecap:square; stroke-linejoin:miter; animation: brush 1.8s cubic-bezier(0.550, 0.055, 0.675, 0.190) forwards; animation-delay:0.2s; stroke-width:10px; stroke:white;  fill:none; stroke-dasharray:2000; stroke-dashoffset: 2000;"/>
-                </svg>  -->
+               
+                <svg  xmlns="http://www.w3.org/2000/svg" class="svg_arrow" style="position:absolute; bottom: 0px; left: 75px;">
+                    <polygon points="0,0 10,0 10,10.7 0,19" style="fill:#fff;stroke:#fff;stroke-width:1;" />
+                </svg>
+
+                <svg  xmlns="http://www.w3.org/2000/svg" class="svg_arrow" style="position:absolute; bottom: 0px; left: 0px;">
+                    <polygon points="0,19 10,10.7 10,10 0,0" style="fill:#fff;stroke:#fff;stroke-width:1;" />
+                </svg>
 
                 <svg width="1400" height="800" xmlns="http://www.w3.org/2000/svg" class="final">
                     <path class="outlined" d="M 50 609 L 50 50 L 1240 50 L 1240 513 L 180 513 L 52.2 615.5" 
-                    style="stroke-linecap:square; stroke-linejoin:miter; animation: brush 1.8s cubic-bezier(0.550, 0.055, 0.675, 0.190) forwards; animation-delay:0.2s; stroke-width:11px; stroke:white;  fill:none; stroke-dasharray:5000; stroke-dashoffset: 5000;"/>
+                    style="stroke-linecap:butt; stroke-linejoin:miter; animation: brush 1.8s cubic-bezier(0.550, 0.055, 0.675, 0.190) forwards; animation-delay:0.26s; stroke-width:11px; stroke:white;  fill:none; stroke-dasharray:5000; stroke-dashoffset: 5000; z-index:1;"/>
                 </svg> 
+                <span class="dim"></span>
+
+
                 <div class="img2"></div>
             </div>
         </div>
     </div>
+
+      <!-- <svg width="500" height="500" xmlns="http://www.w3.org/2000/svg" class="final">
+                    <path class="outlined" d="M 100 450 L 100 150 L 400 150 L 400 370 L 200 370 L 105 448" 
+                    style="stroke-linecap:square; stroke-linejoin:miter; animation: brush 1.8s cubic-bezier(0.550, 0.055, 0.675, 0.190) forwards; animation-delay:0.2s; stroke-width:10px; stroke:white;  fill:none; stroke-dasharray:2000; stroke-dashoffset: 2000;"/>
+                </svg>  -->
     <div class="mainbag">
 
         <div vs-anchor="" class="mainview cont1">
@@ -155,7 +168,9 @@
             
             //move with mouse
              
-           
+           $('.dim').addClass('active');
+           $('.svg_arrow').addClass('active');
+
             $(".inner").mousemove(function(e) {
                 parallaxIt(e, ".img2", -100);
                 parallaxIt(e, ".img1", -30);
