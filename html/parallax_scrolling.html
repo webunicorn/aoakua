@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="euc-kr">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="../css/reset.css">
+    <style>
+       .parallax {background:url('../images/cosmos.jpg'); min-height:500px; background-attachment:fixed; background-position-x:center; background-repeat:no-repeat; background-size:cover; background-position-y: 0px;} 
+       .cont {background:lightsteelblue; height:1000px;}
+    </style>
+    
+</head>
+<body>
+    <div class="wrap">
+        <div class="parallax">
+            <a href="#;" style="border:1px solid beige; width:200px; height:30px; color:#fff; display:inline-block;">링크버튼</a>
+        </div>
+        <div class="cont">
+            컨텐츠
+        </div>
+    </div>
+    <script type="text/javascript" src="http://g5stdaoakua.godomall.com/data/skin/mobile/storyg_190320/js/jquery/jquery.min.js?ts=1553059385"></script>
+    <script>
+        $(function(){
+            $(window).scroll(function(e){
+                parallax();
+            });
+
+            function parallax(){
+                var scrolled = $(window).scrollTop();
+                $('.parallax').css('background-position-y',-(scrolled*0.2)+'px');
+            }
+        });
+   
+    </script>
+</body>
+</html>
