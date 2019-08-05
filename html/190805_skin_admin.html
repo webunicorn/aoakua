@@ -1,0 +1,1572 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <title>MY PLANT :: 쇼핑몰 관리자 - 고도몰5</title>
+    <meta name="description" content="고도몰만의 특별한 서비스! 새로워진 쇼핑몰 관리자 앱은 모바일 전용 페이지를 통해 운영 중인 쇼핑몰을 언제, 어디서든 관리하실 수 있는 서비스입니다.
+	고도몰의 쇼핑몰 솔루션 e나무 임대형, e나무 무료형, e나무 독립형 고객님 모두 제한 없이 이용하실 수 있습니다. " />
+    <meta name="author" content="qnibus" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="cleartype" content="on">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link type="text/css" href="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/css/bootstrap.css?ts=1529553662" rel="stylesheet"/>
+    <link type="text/css" href="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/css/bootstrap-datetimepicker.css?ts=1525753043" rel="stylesheet"/>
+    <link type="text/css" href="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/css/bootstrap-datetimepicker-standalone.css?ts=1525753043" rel="stylesheet"/>
+    <link type="text/css" href="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/css/bootstrap-dialog.css?ts=1525753043" rel="stylesheet"/>
+    <link type="text/css" href="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/jquery/jquery-ui/jquery-ui.css?ts=1525753043" rel="stylesheet"/>
+    <link type="text/css" href="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/css/style.css?ts=1534381265" rel="stylesheet"/>
+    <link type="text/css" href="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/css/non-responsive.css?ts=1525753043" rel="stylesheet"/>
+    <link type="text/css" href="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/css/flags.css?ts=1525753043" rel="stylesheet"/>
+    <link type="text/css" href="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/css/jquery.countdownTimer.css?ts=1525753043" rel="stylesheet"/>
+        <link type="text/css" href="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/css/gd5-style.css?ts=1564390864" rel="stylesheet"/>
+    <link type="text/css" href="http://gdadmin.g5stdaoakua.godomall.com/admin/css/admin-custom.css?ts=1468220054" rel="stylesheet"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/underscore/underscore-min.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/jquery/jquery.min.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/jquery/jquery-ui/jquery-ui.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/bootstrap/bootstrap.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/moment/moment.min.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/numeral/numeral.min.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/bootstrap/bootstrap-datetimepicker.min.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/bootstrap/bootstrap-dialog.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/bootstrap/bootstrap-filestyle.min.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/copyclipboard/ZeroClipboard.min.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/copyclipboard/clipboard.min.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/copyclipboard/clipboard-2.0.0.min.js?ts=1536823410"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/jquery/jquery-browser/dist/jquery.browser.min.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/jquery/jquery.serialize-object.min.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/jquery/jquery.countdownTimer.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/jquery/validation/jquery.validate.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/jquery/validation/localization/messages_ko.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/jquery/validation/additional-methods.min.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/jquery/datasaver/jquery.DataSaver.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/jquery/jquery.number_only.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/jquery/jquery-cookie/jquery.cookie.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/common2.js?ts=1534381265"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/common.js?ts=1564390864"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/schedule.js?ts=1525753043"></script>
+    <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/admin_panel_api.js?ts=1560592863"></script>
+        <script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/script/admin-custom.js?ts=1468220054"></script>
+
+    <script type="text/javascript">
+        <!--
+        $(document).ready(function () {
+            
+            
+            // 메뉴얼 링크
+            $(".gd-help-manual").each(function() {
+                var linkText = $(this).text().trim().replace(/\s/g, ''); // 타이틀의 문자열의 공백을 제거함
+                var manualUrl = 'http://manual.godomall5.godomall.com/data/manual_view.php?category=policy__basic___base_info#' + linkText;
+                $(this).append(' <a href="' + manualUrl + '" target="_blank" class="link-help">페이지 도움말</a>');
+            });
+            
+                    });
+        //-->
+    </script>
+
+</head>
+<body class="policy base-info layout-basic">
+
+<div id="container-wrap" class="container-fluid">
+    <div id="container" class="row">
+        <div id="header" class="col-xs-12">
+            <nav class="navbar">
+    <div class="container">
+        <div class="navbar-inner">
+
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://gdadmin.g5stdaoakua.godomall.com/base/index.php">Godomall5</a>
+                <span class="standard"></span>
+                                                    
+            </div>
+
+            <div class="gnb">
+                <ul class="list-inline">
+                    <li class="no-bar">
+                        <div class="dropdown">
+                            <!--js-btn-layer-sub-menu-->
+                            <a href="#" class="dropdown-toggle gnb-idinfo" id="headerSubMenuManager" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                                <span>전체관리자</span>님 (
+                                <span>aoakua</span>
+                                ) </a>
+                            <ul class="dropdown-menu gnb-dropdown-menu" aria-labelledby="headerSubMenuManager">
+                                <li class="dropdown-item"><a href="http://gdadmin.g5stdaoakua.godomall.com/policy/manage_register.php?sno=1">운영자정보</a></li>
+                                <li class="dropdown-item"><a href="http://gdadmin.g5stdaoakua.godomall.com/base/login_ps.php?mode=logout">로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="pos-r no-bar">
+                        <a href="javascript:Schedule.addToday()" class="schedule-a"> <img src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/img/icon_bell.png" style="margin-right: 6px;">
+                                                    </a>
+                    </li>
+                    <li class="no-bar">
+                        <span class="dropdown" style="margin: 0; padding: 0;">
+                                                            <a href="#" class="dropdown-toggle gnb-myshop" id="headerMyShop" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">내쇼핑몰</a>
+                                <ul class="dropdown-menu gnb-dropdown-menu" aria-labelledby="headerMyShop">
+                                                                    <li class="dropdown-item"><a href="http://g5stdaoakua.godomall.com/" target="_blank"><span class="flag flag-16 flag-kr"></span> 기준몰</a></li>
+                                                                    <li class="dropdown-item"><a href="http://g5stdaoakua.godomall.com/us/" target="_blank"><span class="flag flag-16 flag-us"></span> 영문몰</a></li>
+                                                                    <li class="dropdown-item"><a href="http://g5stdaoakua.godomall.com/cn/" target="_blank"><span class="flag flag-16 flag-cn"></span> 중문몰</a></li>
+                                                                    <li class="dropdown-item"><a href="http://g5stdaoakua.godomall.com/jp/" target="_blank"><span class="flag flag-16 flag-jp"></span> 일문몰</a></li>
+                                                            </ul>
+                                                    </span>
+                                                <span style="margin: 0; padding: 0;">
+                            <a href="../plusshop/" target="_blank" class="gnb-myshop text-red">플러스샵</a>
+                        </span>
+                        <span style="margin: 0; padding: 0;">
+                            <a href="http://gdadmin.g5stdaoakua.godomall.com/share/shoplinker.php" class="gnb-myshop pdr0">마켓연동</a>
+                        </span>
+                                            </li>
+                                        <li class="no-bar new">
+                        <div class="dropdown gnb-orderinfo" id="dropDownOrderPresentation">
+                            <a href="#" class="dropdown-toggle dropdown-toggle-arr" id="headerSubMenuOrderPresentation" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                                <span class="js-oder-count-new display-none">
+                                    <img src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/img/icon_new.png" width="14">
+                                </span>
+                                주문현황
+                            </a>
+                            <ul class="dropdown-menu gnb-dropdown-menu" aria-labelledby="headerSubMenuOrderPresentation">
+                                <li class="dropdown-head">주문상태설정
+                                    <div class="pull-right">
+                                        <a href="#" class="js-setting-order" data-role="orderPresentation"> <img src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/img/icon_gear.png" alt=""> </a>
+                                    </div>
+                                </li>
+                                <li class="dropdown-noitem">조회할 주문상태를<br>선택해주세요.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="devide"></li>
+                                        <li class="no-bar">
+                        <div class="dropdown gnb-favorite" id="dropDownFavoriteMenu">
+                            <a href="#" class="dropdown-toggle dropdown-toggle-arr" id="headerSubMenuFavoriteMenu" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false"> 자주쓰는메뉴 </a>
+                            <ul class="dropdown-menu gnb-dropdown-menu" aria-labelledby="headerSubMenuFavoriteMenu">
+                                <li class="dropdown-head">메뉴설정
+                                    <div class="pull-right">
+                                        <a href="#" class="js-setting-favorite-menu"> <img src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/img/icon_gear.png" alt=""> </a>
+                                    </div>
+                                </li>
+                                <li class="dropdown-noitem">자주쓰는 메뉴를<br>설정해주세요.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="devide"></li>
+                    <li class="no-bar">
+                        <div class="dropdown gnb-btn-more">
+                            <a href="#" class="dropdown-toggle dropdown-toggle-arr" id="headerSubMenuMore" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">더보기</a>
+                            <ul class="dropdown-menu gnb-dropdown-menu" aria-labelledby="headerSubMenuMore">
+                                <li class="dropdown-item"><a href="https://www.godo.co.kr/mygodo/main.gd" target="_blank" class="pdr0">마이고도</a></li>                                <li class="dropdown-item"><a href="http://manual.godomall5.godomall.com" target="_blank" class="pdr0">매뉴얼</a></li>
+                                <li class="dropdown-item"><a href="http://gdadmin.g5stdaoakua.godomall.com/share/sitemap.php" class="pdr0">사이트맵</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                                        <li class="no-bar">
+                        <div class="form-inline gnb-search">
+                            <div class="gnb-search-head">
+                                                                    <select id="headerSearchType" name="headerSearchType" class="header-select">
+                                        <option value="menu">메뉴</option>
+                                        <option value="member">회원</option>
+                                    </select>
+                                                            </div>
+                            <div class="gnb-search-body">
+                                <span class="icon-magni"><img src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/img/ico_search_btn.png" alt=""></span>
+                                <input type="text" id="headerSearchKeyword" class="form-control" name="headerSearchKeyword" placeholder="메뉴검색"/>
+                                <div class="gnb-search-hint form-inline display-none">
+                                    <select class="form-control multiple-select" size="5" id="headerSearchMenuList" style="height:100px;"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<a href="#" class="js-btn-layer-search-member pdr0 ">회원검색</a>-->
+                    </li>
+                    <!-- 스타일 안보임 처리 : 컨트롤러 제거는 하지 않음. 직접 URL 입력시 접속됨 -->
+                    <!-- <li><a href="../bootstrap/index" style="color:yellow;" target="_blank">스타일</a></li>-->
+                </ul>
+            </div>
+        </div>
+
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav reform">
+                                            <li class="active">
+                                <a href="http://gdadmin.g5stdaoakua.godomall.com/policy/index.php" id="menu_policy"
+                                   style="width:97.083333333333px;">기본설정</a>
+                            </li>
+                                                        <li class="">
+                                <a href="http://gdadmin.g5stdaoakua.godomall.com/goods/index.php" id="menu_goods"
+                                   style="width:97.083333333333px;">상품</a>
+                            </li>
+                                                        <li class="">
+                                <a href="http://gdadmin.g5stdaoakua.godomall.com/order/index.php" id="menu_order"
+                                   style="width:97.083333333333px;">주문/배송</a>
+                            </li>
+                                                        <li class="">
+                                <a href="http://gdadmin.g5stdaoakua.godomall.com/member/index.php" id="menu_member"
+                                   style="width:97.083333333333px;">회원</a>
+                            </li>
+                                                        <li class="">
+                                <a href="http://gdadmin.g5stdaoakua.godomall.com/board/index.php" id="menu_board"
+                                   style="width:97.083333333333px;">게시판</a>
+                            </li>
+                                                        <li class="">
+                                <a href="http://gdadmin.g5stdaoakua.godomall.com/promotion/index.php" id="menu_promotion"
+                                   style="width:97.083333333333px;">프로모션</a>
+                            </li>
+                                                        <li class="">
+                                <a href="http://gdadmin.g5stdaoakua.godomall.com/design/index.php" id="menu_design"
+                                   style="width:97.083333333333px;">디자인</a>
+                            </li>
+                                                        <li class="">
+                                <a href="http://gdadmin.g5stdaoakua.godomall.com/service/index.php" id="menu_service"
+                                   style="width:97.083333333333px;">부가서비스</a>
+                            </li>
+                                                        <li class="">
+                                <a href="http://gdadmin.g5stdaoakua.godomall.com/marketing/index.php" id="menu_marketing"
+                                   style="width:97.083333333333px;">마케팅</a>
+                            </li>
+                                                        <li class="">
+                                <a href="http://gdadmin.g5stdaoakua.godomall.com/mobile/index.php" id="menu_mobile"
+                                   style="width:97.083333333333px;">모바일샵</a>
+                            </li>
+                                                        <li class="">
+                                <a href="http://gdadmin.g5stdaoakua.godomall.com/statistics/index.php" id="menu_statistics"
+                                   style="width:97.083333333333px;">통계</a>
+                            </li>
+                                                        <li class="">
+                                <a href="http://gdadmin.g5stdaoakua.godomall.com/myapp/index.php" id="menu_myapp"
+                                   style="width:97.083333333333px;">모바일앱</a>
+                            </li>
+                                        </ul>
+        </div><!-- /.navbar-collapse -->
+
+    </div>
+</nav>
+
+<ol class="breadcrumb text-small clearfix">
+                <li>기본설정</li>
+                        <li>기본정책</li>
+                        <li>기본 정보 설정</li>
+            </ol>
+
+<!-- 고도 사이트로 이동 시작 -->
+<form name="frmGotoGodomall" action="" method="post">
+    <input type="hidden" name="pageKey" value="398535">
+    <input type="hidden" name="sno" value="398535">
+    <input type="hidden" name="mode" value="">
+</form>
+<!-- 고도 사이트로 이동 끝 -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var gd_main_layer = {
+            presentation: {id: "presentation", selector: "#layerPresentation", title: "주요현황 조회설정"},
+            order_presentation: {id: "orderPresentation", get_id: "getOrderPresentation", title: "주문현황 조회설정"},
+            order_setting: {id: "orderSetting", title: "주문관리 조회설정"},
+            favorite_menu: {id: "favoriteMenu", get_id: "getFavoriteMenu", selector: "#layerFavorite", title: "자주쓰는 메뉴 설정"}
+        };
+        var _bootstrap_dialog = BootstrapDialog;
+
+        $('#dropDownFavoriteMenu').on('show.bs.dropdown', function () {
+            var dropdown_container = $(this);
+            var dropdown_menu = dropdown_container.find('.dropdown-menu');
+            $.ajax('../base/main_setting_ps.php', {
+                method: "post",
+                data: {mode: gd_main_layer.favorite_menu.get_id},
+                global_complete: false,
+                success: function () {
+                    if (arguments[0].success === 'OK') {
+                        var result = arguments[0].result;
+                        if (result.length > 0) {
+                            var html = [];
+                            $.each(result, function (idx, item) {
+                                var menuName = 'none';
+                                var menuLink = '';
+                                if (typeof item.tName === 'string') {
+                                    menuName = item.tName;
+                                } else if (typeof item.sName === 'string') {
+                                    menuName = item.sName;
+                                } else if (typeof item.fName === 'string') {
+                                    menuName = item.fName;
+                                }
+                                if (typeof item.tUrl === 'string') {
+                                    menuLink = '/' + item.tUrl;
+                                } else if (typeof item.sUrl === 'string') {
+                                    menuLink = '/' + item.sUrl;
+                                } else {
+                                    menuLink = '/index.php';
+                                }
+                                if (typeof item.fCode === 'string') {
+                                    menuLink = item.fCode + menuLink;
+                                }
+                                // html.push('<li role="separator" class="divider"></li>');
+                                html.push('<li class="dropdown-item"><a href="../' + menuLink + '">' + menuName + '</a></li>');
+                            });
+                            dropdown_menu.find('li:gt(0)').remove();
+                            dropdown_menu.append(html.join(''));
+                        } else {
+                            if (dropdown_menu.find('.dropdown-noitem').length == 0) {
+                                dropdown_menu.find('li:gt(0)').remove();
+                                dropdown_menu.append('<li class="dropdown-noitem">자주쓰는 메뉴를<br>설정해주세요.</li>');
+                            }
+                        }
+                    } else {
+                        console.log(arguments);
+                    }
+                }
+            });
+        });
+
+        $('#dropDownOrderPresentation').on('show.bs.dropdown', function () {
+            var dropdown_container = $(this);
+            $.ajax('../base/main_setting_ps.php', {
+                method: "post",
+                data: {mode: gd_main_layer.order_presentation.get_id},
+                global_complete: false,
+                success: function () {
+                    if (arguments[0].success === 'OK') {
+                        var result = arguments[0].result;
+                        if (result.length > 0) {
+                            var html = [];
+                            $.each(result, function (idx, item) {
+                                // html.push('<li role="separator" class="divider"></li>');
+                                html.push('<li class="dropdown-item"><a href="' + item.link + '">' + item.name + '<span class="dropdown-item-val"><span class="text-red">' + item.count + '</span>건</span></a></li>');
+                            });
+                            var dropdown_menu = dropdown_container.find('.dropdown-menu');
+                            dropdown_menu.find('li:gt(0)').remove();
+                            dropdown_menu.append(html.join(''));
+                        }
+                    } else {
+                        console.log(arguments);
+                    }
+                }
+            });
+        });
+
+        $('.js-setting-presentation').click(function () {
+            $.post('/share/layer_presentation_setting.php', {mode: gd_main_layer.presentation.id}, function (data) {
+                var options = {title: gd_main_layer.presentation.title, message: $(data), size: _bootstrap_dialog.SIZE_WIDE};
+                _bootstrap_dialog.show(options);
+            });
+        });
+
+        $('.js-setting-cs').bind('click', function () {
+            $.post('/share/layer_cs_setting.php', null, function (data) {
+                _bootstrap_dialog.show({
+                    title: '문의/답변관리 조회설정 ',
+                    message: $(data)
+                });
+            });
+        });
+
+        $('.js-setting-order').bind('click', function () {
+            var layer_id = this.dataset.role;
+            var title = (layer_id === gd_main_layer.order_presentation.id) ? gd_main_layer.order_presentation.title : gd_main_layer.order_setting.title;
+            $.post('../base/layer_order_setting.php', {mode: layer_id}, function (data) {
+                var options = {title: title, message: $(data)};
+                _bootstrap_dialog.show(options);
+            });
+        });
+
+        $('.js-setting-favorite-menu').bind('click', function () {
+            $.post('/share/layer_favorite_menu.php', {mode: gd_main_layer.favorite_menu.id}, function (data) {
+                var options = {title: gd_main_layer.favorite_menu.title, message: $(data), size: _bootstrap_dialog.SIZE_WIDE};
+                _bootstrap_dialog.show(options);
+            });
+        });
+
+        $('#headerSearchType').change(function () {
+            if (this.value === 'member') {
+                layer_member_search();
+                document.getElementById('headerSearchType').options[0].selected = true;
+            }
+        });
+
+        $('#headerSearchKeyword').keyup(function (e) {
+            if (e.keyCode === 13 && this.value.length > 1) {
+                $.ajax('../base/main_setting_ps.php', {
+                    method: "post",
+                    global_complete: false,
+                    data: {mode: "searchMenu", keyword: this.value},
+                    success: function () {
+                        var result = arguments[0].result;
+                        var optionHtml = [];
+                        $.each(result, function (idx, item) {
+                            var link = '../' + item.fCode + '/' + item.tUrl;
+                            optionHtml.push('<option value="' + link + '">' + item.tName + '</option>');
+                        });
+                        var $headerSearchMenuList = $('#headerSearchMenuList');
+                        $headerSearchMenuList.closest('div').removeClass('display-none');
+                        $headerSearchMenuList.find('option').remove();
+                        if (optionHtml.length == 0) {
+                            $headerSearchMenuList.append('<option>검색된 메뉴가 없습니다.</option>');
+                        } else {
+                            $headerSearchMenuList.append(optionHtml.join(''));
+                        }
+                    }
+                });
+            }
+        });
+
+        $('#headerSearchMenuList').on('click', function () {
+            location.href = this.value;
+        });
+
+        $(window).click(function () {
+            var $headerSearchMenuList = $('#headerSearchMenuList').closest('div');
+            if ($headerSearchMenuList.hasClass('display-none') === false) {
+                $headerSearchMenuList.addClass('display-none');
+            }
+        });
+
+        $('.endDatetime').datetimepicker().on('dp.show', function (e) {
+            var dateNow = new Date();
+            $(this).children().val(moment(dateNow).hours(23).minutes(59).format("YYYY-MM-DD HH:mm"));
+        });
+    });
+</script>
+            <div id="panel_popupPanel"></div>
+        </div>
+
+        <div id="content-wrap">
+            <div id="menu">
+                <!-- close/open -->
+<div class="js-adminmenu-toggle"></div>
+<div class="js-listgroup-toggle"></div>
+<!-- //close/open -->
+<div class="menu-header policy">
+    <h2>기본설정</h2>
+</div>
+<div class="panel ">
+                    <div class="panel-heading menu-icon-minus active">기본정책</div>
+                <ul class="list-group">                    <li class="list-group-item active">
+                        <a href="base_info.php">기본 정보 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="base_agreement_with_private.php">약관 / 개인정보처리방침</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="goods_tax.php">부가세율 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="base_guide_info.php">이용 / 탈퇴 안내</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="base_currency_unit.php">금액 / 단위 기준 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="base_file_storage.php">파일 저장소 관리</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="base_code_list.php">코드 관리</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="out_side_script_list.php">외부 스크립트 관리</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="base_seo.php">검색엔진 최적화(SEO) 설정</a>                     </li>
+                    </ul>                <div class="panel-heading menu-icon-minus ">관리 정책</div>
+                <ul class="list-group">                    <li class="list-group-item ">
+                        <a href="manage_list.php">운영자 관리</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="manage_security.php">운영 보안 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="member_access.php">쇼핑몰 이용 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="member_password_find.php">비밀번호 찾기 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="member_password_change.php">비밀번호 변경안내 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="manage_mall_status.php">솔루션 이용현황</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="excel_form_list.php">다운로드 양식관리</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="admin_log_list.php">개인정보접속기록 조회</a>                     </li>
+                    </ul>                <div class="panel-heading menu-icon-minus ">해외상점</div>
+                <ul class="list-group">                    <li class="list-group-item ">
+                        <a href="mall_config.php">해외 상점 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="exchange_rate_config.php">환율 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="mall_delivery_list.php">해외 배송조건 관리</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="mall_delivery_group_list.php">해외 배송그룹 관리</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="settle_pg_overseas_config.php">해외 결제 서비스 설정</a>                     </li>
+                    </ul>                <div class="panel-heading menu-icon-minus ">상품 정책</div>
+                <ul class="list-group">                    <li class="list-group-item ">
+                        <a href="goods_display.php">상품 기본 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="goods_images.php">상품 이미지 사이즈 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="goods_detail_info.php">상품 상세 이용안내 관리</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="goods_today.php">최근 본 상품 설정</a>                     </li>
+                    </ul>                <div class="panel-heading menu-icon-minus ">본인확인 인증 서비스</div>
+                <ul class="list-group">                    <li class="list-group-item ">
+                        <a href="member_auth_cellphone.php">휴대폰 본인확인 서비스 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="member_auth_ipin.php">아이핀 서비스 설정</a>                     </li>
+                    </ul>                <div class="panel-heading menu-icon-minus ">배송 정책</div>
+                <ul class="list-group">                    <li class="list-group-item ">
+                        <a href="delivery_config.php">배송비조건 관리</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="delivery_area.php">지역별 추가배송비 관리</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="delivery_company.php">배송 업체 관리</a>                     </li>
+                    </ul>                <div class="panel-heading menu-icon-minus ">주문 정책</div>
+                <ul class="list-group">                    <li class="list-group-item ">
+                        <a href="order_basic.php">주문 기본 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="order_status.php">주문 상태 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="order_cart.php">장바구니 / 관심상품 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="order_add_field_list.php">주문서 추가정보 관리</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="order_print_config.php">주문서 인쇄 설정</a>                     </li>
+                    </ul>                <div class="panel-heading menu-icon-minus ">결제 정책</div>
+                <ul class="list-group">                    <li class="list-group-item ">
+                        <a href="settle_settlekind.php">결제 수단 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="settle_bank.php">무통장 입금 은행 관리</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="settle_pg_config.php">통합 전자결제 서비스 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="settle_pg_mobile_config.php">휴대폰 결제 서비스 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="settle_pg_payco.php">페이코 서비스 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="naver_pay_config.php">네이버 페이 설정</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="settle_pg_kakao.php">카카오 페이 설정</a>                     </li>
+                    </ul>                <div class="panel-heading menu-icon-minus ">보안서버관리</div>
+                <ul class="list-group">                    <li class="list-group-item ">
+                        <a href="ssl_admin_setting.php">관리자 보안서버 관리</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="ssl_pc_setting.php">PC쇼핑몰 보안서버 관리</a>                     </li>
+                                        <li class="list-group-item ">
+                        <a href="ssl_mobile_setting.php">모바일쇼핑몰 보안서버 관리</a>                     </li>
+                        </ul>
+    </div>
+            </div>
+            <div id="content" class="row">
+                <div class="col-xs-12">
+                    <form id="frmBase" action="base_ps.php" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="mode" value="base_info"/>
+    <input type="hidden" name="mallFaviconTmp" value=""/>
+    <input type="hidden" name="stampImageTmp" value="" />
+    <input type="hidden" name="mallSno" value="1" />
+    <input type="hidden" name="mallFl" value="kr" />
+
+    <div class="page-header js-affix">
+        <h3>기본 정보 설정            <small>쇼핑몰의 기본적인 정보를 변경하실 수 있습니다.</small>
+        </h3>
+        <input type="submit" value="저장" class="btn btn-red"/>
+    </div>
+
+            <ul class="multi-skin-nav nav nav-tabs" style="margin-bottom:20px;">
+                            <li role="presentation" class="js-popover active" data-html="true" data-content="기준몰" data-placement="top">
+                    <a href="./base_info.php?mallSno=1">
+                        <span class="flag flag-16 flag-kr"></span>
+                        <span class="mall-name">기준몰</span>
+                    </a>
+                </li>
+                            <li role="presentation" class="js-popover passive" data-html="true" data-content="영문몰" data-placement="top">
+                    <a href="./base_info.php?mallSno=2">
+                        <span class="flag flag-16 flag-us"></span>
+                        <span class="mall-name">영문몰</span>
+                    </a>
+                </li>
+                            <li role="presentation" class="js-popover passive" data-html="true" data-content="중문몰" data-placement="top">
+                    <a href="./base_info.php?mallSno=3">
+                        <span class="flag flag-16 flag-cn"></span>
+                        <span class="mall-name">중문몰</span>
+                    </a>
+                </li>
+                            <li role="presentation" class="js-popover passive" data-html="true" data-content="일문몰" data-placement="top">
+                    <a href="./base_info.php?mallSno=4">
+                        <span class="flag flag-16 flag-jp"></span>
+                        <span class="mall-name">일문몰</span>
+                    </a>
+                </li>
+                    </ul>
+    
+    <div class="table-title gd-help-manual">
+        쇼핑몰 기본 정보
+    </div>
+    <table class="table table-cols">
+        <colgroup>
+            <col class="width-md"/>
+            <col class="width-xl"/>
+            <col class="width-md"/>
+            <col/>
+        </colgroup>
+        <tr>
+            <th>쇼핑몰명</th>
+            <td class="form-inline" >
+                <input type="text" name="mallNm" value="MY PLANT" class="form-control width-lg"/>
+            </td>
+            <th class="">쇼핑몰영문명</th>
+            <td class="form-inline ">
+                <input type="text" name="mallNmEng" value="MY PLANT"  class="form-control width-lg"/>
+            </td>
+        </tr>
+        <tr>
+            <th>상단타이틀</th>
+            <td class="form-inline">
+                <input type="text" name="mallTitle" value="MY PLANT" class="form-control width-lg"/>
+            </td>
+            <th>파비콘</th>
+            <td class="form-inline">
+                <input type="file" name="mallFavicon"  class="form-control width70p"/>
+                <span>
+				</span>
+                <div class="notice-info">이미지사이즈 16x16 pixel, 파일형식 ico로 등록해야 합니다</div>
+            </td>
+        </tr>
+        <tr>
+            <th class="require">쇼핑몰 도메인</th>
+            <td colspan="3" class="form-inline">
+                <span class="font-eng">http://</span>
+                <input type="text" name="mallDomain" value="MYPLANT.co.kr"  class="form-control width-2xl"/>
+                <div class="notice-info">
+                    입력 시 쇼핑몰 및 관리자 화면에 도메인 정보가 노출됩니다. <br />
+                    실제 쇼핑몰 접속 도메인의 추가 및 변경은 마이고도에서 가능합니다. <a class="btn-link" href="javascript:gotoGodomall('domain');">바로가기></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th class="require">대표카테고리</th>
+            <td colspan="3" class="form-inline">
+                <input type="hidden" name="mallCategory" value="가구/인테리어" />
+                <span id="mallCategory">가구/인테리어</span>
+                <input type="button" onclick="mall_categoty();" value="대표카테고리 선택"  class="btn btn-gray btn-sm"/>
+            </td>
+        </tr>
+    </table>
+
+    <div class="table-title gd-help-manual">
+        회사 정보
+    </div>
+    <table class="table table-cols">
+        <colgroup>
+            <col class="width-md"/>
+            <col class="width-xl"/>
+            <col class="width-md"/>
+            <col/>
+        </colgroup>
+        <tr>
+            <th>상호(회사명)</th>
+            <td class="form-inline">
+                <input type="text" name="companyNm" value="MY PLANT" class="form-control width-md"/>
+            </td>
+            <th>사업자등록번호</th>
+            <td class="form-inline">
+                <div>
+                    <input type="text" name="businessNo[]" value="120"  maxlength="3" class="form-control js-number-only width-3xs"/> -
+                    <input type="text" name="businessNo[]" value="86"  maxlength="2" class="form-control js-number-only width-3xs"/> -
+                    <input type="text" name="businessNo[]" value="46911"  maxlength="5" class="form-control js-number-only width-3xs"/>
+                </div>
+                <div class="notice-info">
+                    인터넷 쇼핑몰 운영자는 전자상거래법에 의해 사업자정보 공개페이지를 쇼핑몰 홈페이지 초기 화면에 연결해야 합니다.
+                    <a href="https://www.godo.co.kr/customer/board-view.gd?type=notice&idx=1101" target="_blank" class="btn-link">자세히보기 ></a>
+                </div>
+                <div class="notice-info">
+                    사업자번호를 입력하면 쇼핑몰 하단 푸터에 자동으로 사업자정보 공개페이지가 연결됩니다.
+                    <a href="http://ftc.go.kr/info/bizinfo/communicationList.jsp" target="_black" class="btn-link">통신판매사업자 정보 공개페이지 ></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>대표자명</th>
+            <td colspan="3" class="form-inline">
+                <input type="text" name="ceoNm" value="김고도" class="form-control width-lg"/>
+            </td>
+        </tr>
+        <tr>
+            <th>업태</th>
+            <td class="form-inline">
+                <input type="text" name="service" value=""  class="form-control width-lg"/>
+            </td>
+            <th>종목</th>
+            <td class="form-inline">
+                <input type="text" name="item" value=""  class="form-control width-lg"/>
+            </td>
+        </tr>
+        <tr>
+            <th class="require">대표 이메일</th>
+            <td colspan="3" class="form-inline">
+                <input type="text" name="email[]" value="godo"  class="form-control width-lg"/> @
+                <input type="text" id="email" name="email[]" value="godo.co.kr"  class="form-control width-md js-email-domain"/>
+                <select class=" email_domain" id="email_domain" name="" ><option value="self"  >직접입력</option><option value="naver.com"  >naver.com</option><option value="hanmail.net"  >hanmail.net</option><option value="daum.net"  >daum.net</option><option value="nate.com"  >nate.com</option><option value="hotmail.com"  >hotmail.com</option><option value="gmail.com"  >gmail.com</option><option value="icloud.com"  >icloud.com</option></select>                <div class="notice-info">
+                    대표 이메일은 쇼핑몰에서 메일 발송 시 기본 발송자이메일 정보로 사용됩니다. <br />
+                    발송자 이메일 정보가 없으면 자동메일 발송이 되지 않으니, 대표 이메일 정보를 반드시 입력해주세요.</a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>사업장 주소</th>
+            <td colspan="3">
+                <div class="form-inline mgb5">
+                    <input type="text" name="zonecode" value="" maxlength="5" class="form-control width-2xs"/>
+                    <input type="hidden" name="zipcode" value=""/>
+                    <span id="zipcodeText" class="number display-none">()</span>
+                    <input type="button" onclick="postcode_search('zonecode', 'address', 'zipcode');" value="우편번호찾기" class="btn btn-gray btn-sm"/>
+                </div>
+                <div class="form-inline">
+                    <input type="text" name="address" value="서울특별시 구로구 디지털로 32길 30 13층" class="form-control width-2xl"/>
+                    <input type="text" name="addressSub" value="" class="form-control width-2xl"/>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>출고지 주소</th>
+            <td colspan="3">
+                <div class="form-inline">
+                    <label class="radio-inline">
+                        <input type="radio" name="unstoringFl" value="same" onclick="display_toggle('unstoringFl','same');" checked="checked" />사업장 주소와 동일
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="unstoringFl" value="new" onclick="display_toggle('unstoringFl','new');"  />주소 등록
+                    </label>
+                    <label class="radio-inline">
+                        <input type="button" value="출고지 관리" class="btn btn-black btn-sm btn-unstoring" onclick="address_register('출고지', 'unstoringFl', 'unstoringFl_new', 'unstoringTable');"/>
+                    </label>
+                </div>
+                <div id="unstoringFl_new" class="display-none">
+                    <div class="form-inline mgt10 mgb5 unstoringTable ">
+                                            </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>반품/교환지 주소</th>
+            <td colspan="3" class="form-inline">
+                <div class="form-inline">
+                    <label class="radio-inline">
+                        <input type="radio" name="returnFl" value="same" onclick="display_toggle('returnFl','same');" checked="checked" />사업장 주소와 동일
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="returnFl" value="unstoring" onclick="display_toggle('returnFl','same');"  />출고지 주소와 동일
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="returnFl" value="new" onclick="display_toggle('returnFl','new');"  />주소 등록
+                    </label>
+                    <label class="radio-inline">
+                        <input type="button" value="반품/교환지 관리" class="btn btn-black btn-sm btn-return" onclick="address_register('반품/교환지', 'returnFl', 'returnFl_new', 'returnTable');"/>
+                    </label>
+                </div>
+                <div id="returnFl_new" class="display-none">
+                    <div class="form-inline mgt10 mgb5 returnTable ">
+                                            </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>대표전화</th>
+            <td class="form-inline">
+                <input type="text" name="phone" value="15881244" maxlength="12" class="form-control js-number-only width-md"/>
+            </td>
+            <th>팩스번호</th>
+            <td class="form-inline">
+                <input type="text" name="fax" value="1231549789" maxlength="12" class="form-control js-number-only width-md"/>
+            </td>
+        </tr>
+        <tr>
+            <th>통신판매신고번호</th>
+            <td colspan="3" class="form-inline">
+                <input type="text" name="onlineOrderSerial" value="123456789" class="form-control width-sm"/>
+            </td>
+        </tr>
+        <tr>
+            <th>인감 이미지 등록</th>
+            <td colspan="3" class="form-inline">
+                <input type="file" name="stampImage"  class="form-control"/>
+                <span>
+                    			    </span>
+                <div class="notice-info">* 가로x세로 74픽셀, jpg/png/gif만 가능<br/>등록된 인감 이미지는 "일반 세금계산서, 간이영수증, 거래명세서" 등에 사용됩니다.</div>
+            </td>
+        </tr>
+    </table>
+
+    <div class="table-title gd-help-manual">
+        고객센터
+    </div>
+    <table class="table table-cols">
+        <colgroup>
+            <col class="width-md"/>
+            <col class="width-2xl"/>
+            <col class="width-md"/>
+            <col/>
+        </colgroup>
+        <tr>
+            <th>전화번호</th>
+            <td class="form-inline">
+                <div class="mgb5">
+                                        <input type="text" name="centerPhone" value="15881234" maxlength="12" class="form-control js-number-only width-md"/>
+                </div>
+                <div>
+                                        <input type="text" name="centerSubPhone" value="" maxlength="15" class="form-control js-number-only width-md"/>
+                </div>
+            </td>
+            <th>팩스번호</th>
+            <td class="form-inline">
+                                <input type="text" name="centerFax" value="01234567897" maxlength="15" class="form-control js-number-only width-md"/>
+            </td>
+        </tr>
+        <tr>
+            <th>이메일</th>
+            <td colspan="3" class="form-inline">
+                <input type="text" name="centerEmail[]" value="godo" class="form-control width-lg"/> @
+                <input type="text" id="centerEmail" name="centerEmail[]" value="naver.com" class="form-control width-md js-email-domain"/>
+                <select class=" email_domain" id="center_email_domain" name="" ><option value="self"  >직접입력</option><option value="naver.com" selected="selected" >naver.com</option><option value="hanmail.net"  >hanmail.net</option><option value="daum.net"  >daum.net</option><option value="nate.com"  >nate.com</option><option value="hotmail.com"  >hotmail.com</option><option value="gmail.com"  >gmail.com</option><option value="icloud.com"  >icloud.com</option></select>            </td>
+        </tr>
+        <tr>
+            <th>운영시간</th>
+            <td colspan="3" class="form-inline">
+                <textarea name="centerHours" rows="4" class="form-control width-2xl">평일 AM 10:00 ~ PM 05:00 상담문의 가능합니다.
+토요일 공휴일은 휴무입니다.</textarea>
+            </td>
+        </tr>
+    </table>
+
+    <div class="table-title gd-help-manual">
+        회사소개 내용 수정
+    </div>
+    <table class="table table-cols">
+        <colgroup>
+            <col class="width-md"/>
+            <col/>
+        </colgroup>
+        <tr>
+            <th>회사소개 내용</th>
+            <td class="form-inline">
+                <textarea name="company" id="editor" class="form-control width100p height400"><p>인터넷 비지니스는 이제 우리 삶에서 가장 중요한 연결 매개체로 자리잡았습니다.<br>고도는 다년간 오직 한길, 전자상거래 솔루션만은 전문적으로 개발/운영하여 왔습니다.<br><br>고도는 웹비지니스의 구축보다 사후관리를 더욱 중요하게 생각합니다. 운영과정에서 더 큰 도움이 되고자 노력합니다.<br><br>고도는 치열한 경쟁시대에서 앞서나갈 수 있도록 강력하게 도와드리는 가장 든든한 조력자가 될 것입니다.<br>말뿐이 아닌 지속적인 솔루션 개발과 고퀄리티 웹 사이트 맞춤 컨설팅으로 고객 제일주의를 실현하겠습니다.<br><br>고객을 위해 흘리는 땀을 두려워하지 않는 정직한 기업이 될 것을 약속드립니다.<br><br>고도의 문은 고객여러분께 항상 열려있습니다.<br><br>한분 한분 고객님들과 같이 커가는 고도가 되겠습니다.<br><br>감사합니다.</p></textarea>
+            </td>
+        </tr>
+    </table>
+
+    </table>
+</form>
+
+<script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/smart/js/HuskyEZCreator.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/script/smart/js/editorLoad.js" charset="utf-8"></script>
+<script type="text/javascript">
+    <!--
+
+    var unstoringNo = null;
+    var returnNo = null;
+    var $mallName = '기준몰';
+    var $mallFl = 'kr';
+    var unstoringFl = '1';
+    var returnFl = '1';
+
+    $(document).ready(function () {
+        // 쇼핑몰 기본 정보 저장
+        $("#frmBase").validate({
+            submitHandler: function (form) {
+                oEditors.getById["editor"].exec("UPDATE_CONTENTS_FIELD", []);	// 에디터의 내용이 textarea에 적용됩니다.
+                form.target = 'ifrmProcess';
+                form.submit();
+            },
+            rules: {
+                'mallDomain': "required",
+                'mallCategory': "required",
+                'email[]': "required",
+            },
+            messages: {
+                'mallDomain': {
+                    required: '쇼핑몰 도메인을 입력해 주세요.'
+                },
+                'mallCategory': {
+                    required: '대표 카테고리를 입력해 주세요.'
+                },
+                'email[]': {
+                    required: '대표 이메일을 입력해 주세요.'
+                }
+            }
+        });
+
+        display_toggle('unstoringFl','same');
+        display_toggle('returnFl','same');
+        display_toggle('robotsTxt','y');
+
+        $('.email_domain').change(function () {
+            var val =  $(this).val() == 'self' ? '' :  $(this).val();
+            $(this).closest('td').find('.js-email-domain').val(val);
+        });
+
+        $(".btnStampDelete").click(function() {
+            if (confirm('등록한 인감이미지를 삭제하시겠습니까?') == false){
+                $("input:checkbox[name='stampImageDel']").prop("checked",false);
+                return false;
+            } else {
+                $("input:checkbox[name='stampImageDel']").prop("checked",true);
+                $("frmBase").submit();
+            }
+        })
+
+        $('input[type=\'radio\'][name=\'unstoringFl\'][value=\'new\']').on('click', function(){
+            if (unstoringFl) {
+                $('.btn-unstoring').trigger('click');
+            }
+        })
+
+        $('input[type=\'radio\'][name=\'returnFl\'][value=\'new\']').on('click', function(){
+            if (returnFl) {
+                $('.btn-return').trigger('click');
+            }
+        })
+
+    });
+
+    function getSelectedAddressNo(tableID) {
+        var uNo = [];
+
+        if (tableID == 'unstoringTable') {
+            for(var i in unstoringNo) {
+                uNo[i] = unstoringNo[i].sno;
+            }
+        } else if (tableID == 'returnTable') {
+            for(var i in returnNo) {
+                uNo[i] = returnNo[i].sno;
+            }
+        }
+
+        return uNo;
+    }
+
+    function resetBaseInfoAddressTable(tableID) {     // 주소 목록 레이어 팝업 클릭 시 기존 테이블 리셋
+        $('.' + tableID).remove();
+    }
+
+    /**
+     * 주소(출고지, 반품/교환지) 등록
+     */
+    function address_register(title, name, parentFormID, tableID) {
+        $('input:radio[name=' + name + ']:input[value=new]').prop("checked", true);
+
+        display_toggle(name, 'new');
+        resetBaseInfoAddressTable(tableID);
+
+        var addressNo = getSelectedAddressNo(tableID);
+        var loadChk = $('#layerUnstoringListForm').length;
+        var data = {
+            'subTitle'  : title,
+            'parentFormID' : parentFormID,
+            'tableID'   : tableID,
+            'unstoringNo' : addressNo,
+            'mallName'      : $mallName,
+            'mallFl'    : $mallFl,
+            'unstoringFl'   : 'same',
+            'returnFl'      : 'same',
+            'mallSno'       : '1'
+        };
+
+        $.ajax({
+            url : '../share/layer_unstoring_list.php',
+            data : data,
+            type : 'GET',
+            success : function(data) {
+                if (loadChk == 0) {
+                    data = '<div id="layerUnstoringListForm">' + data + '</div>';
+                }
+                var layerForm = data;
+                layer_popup(layerForm, title + ' 관리', 'wide');
+            }
+        });
+    }
+
+    /**
+     * 대표 카테고리
+     */
+    function mall_categoty() {
+        var loadChk = $('#layerCategotyForm').length;
+        $.post('./layer_mall_categoty.php', '', function (data) {
+            if (loadChk == 0) {
+                data = '<div id="layerCategotyForm">' + data + '</div>';
+            }
+            var layerForm = data;
+            layer_popup(layerForm, '대표카테고리 등록');
+        });
+    }
+
+    /**
+     * 출력 여부
+     *
+     * @param string thisIdKey 해당 ID Key
+     */
+    function display_toggle(thisId, thisIdKey) {
+        $('div[id*=\''+thisId+'_\']').attr('class','display-none');
+        $('#'+thisId+'_'+thisIdKey).attr('class','display-block');
+    }
+    //-->
+</script>
+
+                    <div class="information ">
+    <h4>안내</h4>
+    <div class="content">
+        <div style="color: rgb(51, 51, 51); line-height: 22px; padding-top: 4px; font-size: 12px;">
+<strong>[통신판매신고번호] 통신판매업신고란 무엇인가요?</strong></div>
+<div style="color: rgb(136, 136, 136); line-height: 20px; font-size: 11px;">ㆍ전기통신매체, 광고물 등을 통해 소비자와 직접 상거래가 이루어지는 통신 판매업을 하고자 하는 경우 반드시 신고하여야 합니다. <br>
+ㆍ미신고/허위신고 시 3천만원 이하의 벌금이 부과됩니다. <br>
+&nbsp;&nbsp; (단 6개월간 거래규모 1200만원 미만, 거래횟수 20회 미만인 경우는 신고 면제대상입니다. <br>
+ㆍ신고처는 시/군/구청의 지역경제과입니다.</div> 
+
+<div style="color: rgb(51, 51, 51); line-height: 22px; padding-top: 9px; font-size: 12px;">
+<strong>[통신판매신고번호] 통신판매업신고와 부가통신사업자신고는 다른가요? </strong></div>
+<div style="color: rgb(136, 136, 136); line-height: 20px; font-size: 11px;">ㆍ부가통신사업자란 통신판매업신고와 별도로 인터넷을 이용하여 부가통신역무를 제공하는 사업자에 대한 신고입니다. <br>
+ㆍ자본금 1억원 이하인 경우는 신고 면제대상입니다. ㆍ미신고 시 2년 이하의 징역 또는 1억원 이하의 벌금이 부과됩니다. <br>
+&nbsp;&nbsp; 또한 부가통신사업신고를 한 날로부터 1년 이내에 사업을 시작하지 않거나 1년 이상 휴업을 하게 되면 1년 이내의 사업정지 명령을 받을 수 있습니다. <br>
+ㆍ신고처는 관할 체신청입니다. </div><div style="color: rgb(136, 136, 136); line-height: 20px; font-size: 11px;"><br></div>
+     </div>
+</div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="col-xs-12">
+            
+<div class="footer">
+    <div class="copyright">
+        &copy; NHN <a href="https://www.godo.co.kr" target="_blank">godo
+            <span>:</span>
+        </a> Corp All Rights Reserved. (ver : <span class="version">5.1.19.0801.20c9dedd4</span>)
+    </div>
+</div>
+<script type="text/javascript">
+    <!--
+    $(document).ready(function () {
+        
+        $.ajax('../base/main_setting_ps.php', {
+            method: "post",
+            data: {mode: 'orderPresentationNew'},
+            global_complete: false,
+            beforeSend: function () {
+                $('.js-oder-count-new').addClass('display-none')
+            },
+            success: function () {
+                if (arguments[0].success === 'OK') {
+                    var result = arguments[0].result;
+                    if (result === true) {
+                        $('.js-oder-count-new').removeClass('display-none');
+                    }
+                }
+            }
+        });
+    });
+    //-->
+</script>
+        </div>
+    </div>
+
+    <!-- pub_190802 -->
+    <style>
+        /* N: gd5-style.css 에 넣어주세요 */
+        .ly_setting ::-webkit-scrollbar {width: 5px; height: 8px; border: 3px solid #fff; }
+        .ly_setting ::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment {display: block; height: 10px; background: #f4f4f4}
+        .ly_setting ::-webkit-scrollbar-track {background: #f4f4f4; -webkit-border-radius: 10px; border-radius:10px;}
+        .ly_setting ::-webkit-scrollbar-thumb {height: 50px; width: 50px; background: rgba(0,0,0,.2); -webkit-border-radius: 8px; border-radius: 8px; }
+
+        .ly_setting {position:fixed; top:0; right:0; background:#fff; width:400px; -webkit-transition:all 0.2s ease; -moz-transition:all 0.2s ease; -ms-transition:all 0.2s ease; transition:all 0.2s ease; border-left:1px solid #c4c6d0; z-index:200; border-top:1px solid #c4c6d0;}
+        .ly_setting .setting_header {text-align:center; margin-top:0; position:fixed; width:inherit; background:#fff;}
+        .ly_setting .setting_header h4 {font-size:22px; color:#333333; font-weight:bold; letter-spacing:-2px; padding:26px 0 7px 0; margin:0;}
+        .ly_setting .setting_header p {padding-bottom:7px; font-size:14px; color:#888888; letter-spacing:-1px;}
+        .ly_setting .setting_header input[type="checkbox"] {visibility:hidden;}
+        .ly_setting .setting_header .check_label {border:1px solid #c5c6cd; border-radius:20px; padding:7px 20px; cursor:pointer;}
+        .ly_setting .setting_header .check_label:hover {border:1px solid #979aa7;}
+        .ly_setting .setting_header .input_check_box {position: relative; display:inline-block; cursor:pointer;}
+        .ly_setting .setting_header .input_check_box .check-origin {position: absolute; top: 3px; left: 1px; z-index: -1;}
+        .ly_setting .setting_header .input_check_box .check-origin:checked+.check-clone {background-position: 0 -13px;}
+        .ly_setting .setting_header .input_check_box .check-clone {display: inline-block; width: 16px; height: 13px; vertical-align: middle; background: url('admin/gd_share/img/icon_check_hidden.png') 0 0 no-repeat; }
+        _:-ms-input-placeholder, :root .ly_setting .setting_header .input_check_box .check-clone {margin-top:-2px;}
+        .ly_setting .setting_header .check_label .label_txt {cursor:pointer;}
+        .ly_setting .setting_header .tab_list {overflow:hidden; padding-top:23px;}
+        .ly_setting .setting_header .tab_list li {float:left; width:33.333%; text-align:center;}
+        .ly_setting .setting_header .tab_list li a {display:inline-block; padding:10px 0 13px 0; width:100%; color:#ffffff; font-size:14px; text-decoration:none; background:#494b50; border-left:1px solid #37393d; cursor:pointer;}
+        .ly_setting .setting_header .tab_list li:first-child a {border-left:none;}
+        .ly_setting .setting_header .tab_list li:hover a {color:#ffffff; background:#55575b;}
+        .ly_setting .setting_header .btn_close {position:absolute; top:15px; right:17px;}
+        .ly_setting .inner {height:100%; display:block; padding-top:197px; background: #f5f5f7; transition:all 0.2s ease;}
+        .ly_setting .cont_wrap { overflow-y:scroll; height:100%; box-sizing:border-box; background:#f5f5f7; padding:0 16px; margin-right:5px;}
+        .ly_setting .cont_wrap h5 {padding:23px 0 11px 0; font-size:18px; color:#222222; font-weight:bold; text-align:center; margin:0; letter-spacing:-1px;}
+        .ly_setting .cont_wrap input[type="checkbox"] {width:16px; height:16px; background: url('admin/gd_share/img/icon_checkbox_off.png') no-repeat 0 0;}
+        .ly_setting .cont_wrap input[type="checkbox"]:checked {background: url('admin/gd_share/img/icon_checkbox_on.png') no-repeat 0 0;}
+        .ly_setting .cont_wrap .checkbox-inline {padding-left: 34px; height:16px;}
+        _:-ms-input-placeholder, :root .ly_setting .cont_wrap .checkbox-inline {height:17px;}
+        .ly_setting .cont_wrap .checkbox-inline span {display:block; width:43px; min-height:90px; position:absolute; left:0; top:-38px;}
+        .ly_setting .setting_box {margin-bottom:6px;}
+        .ly_setting .setting_box ul li {position:relative; display:table; background:#fff; width:100%; min-height:90px; box-sizing:border-box; border:1px solid #fff; margin-bottom:5px; }
+        .ly_setting .setting_box ul li:hover {border:1px solid #c8c9d0;}
+        .ly_setting .setting_box ul li::after {content:''; display:block; width:3px; height:92px; position:absolute; top:-1px; left:-1px; background:#7b69d9; z-index:1;}
+        _:-ms-input-placeholder, :root .ly_setting .setting_box ul li::after {top:0;}
+        .ly_setting .setting_box .input_area {display:table-cell; vertical-align:middle; width:43px;}
+        .ly_setting .setting_box .text_area {background:url('admin/gd_share/img/btn_arrow.png') no-repeat right center;}
+        .ly_setting .setting_box .text_area a {position:relative; display:table-cell; text-decoration: none; padding:2px 0; height:90px; width:303px; vertical-align: middle;}
+        .ly_setting .setting_box .text_area .txt {display:block; width:250px;}
+        .ly_setting .setting_box .text_area .txt strong {font-size:15px; color:#222; letter-spacing:-1px;}
+        .ly_setting .setting_box .text_area .txt .s_txt {padding-top:2px; font-size:12px; color:#999999; letter-spacing:-0.5px; display:block;}
+        .ly_setting .setting_box .empty_notice {font-size:13px; color:#666666; background:#fff; text-align:center; padding:38px 0; letter-spacing:-0.5px;}
+        .ly_setting .btn_close {cursor:pointer;}
+         
+         .gnbAnchor_wrap {position:fixed; bottom:25px; right:25px;}
+         .gnbAnchor_wrap .btn_setting {display:block; cursor:pointer;}
+         #gnbAnchor {position:static; opacity: 0.7; z-index: 9999;} /* N: 기존에 설정된 position과 bottom, right은 빼주세요 */
+
+         /* sub_type */  
+         /* N:sub 페이지에 추가된 css */
+         .ly_setting.sub_type {right:0; transition:none; position:fixed;}
+         .ly_setting.sub_type.active {position:fixed;}
+         .ly_setting.sub_type .setting_header {position:absolute; z-index:1;}
+       
+    </style>
+    <!--[if lte IE 8 ]>
+        <style>
+            .ly_setting .setting_header .input_check_box .check-origin {z-index:auto;}
+            .ly_setting .setting_header .input_check_box .check-clone {background:none;}
+            .ly_setting .setting_header input[type="checkbox"] {visibility:visible;}
+        </style>
+    <![endif]-->
+    <div class="ly_setting sub_type" style="display:none;"><!-- N:서브 페이지는 'ly_setting' 클래스와 함께 'sub_type'도 함께 넣어주세요-->
+        <div class="setting_header">
+            <h4>쇼핑몰 필수 설정</h4>
+            <p>설정이 완료된 항목은 체크해주세요</p>
+            <!-- <p>설정항목체크는 최고운영자만 할 수 있습니다</p> -->
+            <label for="check1" class="check_label">
+                <div class="input_check_box">
+                    <input type="checkbox" name="" value="" id="check1" class="check-origin">
+                        <span class="check-clone"></span>
+                </div> 
+                <span class="label_txt">체크된 항목 숨김</span>
+            </label>
+            <ul class="tab_list">
+                <li class="active"><a class="tabmenu1" href="#tab1">필수 설정</a></li>
+                <li><a class="tabmenu2" href="#tab2">쇼핑몰 운영</a></li>
+                <li><a class="tabmenu3" href="#tab3">추천 서비스</a></li>
+            </ul>
+            <span class="btn_close"><img src="admin/gd_share/img/icon_ly_close.png" alt="닫기 버튼"/></span>
+        </div>
+        <!-- //setting_header -->
+        <div class="inner">
+            <div class="cont_wrap">
+                <div id="tab1" class="setting_cont">
+                    <h5>필수 설정</h5>
+                    <div class="setting_box">
+                        <!--N:체크 항목 리스트 노출-->
+                        <ul class="setting_list" style="display:none;">
+                            <li>
+                                <div class="input_area">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="" value="">
+                                        <span></span>
+                                    </label>
+                                </div>
+                                <div class="text_area">
+                                    <a href="">
+                                        <span class="txt">
+                                            <strong>사업자 정보 입력</strong>
+                                            <span class="s_txt">상호 / 대표자명 / 사업장 주소 / 전화번호 / 사업자등록번호 / 통신판매신고번호 등 사업자 정보 필수 기재</span>
+                                        </span>
+                                    </a> 
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input_area">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="" value="">
+                                        <span></span>
+                                    </label>
+                                </div>
+                                <div class="text_area">
+                                    <a href="">
+                                        <span class="txt">
+                                            <strong>쇼핑몰 운영자 관리</strong>
+                                            <span class="s_txt">고객 개인정보 보호를 위해 운영자별 권한 설정</span>
+                                        </span>
+                                    </a> 
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input_area">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="" value="">
+                                        <span></span>
+                                    </label>
+                                </div>
+                                <div class="text_area">
+                                    <a href="">
+                                        <span class="txt">
+                                            <strong>제3자 제공 및 개인정보 처리 위탁 설정</strong>
+                                            <span class="s_txt">제3자 제공 및 처리 위탁 내역 고지 및 동의 여부 선택권 제공</span>
+                                        </span>
+                                    </a> 
+                                </div>
+                            </li> 
+                        </ul>
+                        <!--//N-->
+
+                        <!--N:모든 항목 숨김 처리시 노출-->
+                        <p class="empty_notice">항목이 모두 숨김 처리 되어 있습니다.</p>
+                        <!--//N-->   
+                    </div>
+                    <!-- //setting_box -->
+                </div>
+                <!-- //setting_cont -->
+
+                <div id="tab2" class="setting_cont">
+                    <h5>쇼핑몰 운영</h5>
+                    <div class="setting_box">
+                        <!--N:체크 항목 리스트 노출-->
+                        <ul class="setting_list">
+                            <li>
+                                <div class="input_area">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="" value="">
+                                        <span></span>
+                                    </label>
+                                </div>
+                                <div class="text_area">
+                                    <a href="">
+                                        <span class="txt">
+                                            <strong>사업자 정보 입력</strong>
+                                            <span class="s_txt">상호 / 대표자명 / 사업장 주소 / 전화번호 / 사업자등록번호 / 통신판매신고번호 등 사업자 정보 필수 기재</span>
+                                        </span>
+                                    </a> 
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input_area">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="" value="">
+                                        <span></span>
+                                    </label>
+                                </div>
+                                <div class="text_area">
+                                    <a href="">
+                                        <span class="txt">
+                                            <strong>쇼핑몰 운영자 관리</strong>
+                                            <span class="s_txt">고객 개인정보 보호를 위해 운영자별 권한 설정</span>
+                                        </span>
+                                    </a> 
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input_area">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="" value="">
+                                        <span></span>
+                                    </label>
+                                </div>
+                                <div class="text_area">
+                                    <a href="">
+                                        <span class="txt">
+                                            <strong>제3자 제공 및 개인정보 처리 위탁 설정</strong>
+                                            <span class="s_txt">제3자 제공 및 처리 위탁 내역 고지 및 동의 여부 선택권 제공</span>
+                                        </span>
+                                    </a> 
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input_area">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="" value="">
+                                        <span></span>
+                                    </label>
+                                </div>
+                                <div class="text_area">
+                                    <a href="">
+                                        <span class="txt">
+                                            <strong>쇼핑몰 운영자 관리</strong>
+                                            <span class="s_txt">고객 개인정보 보호를 위해 운영자별 권한 설정</span>
+                                        </span>
+                                    </a> 
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input_area">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="" value="">
+                                        <span></span>
+                                    </label>
+                                </div>
+                                <div class="text_area">
+                                    <a href="">
+                                        <span class="txt">
+                                            <strong>사업자 정보 입력</strong>
+                                            <span class="s_txt">상호 / 대표자명 / 사업장 주소 / 전화번호 / 사업자등록번호 / 통신판매신고번호 등 사업자 정보 필수 기재</span>
+                                        </span>
+                                    </a> 
+                                </div>
+                            </li>
+                        </ul>
+                        <!--//N-->
+
+                        <!--N:모든 항목 숨김 처리시 노출-->
+                        <p class="empty_notice" style="display:none;">항목이 모두 숨김 처리 되어 있습니다.</p>
+                        <!--//N-->   
+                    </div>
+                    <!-- //setting_box -->
+                </div>
+                <!-- //setting_cont -->
+
+                <div id="tab3" class="setting_cont">
+                    <h5>추천 서비스</h5>
+                    <div class="setting_box">
+                        <!--N:체크 항목 리스트 노출-->
+                        <ul class="setting_list">
+                            <li>
+                                <div class="input_area">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="" value="">
+                                        <span></span>
+                                    </label>
+                                </div>
+                                <div class="text_area">
+                                    <a href="">
+                                        <span class="txt">
+                                            <strong>사업자 정보 입력</strong>
+                                            <span class="s_txt">상호 / 대표자명 / 사업장 주소 / 전화번호 / 사업자등록번호 / 통신판매신고번호 등 사업자 정보 필수 기재</span>
+                                        </span>
+                                    </a> 
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input_area">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="" value="">
+                                        <span></span>
+                                    </label>
+                                </div>
+                                <div class="text_area">
+                                    <a href="">
+                                        <span class="txt">
+                                            <strong>쇼핑몰 운영자 관리</strong>
+                                            <span class="s_txt">고객 개인정보 보호를 위해 운영자별 권한 설정</span>
+                                        </span>
+                                    </a> 
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input_area">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="" value="">
+                                        <span></span>
+                                    </label>
+                                </div>
+                                <div class="text_area">
+                                    <a href="">
+                                        <span class="txt">
+                                            <strong>제3자 제공 및 개인정보 처리 위탁 설정</strong>
+                                            <span class="s_txt">제3자 제공 및 처리 위탁 내역 고지 및 동의 여부 선택권 제공</span>
+                                        </span>
+                                    </a> 
+                                </div>
+                            </li> 
+                        </ul>
+                        <!--//N-->
+
+                        <!--N:모든 항목 숨김 처리시 노출-->
+                        <p class="empty_notice" style="display:none;">항목이 모두 숨김 처리 되어 있습니다.</p>
+                        <!--//N-->   
+                    </div>
+                    <!-- //setting_box -->
+                </div>
+                <!-- //setting_cont -->
+
+            </div>   
+        </div> 
+            
+    </div>
+    <script>
+
+        $(function(){
+            var header_h = $('#header').outerHeight();
+            var location_h = $('#header .breadcrumb').outerHeight();
+            var pageheader_h = $('.page-header').outerHeight();
+            var sub_h = header_h + location_h + 76;
+
+            $(window).resize(resizeContents);
+            resizeContents();
+            
+            
+            function resizeContents() {
+                if($('.ly_setting').hasClass('sub_type')){
+                    if($('.ly_setting').hasClass('on')){
+                        var ly_sub_h3 = ($(window).height())-pageheader_h;
+                        $(".ly_setting").css({'height':ly_sub_h3});
+                    }else{
+                        var ly_sub_h2 = ($(window).height())-sub_h;
+                        $(".ly_setting").css({'height':ly_sub_h2}); 
+                    }
+                }else{
+                    if($('.ly_setting').hasClass('on')){
+                        $(".ly_setting").css('height','100%');
+                    }else{
+                        var ly_h = ($(window).height())-header_h;
+                        $(".ly_setting").css('height', ly_h);
+                    }
+                }
+            }
+           
+            if($('.ly_setting').hasClass('sub_type')){
+                $(".sub_type").css('top', sub_h);
+            }else{
+                $(".ly_setting").css('top', header_h);
+            }
+            
+            $(window).scroll(function() { 
+                var position = $(window).scrollTop(); 
+                if($('.ly_setting').hasClass('sub_type')){
+                    var ly_sub_h = ($(window).height())-59;
+                    if(position >= 130) {
+                       $(".ly_setting").addClass('on');
+                       $(".ly_setting").addClass('active');
+                       $(".ly_setting").css({'height':ly_sub_h,'top':59});
+                    }else{
+                        $(".ly_setting").removeClass('on');
+                        $(".ly_setting").removeClass('active');
+                        resizeContents();
+                        $(".sub_type").css('top', sub_h);
+                        
+                        if(1 <= position <= 129){
+                            $(".ly_setting").css({'height':ly_sub_h});
+
+                            // var tab_h = $(window).height() - $(".ly_setting").outerHeight();
+                            // console.log(tab_h);
+                            // $(".sub_type").css('top', tab_h);  
+
+                        }else{
+                            var ly_sub_h2 = ($(window).height())-sub_h;
+                            $(".ly_setting").css({'height':ly_sub_h2}); 
+                        }
+                    }
+                }else{
+                    if(position >= 1) { 
+                        $(".ly_setting").addClass('on');
+                        $(".ly_setting").css({'height':'100%','top':'0px'});
+                    } else {
+                        $(".ly_setting").removeClass('on');
+                        resizeContents();
+                        $(".ly_setting").css('top', header_h);
+                    }
+                }
+
+                
+            });
+
+            //setting_button
+            $('.btn_setting').on('click',function(){
+                $('.ly_setting').show();
+            });
+
+            //close_button
+            $('.btn_close').on('click',function(){
+                $('.ly_setting').hide();
+            });
+
+             //check_hidden
+             var countChecked = function() {
+                var n = $( ".setting_header .input_check_box input:checked" ).length;
+                $( ".setting_header .label_txt" ).text( (n === 1 ? " 체크된 항목 숨김" : " 체크된 항목 노출"));
+            };
+            countChecked();
+            $( ".setting_header .input_check_box input[type=checkbox]" ).on( "click", countChecked );
+
+            //anchor
+            // var tab_h = ($(window).height())-$('.ly_setting').outerHeight();
+            // $('.tab_list li').on('click',function(e){
+            //     console.log('test'); 
+            //     $('.ly_setting').addClass('cl');
+            //     $('.ly_setting').css('position','fixed');
+            //     $('.ly_setting').css('height',tab_h);
+            // }); 
+
+                
+            // $('.tabmenu2').on("click", function(e) {
+            //     e.preventDefault();
+            //     $('#tab2').offset().top;
+            //     $('.ly_setting .cont_wrap').scrollTop($('#tab2').offset().top);
+            //     $('.ly_setting .cont_wrap').animate({
+            //         scrollTop: $('#tab2').offset().top
+            //     }, 100);
+            // });
+
+        
+
+        });
+    </script>
+    <!-- //pub_190802 -->
+</div>
+<!-- //container-wrap -->
+
+<!--<div id="gnbTopAnchor">
+    <a href="#top"><img src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/img/btn_gnb_top.png"></a>
+</div>-->
+
+<!-- pub_190802 -->
+<div class="gnbAnchor_wrap">
+    <!-- 설정 버튼 추가 -->
+    <span class="btn_setting"><img src="admin/gd_share/img/button_setting.png" alt="필수설정 버튼"/></span>
+    <!-- //버튼 추가 -->
+    <div id="gnbAnchor" style="display: block;">
+        <div class="scrollTop" style="display:none;">
+            <a href="#top"><img src="admin/gd_share/img/scroll_top_btn.png"></a>
+        </div>
+        <div class="scrollDown" style="display:block;">
+            <a href="#down"><img src="admin/gd_share/img/scroll_down_btn.png"></a>
+        </div>
+    </div>
+</div>
+<!-- //pub_190802 -->
+
+<iframe name="ifrmProcess" src="/blank.php" width="100%" height="200" class="display-block"></iframe>
+<script type="text/javascript">
+    $(function(){
+        adminPanelApiAjax('policy', 'basic', 'base_info');
+        // 탑버튼 클릭
+        /*$(document).on("click", "a[href=#top]", function(e) {
+            $('html body').animate({scrollTop: 0}, 'fast');
+        });*/
+
+        // 스크롤 최하단시 탑아이콘 출력 (실제 컨텐츠 $('#content > .col-xs-12').height())
+        /*$(window).scroll(function() {
+            if ($(window).height() < $(document).height()) {
+                if ($(window).scrollTop() >= 1) {
+                    $("#gnbTopAnchor").slideDown(150);
+                } else {
+                    $("#gnbTopAnchor").slideUp(100);
+                }
+            }
+        });*/
+
+        $('#gnbAnchor').css('display','block');
+
+        // 탑버튼 클릭
+        $(document).on("click", "a[href=#top]", function(e) {
+            $('html body').animate({scrollTop: 0}, 'fast');
+            $('.scrollDown').css('display','block');
+            $('.scrollTop').css('display','none');
+        });
+
+        // 다운버튼 클릭
+        $(document).on("click", "a[href=#down]", function(e) {
+            $('html body').animate({scrollTop: $(document).scrollTop($(document).height())}, 'fast');
+            $('.scrollDown').css('display','none');
+            $('.scrollTop').css('display','block');
+        });
+
+        $(window).scroll(function() {
+            if($(window).scrollTop() >= 1){
+                // 탑,다운버튼 노출
+                $('.scrollTop').css('display','block');
+                $('.scrollDown').css('display','block');
+
+            }else{
+                $('.scrollTop').css('display','none');
+            }
+
+            if (Math.round($(window).scrollTop()) >= $(document).height() - $(window).height()) {
+                $('.scrollDown').css('display','none');
+            }
+        });
+    });
+</script>
+</body>
+</html>
