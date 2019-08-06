@@ -1427,11 +1427,7 @@
                         
                         if(1 <= position <= 129){
                             $(".ly_setting").css({'height':ly_sub_h});
-
-                            // var tab_h = $(window).height() - $(".ly_setting").outerHeight();
-                            // console.log(tab_h);
-                            // $(".sub_type").css('top', tab_h);  
-
+                            $(".sub_type").css('top', sub_h-position);
                         }else{
                             var ly_sub_h2 = ($(window).height())-sub_h;
                             $(".ly_setting").css({'height':ly_sub_h2}); 
@@ -1469,36 +1465,13 @@
             countChecked();
             $( ".setting_header .input_check_box input[type=checkbox]" ).on( "click", countChecked );
 
-            //anchor
-            // var tab_h = ($(window).height())-$('.ly_setting').outerHeight();
-            // $('.tab_list li').on('click',function(e){
-            //     console.log('test'); 
-            //     $('.ly_setting').addClass('cl');
-            //     $('.ly_setting').css('position','fixed');
-            //     $('.ly_setting').css('height',tab_h);
-            // }); 
-
-                
-            // $('.tabmenu2').on("click", function(e) {
-            //     e.preventDefault();
-            //     $('#tab2').offset().top;
-            //     $('.ly_setting .cont_wrap').scrollTop($('#tab2').offset().top);
-            //     $('.ly_setting .cont_wrap').animate({
-            //         scrollTop: $('#tab2').offset().top
-            //     }, 100);
-            // });
-
-        
+                 
 
         });
     </script>
     <!-- //pub_190802 -->
 </div>
 <!-- //container-wrap -->
-
-<!--<div id="gnbTopAnchor">
-    <a href="#top"><img src="http://gdadmin.g5stdaoakua.godomall.com/admin/gd_share/img/btn_gnb_top.png"></a>
-</div>-->
 
 <!-- pub_190802 -->
 <div class="gnbAnchor_wrap">
