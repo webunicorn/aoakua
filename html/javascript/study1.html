@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+</head>
+<body>
+    <label for="weather">select</label>
+    <select id="weather">
+        <option value="">선택</option>
+        <option value="sunny">sunny</option>
+        <option value="sunny2">sunny2</option>
+        <option value="sunny3">sunny3</option>
+        <option value="sunny4">sunny4</option>
+    </select>
+
+    <p class="par">여기여</p>
+
+    <input type="name" id="target"/>
+
+    <script>
+        var select = document.querySelector('select');
+        var para = document.querySelector('p');
+        var inp = document.getElementById('target');
+
+       // select.addEventListener('change', setWeather2);
+        select.addEventListener('change',function(event){
+            document.getElementsByClassName('par').innerHTML = event.value;
+        });
+
+        function setWeather(){
+            var choice = select.value;
+
+            if(choice == 'sunny'){
+                para.textContent = "sunny1";
+            }else if(choice == 'sunny2'){
+                para.textContent = "sunny2";
+            }else if(choice == 'sunny3'){
+                para.textContent = "sunny3";
+            }else if(choice == 'sunny4'){
+                para.textContent = "sunny4";
+            }else{ 
+                para.textContent = '';
+            }
+        }
+
+        function setWeather2(){
+            var choice = select.value;
+
+            switch(choice){
+                case 'sunny':
+                    para.textContent = 'sunny';
+                    break;
+                case 'sunny2':
+                    para.textContent = 'sunny2';
+                    break;
+                case 'sunny3':
+                    para.textContent = 'sunny3';
+                    break;
+                case 'sunny4':
+                    para.textContent = 'sunny4';
+                    break;
+                default:
+                    para.textContent = '';
+
+            }
+        }
+    </script>
+    <script>
+        function Person(name){
+            this.name = name;
+        }
+
+        Person.prototype.name = null;
+        Person.prototype.introduce = function(){
+            return 'My name is ' + this.name;
+        }
+
+        function Programmer(name){
+            this.name = name;
+        }
+
+        Programmer.prototype = new Person();
+        Programmer.prototype.coding = function(){
+            return 'hello world';
+        }
+
+        function Designer(name){
+            this.name = name;
+        }
+
+        Designer.prototype = new Person();
+        Designer.prototype.design = function(){
+            return "beautiful";
+        }
+
+        var p1 = new Programmer('na');
+        document.write(p1.introduce()+"<br>");
+        document.write(p1.coding()+"<br>");
+
+        var p2 = new Designer('lee');
+        document.write(p2.introduce()+"<br>");
+        document.write(p2.design());
+    </script>
+    <script>
+        Object.prototype.contain = function(needle){
+            for(var name in this){
+                if(this[name] === needle){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        var o = {'name':'test1', 'city':'test2'};
+        console.log(o.contain('test1'));
+        var a = ['test1','test2','test3'];
+        console.log(a.contain('test2'));
+    </script>
+</body>
+    
+</html>
