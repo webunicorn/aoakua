@@ -46,7 +46,7 @@
 				e.preventDefault();
 				_this = $(this);
 				_href= _this.attr("href");
-				
+
 				if(_href == '#gnb1'){
 					$('html,body').stop().animate({ scrollTop: $('' + _href + '').offset().top-15 }, 1000);
 				}else if(_href == '#gnb2'){
@@ -56,13 +56,12 @@
 				}else{
 					$('html,body').stop().animate({ scrollTop: $('' + _href + '').offset().top }, 1000);
 				}
-				
+
 				$('.renew_haedream_wrap .header_wrap li').removeClass('on');
-				
+
 				setTimeout(function() {
 					_this.parent().parent().addClass('on');
 				}, 140);
-
 			});
 
 			$(window).load(function() {
@@ -83,7 +82,10 @@
 									setTimeout(function() {
 										$cont1.find('.strong').addClass('active');
 										setTimeout(function() {
-											$cont1.find('.feature_list').addClass('active');
+											$cont1.find('.sub_tit').addClass('active');
+											setTimeout(function() {
+												$cont1.find('.feature_list').addClass('active');
+											}, 140);
 										}, 140);
 									}, 140);
 								}, 100);
@@ -113,7 +115,7 @@
 				  arrows: true,
 			})
 			.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-					$('.current').text(nextSlide + 1);
+				$('.current').text(nextSlide + 1);
 			});
 
 			//마케팅지원 slider
@@ -127,17 +129,17 @@
 				nextArrow: $('.cont4 .ie_low_slider .btn_slider_next'),
 				dots: true,
 				cssEase : 'ease',
-				customPaging: function(slider, i) { 
+				customPaging: function(slider, i) {
 					return '<button class="tab">' + $(slider.$slides[i]).attr('title') + '</button>';
 				},
 			});
 
-			//!ie8,9	
+			//!ie8,9
 			var Browser = {chk : navigator.userAgent.toLowerCase()}
 			Browser = {ie8 : Browser.chk.indexOf('msie 8') != -1,}
-			
+
 			if (Browser.ie8) {
-				
+
 			}else{
 				var menu = ['브랜드 검색', 'more 마케팅', 'SNS 이벤트']
 				var slider1 = new Swiper('.cont4 .swiper-container', {
@@ -160,13 +162,13 @@
 					 },
 				});
 			}
-			
+
 
 			//해드림 매니저 slider
 			$('.manager_slider li').eq(0).addClass('on');
 			$('.manager_slider').slick({
 				autoplay: true,
-				slidesToShow: 5, 
+				slidesToShow: 5,
 				slidesToScroll: 1,
 				autoplaySpeed: 1300,
 				pauseOnHover: false,
@@ -196,28 +198,24 @@
 				var ly_pop = $(".ly_pop_detail");
 				if (!ly_pop.is(e.target) && ly_pop.has(e.target).length === 0){
 					ly_pop.hide();
-				}	
+				}
 			});
 
-			
+
 			var Browser = {chk : navigator.userAgent.toLowerCase()}
 			Browser = {ie8 : Browser.chk.indexOf('msie 8') != -1,}
 
 			//레이어 팝업
 			function lyPopup(prm){
-			
 				$(prm).css({
 					'position': 'fixed',
 					'left': '50%',
 					'top': '50%'
 				});
-			
 				$(prm).css({
 					'margin-left': -$(prm).outerWidth() / 2 + 'px',
 					'margin-top': -$(prm).outerHeight() / 2 + 'px'
 				});
-
-
 				$(prm).stop().fadeIn('fast');
 				$('.ly_dim').addClass('on');
 			}
@@ -227,30 +225,28 @@
 					'left': '50%',
 					'top': '50%'
 				});
-			
 				$('.ly_pop_wrap').css({
 					'margin-left': -$('.ly_pop_wrap').outerWidth() / 2 + 'px',
 					'margin-top': -$('.ly_pop_wrap').outerHeight() / 2 + 'px'
 				});
-			
 			});
 			$('.fix_btn_apply, .btn_apply').on({
 				'click':function(e){
 					e.preventDefault();
 					var lySj = '.ly_pop_wrap';
 					lyPopup(lySj);
-					
 				}
 			});
 			$('.btn_ly_pop_close').on({
 				'click':function(e){
 					e.preventDefault();
-					
+
 					$(this).parent().parent().stop().fadeOut('fast');
 					$('.ly_dim').removeClass('on');
 				}
 			});
 
+			//radio addclass
 			$radio_item.on({
 				'click':function(){
 					$radio_item.removeClass('active');
@@ -275,14 +271,14 @@
 				columnWidth	: 390,
 				fitWidth: true
 			});
-			
+
 			//top button
 			$btn_top.on({
 				'click':function(e){
 					e.preventDefault();
 					$("html, body").animate({ scrollTop : '0' }, "100");
 				}
-			}); 
+			});
 
 			//scroll event
 			$(window).scroll(function(event){
@@ -309,13 +305,13 @@
 					$('.review_slider').slick('slickPause');
 				}else{
 					$('.review_slider').slick('slickPlay');
-				}	
-				
+				}
+
 				//scroll gnb on
 				if($s_top >= $cont3.offset().top-100){
 					$gnb_list.removeClass('on');
 					$('.gnb .menu1').addClass('on');
-					
+
 				}else{
 					$('.gnb .menu1').removeClass('on');
 				}
@@ -341,7 +337,7 @@
 				if($s_top >= $cont7.offset().top-100){
 					$gnb_list.removeClass('on');
 				}
-				
+
 
 				//fadeInUp
 				/* 구축 서비스 소개 */
@@ -357,7 +353,7 @@
 						}, 200);
 					}, 300);
 				}
-			
+
 				/* 진행 프로세스 */
 				if($s_top >= $cont5.offset().top-700){
 					$('.cont5 h4').addClass('active');
@@ -386,9 +382,8 @@
 						}, 1600);
 					}, 250);
 				}
-			
-			});
 
+			});
 
 			//ie
 			var agt = navigator.userAgent.toLowerCase();
@@ -399,10 +394,80 @@
 				$('.cont2 .review_slider li ul li').addClass('ie');
 			}
 
+
+			//레이어 팝업 리사이즈시
+			$(window).resize(function() {
+				var left = ( $(window).scrollLeft() + ( $(window).width() - $('.ly_plan_wrap').outerWidth()) / 2 );
+				var top = ( $(window).scrollTop() + ( $(window).height() - $('.ly_plan_wrap').outerHeight()) / 2 );
+				$('.ly_plan_wrap').css({'left':left,'top':top});
+
+				var left = ( $(window).scrollLeft() + ( $(window).width() - $('.ly_counsel_apply_wrap').outerWidth()) / 2 );
+				var top = ( $(window).scrollTop() + ( $(window).height() - $('.ly_counsel_apply_wrap').outerHeight()) / 2 );
+				$('.ly_counsel_apply_wrap').css({'left':left,'top':top});
+
+				var left = ( ( $(window).width() - $('.layer01.ty2').outerWidth()) / 2 );
+				var top = ( ( $(window).height() - $('.layer01.ty2').outerHeight()) / 2 );
+				$('.layer01.ty2').css({'left':left,'top':top});
+
+				var left = ( ( $(window).width() - $('.layer02.ty1').outerWidth()) / 2 );
+				var top = ( ( $(window).height() - $('.layer02.ty1').outerHeight()) / 2 );
+				$('.layer02.ty1').css({'left':left,'top':top});
+
+				var left = ( $(window).scrollLeft() + ( $(window).width() - $('.free_box').outerWidth()) / 2 );
+				var top = ( $(window).scrollTop() + ( $(window).height() - $('.free_box').outerHeight()) / 2 );
+				$('.free_box').css({'left':left,'top':top});
+
+				var left = ( $(window).scrollLeft() + ( $(window).width() - $('.custom_box').outerWidth()) / 2 );
+				var top = ( $(window).scrollTop() + ( $(window).height() - $('.custom_box').outerHeight()) / 2 );
+				$('.custom_box').css({'left':left,'top':top});
+			});
+
+
+
+
+			$('.layer01 .popup-close').on({
+				'click':function(e){
+					e.preventDefault();
+					$('.layer-item').hide();
+					$('.ly_dim').removeClass('on');
+				}
+            });
+
+			$('.layer02 .popup-close').on({
+				'click':function(e){
+					e.preventDefault();
+					$('.layer-item').hide();
+					$('.ly_dim').removeClass('on');
+                    location.replace('https://{:$godoDomain.godo}/promotion/hae-dream.gd');
+				}
+            });
+
+			function registEnd()
+	        {
+	            $('form').each(function() {
+	                this.reset();
+	            });
+
+	            $('.ly_counsel_apply_wrap').hide();
+
+				var left = (( $(window).width() - $('.layer02.ty1').outerWidth()) / 2 );
+				var top = (( $(window).height() - $('.layer02.ty1').outerHeight()) / 2  );
+	            $('.layer02.ty1').css({'left':left,'top':top,'position':'fixed'});
+	            $('.layer02.ty1').show();
+				$('.ly_dim').addClass('on');
+
+	        }
+
+	        function registDisable() {
+	            var left = ( $(window).scrollLeft() + ( $(window).width() - $('.layer02.ty1').outerWidth()) / 2 );
+	            var top = ( $(window).scrollTop() + ( $(window).height() - $('.layer02.ty1').outerHeight()) / 2 );
+	            $('.layer01.ty2').css({'left':left,'top':top});
+	            $('.layer01.ty2').show();
+	        }
+
 		});
 
 	</script>
-	
 
 	<!--[if lte IE 9 ]>
 	<style>
@@ -417,7 +482,7 @@
 		.renew_haedream_wrap #container .cont6 .portfolio_box .btn_more,
 		.renew_haedream_wrap #container .cont8 .addr,
 		.renew_haedream_wrap .counsel_apply_cont .ca_cont .type_menu li,
-		.renew_haedream_wrap #container .cont1 .h4, 
+		.renew_haedream_wrap #container .cont1 .h4,
 		.renew_haedream_wrap #container .cont1 .strong,
 		.renew_haedream_wrap #container .visual_cont .img_team,
 		.renew_haedream_wrap #container .cont1 .feature_list,
@@ -445,7 +510,7 @@
 		.renew_haedream_wrap #container .cont6 .portfolio_box .btn_more,
 		.renew_haedream_wrap #container .cont8 .addr,
 		.renew_haedream_wrap .counsel_apply_cont .ca_cont .type_menu li,
-		.renew_haedream_wrap #container .cont1 .h4, 
+		.renew_haedream_wrap #container .cont1 .h4,
 		.renew_haedream_wrap #container .cont1 .strong,
 		.renew_haedream_wrap #container .visual_cont .img_team,
 		.renew_haedream_wrap #container .cont1 .feature_list,
@@ -465,6 +530,7 @@
 		.renew_haedream_wrap #container .cont2 .inner {overflow:hidden;}
 		.renew_haedream_wrap #container .cont6 .portfolio_box .btn_more {margin-top:30px;}
 		.renew_haedream_wrap #container .cont8 .inner {overflow:hidden;}
+		.renew_haedream_wrap #container .cont2 h4 {padding-left:44px !important;}
 		.renew_haedream_wrap .counsel_apply_cont .ca_cont .input_check_box .check-origin {position:static;}
 		.renew_haedream_wrap .counsel_apply_cont .ca_cont .input_check_box .check-clone {display:none;}
 		.renew_haedream_wrap .counsel_apply_cont .ca_cont .input_box input[type="checkbox"] {border:none; height:15px; padding:0;}
@@ -492,7 +558,7 @@
 	</style>
 	<![endif]-->
 	<style>
-		
+
 		@import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
 		@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
 
@@ -590,6 +656,7 @@
 			<div class="inner">
 				<span class="h4">국내최초/ 비교불가</span>
 				<span class="strong">해드림은 왜 다를까</span>
+				<p class="sub_tit">해드림은 커머스 사업 방향성에 맞는 합리적인 솔루션과 가치를 제공합니다.</p>
 				<ul class="feature_list">
 					<li class="feature1">
 						<span class="num">01</span>
@@ -617,72 +684,84 @@
 					<li class="item">
 						<ul>
 							<li>
+								<span class="img_area"><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_review_cate01.png" alt=""/></span>
 								<span class="tit">종합 식품 쇼핑몰 유O 고객님</span>
 								<span class="rating num5">별 다섯개<img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/icon_star5.png" alt="별 다섯개"/></span>
-								<p>디자이너, 퍼블리셔, 개발자 등 전문가는 있지만 정작 쇼핑몰 구축에 대한 방법은 잘 몰랐었는데, 해드림을 통해서 저희가 원하는 오픈 날짜에 잘 맞춰서 문제 없이 오픈했습니다. 감사합니다.</p> 
+								<p>쇼핑몰 구축에 대한 방법은 잘 몰랐는데 해드림을 통해 원하는 날짜에 문제 없이 오픈했습니다. 감사합니다.</p>
 							</li>
 							<li>
+								<span class="img_area"><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_review_cate02.png" alt=""/></span>
 								<span class="tit">여성 의류 쇼핑몰 김O미 고객님</span>
 								<span class="rating num5">별 다섯개<img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/icon_star5.png" alt="별 다섯개"/></span>
-								<p>타사에서 사용하고 있던 쇼핑몰 운영이 매우 불편하여 해드림을 통해 고도로 이전했습니다. 이전이 매우 복잡하고 힘들 줄 알았는데 옆에서 잘 도와주시고 설명해주셔서 정착할 수 있었습니다.</p> 
+								<p>기존 쇼핑몰 운영에 불편을 느껴 해드림을 찾았습니다. 복잡하고 힘들 줄 알았는데 옆에서 잘 도와주셔서 정착할 수 있었습니다.</p>
 							</li>
 							<li>
+								<span class="img_area"><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_review_cate03.png" alt=""/></span>
 								<span class="tit">다이어트 식품 쇼핑몰 도O아 고객님</span>
 								<span class="rating num5">별 다섯개<img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/icon_star5.png" alt="별 다섯개"/></span>
-								<p>디자이너 출신인데 개발이나 비전문적인 분야에서 많은 도움을 받았습니다. 운영 중인 다른 몰도 고도로 이전하려고 합니다. 매니저님의 신속한 피드백 덕분에 아주 든든합니다. </p> 
+								<p>매니저님의 신속한 피드백과 개발 등 제가 모르는 부분에 많은 도움을 받았습니다. 운영 중인 다른 몰도 고도로 이전하려고 합니다.</p>
 							</li>
 							<li class="lt">
+								<span class="img_area"><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_review_cate04.png" alt=""/></span>
 								<span class="tit">교육 컨텐츠 쇼핑몰 박O돈 고객님</span>
 								<span class="rating num5">별 다섯개<img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/icon_star5.png" alt="별 다섯개"/></span>
-								<p>관계사들을 위한 도매몰이 필요했는데 도매몰에 필수적인 기능부터 트렌드까지 잘 설명해주셔서 가이드대로 따라갔더니 회사 내부에서도 만족도가 상당히 높습니다. 해드림 정말 추천합니다.</p> 
+								<p>도매몰이 필요했는데 필수기능부터 트렌드까지 잘 설명해주셔서 만족도가 상당히 높습니다. 해드림 정말 추천합니다.</p>
 							</li>
 						</ul>
 					</li>
 					<li class="item">
 						<ul>
 							<li>
+								<span class="img_area"><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_review_cate05.png" alt=""/></span>
 								<span class="tit">가구 쇼핑몰 김O희 고객님</span>
 								<span class="rating num5">별 다섯개<img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/icon_star5.png" alt="별 다섯개"/></span>
-								<p>신규 브랜드 런칭이라 세세한 디자인부터 까다로운 개발까지 고민이 많았습니다. 디테일한 부분까지 잘 챙겨주셔서 성공적으로 런칭했어요. 정말 감사합니다.</p> 
+								<p>신규 브랜드 런칭이라 고민이 많았는데 디테일한 부분까지 잘 챙겨주셔서 성공적으로 런칭했어요. 정말 감사합니다.</p>
 							</li>
 							<li>
+								<span class="img_area"><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_review_cate06.png" alt=""/></span>
 								<span class="tit">반려 동물 쇼핑몰 정O성 고객님</span>
 								<span class="rating num4">별 네개<img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/icon_star4.png" alt="별 네개"/></span>
-								<p>고도를 선택한 이유는 딱 한가지. 해드림 서비스를 꼭 받고 싶었어요. 혼자 하기엔 너무 막막했는데 그래도 나를 위해 신경써주고 도와주는 사람이 있다는 것이 정말 든든했습니다.</p> 
+								<p>고도를 선택한 이유 딱 한가지 해드림이었습니다. 혼자는 막막한데 신경써주고 도와주는 사람이 있다는 것이 정말 든든했습니다.</p>
 							</li>
 							<li>
+								<span class="img_area"><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_review_cate07.png" alt=""/></span>
 								<span class="tit">여성 용품 쇼핑몰 허O경 고객님</span>
 								<span class="rating num5">별 다섯개<img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/icon_star5.png" alt="별 다섯개"/></span>
-								<p>복잡한 솔루션에서 필요한 부분만 콕콕 찝어서 가이드 주셔서 쇼핑몰 제작부터 운영까지 수월하게 진행할 수 있었습니다. 다른 지인들에게도 추천해드리려고요!</p> 
+								<p>필요한 부분만 쉽게 가이드 주셔서 제작부터 운영까지 수월하게 진행할 수 있었습니다. 다른 지인들에게도 추천하려구요!</p>
 							</li>
 							<li class="lt">
+								<span class="img_area"><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_review_cate08.png" alt=""/></span>
 								<span class="tit">글로벌 의류 쇼핑몰 김O현 고객님</span>
 								<span class="rating num5">별 다섯개<img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/icon_star5.png" alt="별 다섯개"/></span>
-								<p>기본정보 세팅부터 상품등록, 그리고 PG가이드까지 순차적으로 잘 알려주셔서 빠르게 오픈할 수 있었던 것 같습니다. 이번 리뉴얼 오픈 이벤트도 성황리에 잘 끝냈습니다. 감사합니다.</p> 
+								<p>세팅부터 PG가이드까지 순차적으로 잘 알려주셔서 빠르게 오픈할 수 있었고, 오픈 이벤트도 잘 마쳤습니다!</p>
 							</li>
 						</ul>
 					</li>
 					<li class="item">
 						<ul>
 							<li>
+								<span class="img_area"><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_review_cate09.png" alt=""/></span>
 								<span class="tit">도서 관련 쇼핑몰 김O영 고객님</span>
 								<span class="rating num5">별 다섯개<img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/icon_star5.png" alt="별 다섯개"/></span>
-								<p>직접 판교까지 방문해주시고 하나하나 열정적으로 설명해주시는 모습에 고민없이 해드림을 선택했습니다. 제가 너무 바빴던 시기에 피드백 잘 해주셔서 일정에 맞게 오픈할 수 있었어요.</p> 
+								<p>판교까지 방문해 열정적으로 설명해주셔서 고민없이 해드림을 선택했습니다. 일정에 맞게 오픈할 수 있었어요!</p>
 							</li>
 							<li>
+								<span class="img_area"><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_review_cate10.png" alt=""/></span>
 								<span class="tit">글로벌 시계 쇼핑몰 전O영 고객님</span>
 								<span class="rating num4">별 네개<img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/icon_star4.png" alt="별 네개"/></span>
-								<p>5개 몰을 구축해야하는데 마음만 급하고 막막했습니다. 큰 뼈대를 잡아주시고 그 안에 채워가는 과정을 같이 진행해주셔서 빠른 시간안에 성공적으로 런칭할 수 있었습니다.</p> 
+								<p>5개 몰이 필요해 마음만 급하고 막막했는데 큰 뼈대와 그 안을 채워가며 진행해주니 빠른 시간안에 성공적으로 런칭했습니다!</p>
 							</li>
 							<li>
+								<span class="img_area"><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_review_cate11.png" alt=""/></span>
 								<span class="tit">화장품 쇼핑몰 강O철 고객님</span>
 								<span class="rating num5">별 다섯개<img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/icon_star5.png" alt="별 다섯개"/></span>
-								<p>다양한 레퍼런스를 보여주셔서 사업의 방향을 잡는데 많은 도움이 되었습니다. 질문이 많아 귀찮을만도 하셨을텐데 늘 친절한 답변 감사합니다. 해드림 덕분에 쇼핑몰을 만들 수 있었습니다.</p> 
+								<p>다양한 레퍼런스를 보여주셔서 사업의 방향을 잡는데 많은 도움이 되었습니다. 그리고 늘 친절한 답변 감사합니다.</p>
 							</li>
 							<li class="lt">
+								<span class="img_area"><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_review_cate12.png" alt=""/></span>
 								<span class="tit">아기 용품 김O훈 고객님</span>
 								<span class="rating num4">별 네개<img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/icon_star4.png" alt="별 네개"/></span>
-								<p>공동구매, 정기결제 등 원하는 요청사항이 많았음에도 협력사와 꼼꼼하게 프로세스를 잘 체크해주신 덕분에 문제 없이 잘 운영중입니다. 또 추가 구축내용이 생기면 해드림과 할 예정입니다.</p> 
+								<p>요청사항이 많았는데도 협력사와 꼼꼼하게 잘 체크해주신 덕분에 문제 없이 운영중입니다. 또 해드림과 함께 할겁니다.</p>
 							</li>
 						</ul>
 					</li>
@@ -703,24 +782,24 @@
 						<span class="type">Basic</span>
 						<p class="tit">가볍고 빠르게 시작<br>1인 기업, 인플루언서 추천</p>
 						<span class="pay"><strong>33</strong>만원부터</span>
-						<dl>
+						<dl class="area">
 							<dt>제작범위</dt>
 							<dd>
 								<ul>
-									<li>- PG 가입 가이드</li>
-									<li>- 간편 로그인 설정</li>
-									<li>- 스킨 배너 제작</li>
-									<li>- 1회 솔루션 교육</li>
+									<li>&middot; PG 가입 가이드</li>
+									<li>&middot; 간편 로그인 설정</li>
+									<li>&middot; 스킨 배너 제작</li>
+									<li>&middot; 1회 솔루션 교육</li>
 								</ul>
 							</dd>
 						</dl>
-						<dl>
+						<dl class="solution">
 							<dt>추천솔루션</dt>
 							<dd><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_logo_shopby.png" alt="shop by" class="logo_img"/></dd>
 						</dl>
 						<dl>
 							<dt>제작기간</dt>
-							<dd>5일<br><em>콘텐츠 준비, PG 가입, 승인기간 제외</em></dd>
+							<dd>5일<em>(콘텐츠 준비, PG 가입, 승인기간 제외)</em></dd>
 						</dl>
 						<dl class="with_list">
 							<dt>함께한 쇼핑몰</dt>
@@ -735,25 +814,25 @@
 						<span class="type">Standard</span>
 						<p class="tit">맞춤 디자인 및 개발!<br>중소기업, 스타트업 추천</p>
 						<span class="pay"><strong>66</strong>만원부터</span>
-						<dl>
+						<dl class="area">
 							<dt>제작범위</dt>
 							<dd>
 								<ul>
-									<li>- 1:1 매니저 전담</li>
-									<li>- 맞춤 디자인, 개발</li>
-									<li>- 쇼핑몰 스케줄 관리</li>
-									<li>- 쇼핑몰 기본 세팅
+									<li>&middot; 1:1 매니저 전담</li>
+									<li>&middot; 맞춤 디자인, 개발</li>
+									<li>&middot; 쇼핑몰 스케줄 관리</li>
+									<li>&middot; 쇼핑몰 기본 세팅
 										<span class="btn_pop_detail btn1">항목보기</span>
-										
+
 									</li>
-									<li>- 쇼핑몰 오픈 테스트
+									<li>&middot; 쇼핑몰 오픈 테스트
 										<span class="btn_pop_detail btn2">항목보기</span>
-										
+
 									</li>
 								</ul>
 							</dd>
 						</dl>
-						<dl>
+						<dl class="solution">
 							<dt>추천솔루션</dt>
 							<dd><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_logo_godomall5.png" alt="godomall5" class="logo_img"/></dd>
 						</dl>
@@ -774,21 +853,21 @@
 						<span class="type">Premium</span>
 						<p class="tit">기업 및 브랜드 성장<br>중/대형 기업 및 기관 추천</p>
 						<span class="pay">상담 후 견적안내</span>
-						<dl>
+						<dl class="area">
 							<dt>제작범위</dt>
 							<dd>
 								<ul>
-									<li>- 1:1 매니저 전담 및 컨설팅</li>
-									<li>- 사업확장, 시스템 개선</li>
-									<li>- 대형 웹에이전시와 협업</li>
-									<li>- 브랜드 RFP 기반 제안서 작성</li>
-									<li>- 경쟁 PT 및 비딩 참여 가능</li>
+									<li>&middot; 1:1 매니저 전담 및 컨설팅</li>
+									<li>&middot; 사업확장, 시스템 개선</li>
+									<li>&middot; 대형 웹에이전시와 협업</li>
+									<li>&middot; 브랜드 RFP 기반 제안서 작성</li>
+									<li>&middot; 경쟁 PT 및 비딩 참여 가능</li>
 								</ul>
 							</dd>
 						</dl>
-						<dl>
+						<dl class="solution">
 							<dt>추천솔루션</dt>
-							<dd><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_logo_godomall5.png" alt="godomall5" class="logo_img"/></dd>
+							<dd><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_logo_godomall5pro.png" alt="godomall5pro" class="logo_img2"/> <img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_logo_ncp.png" alt="ncp" class="logo_img2"/></dd>
 						</dl>
 						<dl>
 							<dt>제작기간</dt>
@@ -830,30 +909,32 @@
 		<!-- //cont3 -->
 		<div class="cont4" id="gnb2">
 			<div class="inner">
-				<h4>매출 성장 케어<br><strong>마케팅 지원</strong></h4>
-				
+				<h4>구축에서 끝나지 않습니다<br><strong>매출 성장 마케팅 지원</strong></h4>
 				<div class="ie_low_slider">
 					<ul class="marketing_slider">
-						<li title="브랜드 검색">
+						<li title="브랜드 검색" class="ms_slide1">
 							<div class="img_box"><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_marketing01.png" alt=""/></div>
 							<div class="txt_box">
-								<strong>네이버 브랜드 검색 광고 지원!</strong>
-								<p>통합검색 최상단에 이미지와 함께 노출!<br>해드림과 함께하는 신규 고객에게 제공됩니다.</p>
+								<strong>브랜드 검색 광고비</strong>
+								<span class="bg_mark">55만원 지원</span>
+								<p>검색 결과 최상단 노출로 매출 성장을 경험해보세요.<br>해드림과 함께하는 신규 고객님께<br>광고비 55만원을 지원해드립니다!</p>
 							</div>
 						</li>
-						<li title="more 마케팅">
+						<li title="more 마케팅" class="ms_slide2">
 							<div class="img_box"><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_marketing02.png" alt=""/></div>
 							<div class="txt_box">
-								<strong>NHN AD x godo</strong>
-								<p>쇼핑몰 이탈 순간 콘텐츠를 제공!<br>more 패널 45일+more 티커 30일 지원!</p>
-								<a href="https://more.nhnad.com/home" target="_blank">more 서비스 자세히보기</a>
+								<strong>온사이트 마케팅 솔루션</strong>
+								<span class="bg_mark">more 지원</span>
+								<p>고객의 쇼핑몰 이탈 순간을 놓치지 마세요.<br>NHN AD more 패널 45일과 함께<br>more 티커 30일을 추가로 더 드립니다!</p>
+								<!-- <a href="https://more.nhnad.com/home" target="_blank">more 서비스 자세히보기</a> -->
 							</div>
-						</li>
-						<li title="SNS 이벤트">
+						</li> 
+						<li title="SNS 이벤트" class="ms_slide3">
 							<div class="img_box"><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_marketing03.png" alt=""/></div>
 							<div class="txt_box">
-								<strong>고도 공식 SNS 채널에 홍보!</strong>
-								<p>홍보에 쓰일 제품은 고도가 직접 구매!<br>월 1회 추첨을 통해 제공됩니다.</p>
+								<strong>고도 공식 SNS 채널</strong>
+								<span class="bg_mark">홍보 지원</span>
+								<p>고도 공식 SNS 채널을 활용해 보세요.<br>월 1회 추첨을 통해 SNS 채널에 홍보해드리고<br>홍보에 쓰일 제품은 고도가 직접 구매합니다!</p>
 							</div>
 						</li>
 					</ul>
@@ -865,26 +946,28 @@
 
 				<div class="swiper-container marketing_slider">
 					<ul class="swiper-wrapper">
-						<li  class="swiper-slide" title="브랜드 검색">
+						<li class="swiper-slide ms_slide1" title="브랜드 검색">
 							<div class="img_box"><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_marketing01.png" alt=""/></div>
 							<div class="txt_box">
-								<strong>네이버 브랜드 검색 광고 지원!</strong>
-								<p>통합검색 최상단에 이미지와 함께 노출!<br>해드림과 함께하는 신규 고객에게 제공됩니다.</p>
+								<strong>브랜드 검색 광고비</strong>
+								<span class="bg_mark">55만원 지원</span>
+								<p>검색 결과 최상단 노출로 매출 성장을 경험해보세요.<br>해드림과 함께하는 신규 고객님께<br>광고비 55만원을 지원해드립니다!</p>
 							</div>
 						</li>
-						<li  class="swiper-slide" title="more 마케팅">
+						<li  class="swiper-slide ms_slide2" title="more 마케팅">
 							<div class="img_box"><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_marketing02.png" alt=""/></div>
 							<div class="txt_box">
-								<strong>NHN AD x godo</strong>
-								<p>쇼핑몰 이탈 순간 콘텐츠를 제공!<br>more 패널 45일+more 티커 30일 지원!</p>
-								<a href="https://more.nhnad.com/home" target="_blank">more 서비스 자세히보기</a>
+								<strong>온사이트 마케팅 솔루션</strong>
+								<span class="bg_mark"><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/txt_more.png" alt="more"/> 지원</span>
+								<p>고객의 쇼핑몰 이탈 순간을 놓치지 마세요.<br>NHN AD more 패널 45일과 함께<br>more 티커 30일을 추가로 더 드립니다!</p>
 							</div>
 						</li>
-						<li  class="swiper-slide" title="SNS 이벤트">
+						<li  class="swiper-slide ms_slide3" title="SNS 이벤트">
 							<div class="img_box"><img src="//{:$godoDomain.img}/godomall/promotion/haedream/renew19/img_marketing03.png" alt=""/></div>
 							<div class="txt_box">
-								<strong>고도 공식 SNS 채널에 홍보!</strong>
-								<p>홍보에 쓰일 제품은 고도가 직접 구매!<br>월 1회 추첨을 통해 제공됩니다.</p>
+								<strong>고도 공식 SNS 채널</strong>
+								<span class="bg_mark">홍보 지원</span>
+								<p>고도 공식 SNS 채널을 활용해 보세요.<br>월 1회 추첨을 통해 SNS 채널에 홍보해드리고<br>홍보에 쓰일 제품은 고도가 직접 구매합니다!</p>
 							</div>
 						</li>
 					</ul>
@@ -902,8 +985,8 @@
 				<h4>쇼핑몰 구축부터 마케팅까지<br><strong>진행 프로세스</strong></h4>
 				<ul class="step_box">
 					<li class="step1">
-						<span class="step">step1</span>
-						<strong>상담 신청 및<br>1:1 상담</strong>
+						<span class="step">STEP1</span>
+						<strong>상담 신청 및 1:1 상담</strong>
 						<ul>
 							<li><span class="num">01</span><span class="txt">서비스 상담 신청</span></li>
 							<li><span class="num">02</span><span class="txt">전문 매니저와 구축 상담(유선)</span></li>
@@ -912,16 +995,16 @@
 						</ul>
 					</li>
 					<li class="step2">
-						<span class="step">step2</span>
-						<strong>상품 등록 및<br>PG 가입 신청</strong>
+						<span class="step">STEP2</span>
+						<strong>상품 등록 및 PG 가입 신청</strong>
 						<ul>
 							<li><span class="num">01</span><span class="txt">상품 등록 및 솔루션 1:1 교육</span></li>
 							<li><span class="num">02</span><span class="txt">PG 심사 및 검수<br><em>(네이버페이, 페이코  심사포함)</em></span></li>
 						</ul>
 					</li>
 					<li class="step3">
-						<span class="step">step3</span>
-						<strong>쇼핑몰 오픈 및<br>마케팅 상담</strong>
+						<span class="step">STEP3</span>
+						<strong>쇼핑몰 오픈 및 마케팅 상담</strong>
 						<ul>
 							<li><span class="num">01</span><span class="txt">주문 테스트 및 오픈</span></li>
 							<li><span class="num">02</span><span class="txt">마케팅 상담 및 비용지원</span></li>
@@ -1196,7 +1279,7 @@
 		<!-- //cont9 -->
 	</div>
 	<!-- //container -->
-	
+
 	<span class="fix_btn_apply">상담신청</span>
 	<span class="btn_top">위로</span>
 
@@ -1363,7 +1446,7 @@
 							<div class="input_check_box">
 								<input type="checkbox" name="agree1" value="y" id="check_agree" class="check-origin">
 								<span class="check-clone"></span>
-							</div> 
+							</div>
 							<span class="label_txt">개인정보 수집 및 이용에 동의합니다.</span>
 						</label>
 					</div>
@@ -1375,6 +1458,24 @@
 	</div>
 	<!-- //ly_pop_wrap -->
 	<!-- //상담 신청 layer_popup -->
+
+
+	<!-- 신청접수 마감 팝업 -->
+	<div class="layer-item layer01 ty2">
+		<div class="layer_item_cont">
+			<img src="//{:$godoDomain.img}/godomall/promotion/help-services/1903/popup-help-services-end.png" alt="신청접수마감">
+			<a href="" class="popup-close">닫기</a>
+		</div>
+	</div>
+	<!-- 완료 팝업 -->
+	<div class="layer-item layer02 ty1">
+		<div class="layer_item_cont">
+			<img src="//{:$godoDomain.img}/godomall/promotion/help-services/1903/popup-help-services-finish.png" alt="신청접수완료">
+			<a href="" class="popup-close">닫기</a>
+		</div>
+	</div>
+
+
 </div>
 <!-- //renew_haedream_wrap -->
 {:/block}
