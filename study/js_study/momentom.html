@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .form, .greetings {display: none;}
+        .showing {display: block;}
+    </style>
+</head>
+<body>
+
+    <h1 class="timeStamp">TIME</h1>
+    <form class="js-form form">
+        <input type="text" placeholder="what's your name?"/>
+    </form>
+    <h4 class="js-greetings greetings"></h4>
+    
+    <script src="todo.js"></script>
+    <script src="greeting.js"></script>
+    <script>
+        //time
+        const time = document.querySelector(".timeStamp");
+
+        function getTime(){
+            const date = new Date();
+            const hour = date.getHours();
+            const minutes = date.getMinutes();
+            const seconds = date.getSeconds();
+            
+            time.innerText = `${hour < 10 ? `0${hour}` : hour}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+        }
+
+        function init(){
+            getTime();
+            setInterval(getTime, 1000);
+        }
+        init();
+
+
+
+    </script>
+</body>
+</html>

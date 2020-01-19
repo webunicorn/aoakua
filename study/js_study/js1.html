@@ -5,8 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        h1 {color:#dddddd;}
+        .cur {cursor: pointer;}
+        .clicked {color:#aaeff2;}
+        
+    </style>
 </head>
 <body>
-    test
+    <h1 id="title" class="cur">Hello World!!</h1>
+    <script>
+        /*
+        function potato(name, age){
+            return `you are name ${name} and you are age ${age}`;
+        }
+
+        const cake = potato('jina',32); //상수에 저장
+        console.log(cake);
+        */
+
+        /*
+        const cal = { //객체 안에 함수 넣기
+            plus : function(a,b){
+                return a + b;
+            },
+            minus : function(a,b){
+                return a - b;
+            }
+        };
+
+        const plPlus = cal.plus(30,30);
+        const plMinus = cal.minus(40,20);
+        console.log(plPlus, plMinus);
+        */
+
+        /*
+        const tit = document.getElementById("title");
+        tit.innerHTML = "hi!!";
+        console.dir(tit);//객체는 콘솔에 찍을 때 dir 을 사용하면 편하다
+        //console.log(tit);
+
+        const tit2 = document.querySelector("#title"); //querySeletor는 css에서와 같이 dom 선택 방법과 같다. classa는 ".tit" 이런식으로 사용하면 됨
+
+        function handleResize(){
+            console.log("resize");
+        }
+        window.addEventListener("resize", handleResize); //함수를 바로 실행하지 않고 해당 이벤트가 일어났을 때만 실행됨 그래서 ()는 없앤것
+        */
+
+        /*
+        const tit = document.querySelector("#title");
+        const BASE_COLOR = "rgb(223, 223, 223)";
+        const OTHER_COLOR = "#925858";
+
+        function changeColor(){
+            //console.log("change");
+            //const tit = document.querySelector("#title");
+            const CURRENT_COLOR = tit.style.color;
+            console.log(CURRENT_COLOR);
+            if(CURRENT_COLOR === BASE_COLOR){
+                tit.style.color = OTHER_COLOR;
+               
+            }else{
+                tit.style.color = BASE_COLOR;
+            }
+            
+        }
+
+        function init(){
+            tit.style.color = "rgb(223, 223, 223)";    
+            tit.addEventListener("click", changeColor);
+        }
+        init();
+        */
+
+        
+        const tit = document.querySelector("#title");
+        const CLICKED_CLASS = "clicked";
+
+        
+        function changeColor(){
+            //const currentClass = tit.className;
+            /*
+            const hasClass = tit.classList.contains(CLICKED_CLASS);
+            if(hasClass){
+                //tit.className = "";
+                tit.classList.remove(CLICKED_CLASS);
+            }else{
+                //tit.className = CLICKED_CLASS;
+                tit.classList.add(CLICKED_CLASS);
+            }
+            */
+
+            tit.classList.toggle(CLICKED_CLASS); //toggle을 이용해 쉽게 클래스를 지우고 생성이 가능! 위에 있는 코드를 이렇게 한 줄로 바꿀 수 있는 것
+        }
+
+        function init(){
+            //tit.style.color = "#dddddd";
+            tit.addEventListener("click", changeColor);
+        }
+        init();
+        
+
+    </script>
 </body>
 </html>
