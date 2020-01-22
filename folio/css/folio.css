@@ -140,6 +140,7 @@ to {
 
 @media only screen and (max-width : 992px) {
     #main .work .work_list li {width:auto;}
+    #main .work .work_list li {padding-bottom:5rem;}
 }
 
 @media only screen and (max-width : 768px){
@@ -148,6 +149,7 @@ to {
     .svg_box {display: none;}
     #main .intro .name {display:block; font-size: 11rem; line-height: 11rem; /* background: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db); -webkit-background-clip: text; -webkit-text-fill-color: transparent;*/}
     #main .intro .job {padding-top:4rem;}
+    #main .work .work_list li {padding-bottom:5rem;}
 }
 
 @media only screen and (max-width : 550px) {
@@ -155,6 +157,7 @@ to {
     #header .gnb a {font-weight:300;}
     #main .intro {height:100vh;}
     #main .intro .name {display:block; font-size: 8rem; line-height: 8rem;}
+    #main .work .work_list li {padding-bottom:5rem;}
     #main .work .work_list li .title .device {font-size:1.5rem;}
 }
 
@@ -163,5 +166,6 @@ to {
     #header .gnb a {font-weight:300; font-size:1.8rem;}
     #main .intro {height:100vh;}
     #main .intro .name {display:block; font-size: 8rem; line-height: 8rem;}
+    #main .work .work_list li {padding-bottom:5rem;}
     #main .work .work_list li .title .device {font-size:1.5rem;}
 }
