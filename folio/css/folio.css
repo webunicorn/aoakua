@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 /* font */
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean');
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
@@ -89,7 +91,7 @@ h2 {font-family: 'Roboto', sans-serif; font-size:3rem; padding:5rem 0 3rem 2rem;
 #main .contact h2 {padding-top:3rem;}
 #main .contact .contact_list {font-size:1.6rem; line-height: 1.6rem; padding-left:2rem; color:#333;}
 #main .contact .contact_list li {padding:0 0 1rem 0;}
-#main .contact .contact_list li::before {content:'·'; display:inline-block; padding-right:0.4rem;}
+#main .contact .contact_list li::before {content:'\22C5'; display:inline-block; padding-right:0.4rem;}
 #main .contact .slogan {font-family:'Oleo Script', cursive; font-size:1.7rem; font-weight: 100; position: absolute; right:3rem; bottom:1rem;}
 
 /* rotate */
@@ -160,6 +162,7 @@ to {
     #main .intro .name {display:block; font-size: 7.5rem; line-height: 7.5rem;}
     #main .work .work_list li {padding-bottom:5rem;}
     #main .work .work_list li .title .device {font-size:1.5rem;}
+    #main .contact .contact_list li {font-size: 1.8rem;}
 }
 
 @media only screen and (max-width : 360px) {
@@ -170,4 +173,5 @@ to {
     #main .intro .name {display:block; font-size: 8rem; line-height: 8rem;}
     #main .work .work_list li {padding-bottom:5rem;}
     #main .work .work_list li .title .device {font-size:1.5rem;}
+    #main .contact .contact_list li {font-size: 1.8rem;}
 }
