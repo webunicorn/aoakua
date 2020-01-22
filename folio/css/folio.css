@@ -92,7 +92,7 @@ h2 {font-family: 'Roboto', sans-serif; font-size:3rem; padding:5rem 0 3rem 2rem;
 #main .contact .contact_list {font-size:1.6rem; line-height: 1.6rem; padding-left:2rem; color:#333;}
 #main .contact .contact_list li {padding:0 0 1rem 0; color:#121215 !important;}
 #main .contact .contact_list li::before {content:'\22C5'; display:inline-block; padding-right:0.4rem;}
-#main .contact .slogan {font-family:'Oleo Script', cursive; font-size:1.7rem; font-weight: 100; position: absolute; right:3rem; bottom:1rem;}
+#main .contact .slogan {font-family:'Oleo Script', cursive; font-size:1.7rem; font-weight: 100; position: absolute; right:3rem; bottom:0.3rem;}
 
 /* rotate */
 @-webkit-keyframes rotate {
