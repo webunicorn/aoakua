@@ -159,7 +159,7 @@ to {
 
 @media only screen and (max-width : 360px) {
     html {font-size:7px;}
-    #header .gnb a {font-weight:300;}
+    #header .gnb a {font-weight:300; font-size:1.8rem;}
     #main .intro {height:100vh;}
     #main .intro .name {display:block; font-size: 8rem; line-height: 8rem;}
     #main .work .work_list li .title .device {font-size:1.5rem;}
