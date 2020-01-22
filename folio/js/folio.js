@@ -14,14 +14,13 @@ function deviceCheck(){
         if(pcDevice.indexOf(navigator.platform.toLowerCase()) < 0){
             //mobile
             workList.classList.remove("effect");
-        }else if(navigator.userAgent.indexOf("Android")>0 || 
-        navigator.userAgent.indexOf("iPhone") > 0|| 
-        navigator.userAgent.indexOf("iPod") > 0|| 
-        navigator.userAgent.indexOf("BlackBerry") > 0){
+        }else if(navigator.userAgent.match(/iPad/i)||navigator.userAgent.match(/Tablet/i)||navigator.userAgent.match(/Android/i)||navigator.userAgent.match(/iPhone|iPod/i) ){
             //tablet
             workList.classList.remove("effect");
+            
         }else{
             //pc
+            console.log("pc");
         }
     }
 }
