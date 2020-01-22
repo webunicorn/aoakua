@@ -70,10 +70,10 @@ $(function(){
     
     /***** layer popup *****/
     //button
-    $('.btn_qna_more, .btn_notice_more, .btn_member_info').on({
+    $('#btn_qna, .btn_notice_more, .btn_member_info').on({
 		'click':function(e){
             e.preventDefault();
-            console.log($(this).attr('class'));
+            console.log($(this).attr('id'));
 			var lySj = '.ly_pop_wrap';
 			lyPopup(lySj);
 		}
