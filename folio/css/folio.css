@@ -125,17 +125,17 @@ h2 {font-family: 'Roboto', sans-serif; font-size:3rem; padding:5rem 0 3rem 2rem;
     -webkit-text-fill-color: transparent;
     -webkit-animation: shine 5s linear infinite;
             animation: shine 5s linear infinite;
-  }
-  @-webkit-keyframes shine {
-    to {
-      background-position: 200% center;
-    }
-  }
-  @keyframes shine {
-    to {
-      background-position: 200% center;
-    }
-  }
+}
+@-webkit-keyframes shine {
+to {
+    background-position: 200% center;
+}
+}
+@keyframes shine {
+to {
+    background-position: 200% center;
+}
+}
 
 @media only screen and (max-width : 992px) {
     #main .work .work_list li {width:auto;}
@@ -143,19 +143,25 @@ h2 {font-family: 'Roboto', sans-serif; font-size:3rem; padding:5rem 0 3rem 2rem;
 
 @media only screen and (max-width : 768px){
     html {font-size:9px;}
+    #header .gnb a {font-weight:300;}
     .svg_box {display: none;}
     #main .intro .name {display:block; font-size: 11rem; line-height: 11rem; /* background: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db); -webkit-background-clip: text; -webkit-text-fill-color: transparent;*/}
     #main .intro .job {padding-top:4rem;}
 }
 
 @media only screen and (max-width : 550px) {
-    html {font-size:7px;}
+    html {font-size:8px;}
+    #header .gnb a {font-weight:300;}
     #main .intro {height:100vh;}
-    #main .intro .name {display:block; font-size: 9rem; line-height: 9rem;}
+    #main .intro .name {display:block; font-size: 8rem; line-height: 8rem;}
+    #main .work .work_list li .title .device {font-size:1.5rem;}
 }
 
 @media only screen and (max-width : 360px) {
-    html {font-size:6px;}
+    html {font-size:7px;}
+    #header .gnb a {font-weight:300;}
     #main .intro {height:100vh;}
-    #main .intro .name {display:block; font-size: 9rem; line-height: 9rem;}
+    #main .intro .name {display:block; font-size: 8rem; line-height: 8rem;}
+    #main .work .work_list li .title .device {font-size:1.5rem;}
+    #main .contact {margin:5rem 0 3rem 0; }
 }
