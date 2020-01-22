@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cloud Console</title>
+    <link type="text/css" rel="stylesheet" href="../css/console.css">
+    <link type="text/css" rel="stylesheet" href="../css/sumoselect.min.css">
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.sumoselect.min.js"></script>
+    <script type="text/javascript" src="../js/console_ui.js"></script>
+
+    <!--[if lte IE 9 ]>
+	<style>
+        .cont_box.type1 .total_area {background: rgb(62,74,244);}
+        .cont_box.type2 .total_area {background: rgb(250,40,40);}
+	</style>
+    <![endif]-->
+
+    <!--[if lte IE 8 ]>
+	<style>
+        .mypage_wrap {float:left; padding-bottom:40px;}
+        .cont_box.type1 .total_area {background: rgb(62,74,244);}
+        .cont_box.type2 .total_area {background: rgb(250,40,40);}
+        .total_area .incld {color:#fff;}
+        .ly_notice {letter-spacing:-0.5px;}
+        #footer {float:left;}
+        .check_label .input_check_box .check-origin {position:static; height:auto; padding:0;}
+        .check_label .input_check_box .check-clone {background:none; width:auto; height:auto;}
+        .radio_label .input_radio_box .radio-origin {position:static; height:auto; padding:0;}
+        .radio_label .input_radio_box .radio-clone {background:none; width:auto; height:auto;}
+	</style>
+    <![endif]-->
+    
+</head>
+<body>
+    <div id="header">
+        <div class="inner clear">
+            <h1><a href=""><img src="../images/console/logo_console.png" alt="play conosole"/></a></h1>
+            <ul class="gnb clear">
+                <li class="active"><h2><a href="" class="spoqa">MYPAGE</a></h2></li>
+                <li>
+                    <h2><a href="javascript:void(0);" class="spoqa">AWS</a></h2>
+                    <ul class="sub gshow" style="display:none;">
+                        <li><a href="">비용관리</a></li>
+                        <li><a href="">결제</a></li>
+                        <li><a href="">계정관리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2><a href="javascript:void(0);" class="spoqa">TOAST</a></h2>
+                    <div class="notice gshow" style="display:none;">
+                        <p>TOAST Console은 준비중입니다.<br/>현재는 TOAST Console을 통해 <br/>자세한 정보를 확인할 수 있습니다.</p>
+                        <a href="" target="_blank" class="btn_link"><span>TOAST Console 바로가기</span></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><a href="javascript:void(0);">고도클라우드</a></h2>
+                    <div class="notice gshow" style="display:none;">
+                        <p>Godo Console을 통해 <br/>자세한 정보를 확인할 수 있습니다.</p>
+                        <a href="" target="_blank" class="btn_link"><span>Godo Console 바로가기</span></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><a href="">부가서비스</a></h2>
+                </li>
+            </ul>
+            <span class="myinfo spoqa">kimgodolove@godo.co.kr</span>
+        </div>
+    </div>
+
+<div class="aws_page_wrap">
+    <div class="snb_wrap">
+        <ul class="snb">
+            <li>
+                <h3>비용관리</h3>
+                <ul class="sub_menu">
+                    <li class="sub1 active"><h4><a href="">대시보드</a></h4></li>
+                    <li class="sub2"><h4><a href="">사용내역</a></h4></li>
+                </ul>
+            </li>
+            <li>
+                <h3>결제관리</h3>
+                <ul class="sub_menu">
+                    <li class="sub3"><h4><a href="">결제내역</a></h4></li>
+                    <li class="sub4"><h4><a href="">리포트</a></h4></li>
+                    <li class="sub5"><h4><a href="">청구서</a></h4></li>
+                </ul>
+            </li>
+            <li>
+                <h3>계정관리</h3>
+                <ul class="sub_menu">
+                    <li class="sub6"><h4><a href="">계정</a></h4></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- //snb_wrap -->
+    <div class="aws_content">
+        <div class="inner">
+            <div class="dashboard_cont">
+                <h4>대시보드</h4>
+                <div class="date_box">
+                    <span class="date_info_s lt_r">UPDATE 2019.04.10 09:00 (GMT+9)</span>
+                </div>
+
+                <div class="select_box area">
+                    <select multiple="multiple" class="account_select">
+                        <option value="1">123456</option>
+                        <option value="2">789012</option>
+                    </select>
+                    
+                    <div class="product_select_box">
+                        <select multiple="multiple" class="product_select">
+                            <option value="1">AWS Budgets</option>
+                            <option value="2">AWS CloudTrail</option>
+                            <option value="2">AWS Direct Connect</option>
+                            <option value="2">AWS Lambda</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- //select_box -->
+                <div class="aws_exch_box">
+                    <span class="tit">AWS 환율기준</span>
+                    <span class="notice_info">
+                        <img src="../images/console/icon_notice.png" alt="알림메세지 버튼">
+                        <span class="ly_notice">
+                            환율은 매월 말 KEB하나은행 최초고시 전신환 매도율 기준으로 적용됩니다.
+                        </span>
+                    </span>
+                </div>
+
+                <div class="box_wrap clear">
+                    <div class="cost_summary clear">
+                        <div class="total_over_area now">
+                            <span class="sub_tit">
+                                현재 당월 예상 누적액
+                                <span class="notice_info">
+                                    <img src="../images/console/icon_notice_w.png" alt="알림메세지 버튼">
+                                    <span class="ly_notice">
+                                        현재비용은 하단 UPDATE 일시 기준으로
+                                        발생된 비용의 합계입니다.
+                                    </span>
+                                </span>
+                            </span>
+                            
+                            <span class="total_cost">
+                                <span class="incld"><span class="date">2019.09.1~23</span>(부가세 별도)</span>
+                                <strong class="cost dollar">$1,290,000</strong>
+                                <span class="cost_box">
+                                    <strong class="cost">1,481,400</strong> <em>원</em>
+                                    <span class="notice_info">
+                                        <img src="../images/console/icon_notice_w.png" alt="알림메세지 버튼">
+                                        <span class="ly_notice">
+                                            현재비용의 원화는 전월말 청구서 환율기준으로 표시된
+                                            비용으로 이번달 청구 환율기준과 다를 수 있습니다.
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                        </div>
+                        <!-- //total_over_area -->
+                        <div class="total_over_area">
+                            <span class="sub_tit">
+                                당월 예상 비용
+                                <span class="notice_info">
+                                    <img src="../images/console/icon_notice.png" alt="알림메세지 버튼">
+                                    <span class="ly_notice">
+                                        예상비용은 전월 자료를 기준으로 비교할 수 있도록
+                                        제공하는 기능이며, 실제 비용은 사용 형태에 따라
+                                        달라질 수 있습니다.
+                                    </span>
+                                </span>
+                            </span>
+                            <span class="notice_standby">
+                                예상비용 기능은 준비중입니다
+                            </span>
+                        </div>
+                        <!-- //total_over_area -->
+                        <div class="total_over_area">
+                            <span class="sub_tit">
+                                지난 달 비용
+                                <span class="notice_info">
+                                    <img src="../images/console/icon_notice.png" alt="알림메세지 버튼">
+                                    <span class="ly_notice">
+                                        전월 비용은 달러화와 전월 청구서기준 (공급가액)
+                                        비용이 표기되어 있습니다
+                                    </span>
+                                </span>
+                            </span>
+                            <span class="total_cost">
+                                <span class="incld"><span class="date">2019.09.1~23</span>(부가세 별도)</span>
+                                <strong class="cost dollar">$1,290,000</strong>
+                                <span class="cost_box">
+                                    <strong class="cost">1,481,400</strong> <em>원</em>
+                                    <span class="notice_info">
+                                        <img src="../images/console/icon_notice.png" alt="알림메세지 버튼">
+                                        <span class="ly_notice">
+                                            전월 청구서기준 (공급가액) 비용이
+                                            표기되어 있습니다.
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                        </div>
+                        <!-- //total_over_area -->
+                    </div>
+                    <!-- //cost_summary -->
+
+                    <div class="in_box particle">
+                        <div class="tit_area">
+                            <h5>월별 누적 사용금액 비교</h5>
+                            <span class="sub_tit">AWS 서비스 요금 기준으로 제공됩니다.</span>
+                            <div class="refer_period">
+                                조회기간
+                                <span class="date">1일~23일</span>
+                            </div>
+                        </div>
+                        <div class="stick_graph_box">
+                            <div class="compare_graph">
+                                <div class="monthly_graph">
+                                    <div class="bg_grp">
+                                         <!-- N:그래프의 게이지는 height의 %값을 변동해주면 됩니다 -->
+                                        <div class="data_grp" style="height:20%">
+                                            <div class="data_info">23일</div>
+                                        </div>
+                                    </div>
+                                    <span class="date_tit">2019년 8월</span>
+                                </div>
+                                <div class="monthly_total">
+                                    <span class="period_date">8월1일~23일</span>
+                                    <strong class="period_cost spoqa">$1,090.10</strong>
+                                    <span class="sum_tit">월 합계</span>
+                                    <strong class="sum_cost spoqa">$1,293.10</strong>
+                                </div>
+                            </div>
+                            <div class="compare_graph current">
+                                <div class="monthly_graph">
+                                    <div class="bg_grp">
+                                        <!-- N:그래프의 게이지는 height의 %값을 변동해주면 됩니다 -->
+                                        <div class="data_grp" style="height:50%;">
+                                            <div class="data_info">23일</div>
+                                        </div>
+                                    </div>
+                                    <span class="date_tit">2019년 9월</span>
+                                </div>
+                                <div class="monthly_total">
+                                    <span class="period_date">9월1일~23일</span>
+                                    <strong class="period_cost spoqa">$2,090.10</strong>
+                                    <span class="sum_tit">이달의 예상비용</span>
+                                    <strong class="sum_cost spoqa">$2,293.10</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //in_box -->
+
+                    <div class="in_box particle lt_r">
+                        <div class="tit_area">
+                            <h5>Product 별 이번 달 현재까지 비용</h5>
+                            <span class="sub_tit">아래 차트를 통해 각 서비스에 비용의 비율을 확인하실 수 있습니다.</span>
+                            <div class="refer_period">
+                                조회기간
+                                <span class="date">1일~23일</span>
+                            </div>
+                        </div>
+                        <div class="graph_box">
+                            <!-- N:그래프 삽입하실 때 'dummy' div는 빼주세요 -->
+                            <div class="dummy" style="width:100%; height:506px;"></div>
+                        </div>
+                        <!-- //graph_box -->
+                    </div>
+                    <!-- //in_box -->
+                </div>
+                <!-- //box_wrap -->
+
+                <div class="box_wrap">
+                    <div class="in_box">
+                        <div class="tit_area">
+                            <h5>일별 비용 트렌드</h5>
+                        </div>
+                        <div class="graph_box">
+                            <!-- N:그래프 삽입하실 때 'dummy' div는 빼주세요 -->
+                            <div class="dummy" style="width:1260px; height:591px;"></div>
+                        </div>
+                        <!-- //graph_box -->
+
+                        <div class="tb_wrap">
+                            <div class="tb_outer">
+                                <div class="tb_inner">
+                                    <table class="tb3 even_tb">
+                                        <thead>
+                                            <tr>
+                                                <th class="th_left caption first_left">Monthly Total</th>
+                                                <th>1</th>
+                                                <th>2</th>
+                                                <th>3</th>
+                                                <th>4</th>
+                                                <th>5</th>
+                                                <th>6</th>
+                                                <th>7</th>
+                                                <th>8</th>
+                                                <th>9</th>
+                                                <th>10</th>
+                                                <th>11</th>
+                                                <th>12</th>
+                                                <th>13</th>
+                                                <th>14</th>
+                                                <th>15</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th class="th_left first_left">2019년 6월</th>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="th_left first_left">2019년 5월</th>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="th_left first_left">2019년 4월</th>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="th_left first_left">2019년 3월</th>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="th_left first_left">2019년 2월</th>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="th_left first_left">2019년 1월</th>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>   
+                                            </tr>
+                                            <tr class="td_avr">
+                                                <th class="th_left average first_left">AVERAGE</th>
+                                                <td>$923.00</td>
+                                                <td>$923.00</td>
+                                                <td>$923.00</td>
+                                                <td>$923.00</td>
+                                                <td>$923.00</td>
+                                                <td>$923.00</td>
+                                                <td>$923.00</td>
+                                                <td>$923.00</td>
+                                                <td>$923.00</td>
+                                                <td>$923.00</td>
+                                                <td>$923.00</td>
+                                                <td>$923.00</td>
+                                                <td>$923.00</td>
+                                                <td>$923.00</td>
+                                                <td>$923.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //in_box -->
+                </div>
+                <!-- //box_wrap -->
+
+                <div class="box_wrap">
+                    <div class="in_box trend_box hr">
+                        <div class="tit_area">
+                            <h5>항목별 비용 트렌드</h5>
+                        </div>
+                        <div class="graph_box">
+                            <!-- N:그래프 삽입하실 때 'dummy' div는 빼주세요 -->
+                            <div class="dummy" style="width:410px; height:403px;"></div>
+                        </div>
+                        <!-- //graph_box -->
+
+                        <div class="trend_tb">
+                            <ul class="tab_box">
+                                <li><a href="">Account</a></li>
+                                <li class="active"><a href="">Product</a></li>
+                            </ul>
+                            <div class="tb_outer">
+                                <div class="tb_inner">
+                                    <table class="tb3 multi_fixed">
+                                        <thead>
+                                            <tr>
+                                                <th class="first_left th_left caption">Product</th>
+                                                <th class="second_left">2019년 11월</th>
+                                                <th class="third_left">2019년 12월</th>
+                                                <th>1</th>
+                                                <th>2</th>
+                                                <th>3</th>
+                                                <th>4</th>
+                                                <th>5</th>
+                                                <th>6</th>
+                                                <th>7</th>
+                                                <th>8</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th class="first_left th_left">AWS Budgets</th>
+                                                <td class="second_left">$21,123.00</td>
+                                                <td class="third_left">$21,123.00</td>
+                                                <td>$21,123.00</td>
+                                                <td>$21,123.00</td>
+                                                <td>$21,123.00</td>
+                                                <td>$21,123.00</td>
+                                                <td>$21,123.00</td>
+                                                <td>$21,123.00</td>
+                                                <td>$21,123.00</td>
+                                                <td>$21,123.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="first_left th_left">AWS CloudTrail</th>
+                                                <td class="second_left">$1,197.40</td>
+                                                <td class="third_left">$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="first_left th_left">AWS Lambda</th>
+                                                <td class="second_left">$123.00</td>
+                                                <td class="third_left">$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="first_left th_left">Amazon CloudFront</th>
+                                                <td class="second_left">$123.00</td>
+                                                <td class="third_left">$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="first_left th_left">Amazon DynamoDB</th>
+                                                <td class="second_left">$123.00</td>
+                                                <td class="third_left">$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="first_left th_left">Amazon EC2</th>
+                                                <td class="second_left">$123.00</td>
+                                                <td class="third_left">$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="first_left th_left">Amazon ElastiCache</th>
+                                                <td class="second_left">$123.00</td>
+                                                <td class="third_left">$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //in_box -->
+                </div>
+                <!-- //box_wrap -->
+                <div class="ly_pop_wrap4" style="display:block">
+                    <div class="ly_pop_cont4">
+                        <div class="ly_cont_box">
+                            <p>
+                                <span class="tit">
+                                AWS Billing Policy<br/>
+                                [2018.12.01]과금데이타가 보이지 않는 현상은 시스템오류나 장애가 아닌 AWS정책에 의한 일시적인 현상입니다.<br/>
+                                </span>
+                                매월 초에는 AWS시스템의 과금 데이터 전달 지연 시간(최소24시간이상)으로 인하여<br/>
+                                 일시적으로 당월 과금 데이터가 보이지 않을 수 있습니다.<br/>
+                                시스템오류나 장애가 아닌 AWS정책에 의한 정상적인 현상입니다.<br/>
+                                엔에이치엔고도는 AWS의 해당정책 개선을 위해 노력하고 있습니다.
+                            </p>
+                        </div>
+                        <a href="" class="btn_ly_close">닫기</a>
+                    </div>
+                </div>
+                <!-- ly_pop_wrap4 -->
+            </div>
+            <!-- //dashboard_cont -->
+        </div>
+    </div>
+    <!-- //aws_content -->
+
+</div>
+<!-- //aws_page_wrap -->
+<div id="footer">
+    <div class="inner">
+        <h4>서비스문의</h4>
+        <ul class="contact_list">
+            <li>전화문의: <a href="tel:1688-7662">1688-7662</a> (내선 4번>1번)</li>
+            <li class="mail">메일문의: <a href="mailto:dl_cloudsupport@godo.co.kr">dl_cloudsupport@godo.co.kr</a></li>
+        </ul>
+        <p class="corp">ⓒ NHN godo: Corp. All Rights Reserved.</p>
+        <ul class="agree_menu">
+            <li><a href="https://www.godo.co.kr/etc/agreement/join-agreement.gd">약관</a></li>
+            <li><a href="https://www.godo.co.kr/etc/agreement/privacy-agreement.gd">개인정보처리방침</a></li>
+        </ul>
+    </div>
+</div>
+<!-- //footer -->
+</div>
+</body>
+</html>

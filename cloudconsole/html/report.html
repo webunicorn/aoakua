@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>리포트</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+    <style>
+        /* reset */
+        body {margin:0;padding:0;background-color:#fff;}
+        hr {display:none;clear:both;}
+        img,fieldset {border:0 none;}
+        h1,h2,h3,h4,h5,dl,dt,dd,ul,li,ol,th,td,p,blockquote,form,fieldset,legend {margin:0;padding:0;}
+        table {border-collapse:collapse;border:0 none;}
+        form, p {margin: 0px; }
+        button {border:0 none;padding:0;margin:0;background:transparent;*overflow:visible;cursor:pointer;}
+        button::-moz-focus-inner {border:0;padding:0;}
+        a {text-decoration:none; color:#333;}
+        a:link {text-decoration:none; }
+        a:visited {text-decoration:none; }
+        a:active {text-decoration:none; }
+        a:hover {text-decoration:none; }
+        ol, ul {list-style: none;}
+        body,table,th,td,input,select,textarea,div,button,em {font-family:'Noto Sans KR','맑은 고딕','Malgun Gothic'; font-size: 12px; font-style: normal; line-height:18px; margin:0;}
+        table {width:100%; border-top:1px solid #333333;}
+
+        .report_wrap {width:900px; margin:0 auto 50px auto; padding:0 50px; box-sizing: border-box;}
+        .report_wrap .header {padding:30px 0; overflow:hidden;}
+        .report_wrap .header h1 {float:left;}
+        .report_wrap .header h2 {float:right; padding-top:10px;}
+        .report_wrap .info_box {background:#3f49d9; border-radius:10px; color:#fff; padding:30px 0 0 0; margin:0 0 11px 0;}
+        .report_wrap .info_box h3 {font-size:26px; font-weight:400; letter-spacing:-1px; padding-left:40px; display:inline-block;}
+        .report_wrap .info_box .id {color:#abafee; font-size:15px; letter-spacing:-0.5px; float:right; padding-right:40px;}
+        .report_wrap .info_box .id_num {font-size:20px; color:#fff; font-weight:300; padding-left:30px; letter-spacing:1px;}
+        .report_wrap .info_box .info_list {margin:28px 0 0 0; padding:20px 0 30px 0; border-top:1px solid #7d85fa;}
+        .report_wrap .info_box .info_list dl {padding:10px 0 10px 40px; }
+        .report_wrap .info_box .info_list dl dt {font-size:15px; color:#abafee; float:left; min-width:100px; letter-spacing:-0.5px;}
+        .report_wrap .info_box .info_list dl dd {font-size:16px; font-weight:400;}
+        .report_wrap .tb_box h4 {margin-top:50px; font-size:22px; color:#333333; font-weight:600; letter-spacing:-2px; padding:0 0 31px 0;}
+        .report_wrap .tb_box .total_tb tr {background:#f7f7f7;}
+        .report_wrap .tb_box .total_tb th {font-size:16px; color:#525369; text-align:left; padding:25px 40px 25px 40px; border-bottom:1px solid #dedede;}
+        .report_wrap .tb_box .total_tb td {font-size:30px; color:#3f49d9; text-align:right; padding:23px 40px 27px 40px; font-weight:800; border-bottom:1px solid #dedede; letter-spacing:-0.5px;}
+        .report_wrap .tb_box .list_tb {}
+        .report_wrap .tb_box .list_tb th {letter-spacing:-1px; font-size:15px; color:#999999; font-weight:400; text-align:left; padding:16px 0 16px 30px; border-bottom:1px solid #e0e0e0;}
+        .report_wrap .tb_box .list_tb td {font-size:16px; color:#333333; text-align:right; padding:16px 30px 16px 0; border-bottom:1px solid #e0e0e0; font-weight:600;}
+        .report_wrap .tb_box .list_tb tfoot {background:#f7f7fa;}
+        .report_wrap .tb_box .list_tb tfoot th {font-size:16px; color:#333333; font-weight:600;}
+        .report_wrap .tb_box .list_tb tfoot td {font-size:24px; color:#3f49d9;}
+        .report_wrap .tb_box .list_tb tfoot .noti {font-size:14px; color:#929292; font-weight:400; padding-top:6px;}
+    </style>
+</head>
+<body>
+    <div class="report_wrap">
+        <div class="header">
+            <h1><a href=""><img src="../images/report/logo_godo.png" alt="nhngodo"/></a></h1>
+            <h2><a href=""><img src="../images/report/logo_console.png" alt="console"/></a></h2>
+        </div>
+        <!-- //header -->
+        <div class="info_box">
+            <h3>AWS클라우드서비스</h3>
+            <span class="id">ACCOUNT ID<span class="id_num spoqa">123456789</span></span>
+            <div class="info_list">
+                <dl>
+                    <dt>리포트 기간</dt>
+                    <dd>2019년 09년 01일 ~ 09년 31일</dd>
+                </dl>
+                <dl>
+                    <dt>다운로드 ID</dt>
+                    <dd>kimgodo1234@godo.co.kr</dd>
+                </dl>
+                <dl>
+                    <dt>다운로드 일시</dt>
+                    <dd>2019년 09년 10일 12:00</dd>
+                </dl>
+            </div>
+        </div>
+        <!-- //info_box -->
+        <div class="tb_box">
+            <h4>예상비용 합계</h4>
+            <table class="total_tb">
+                <colgroup>
+                    <col width="50%"/>
+                    <col width="50%"/>
+                </colgroup>
+                <tr>
+                    <th>AWS</th>
+                    <td>$1234.56</td>
+                </tr>
+            </table>
+        </div>
+        <!-- //tb_box -->
+        <div class="tb_box">
+            <h4>예상 세부내역</h4>
+            <table class="list_tb">
+                <colgroup>
+                    <col width="70%"/>
+                    <col width="30%"/>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>세부내역 설명1입력</th>
+                        <td>$1234.56</td>
+                    </tr>
+                    <tr>
+                        <th>세부내역 설명1입력</th>
+                        <td>$1234.56</td>
+                    </tr>
+                    <tr>
+                        <th>세부내역 설명1입력</th>
+                        <td>$1234.56</td>
+                    </tr>
+                    <tr>
+                        <th>세부내역 설명1입력</th>
+                        <td>$1234.56</td>
+                    </tr>
+                    <tr>
+                        <th>세부내역 설명1입력</th>
+                        <td>$1234.56</td>
+                    </tr>
+                    <tr>
+                        <th>세부내역 설명1입력</th>
+                        <td>$1234.56</td>
+                    </tr>
+                    <tr>
+                        <th>세부내역 설명1입력</th>
+                        <td>$1234.56</td>
+                    </tr>
+                    <tr>
+                        <th>세부내역 설명1입력</th>
+                        <td>$1234.56</td>
+                    </tr>
+                    <tr>
+                        <th>세부내역 설명1입력</th>
+                        <td>$1234.56</td>
+                    </tr>
+                    <tr>
+                        <th>세부내역 설명1입력</th>
+                        <td>$1234.56</td>
+                    </tr>
+                    <tr>
+                        <th>세부내역 설명1입력</th>
+                        <td>$1234.56</td>
+                    </tr>
+                    <tr>
+                        <th>세부내역 설명1입력</th>
+                        <td>$1234.56</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>
+                            예상합계
+                            <p class="noti">사용 현황에 대한 예상 합계비용이며, 실제 결제 시 비용과 상이할 수 있습니다.</p>
+                        </th>
+                        <td>
+                            $1234.56
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <!-- //tb_box -->
+    </div>
+    <!-- //report_wrap -->
+
+</body>
+</html>

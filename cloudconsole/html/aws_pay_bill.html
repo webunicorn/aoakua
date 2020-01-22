@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cloud Console</title>
+    <link type="text/css" rel="stylesheet" href="../css/console.css">
+    <link type="text/css" rel="stylesheet" href="../css/sumoselect.min.css">
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.sumoselect.min.js"></script>
+    <script type="text/javascript" src="../js/console_ui.js"></script>
+
+    <!--[if lte IE 9 ]>
+	<style>
+        .cont_box.type1 .total_area {background: rgb(62,74,244);}
+        .cont_box.type2 .total_area {background: rgb(250,40,40);}
+	</style>
+    <![endif]-->
+
+    <!--[if lte IE 8 ]>
+	<style>
+        .mypage_wrap {float:left; padding-bottom:40px;}
+        .cont_box.type1 .total_area {background: rgb(62,74,244);}
+        .cont_box.type2 .total_area {background: rgb(250,40,40);}
+        .total_area .incld {color:#fff;}
+        .ly_notice {letter-spacing:-0.5px;}
+        #footer {float:left;}
+        .check_label .input_check_box .check-origin {position:static; height:auto; padding:0;}
+        .check_label .input_check_box .check-clone {background:none; width:auto; height:auto;}
+        .radio_label .input_radio_box .radio-origin {position:static; height:auto; padding:0;}
+        .radio_label .input_radio_box .radio-clone {background:none; width:auto; height:auto;}
+	</style>
+    <![endif]-->
+    
+</head>
+<body>
+    <div id="header">
+        <div class="inner clear">
+            <h1><a href=""><img src="../images/console/logo_console.png" alt="play conosole"/></a></h1>
+            <ul class="gnb clear">
+                <li class="active"><h2><a href="" class="spoqa">MYPAGE</a></h2></li>
+                <li>
+                    <h2><a href="javascript:void(0);" class="spoqa">AWS</a></h2>
+                    <ul class="sub gshow" style="display:none;">
+                        <li><a href="">비용관리</a></li>
+                        <li><a href="">결제</a></li>
+                        <li><a href="">계정관리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2><a href="javascript:void(0);" class="spoqa">TOAST</a></h2>
+                    <div class="notice gshow" style="display:none;">
+                        <p>TOAST Console은 준비중입니다.<br/>현재는 TOAST Console을 통해 <br/>자세한 정보를 확인할 수 있습니다.</p>
+                        <a href="" target="_blank" class="btn_link"><span>TOAST Console 바로가기</span></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><a href="javascript:void(0);">고도클라우드</a></h2>
+                    <div class="notice gshow" style="display:none;">
+                        <p>Godo Console을 통해 <br/>자세한 정보를 확인할 수 있습니다.</p>
+                        <a href="" target="_blank" class="btn_link"><span>Godo Console 바로가기</span></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><a href="">부가서비스</a></h2>
+                </li>
+            </ul>
+            <span class="myinfo spoqa">kimgodolove@godo.co.kr</span>
+        </div>
+    </div>
+
+<div class="aws_page_wrap">
+    <div class="snb_wrap">
+        <ul class="snb">
+            <li>
+                <h3>비용관리</h3>
+                <ul class="sub_menu">
+                    <li class="sub1"><h4><a href="">대시보드</a></h4></li>
+                    <li class="sub2"><h4><a href="">사용내역</a></h4></li>
+                </ul>
+            </li>
+            <li>
+                <h3>결제관리</h3>
+                <ul class="sub_menu">
+                    <li class="sub3"><h4><a href="">결제내역</a></h4></li>
+                    <li class="sub4"><h4><a href="">리포트</a></h4></li>
+                    <li class="sub5 active"><h4><a href="">청구서</a></h4></li>
+                </ul>
+            </li>
+            <li>
+                <h3>계정관리</h3>
+                <ul class="sub_menu">
+                    <li class="sub6"><h4><a href="">계정</a></h4></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- //snb_wrap -->
+    <div class="aws_content">
+        <div class="inner">
+            <div class="pay_bill_cont">
+                <h4>청구서</h4>
+                <div class="date_box">
+                    <span class="date_info_s lt_r">UPDATE 2019.04.10 09:00 (GMT+9)</span>
+                </div>
+                
+                <div class="select_box area">
+                    <div class="date_select">
+                        <span class="tit">Date</span>
+                        <select class="date_select">
+                            <option>2019.03</option>
+                            <option>2019.04</option>
+                            <option>2019.05</option>
+                            <option>2019.06</option>
+                            <option>2019.07</option>
+                            <option>2019.08</option>
+                            <option>2019.09</option>
+                        </select>
+                    </div>
+                    <button class="b_base1 b_style1 lt_r">다운로드</button>
+                </div>
+                <!-- //select_box -->
+
+                <div class="box_wrap clear">
+                    <div class="account_info in_box none">
+                        <div class="tit_area brd_none">
+                            <h5>계정 정보</h5>
+                        </div>
+                        <div class="table_box ">
+                            <table class="tb2">
+                                <colgroup>
+                                    <col width="20%"/>
+                                    <col width="45%"/>
+                                    <col width="35%"/>
+                                </colgroup>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Vendor</th>
+                                    <th>Cloud Account</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="text_l">AWS</td>
+                                    <td>123456789</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="text_l">godomall</td>
+                                    <td>123456789</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- //table_box -->
+                        <div class="exchange_box">
+                            <strong>적용환율</strong>
+                            <span class="date">2019.9</span>
+                            <span class="noti">환율은 매월 말 KEB 하나은행<br/>
+                            최초 전신환매도율 기준으로 적용됩니다.</span>
+                            <span class="cost">1,178원</span>
+                        </div>
+                    </div>
+                    <!-- //in_box -->
+
+                    <div class="right_area">
+                        <div class="summary_info in_box none">
+                            <div class="tit_area brd_none">
+                                <h5>요약 정보</h5>
+                            </div>
+                            <div class="bill_list_box">
+                                <div class="tb_thead">
+                                    <span class="tit">항목</span>
+                                    <span class="cost">금액</span>
+                                </div>
+                                <ul class="tb_list brd_none">
+                                    <li>
+                                        <span class="tit">AWS 클라우드 사용 요금</span>
+                                        <span class="cost">2,814,720원 <em>($1,234.00)</em></span>
+                                    </li>
+                                    <li>
+                                        <span class="tit">매니지드 서비스 요금</span>
+                                        <span class="cost">300,000원</span>
+                                    </li>
+                                    <li>
+                                        <span class="tit">크레딧</span>
+                                        <span class="cost">0원</span>
+                                    </li>
+                                </ul>
+                                <ul class="tb_list">
+                                    <li>
+                                        <span class="tit">할인 요금</span>
+                                        <span class="cost">0원</span>
+                                    </li>
+                                </ul>
+                                <ul class="tb_list imp_area">
+                                    <li>
+                                        <span class="tit">공급가액 합계</span>
+                                        <span class="cost">3,114,720원</span>
+                                    </li>
+                                    <li>
+                                        <span class="tit">부가세 (VAT)</span>
+                                        <span class="cost">311,472원</span>
+                                    </li>
+                                </ul>
+                                <div class="tb_footer">
+                                    <span class="tit">클라우드 청구 요금 합계</span>
+                                    <span class="cost spoqa">3,426,192<em>원</em></span>
+                                </div>
+                            </div>
+                            <!-- //bill_list_box -->
+                        
+                        </div>
+                        <!-- //in_box -->
+                        <div class="detail_info in_box none">
+                            <div class="tit_area brd_none">
+                                <h5>상세 내역</h5>
+                                <div class="select_box">
+                                    <select multiple="multiple" class="account_select">
+                                        <option value="1">123456</option>
+                                        <option value="2">789012</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="bill_list_box">
+                                <div class="tb_thead">
+                                    <span class="tit">DESCRIPTION</span>
+                                    <span class="cost">비용 합계</span>
+                                </div>
+                                <ul class="tb_list brd_none imp_area">
+                                    <li>
+                                        <span class="tit">Amazon EC2</span>
+                                        <span class="cost">$200,000.00</span>
+                                    </li>
+                                    <li>
+                                        <span class="tit">Amazon CloudFront</span>
+                                        <span class="cost">$814.00</span>
+                                    </li>
+                                </ul>
+                                <div class="tb_footer">
+                                    <span class="tit">TOTAL</span>
+                                    <span class="cost spoqa">$ 2,814,720</span>
+                                </div>
+                            </div>
+                            <!-- //bill_list_box -->
+                        </div>
+                        <!-- //in_box -->
+                    </div>
+                </div>
+                <!-- //box_wrap -->
+            </div>
+            <!-- //pay_bill_cont -->
+        </div>
+    </div>
+    <!-- //aws_content -->
+
+</div>
+<!-- //aws_page_wrap -->
+<div id="footer">
+    <div class="inner">
+        <h4>서비스문의</h4>
+        <ul class="contact_list">
+            <li>전화문의: <a href="tel:1688-7662">1688-7662</a> (내선 4번>1번)</li>
+            <li class="mail">메일문의: <a href="mailto:dl_cloudsupport@godo.co.kr">dl_cloudsupport@godo.co.kr</a></li>
+        </ul>
+        <p class="corp">ⓒ NHN godo: Corp. All Rights Reserved.</p>
+        <ul class="agree_menu">
+            <li><a href="https://www.godo.co.kr/etc/agreement/join-agreement.gd">약관</a></li>
+            <li><a href="https://www.godo.co.kr/etc/agreement/privacy-agreement.gd">개인정보처리방침</a></li>
+        </ul>
+    </div>
+</div>
+<!-- //footer -->
+</div>
+</body>
+</html>

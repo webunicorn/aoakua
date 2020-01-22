@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cloud Console</title>
+    <link type="text/css" rel="stylesheet" href="../css/console.css">
+    <link type="text/css" rel="stylesheet" href="../css/sumoselect.min.css">
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.sumoselect.min.js"></script>
+    <script type="text/javascript" src="../js/console_ui.js"></script>
+
+    <!--[if lte IE 9 ]>
+	<style>
+        .cont_box.type1 .total_area {background: rgb(62,74,244);}
+        .cont_box.type2 .total_area {background: rgb(250,40,40);}
+	</style>
+    <![endif]-->
+
+    <!--[if lte IE 8 ]>
+	<style>
+        .mypage_wrap {float:left; padding-bottom:40px;}
+        .cont_box.type1 .total_area {background: rgb(62,74,244);}
+        .cont_box.type2 .total_area {background: rgb(250,40,40);}
+        .total_area .incld {color:#fff;}
+        .ly_notice {letter-spacing:-0.5px;}
+        #footer {float:left;}
+        .check_label .input_check_box .check-origin {position:static; height:auto; padding:0;}
+        .check_label .input_check_box .check-clone {background:none; width:auto; height:auto;}
+        .radio_label .input_radio_box .radio-origin {position:static; height:auto; padding:0;}
+        .radio_label .input_radio_box .radio-clone {background:none; width:auto; height:auto;}
+	</style>
+    <![endif]-->
+    
+</head>
+<body>
+    <div id="header">
+        <div class="inner clear">
+            <h1><a href=""><img src="../images/console/logo_console.png" alt="play conosole"/></a></h1>
+            <ul class="gnb clear">
+                <li class="active"><h2><a href="" class="spoqa">MYPAGE</a></h2></li>
+                <li>
+                    <h2><a href="javascript:void(0);" class="spoqa">AWS</a></h2>
+                    <ul class="sub gshow" style="display:none;">
+                        <li><a href="">비용관리</a></li>
+                        <li><a href="">결제</a></li>
+                        <li><a href="">계정관리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2><a href="javascript:void(0);" class="spoqa">TOAST</a></h2>
+                    <div class="notice gshow" style="display:none;">
+                        <p>TOAST Console은 준비중입니다.<br/>현재는 TOAST Console을 통해 <br/>자세한 정보를 확인할 수 있습니다.</p>
+                        <a href="" target="_blank" class="btn_link"><span>TOAST Console 바로가기</span></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><a href="javascript:void(0);">고도클라우드</a></h2>
+                    <div class="notice gshow" style="display:none;">
+                        <p>Godo Console을 통해 <br/>자세한 정보를 확인할 수 있습니다.</p>
+                        <a href="" target="_blank" class="btn_link"><span>Godo Console 바로가기</span></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><a href="">부가서비스</a></h2>
+                </li>
+            </ul>
+            <span class="myinfo spoqa">kimgodolove@godo.co.kr</span>
+        </div>
+    </div>
+
+
+<div class="top_notice_wrap"><!-- N:미납내역 발생시 안내문구 -->
+    <div class="inner">
+        <p class="noti"><strong>총 1건의 미납 내역이 존재 합니다.</strong> 서비스가 예고 없이 중지 될 수 있으니 확인 바랍니다.</p>
+        <a href="" target="_blank" class="btn_over b_base1 b_style2">미납내역</a>
+    </div>
+</div>
+<div class="mypage_wrap">
+    <div class="inner clear">
+        <div class="cont_box accent">
+            <div class="cont_tit">
+                <h4>서비스 예상비용</h4>
+                <span class="date_info">19.09.01~19.09.11</span>
+                <span class="notice_info">
+                    <img src="../images/console/icon_notice.png" alt="알림메세지 버튼"/>
+                    <span class="ly_notice">
+                        1일부터 현재일까지 사용한 예상 합계 비용을<br/>
+                        확인할 수 있습니다. 또한 벤더사 정책에 따라<br/>
+                        예상 비용데이타가 일시적으로 노출되지<br/>
+                        않거나 실제 청구 비용과 다를 수 있습니다
+                    </span>
+                </span>
+            </div>
+
+            <div class="total_area">
+                <span class="sub_tit spoqa">Total</span>
+                <span class="total_cost">
+                    <span class="incld">(부가세 포함)</span>약 <strong class="spoqa">1,290,000</strong> <em>원</em>
+                </span>
+            </div>
+
+            <div class="aws_area">
+                <div class="detail_info_area">
+                    <span class="sub_tit spoqa">AWS</span>
+                    <div class="lt_r">
+                        <span class="sum_cost">약 <strong class="spoqa">500,000</strong><em>원</em></span>
+                        <a href="" target="_blank" class="b_base2 b_style4">세부정보</a>
+                    </div>
+                </div>
+                <div class="detail_list">
+                    <ul>
+                        <li>
+                            <span class="tit">AWS Infra</span>
+                            <span class="cost">$1,234,000 = 500,000원</span>
+                        </li>
+                        <li>
+                            <span class="tit">매니지드</span>
+                            <span class="cost">200,000원</span>
+                        </li>
+                        <li>
+                            <span class="tit">할인금액</span>
+                            <span class="cost">200,000원</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detail_info_area">
+                <span class="sub_tit spoqa">TOAST</span>
+                <div class="lt_r">
+                    <span class="sum_cost">약 <strong class="spoqa">0</strong><em>원</em></span>
+                    <a href="" target="_blank" class="b_base2 b_style4">세부정보</a>
+                </div>
+            </div>
+
+            <div class="detail_info_area">
+                <span class="sub_tit spoqa">고도클라우드</span>
+                <div class="lt_r">
+                    <span class="sum_cost">약 <strong class="spoqa">0</strong><em>원</em></span>
+                    <a href="" target="_blank" class="b_base2 b_style4">세부정보</a>
+                </div>
+            </div>
+
+            <div class="exchange_info_area">
+                <span class="tit">AWS 환율기준
+                    <span class="notice_info">
+                        <img src="../images/console/icon_notice.png" alt="알림메세지 버튼"/>
+                        <span class="ly_notice">
+                            환율적용은 매월 말 KEB하나은행 최초고시<br/>
+                            전신환 매도율 기준으로 합니다.<br/>
+                            단 예상비용의 경우 전월 말의 환율기준으로 <br/>
+                            적용하여 예상금액이 표기됩니다
+                        </span>
+                    </span>
+                </span>
+                <span class="date_info_s lt_r">UPDATE 2019.04.10 09:00 (GMT+9)</span>
+            </div>
+        </div>
+        <!-- //cont_box -->
+
+        <!-- N:청구내역은 'type1' , 미납내역은 'type2'로 각 클래스를 넣어주세요 -->
+        <div class="cont_box accent bill">
+            <div class="cont_tit">
+                <h4>납부내역</h4>
+                <select class="date_select">
+                    <option>2019.03</option>
+                    <option>2019.04</option>
+                    <option>2019.05</option>
+                    <option>2019.06</option>
+                    <option>2019.07</option>
+                    <option>2019.08</option>
+                    <option>2019.09</option>
+                </select>
+                <a href="" target="_blank" class="btn_bill_view b_base4 b_style4">청구서 보기</a>
+            </div>
+
+            <div class="total_area">
+                <span class="sub_tit spoqa">Total</span>
+                <div class="btn_box">
+                    <a href="" class="btn_bill_down b_base4"><span>청구서 다운로드</span></a>
+                    <a href="" class="btn_auto_pay b_base2">자동 결제</a><!-- N:비활성화일때 'dis' 클래스를 넣어주세요 -->
+                </div>
+                <span class="incld">(부가세 포함)</span>
+                <span class="total_cost">
+                    약 <strong class="spoqa">9,790,000</strong> <em>원</em>
+                </span>
+            </div>
+
+            <div class="aws_area">
+                <div class="detail_info_area">
+                    <span class="sub_tit spoqa">AWS</span>
+                    <div class="lt_r">
+                        <span class="sum_cost">약 <strong class="spoqa">500,000</strong><em>원</em></span>
+                        <a href="" target="_blank" class="btn_each_pay b_base2 b_style4">결제</a><!--N: 개별결제 버튼은 'btn_each_pay' 클래스를 넣어주세요-->
+                    </div>
+                </div>
+                <div class="detail_list">
+                    <ul>
+                        <li>
+                            <span class="tit">AWS Infra</span>
+                            <span class="cost">$1,234,000 = 500,000원</span>
+                        </li>
+                        <li>
+                            <span class="tit">매니지드</span>
+                            <span class="cost">200,000원</span>
+                        </li>
+                        <li>
+                            <span class="tit">할인금액</span>
+                            <span class="cost">200,000원</span>
+                        </li>
+                        <li>
+                            <span class="tit">할인금액</span>
+                            <span class="cost">200,000원</span>
+                        </li>
+                        <li>
+                            <span class="tit">할인금액</span>
+                            <span class="cost">200,000원</span>
+                        </li>
+                        <li>
+                            <span class="tit">할인금액</span>
+                            <span class="cost">200,000원</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detail_info_area">
+                <span class="sub_tit spoqa">TOAST</span>
+                <div class="lt_r">
+                    <span class="sum_cost">약 <strong class="spoqa">0</strong><em>원</em></span>
+                    <a href="" target="_blank" class="b_base2 b_style4">세부정보</a>
+                </div>
+            </div>
+
+            <div class="detail_info_area">
+                <span class="sub_tit spoqa">고도클라우드</span>
+                <div class="lt_r">
+                    <span class="sum_cost">약 <strong class="spoqa">0</strong><em>원</em></span>
+                    <a href="" target="_blank" class="b_base2 b_style4">세부정보</a>
+                </div>
+            </div>
+
+            <div class="exchange_info_area">
+                <span class="tit">AWS 환율기준
+                    <span class="notice_info">
+                        <img src="../images/console/icon_notice.png" alt="알림메세지 버튼"/>
+                        <span class="ly_notice">
+                            환율은 매월 말 KEB하나은행 최초고시<br/> 전신환 매도율 기준으로 적용됩니다
+                        </span>
+                    </span>
+                <span class="tax_info">부가세 포함 표기</span>
+            </div>
+        </div>
+        <!-- //cont_box -->
+
+        <div class="cont_box">
+            <div class="cont_tit">
+                <h4>공지사항</h4>
+                <a href="" target="_blank" class="b_base2 b_style4 btn_notice_more">전체보기</a>
+            </div>
+            <ul class="notice_list">
+                <li>
+                    <span class="mark m_base m_style1">긴급안내</span>
+                    <p class="ellipsis"><a href="">SQL 인젝션 공격 관련 안내 입니다.SQL 인젝션 공격 관련 안내 입니다.</a></p>
+                    <span class="date">19.09.01</span>
+                </li>
+                <li>
+                    <span class="mark m_base m_style1">긴급안내</span>
+                    <p><a href="">SQL 인젝션 공격 관련 안내 입니다.</a></p>
+                    <span class="date">19.09.01</span>
+                </li>
+                <li>
+                    <span class="mark m_base m_style2">정기점검</span>
+                    <p><a href="">SQL 인젝션 공격 관련 안내 입니다.</a></p>
+                    <span class="date">19.09.01</span>
+                </li>
+            </ul>
+        </div>
+        <!-- //cont_box -->
+
+        <div class="cont_box message">
+            <div class="cont_tit">
+                <h4>관리자메시지</h4>
+                <span class="date_info_s">UPDATE 2019.04.10 09:00 (GMT+9)</span>
+            </div>
+            <div class="message_box">
+                - 고객님의 서비스는 현재 미사용 인스턴스가 있습니다.<br/>
+                - 온프레미스 대비 30% 비용 절감 효과가 있습니다.<br/>
+                - 상담이 필요하시면 연락 부탁 드립니다.
+            </div>
+        </div>
+        <!-- //cont_box -->
+
+        <div class="cont_box">
+            <div class="cont_tit">
+                <h4>온라인문의</h4>
+                <a href="" target="_blank" class="b_base2 b_style4 btn_notice_more">전체보기</a>
+            </div>
+            <ul class="qna_area">
+                <li>
+                    <span class="tit">전체문의</span>
+                    <strong class="ellipsis">7<span>건</span></strong>
+                </li>
+                <li>
+                    <span class="tit">처리대기</span>
+                    <strong class="ellipsis">3<span>건</span></strong>
+                </li>
+                <li>
+                    <span class="tit">접수확인</span>
+                    <strong class="ellipsis">9<span>건</span></strong>
+                </li>
+                <li>
+                    <span class="tit">답변완료</span>
+                    <strong class="ellipsis">121<span>건</span></strong>
+                </li>
+            </ul>
+            <a href="" class="btn_online_q b_base3 b_style3">온라인 문의하기</a>
+        </div>
+        <!-- //cont_box -->
+
+        <div class="cont_box multiple">
+            <div class="sub_cont_box contract_info">
+                <div class="cont_tit">
+                    <h4>계약 내용</h4>
+                </div>
+                <div class="info_list">
+                    <dl>
+                        <dt>최초계약일</dt>
+                        <dd>2019.02.05</dd>
+                    </dl>
+                    <dl>
+                        <dt>대금결제일</dt>
+                        <dd>
+                            매월 10일
+                            <a href="" class="b_base2 b_style4">변경</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>결제수단</dt>
+                        <dd>
+                            자동결제
+                            <a href="" class="b_base2 b_style4">변경</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>청구서수신</dt>
+                        <dd>
+                            kimgodo@godo.co.kr
+                            <a href="" class="b_base2 b_style4">등록/변경</a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <!-- //sub_cont_box -->
+            <div class="sub_cont_box member_info">
+                <div class="cont_tit">
+                    <h4>회원 정보</h4>
+                    <a href="" target="_blank" class="b_base2 b_style4 lt_r">회원정보 변경</a>
+                </div>
+                <div class="info_list">
+                    <dl>
+                        <dt>주 담당자</dt>
+                        <dd>김고도</dd>
+                    </dl>
+                    <dl>
+                        <dt>전화번호</dt>
+                        <dd>070-1234-5678</dd>
+                    </dl>
+                    <dl>
+                        <dt>메일주소</dt>
+                        <dd>kimgodo12890@godo.co.kr</dd>
+                    </dl>
+                    <dl>
+                        <dt>회사명</dt>
+                        <dd>클라우드고도</dd>
+                    </dl>
+                </div>
+            </div>
+            <!-- //sub_cont_box -->
+            <div class="sub_cont_box dep_info">
+                <div class="cont_tit">
+                    <h4>담당자 정보</h4>
+                </div>
+                <div class="info_list">
+                    <dl>
+                        <dt>담당 영업팀</dt>
+                        <dd>
+                            율도국전담팀 클라우드영업팀<br/>
+                            <span class="phone">070-1234-5678</span> 
+                            <span class="email">(kimgodo1234@godo.co.kr)</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>담당 운영팀</dt>
+                        <dd>율도국전담팀 클라우드운영팀<br/>
+                            <span class="phone">070-1234-5678</span>
+                            <span class="email">(kimgodo1234@godo.co.kr)</span>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <!-- //sub_cont_box -->
+        </div>
+        <!-- //cont_box -->
+
+        <div class="cont_box account">
+            <div class="cont_tit">
+                <h4>클라우드 계정관리</h4>
+            </div>
+            <span class="sub_tit">AWS Account</span>
+            <a href="" class="btn_acc_set b_base3 b_style3"><span>Account Setting</span></a>
+        </div>
+        <!-- //cont_box -->
+    </div>
+</div>
+<!-- //mypage_wrap -->
+
+<div id="footer">
+    <div class="inner">
+        <h4>서비스문의</h4>
+        <ul class="contact_list">
+            <li>전화문의: <a href="tel:1688-7662">1688-7662</a> (내선 4번>1번)</li>
+            <li class="mail">메일문의: <a href="mailto:dl_cloudsupport@godo.co.kr">dl_cloudsupport@godo.co.kr</a></li>
+        </ul>
+        <p class="corp">ⓒ NHN godo: Corp. All Rights Reserved.</p>
+        <ul class="agree_menu">
+            <li><a href="https://www.godo.co.kr/etc/agreement/join-agreement.gd">약관</a></li>
+            <li><a href="https://www.godo.co.kr/etc/agreement/privacy-agreement.gd">개인정보처리방침</a></li>
+        </ul>
+    </div>
+</div>
+<!-- //footer -->
+</div>
+</body>
+</html>

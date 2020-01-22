@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cloud Console</title>
+    <link type="text/css" rel="stylesheet" href="../css/console.css">
+    <link type="text/css" rel="stylesheet" href="../css/sumoselect.min.css">
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.sumoselect.min.js"></script>
+    <script type="text/javascript" src="../js/console_ui.js"></script>
+
+    <!--[if lte IE 9 ]>
+	<style>
+        .cont_box.type1 .total_area {background: rgb(62,74,244);}
+        .cont_box.type2 .total_area {background: rgb(250,40,40);}
+	</style>
+    <![endif]-->
+
+    <!--[if lte IE 8 ]>
+	<style>
+        .mypage_wrap {float:left; padding-bottom:40px;}
+        .cont_box.type1 .total_area {background: rgb(62,74,244);}
+        .cont_box.type2 .total_area {background: rgb(250,40,40);}
+        .total_area .incld {color:#fff;}
+        .ly_notice {letter-spacing:-0.5px;}
+        #footer {float:left;}
+        .check_label .input_check_box .check-origin {position:static; height:auto; padding:0;}
+        .check_label .input_check_box .check-clone {background:none; width:auto; height:auto;}
+        .radio_label .input_radio_box .radio-origin {position:static; height:auto; padding:0;}
+        .radio_label .input_radio_box .radio-clone {background:none; width:auto; height:auto;}
+	</style>
+    <![endif]-->
+    
+</head>
+<body>
+    <div id="header">
+        <div class="inner clear">
+            <h1><a href=""><img src="../images/console/logo_console.png" alt="play conosole"/></a></h1>
+            <ul class="gnb clear">
+                <li class="active"><h2><a href="" class="spoqa">MYPAGE</a></h2></li>
+                <li>
+                    <h2><a href="javascript:void(0);" class="spoqa">AWS</a></h2>
+                    <ul class="sub gshow" style="display:none;">
+                        <li><a href="">비용관리</a></li>
+                        <li><a href="">결제</a></li>
+                        <li><a href="">계정관리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2><a href="javascript:void(0);" class="spoqa">TOAST</a></h2>
+                    <div class="notice gshow" style="display:none;">
+                        <p>TOAST Console은 준비중입니다.<br/>현재는 TOAST Console을 통해 <br/>자세한 정보를 확인할 수 있습니다.</p>
+                        <a href="" target="_blank" class="btn_link"><span>TOAST Console 바로가기</span></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><a href="javascript:void(0);">고도클라우드</a></h2>
+                    <div class="notice gshow" style="display:none;">
+                        <p>Godo Console을 통해 <br/>자세한 정보를 확인할 수 있습니다.</p>
+                        <a href="" target="_blank" class="btn_link"><span>Godo Console 바로가기</span></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><a href="">부가서비스</a></h2>
+                </li>
+            </ul>
+            <span class="myinfo spoqa">kimgodolove@godo.co.kr</span>
+        </div>
+    </div>
+
+<div class="additional_service_wrap type2"><!--N:서비스적용 화면일때는 'type2' 클래스를 넣어주세요-->
+    <div class="inner clear">
+        <h4>부가서비스</h4>
+        <div class="box_wrap">
+            <div class="in_box none">
+                <div class="tit_area brd_none">
+                    <h5>클라우드 매니지드 서비스</h5>
+                    <span class="sub_tit lt_r">클라우드 매니지드서비스의 적용시점과 비용은 담당자와 협의를 통해 산정되어 적용됩니다. </span>
+                </div>
+                <div class="apply_status">
+                    <span class="tit">매니지드서비스 신청 현황</span>
+                    <div class="detail">
+                        <dl>
+                            <dt>상품명</dt>
+                            <dd>프리미엄</dd>
+                        </dl>
+                        <dl>
+                            <dt>매니지드서비스 시작일</dt>
+                            <dd>2018.12.01</dd>
+                        </dl>
+                        <dl>
+                            <dt>월비용</dt>
+                            <dd>500,0000원</dd>
+                        </dl>
+                    </div>
+                    <div class="btn_box"><a href="" class="btn_change_service b_base3 b_style1">서비스변경 요청</a></div>
+                </div>
+                <div class="table_box">
+                    <table class="tb1">
+                        <colgroup>
+                            <col width="12%">
+                            <col width="22%">
+                            <col width="22%">
+                            <col width="22%">
+                            <col width="22%">
+                        </colgroup>
+                        <thead>
+                            <th scope="col" class="type">구분</th>
+                            <th scope="col">베이직</th>
+                            <th scope="col">스탠다드</th>
+                            <th scope="col">프리미엄</th>
+                            <th scope="col">엔터프라이즈</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">비용</th>
+                                <td></td>
+                                <td>협의</td>
+                                <td>협의</td>
+                                <td>협의</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">서비스 제공 형태</th>
+                                <td></td>
+                                <td>Cloud 콘솔을 이용한 운영 지원</td>
+                                <td>서비스 원격 접근</td>
+                                <td>인프라, 서비스 운영 대행</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">서비스 제공 시간</th>
+                                <td>업무시간 주 5일</td>
+                                <td>업무시간 주 5일</td>
+                                <td>업무시간 07:00:~21:00 주 5일</td>
+                                <td>365X24 매일</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">지원 형태</th>
+                                <td>이메일 (1:1문의) 지원 1일 이내</td>
+                                <td>이메일(1:1문의) 지원 5시간 이내</td>
+                                <td>전담인력 지정 지원</td>
+                                <td>전담인력 지정 지원</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">지원 범위</th>
+                                <td>초기구축 인프라 관리</td>
+                                <td>Cloud 인프라 관리, 모니터링, 알림</td>
+                                <td>2포함, 안프라 성능관리</td>
+                                <td>3포함, 인프라 비용최적화</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">지원 내용</th>
+                                <td></td>
+                                <td>클라우드 인프라 구축 관리</td>
+                                <td>클라우드 인프라, 서비스 구축 관리</td>
+                                <td>클라우드 인프라, 서비스 구축 운영</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">백업 복구</th>
+                                <td></td>
+                                <td>백업 (무결성 체크X)</td>
+                                <td>백업 (무결성 체크O)</td>
+                                <td>백업 및 복구 대행</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">장애 대응</th>
+                                <td></td>
+                                <td>인프라</td>
+                                <td>인프라, 서비스 장애 통보</td>
+                                <td>인프라, 서비스 장애통보 및 장애 복구</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">리포트</th>
+                                <td></td>
+                                <td>인프라 분기 리포트</td>
+                                <td>인프라 월간 리포트</td>
+                                <td>인프라 월간 리포트</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">보안</th>
+                                <td></td>
+                                <td></td>
+                                <td>인프라 보안 분기 점검 리포트</td>
+                                <td>인프라 보안 월간 점검 리포트</td>
+                            </tr>
+                            <tr class="apply_area">
+                                <th scope="row">서비스신청</th>
+                                <td></td>
+                                <td><a href="" class="btn_apply b_base3 b_style1">신청</a></td>
+                                <td><a href="" class="btn_apply b_base3 b_style1">신청</a></td>
+                                <td><a href="" class="btn_apply b_base3 b_style1">신청</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- //in_box -->
+        </div>
+        <!-- //box_wrap -->
+    </div>
+    
+</div>
+<!-- //additional_service_wrap -->
+<div id="footer">
+    <div class="inner">
+        <h4>서비스문의</h4>
+        <ul class="contact_list">
+            <li>전화문의: <a href="tel:1688-7662">1688-7662</a> (내선 4번>1번)</li>
+            <li class="mail">메일문의: <a href="mailto:dl_cloudsupport@godo.co.kr">dl_cloudsupport@godo.co.kr</a></li>
+        </ul>
+        <p class="corp">ⓒ NHN godo: Corp. All Rights Reserved.</p>
+        <ul class="agree_menu">
+            <li><a href="https://www.godo.co.kr/etc/agreement/join-agreement.gd">약관</a></li>
+            <li><a href="https://www.godo.co.kr/etc/agreement/privacy-agreement.gd">개인정보처리방침</a></li>
+        </ul>
+    </div>
+</div>
+<!-- //footer -->
+</div>
+</body>
+</html>

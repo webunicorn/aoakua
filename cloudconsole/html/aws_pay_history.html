@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cloud Console</title>
+    <link type="text/css" rel="stylesheet" href="../css/console.css">
+    <link type="text/css" rel="stylesheet" href="../css/sumoselect.min.css">
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.sumoselect.min.js"></script>
+    <script type="text/javascript" src="../js/console_ui.js"></script>
+
+    <!--[if lte IE 9 ]>
+	<style>
+        .cont_box.type1 .total_area {background: rgb(62,74,244);}
+        .cont_box.type2 .total_area {background: rgb(250,40,40);}
+	</style>
+    <![endif]-->
+
+    <!--[if lte IE 8 ]>
+	<style>
+        .mypage_wrap {float:left; padding-bottom:40px;}
+        .cont_box.type1 .total_area {background: rgb(62,74,244);}
+        .cont_box.type2 .total_area {background: rgb(250,40,40);}
+        .total_area .incld {color:#fff;}
+        .ly_notice {letter-spacing:-0.5px;}
+        #footer {float:left;}
+        .check_label .input_check_box .check-origin {position:static; height:auto; padding:0;}
+        .check_label .input_check_box .check-clone {background:none; width:auto; height:auto;}
+        .radio_label .input_radio_box .radio-origin {position:static; height:auto; padding:0;}
+        .radio_label .input_radio_box .radio-clone {background:none; width:auto; height:auto;}
+	</style>
+    <![endif]-->
+    
+</head>
+<body>
+    <div id="header">
+        <div class="inner clear">
+            <h1><a href=""><img src="../images/console/logo_console.png" alt="play conosole"/></a></h1>
+            <ul class="gnb clear">
+                <li class="active"><h2><a href="" class="spoqa">MYPAGE</a></h2></li>
+                <li>
+                    <h2><a href="javascript:void(0);" class="spoqa">AWS</a></h2>
+                    <ul class="sub gshow" style="display:none;">
+                        <li><a href="">비용관리</a></li>
+                        <li><a href="">결제</a></li>
+                        <li><a href="">계정관리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2><a href="javascript:void(0);" class="spoqa">TOAST</a></h2>
+                    <div class="notice gshow" style="display:none;">
+                        <p>TOAST Console은 준비중입니다.<br/>현재는 TOAST Console을 통해 <br/>자세한 정보를 확인할 수 있습니다.</p>
+                        <a href="" target="_blank" class="btn_link"><span>TOAST Console 바로가기</span></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><a href="javascript:void(0);">고도클라우드</a></h2>
+                    <div class="notice gshow" style="display:none;">
+                        <p>Godo Console을 통해 <br/>자세한 정보를 확인할 수 있습니다.</p>
+                        <a href="" target="_blank" class="btn_link"><span>Godo Console 바로가기</span></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><a href="">부가서비스</a></h2>
+                </li>
+            </ul>
+            <span class="myinfo spoqa">kimgodolove@godo.co.kr</span>
+        </div>
+    </div>
+
+<div class="aws_page_wrap">
+    <div class="snb_wrap">
+        <ul class="snb">
+            <li>
+                <h3>비용관리</h3>
+                <ul class="sub_menu">
+                    <li class="sub1"><h4><a href="">대시보드</a></h4></li>
+                    <li class="sub2"><h4><a href="">사용내역</a></h4></li>
+                </ul>
+            </li>
+            <li>
+                <h3>결제관리</h3>
+                <ul class="sub_menu">
+                    <li class="sub3 active"><h4><a href="">결제내역</a></h4></li>
+                    <li class="sub4"><h4><a href="">리포트</a></h4></li>
+                    <li class="sub5"><h4><a href="">청구서</a></h4></li>
+                </ul>
+            </li>
+            <li>
+                <h3>계정관리</h3>
+                <ul class="sub_menu">
+                    <li class="sub6"><h4><a href="">계정</a></h4></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- //snb_wrap -->
+    <div class="aws_content">
+        <div class="inner">
+            <div class="pay_history_cont">
+                <h4>결제내역</h4>
+                <div class="date_box">
+                    <span class="date_info_s lt_r">UPDATE 2019.04.10 09:00 (GMT+9)</span>
+                </div>
+                
+                <div class="select_box area">
+                    <div class="date_select">
+                        <span class="tit">Start</span>
+                        <select class="date_select">
+                            <option>2019.03</option>
+                            <option>2019.04</option>
+                            <option>2019.05</option>
+                            <option>2019.06</option>
+                            <option>2019.07</option>
+                            <option>2019.08</option>
+                            <option>2019.09</option>
+                        </select>
+                        <span class="tit">End</span>
+                        <select class="date_select">
+                            <option>2019.03</option>
+                            <option>2019.04</option>
+                            <option>2019.05</option>
+                            <option>2019.06</option>
+                            <option>2019.07</option>
+                            <option>2019.08</option>
+                            <option>2019.09</option>
+                        </select>
+                        <button class="btn_search b_base1 b_style1">조회</button>
+                    </div>
+                    
+                </div>
+                <!-- //select_box -->
+
+                <div class="box_wrap">
+                    <div class="in_box none">
+                        <div class="tit_area brd_none">
+                            <h5>결제 내역</h5>
+                        </div>
+                        <div class="table_box">
+                            <table class="tb2">
+                                <colgroup>
+                                    <col width="6%"/>
+                                    <col width="19%"/>
+                                    <col width="10%"/>
+                                    <col width="10%"/>
+                                    <col width="13%"/>
+                                    <col width="10%"/>
+                                    <col width="17%"/>
+                                    <col width="15%"/>
+                                </colgroup>
+                                <tr>
+                                    <th>No</th>
+                                    <th>ID</th>
+                                    <th>ACCOUNT</th>
+                                    <th>DATE BILLED</th>
+                                    <th>결제방법</th>
+                                    <th>DATE PAID</th>
+                                    <th>비용</th>
+                                    <th>상태</th>
+                                </tr>
+                                <tr class="unpaid"><!-- N:미결제시 'unpaid' 클래스를 넣어주세요 -->
+                                    <td>1</td>
+                                    <td class="text_l">Godo</td>
+                                    <td>123456789</td>
+                                    <td>2018.11</td>
+                                    <td>Credit Card</td> 
+                                    <td>2018.11.10</td>
+                                    <td class="cost">93,000원</td>
+                                    <td class="status">UNPAID<button type="button" class="btn_pay b_base1 b_style2">결제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="text_l">ggodoododododo</td>
+                                    <td>123456789</td>
+                                    <td>2018.11</td>
+                                    <td>Credit Card</td>
+                                    <td>2018.11.10</td>
+                                    <td class="cost">9,121,033,333,330원</td>
+                                    <td class="status">PAID</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td class="text_l">ggodoododododo</td>
+                                    <td>123456789</td>
+                                    <td>2018.11</td>
+                                    <td>Credit Card</td>
+                                    <td>2018.11.10</td>
+                                    <td class="cost">9,121,033,333,330원</td>
+                                    <td class="status">PAID</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td class="text_l">ggodoododododo</td>
+                                    <td>123456789</td>
+                                    <td>2018.11</td>
+                                    <td>Credit Card</td>
+                                    <td>2018.11.10</td>
+                                    <td class="cost">9,121,033,333,330원</td>
+                                    <td class="status">PAID</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td class="text_l">ggodoododododo</td>
+                                    <td>123456789</td>
+                                    <td>2018.11</td>
+                                    <td>Credit Card</td>
+                                    <td>2018.11.10</td>
+                                    <td class="cost">9,121,033,333,330원</td>
+                                    <td class="status">PAID</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td class="text_l">ggodoododododo</td>
+                                    <td>123456789</td>
+                                    <td>2018.11</td>
+                                    <td>Credit Card</td>
+                                    <td>2018.11.10</td>
+                                    <td class="cost">9,121,033,333,330원</td>
+                                    <td class="status">PAID</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td class="text_l">ggodoododododo</td>
+                                    <td>123456789</td>
+                                    <td>2018.11</td>
+                                    <td>Credit Card</td>
+                                    <td>2018.11.10</td>
+                                    <td class="cost">9,121,033,333,330원</td>
+                                    <td class="status">PAID</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- //table_box -->
+                        <div class="paging_box">
+                            <a href="" class="bnt_p"><img src="../images/console/icon_first.png" alt="처음 페이지"/></a>
+                            <a href="" class="bnt_p"><img src="../images/console/icon_prev.png" alt="이전 페이지"/></a>
+                            <ul class="paging">
+                                <li class="active"><a href="">1</a></li>
+                                <li><a href="">2</a></li>
+                                <li><a href="">3</a></li>
+                            </ul>
+                            <a href="" class="bnt_p"><img src="../images/console/icon_next.png" alt="다음 페이지"/></a>
+                            <a href="" class="bnt_p"><img src="../images/console/icon_last.png" alt="마지막 페이지"/></a>
+                        </div>
+                        <!-- //paging_box -->
+                    </div>
+                    <!-- //in_box -->
+                </div>
+                <!-- //box_wrap -->
+
+      
+            </div>
+            <!-- //pay_history_cont -->
+        </div>
+    </div>
+    <!-- //aws_content -->
+
+</div>
+<!-- //aws_page_wrap -->
+<div id="footer">
+    <div class="inner">
+        <h4>서비스문의</h4>
+        <ul class="contact_list">
+            <li>전화문의: <a href="tel:1688-7662">1688-7662</a> (내선 4번>1번)</li>
+            <li class="mail">메일문의: <a href="mailto:dl_cloudsupport@godo.co.kr">dl_cloudsupport@godo.co.kr</a></li>
+        </ul>
+        <p class="corp">ⓒ NHN godo: Corp. All Rights Reserved.</p>
+        <ul class="agree_menu">
+            <li><a href="https://www.godo.co.kr/etc/agreement/join-agreement.gd">약관</a></li>
+            <li><a href="https://www.godo.co.kr/etc/agreement/privacy-agreement.gd">개인정보처리방침</a></li>
+        </ul>
+    </div>
+</div>
+<!-- //footer -->
+</div>
+</body>
+</html>

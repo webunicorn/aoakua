@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cloud Console</title>
+    <link type="text/css" rel="stylesheet" href="../css/console.css">
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <!--[if lte IE 8 ]>
+	<style>
+        .console_main_wrap .main_cont .feature_list .info p {font-size:13px;}
+        .check_label .input_check_box .check-origin {position:static; height:auto; padding:0;}
+        .check_label .input_check_box .check-clone {background:none; width:auto; height:auto;}
+        .radio_label .input_radio_box .radio-origin {position:static; height:auto; padding:0;}
+        .radio_label .input_radio_box .radio-clone {background:none; width:auto; height:auto;}
+        #apply_header {border-bottom:1px solid #ccc;}
+	</style>
+	<![endif]-->
+</head>
+<body>
+    <div id="apply_header" class="clear">
+        <div class="inner">
+            <h1><a href=""><img src="../images/main/logo_console.png" alt="play console"/></a></h1>
+            <a href="" target="_blank" class="btn_apply b_base1 b_style1">서비스신청</a>
+        </div>
+    </div>
+    <!-- //header -->
+    <div class="apply_wrap">
+
+    <div class="apply_form_wrap">
+        <div class="top_notice_wrap2">
+            <p class="noti">Play Console 관리자 확인 및 승인을 마쳐야 사용할 수 있습니다.</p>
+        </div>
+
+        <div class="form_cont_box">
+            <h3>회원 정보</h3>
+            <table class="tb1">
+                <colgroup>
+                    <col width="20%"/>
+                    <col width="80%"/>
+                </colgroup>
+                <tr>
+                    <th>ID</th>
+                    <td>kimgodo</td>
+                </tr>
+                <tr>
+                    <th>메일주소</th>
+                    <td>kimgodo1234@godo.co.kr</td>
+                </tr>
+            </table>
+        </div>
+        <!-- //form_cont_box -->
+
+        <div class="form_cont_box">
+            <h3>추가 정보</h3>
+            <table class="tb1">
+                <colgroup>
+                    <col width="20%"/>
+                    <col width="80%"/>
+                </colgroup>
+                <tr>
+                    <th>사업자번호</th>
+                    <td>법인사업자</td>
+                </tr>
+                <tr>
+                    <th>결제수단</th>
+                    <td>
+                        <label for="radio01_1" class="radio_label">
+                            <div class="input_radio_box">
+                                <input type="radio" name="radio01" value="" id="radio01_1" class="radio-origin">
+                                <span class="radio-clone"></span>
+                            </div> 
+                            <strong class="label_name">수동결제</strong>
+                        </label>
+                        <label for="radio01_2" class="radio_label">
+                            <div class="input_radio_box">
+                                <input type="radio" name="radio01" value="" id="radio01_2" class="radio-origin">
+                                <span class="radio-clone"></span>
+                            </div> 
+                            <strong class="label_name">자동결제</strong>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>신용카드 등록</th>
+                    <td>카드 결제 인증이 완료 되었습니다 (등록날짜 : 2019-04-01 16:09:45 카드사 정보 BC)</td>
+                </tr>
+                <tr>
+                    <th>자동 결제일</th>
+                    <td>매월 10일 (전월 1일부터 말일까지의 이용 금액)</td>
+                </tr>
+                <tr>
+                    <th>유의 사항</th>
+                    <td>2005년 4월부터 개정된 부가가치세법에 따라, 신용카드로 결제하시는 경우 세금계산서가<br/>
+                        별도로 발급되지 않으며 신용카드 매출전표가 세금계산서를 대체합니다.<br/>
+                        신용카드 전표 발급은 마이고도에서 직접 발급 받으실 수 있습니다.
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- //form_cont_box -->
+
+        <div class="form_cont_box">
+            <h3>서비스 이용 약관</h3>
+            <div class="check_all">
+                <label for="check05_all" class="check_label">
+                    <div class="input_check_box">
+                        <input type="checkbox" name="check05" id="check05_all" class="check-origin">
+                        <span class="check-clone"></span>
+                    </div> 
+                    <span class="label_txt">전체 동의</span>
+                </label> 
+            </div>
+            <table class="tb1">
+                <colgroup>
+                    <col width="28%"/>
+                    <col width="72%"/>
+                </colgroup>
+                <tr>
+                    <th>서비스 이용 약관</th>
+                    <td>
+                        <label for="check05_1" class="check_label">
+                            <div class="input_check_box">
+                                <input type="checkbox" name="check05" id="check05_1" class="check-origin">
+                                <span class="check-clone"></span>
+                            </div> 
+                            <span class="label_txt">통합 클라우드 서비스 이용에 동의합니다</span>
+                        </label> 
+                        <a href="https://www.godo.co.kr/etc/agreement/join-agreement.gd" target="_blank" class="btn_agree_view">상세보기</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>개인정보 수집 및 이용 안내</th>
+                    <td>
+                        <label for="check05_2" class="check_label">
+                            <div class="input_check_box">
+                                <input type="checkbox" name="check05" id="check05_2" class="check-origin">
+                                <span class="check-clone"></span>
+                            </div> 
+                            <span class="label_txt">개인정보 수집 및 이용에 동의 합니다</span>
+                        </label> 
+                        <a href="https://www.godo.co.kr/etc/agreement/privacy-agreement.gd" target="_blank" class="btn_agree_view">상세보기</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- //form_cont_box -->
+
+        <div class="btn_box">
+            <input type="button" class="btn_cancel b_base3 b_style5" value="취소">
+            <input type="submit" class="btn_apply b_base3 b_style1" value="신청">
+        </div>
+
+        <div class="ly_pop_wrap3" style="display:block">
+            <div class="ly_pop_cont3">
+                <div class="company_license_box">
+                    <p>
+                        본 서비스는 기업회원만 이용이 가능한서비스입니다.<br/>
+                        서비스 이용을 위해서는 <strong>마이고도 > 회원/결제/쿠폰[정보수정] > 사업자정보수정</strong> 에서<br/>
+                        사업자정보수정을 하여 사업자회원으로 전환 후 신청이 가능합니다.
+                    </p>
+                    <a href="" target="_blank" class="b_base1 b_style1">사업자정보수정 바로가기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //apply_form_wrap -->
+
+    <div id="footer">
+        <div class="inner">
+            <h4>서비스문의</h4>
+            <ul class="contact_list">
+                <li>전화문의: <a href="tel:1688-7662">1688-7662</a> (내선 4번>1번)</li>
+                <li class="mail">메일문의: <a href="mailto:dl_cloudsupport@godo.co.kr">dl_cloudsupport@godo.co.kr</a></li>
+            </ul>
+            <p class="corp">ⓒ NHN godo: Corp. All Rights Reserved.</p>
+            <ul class="agree_menu">
+                <li><a href="https://www.godo.co.kr/etc/agreement/join-agreement.gd">약관</a></li>
+                <li><a href="https://www.godo.co.kr/etc/agreement/privacy-agreement.gd">개인정보처리방침</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- //footer -->
+</div>
+<!-- //apply_wrap -->

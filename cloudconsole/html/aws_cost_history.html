@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cloud Console</title>
+    <link type="text/css" rel="stylesheet" href="../css/console.css">
+    <link type="text/css" rel="stylesheet" href="../css/sumoselect.min.css">
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.sumoselect.min.js"></script>
+    <script type="text/javascript" src="../js/console_ui.js"></script>
+
+    <!--[if lte IE 9 ]>
+	<style>
+        .cont_box.type1 .total_area {background: rgb(62,74,244);}
+        .cont_box.type2 .total_area {background: rgb(250,40,40);}
+	</style>
+    <![endif]-->
+
+    <!--[if lte IE 8 ]>
+	<style>
+        .mypage_wrap {float:left; padding-bottom:40px;}
+        .cont_box.type1 .total_area {background: rgb(62,74,244);}
+        .cont_box.type2 .total_area {background: rgb(250,40,40);}
+        .total_area .incld {color:#fff;}
+        .ly_notice {letter-spacing:-0.5px;}
+        #footer {float:left;}
+        .check_label .input_check_box .check-origin {position:static; height:auto; padding:0;}
+        .check_label .input_check_box .check-clone {background:none; width:auto; height:auto;}
+        .radio_label .input_radio_box .radio-origin {position:static; height:auto; padding:0;}
+        .radio_label .input_radio_box .radio-clone {background:none; width:auto; height:auto;}
+	</style>
+    <![endif]-->
+    
+</head>
+<body>
+    <div id="header">
+        <div class="inner clear">
+            <h1><a href=""><img src="../images/console/logo_console.png" alt="play conosole"/></a></h1>
+            <ul class="gnb clear">
+                <li class="active"><h2><a href="" class="spoqa">MYPAGE</a></h2></li>
+                <li>
+                    <h2><a href="javascript:void(0);" class="spoqa">AWS</a></h2>
+                    <ul class="sub gshow" style="display:none;">
+                        <li><a href="">비용관리</a></li>
+                        <li><a href="">결제</a></li>
+                        <li><a href="">계정관리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2><a href="javascript:void(0);" class="spoqa">TOAST</a></h2>
+                    <div class="notice gshow" style="display:none;">
+                        <p>TOAST Console은 준비중입니다.<br/>현재는 TOAST Console을 통해 <br/>자세한 정보를 확인할 수 있습니다.</p>
+                        <a href="" target="_blank" class="btn_link"><span>TOAST Console 바로가기</span></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><a href="javascript:void(0);">고도클라우드</a></h2>
+                    <div class="notice gshow" style="display:none;">
+                        <p>Godo Console을 통해 <br/>자세한 정보를 확인할 수 있습니다.</p>
+                        <a href="" target="_blank" class="btn_link"><span>Godo Console 바로가기</span></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><a href="">부가서비스</a></h2>
+                </li>
+            </ul>
+            <span class="myinfo spoqa">kimgodolove@godo.co.kr</span>
+        </div>
+    </div>
+
+<div class="aws_page_wrap">
+    <div class="snb_wrap">
+        <ul class="snb">
+            <li>
+                <h3>비용관리</h3>
+                <ul class="sub_menu">
+                    <li class="sub1"><h4><a href="">대시보드</a></h4></li>
+                    <li class="sub2 active"><h4><a href="">사용내역</a></h4></li>
+                </ul>
+            </li>
+            <li>
+                <h3>결제관리</h3>
+                <ul class="sub_menu">
+                    <li class="sub3"><h4><a href="">결제내역</a></h4></li>
+                    <li class="sub4"><h4><a href="">리포트</a></h4></li>
+                    <li class="sub5"><h4><a href="">청구서</a></h4></li>
+                </ul>
+            </li>
+            <li>
+                <h3>계정관리</h3>
+                <ul class="sub_menu">
+                    <li class="sub6"><h4><a href="">계정</a></h4></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- //snb_wrap -->
+    <div class="aws_content">
+        <div class="inner">
+            <div class="history_cont">
+                <h4>사용내역</h4>
+                <div class="date_box">
+                    <span class="date_info_s lt_r">UPDATE 2019.04.10 09:00 (GMT+9)</span>
+                </div>
+
+                <div class="select_box area">
+                    <select multiple="multiple" class="account_select">
+                        <option value="1">123456</option>
+                        <option value="2">789012</option>
+                    </select>
+                    <div class="date_select">
+                        <span class="tit">Date</span>
+                        <ul class="date_btn_box">
+                            <li><a href="" class="b_base1 b_style4">최근6개월</a></li>
+                            <li><a href="" class="b_base1 b_style4">최근12개월</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- //select_box -->
+
+                <div class="box_wrap">
+                    <div class="in_box bill_history none">
+                        <div class="select_box normal lt_r">
+                            <select class="graph_type_select">
+                                <option value="1">누적그래프</option>
+                                <option value="2">막대그래프</option>
+                            </select>
+                        </div>
+                        <div class="graph_box clear">
+                            <!-- N:그래프 삽입하실 때 'dummy' div는 빼주세요 -->
+                            <div class="dummy" style="width:100%; height:591px;"></div>
+                        </div>
+                        <!-- //graph_box -->
+
+                        <div class="tb_wrap">
+                            <div class="tb_outer">
+                                <div class="tb_inner">
+                                    <table class="tb3 even_tb">
+                                        <thead>
+                                            <tr>
+                                                <th class="th_left caption first_left">Product</th>
+                                                <th>2019.01</th>
+                                                <th>2019.02</th>
+                                                <th>2019.03</th>
+                                                <th>2019.04</th>
+                                                <th>2019.05</th>
+                                                <th>2019.06</th>
+                                                <th>2019.07</th>
+                                                <th>2019.08</th>
+                                                <th>2019.09</th>
+                                                <th>2019.10</th>
+                                                <th>2019.11</th>
+                                                <th>2019.12</th>
+                                                <th>2019.13</th>
+                                                <th>2019.14</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th class="th_left first_left">AWS Budgets</th>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="th_left first_left">AWS CloudTrail</th>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                                <td>$1,197.40</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="th_left first_left">AWS Lambda</th>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="th_left first_left">Amazon CloudFront</th>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="th_left first_left">Amazon ElastiCache</th>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                                <td>$123.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //in_box -->
+                </div>
+                <!-- //box_wrap -->
+
+      
+            </div>
+            <!-- //history_cont -->
+        </div>
+    </div>
+    <!-- //aws_content -->
+
+</div>
+<!-- //aws_page_wrap -->
+<div id="footer">
+    <div class="inner">
+        <h4>서비스문의</h4>
+        <ul class="contact_list">
+            <li>전화문의: <a href="tel:1688-7662">1688-7662</a> (내선 4번>1번)</li>
+            <li class="mail">메일문의: <a href="mailto:dl_cloudsupport@godo.co.kr">dl_cloudsupport@godo.co.kr</a></li>
+        </ul>
+        <p class="corp">ⓒ NHN godo: Corp. All Rights Reserved.</p>
+        <ul class="agree_menu">
+            <li><a href="https://www.godo.co.kr/etc/agreement/join-agreement.gd">약관</a></li>
+            <li><a href="https://www.godo.co.kr/etc/agreement/privacy-agreement.gd">개인정보처리방침</a></li>
+        </ul>
+    </div>
+</div>
+<!-- //footer -->
+</div>
+</body>
+</html>

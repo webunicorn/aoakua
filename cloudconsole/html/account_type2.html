@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>청구서</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+    <style>
+        /* reset */
+        body {margin:0;padding:0;background-color:#fff;}
+        hr {display:none;clear:both;}
+        img,fieldset {border:0 none;}
+        h1,h2,h3,h4,h5,dl,dt,dd,ul,li,ol,th,td,p,blockquote,form,fieldset,legend {margin:0;padding:0;}
+        table {border-collapse:collapse;border:0 none;}
+        form, p {margin: 0px; }
+        button {border:0 none;padding:0;margin:0;background:transparent;*overflow:visible;cursor:pointer;}
+        button::-moz-focus-inner {border:0;padding:0;}
+        a {text-decoration:none; color:#333;}
+        a:link {text-decoration:none; }
+        a:visited {text-decoration:none; }
+        a:active {text-decoration:none; }
+        a:hover {text-decoration:none; }
+        ol, ul {list-style: none;}
+        body,table,th,td,input,select,textarea,div,button,em {font-family:'Noto Sans KR','맑은 고딕','Malgun Gothic'; font-size: 12px; font-style: normal; line-height:18px; margin:0;}
+        table {width:100%; border-top:1px solid #333333;}
+
+        .account_wrap {width:900px; margin:0 auto 50px auto; padding:50px; box-sizing: border-box;}
+        .account_wrap.type2 .info_box {overflow: hidden; background:#8f8f8f; border-radius:10px; color:#fff; padding:30px 0 30px 0; box-sizing: border-box;}
+        .account_wrap.type2 .info_box h3 {font-size:26px; line-height:46px; font-weight:600; letter-spacing:-1px; display:block; padding-left:40px;}
+        .account_wrap .info_box .info_list dl {padding:8px 0 8px 40px; }
+        .account_wrap .info_box .info_list dl dt {font-size:16px; color:#dcdcdc; float:left; min-width:100px; letter-spacing:-0.5px; font-weight:400;}
+        .account_wrap .info_box .info_list dl dd {font-size:20px; font-weight:400;}
+        .account_wrap .tb_box .info_tb {margin-top:50px;}
+        .account_wrap .tb_box .info_tb th {background:#f7f7f7; font-size:14px; color:#606060; font-weight:500; padding:17px 0; border-bottom:1px solid #dedede;}
+        .account_wrap .tb_box .info_tb td {color:#333333; font-size:15px; font-weight:500; padding:17px 30px; border-bottom:1px solid #dedede;}
+        .account_wrap .tb_box h4 {margin-top:50px; font-size:22px; color:#333333; font-weight:600; letter-spacing:-1px; padding:0 0 31px 0;}
+        .account_wrap .tb_box .list_tb th {letter-spacing:-0.5px; font-size:15px; color:#999999; font-weight:300; text-align:left; padding:16px 0 16px 30px; border-bottom:1px solid #e0e0e0;}
+        .account_wrap .tb_box .list_tb td {font-size:16px; color:#333333; text-align:right; padding:16px 30px 16px 0; border-bottom:1px solid #e0e0e0; font-weight:400;}
+        .account_wrap .tb_box .list_tb tbody tr:last-child th,
+        .account_wrap .tb_box .list_tb tbody tr:last-child td {border-bottom:none;}
+        .account_wrap .tb_box .list_tb tfoot {background:#fff; border-top:1px solid #c7c7c7;}
+        .account_wrap .tb_box .list_tb tfoot th {font-size:15px; color:#333333; font-weight:400; padding:20px 0 20px 30px; }
+        .account_wrap .tb_box .list_tb tfoot td {font-size:18px; color:#3f49d9; padding:20px 30px 20px 0; font-weight:600; }
+    </style>
+</head>
+<body>
+    <div class="account_wrap type2">
+        <div class="info_box">
+            <div class="info_tit">
+                <h3>dl_aws_datatech@nhn.com 이용내역서</h3>
+                <div class="info_list">
+                    <dl>
+                        <dt>AWS Account</dt>
+                        <dd>1283995483</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <!-- //info_box -->
+        <div class="tb_box">
+            <table class="info_tb">
+                <colgroup>
+                    <col width="15%"/>
+                    <col width="90%"/>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>서비스 명</th>
+                        <td>Amazon Web Service(AWS)</td>
+                    </tr>
+                    <tr>
+                        <th>사용기간</th>
+                        <td>2019.07.01 ~ 2019.07.31 00:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- //tb_box -->
+        <div class="tb_box">
+            <h4>SUMMNARY FOR LINKED ACCOUNT</h4>
+            <table class="list_tb">
+                <colgroup>
+                    <col width="70%"/>
+                    <col width="30%"/>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>Data Transfer</th>
+                        <td>$1234.56</td>
+                    </tr>
+                    <tr>
+                        <th>Database Migration Service</th>
+                        <td>$1234.56</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>
+                            TOTAL (USD)
+                        </th>
+                        <td>
+                            $12342.56
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <!-- //tb_box -->
+    </div>
+    <!-- //account_wrap -->
+
+</body>
+</html>
