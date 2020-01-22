@@ -73,9 +73,14 @@ $(function(){
     $('#btn_qna, .btn_notice_more, .btn_member_info').on({
 		'click':function(e){
             e.preventDefault();
-            console.log($(this).attr('id'));
+            var idName = $(this).attr('id');
+            console.log(idName);
 			var lySj = '.ly_pop_wrap';
-			lyPopup(lySj);
+            lyPopup(lySj);
+
+            if(idName == "btn_qna"){
+                $(".qna_view").css("dispay","block");
+            }
 		}
     });
     
