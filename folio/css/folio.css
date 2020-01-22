@@ -152,7 +152,7 @@ to {
     #main .work .work_list li {padding-bottom:5rem;}
 }
 
-@media only screen and (max-width : 550px) {
+@media only screen and (max-width : 560px) {
     html {font-size:8px;}
     #header .gnb {top:8.5rem;}
     #header .gnb a {font-weight:300; font-size:1.7rem;}
