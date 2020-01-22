@@ -79,11 +79,12 @@ h2 {font-family: 'Roboto', sans-serif; font-size:3rem; padding:5rem 0 3rem 2rem;
 #main .work .work_list {}
 #main .work .work_list li {width:calc(50% - 4rem); float:left; padding:2rem 2rem 3rem 2rem;}
 #main .work .work_list li a {display:block; position: relative;}
-#main .work .work_list li a img {max-width:100%; height:auto; vertical-align: top; -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); -webkit-transition: .5s ease-in-out; -moz-transition: .5s ease-in-out; -o-transition: .5s ease-in-out; transition: .5s ease-in-out;}
-#main .work .work_list li a:hover img {-webkit-filter: grayscale(0%); -moz-filter: grayscale(0%); -o-filter: grayscale(0%); filter: grayscale(0%);}
+#main .work .work_list li a img {max-width:100%; height:auto; vertical-align: top; }
 #main .work .work_list li .title {font-size:1.9rem; font-family: 'Roboto', sans-serif; font-weight:500; letter-spacing:-0.5px; padding-top:1.5rem;}
 #main .work .work_list li .title .device {font-size:1.2rem; color:#828282; letter-spacing:0.3px; float:right; font-weight:400;}
-#main .contact {width:100%; border-top: 1px solid #eaeaea; margin:5rem 0 1rem 0; }
+#main .work .work_list.effect li a img {-webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); -webkit-transition: .5s ease-in-out; -moz-transition: .5s ease-in-out; -o-transition: .5s ease-in-out; transition: .5s ease-in-out;}
+#main .work .work_list.effect li a:hover img {-webkit-filter: grayscale(0%); -moz-filter: grayscale(0%); -o-filter: grayscale(0%); filter: grayscale(0%);}
+#main .contact {width:100%; border-top: 1px solid #eaeaea; margin:5rem 0 3rem 0; }
 #main .contact .inner {max-width:1500px; position: relative; margin:0 auto;}
 #main .contact h2 {padding-top:3rem;}
 #main .contact .contact_list {font-size:1.6rem; line-height: 1.6rem; padding-left:2rem;}
@@ -163,5 +164,4 @@ to {
     #main .intro {height:100vh;}
     #main .intro .name {display:block; font-size: 8rem; line-height: 8rem;}
     #main .work .work_list li .title .device {font-size:1.5rem;}
-    #main .contact {margin:5rem 0 3rem 0; }
 }
