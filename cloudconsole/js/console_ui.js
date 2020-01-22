@@ -70,17 +70,11 @@ $(function(){
     
     /***** layer popup *****/
     //button
-    $('#btn_qna, .btn_notice_more, .btn_member_info').on({
+    $('.btn_qna_more, .btn_notice_more, .btn_member_info').on({
 		'click':function(e){
-            e.preventDefault();
-            var idName = $(this).attr('id');
-            console.log(idName);
+			e.preventDefault();
 			var lySj = '.ly_pop_wrap';
-            lyPopup(lySj);
-
-            if(idName == "btn_qna"){
-                $(".qna_view").css("dispay","block");
-            }
+			lyPopup(lySj);
 		}
     });
     
