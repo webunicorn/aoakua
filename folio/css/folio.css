@@ -87,7 +87,7 @@ h2 {font-family: 'Roboto', sans-serif; font-size:3rem; padding:5rem 0 3rem 2rem;
 #main .contact {width:100%; border-top: 1px solid #eaeaea; margin:5rem 0 3rem 0; }
 #main .contact .inner {max-width:1500px; position: relative; margin:0 auto;}
 #main .contact h2 {padding-top:3rem;}
-#main .contact .contact_list {font-size:1.6rem; line-height: 1.6rem; padding-left:2rem;}
+#main .contact .contact_list {font-size:1.6rem; line-height: 1.6rem; padding-left:2rem; color:#333;}
 #main .contact .contact_list li {padding:0 0 1rem 0;}
 #main .contact .contact_list li::before {content:'·'; display:inline-block; padding-right:0.4rem;}
 #main .contact .slogan {font-family:'Oleo Script', cursive; font-size:1.7rem; font-weight: 100; position: absolute; right:3rem; bottom:1rem;}
