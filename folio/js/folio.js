@@ -20,7 +20,6 @@ function deviceCheck(){
             
         }else{
             //pc
-            console.log("pc");
         }
     }
 }

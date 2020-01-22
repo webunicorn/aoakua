@@ -29,12 +29,12 @@ word-break:break-all;
 
 
 /* main */
-html {font-size:10px;}
+html {font-size:10px; min-width:320px;}
 h2 {font-family: 'Roboto', sans-serif; font-size:3rem; padding:5rem 0 3rem 2rem; font-weight:300; letter-spacing:-1px; }
 .clear::after {content:''; display:block; clear:both;}
 .roboto {font-family: 'Roboto', sans-serif;}
 
-#header {}
+#header {position: relative;}
 #header .logo {position:absolute; top:62px; left:42px; display:inline-block; width:40px; height:40px; border-radius:50px; cursor:pointer; background: #1f1e1e;  /*background: linear-gradient(90deg, #aea4e3, #d3ffe8);*/}
 #header .circle_box { position: absolute; width:150px; height:150px; overflow: hidden;}
 #header .circle_box text {font-size: 18.2px; font-weight:300;}
@@ -148,21 +148,23 @@ to {
     #header .gnb a {font-weight:300;}
     .svg_box {display: none;}
     #main .intro .name {display:block; font-size: 11rem; line-height: 11rem; /* background: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db); -webkit-background-clip: text; -webkit-text-fill-color: transparent;*/}
-    #main .intro .job {padding-top:4rem;}
+    #main .intro .job {padding-top:1rem;}
     #main .work .work_list li {padding-bottom:5rem;}
 }
 
 @media only screen and (max-width : 550px) {
     html {font-size:8px;}
-    #header .gnb a {font-weight:300;}
+    #header .gnb {top:8.5rem;}
+    #header .gnb a {font-weight:300; font-size:1.7rem;}
     #main .intro {height:100vh;}
-    #main .intro .name {display:block; font-size: 8rem; line-height: 8rem;}
+    #main .intro .name {display:block; font-size: 7.5rem; line-height: 7.5rem;}
     #main .work .work_list li {padding-bottom:5rem;}
     #main .work .work_list li .title .device {font-size:1.5rem;}
 }
 
 @media only screen and (max-width : 360px) {
     html {font-size:7px;}
+    #header .gnb {top:9.5rem;}
     #header .gnb a {font-weight:300; font-size:1.8rem;}
     #main .intro {height:100vh;}
     #main .intro .name {display:block; font-size: 8rem; line-height: 8rem;}
