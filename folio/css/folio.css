@@ -36,8 +36,8 @@ h2 {font-family: 'Roboto', sans-serif; font-size:3rem; padding:5rem 0 3rem 2rem;
 .roboto {font-family: 'Roboto', sans-serif;}
 
 #header {}
-#header .logo {position:absolute; top:6.2rem; left:4.2rem; display:inline-block; width:4rem; height:4rem; border-radius:5rem; background: #1f1e1e; /*background: linear-gradient(90deg, #aea4e3, #d3ffe8);*/}
-#header .circle_box { position: absolute; width:150px; height:150px; overflow: hidden; }
+#header .logo {position:absolute; top:6.2rem; left:4.2rem; display:inline-block; width:4rem; height:4rem; border-radius:5rem; cursor:pointer; background: #1f1e1e;  /*background: linear-gradient(90deg, #aea4e3, #d3ffe8);*/}
+#header .circle_box { position: absolute; width:150px; height:150px; overflow: hidden;}
 #header .circle_box text {font-size: 1.82rem; font-weight:300;}
 #header .circle_box svg { position: absolute; left: -13px; top: 7px; width: 150px; height: 150px;
   -webkit-animation-name: rotate;
@@ -114,3 +114,16 @@ h2 {font-family: 'Roboto', sans-serif; font-size:3rem; padding:5rem 0 3rem 2rem;
     to { transform: rotate(0); }
 }
 
+
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets : 768px ~ */
+@media only screen and (min-width : 768px) {
+
+}
+
+@media only screen and (max-width : 992px) {
+    #main .work .work_list li {width:auto;}
+}
