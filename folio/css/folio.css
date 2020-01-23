@@ -77,6 +77,11 @@ h2 {font-family: 'Roboto', sans-serif; font-size:3rem; padding:5rem 0 3rem 2rem;
 #main .intro .svg_box .svg {width:700px; height:500px;}
 #main .intro .svg_box .bg_vedio {width:700px; height:400px; position: absolute; top:60px; left:0; z-index:-1;}
 #main .intro .svg_box .svg_name {font-size:13rem; line-height: 13rem; color:#fff; text-align:center; font-weight:800;}
+@-moz-document url-prefix() { 
+    #main .intro .svg_box .svg_name { 
+        font-weight:700;;
+    }
+}
 #main .intro .svg_box .masked {mask:url("#mask_layer");}
 #main .work {max-width:1500px; margin:0 auto;}
 #main .work .work_list {}
