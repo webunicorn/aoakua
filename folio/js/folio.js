@@ -1,9 +1,3 @@
-let logo = document.querySelector(".logo"),
-    gnb = document.querySelector(".gnb li a");
-
-logo.addEventListener("click", function(){
-    location.reload();
-});
 
 function deviceCheck(){
     const pcDevice = "win16|win32|win64|mac|macintel";
@@ -25,6 +19,13 @@ function deviceCheck(){
 }
 
 function init(){
+    let logo = document.querySelector(".logo"),
+        gnb = document.querySelector(".gnb li a");
+
+    logo.addEventListener("click", function(){
+        location.reload();
+    });
+
     deviceCheck();
 }
 init();
