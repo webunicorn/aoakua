@@ -107,7 +107,7 @@ h2 {font-family: 'Roboto', sans-serif; font-size:3rem; padding:5rem 0 3rem 2rem;
 #main .contact .contact_list li::before {content:'\22C5'; display:inline-block; padding-right:0.4rem;}
 #main .contact .slogan {font-family:'Oleo Script', cursive; font-size:1.7rem; font-weight: 100; position: absolute; right:3rem; bottom:0.3rem;}
 
-/*** keyframe ***/
+/*** animation ***/
 /* rotate */
 @-webkit-keyframes rotate {
     from { -webkit-transform: rotate(360deg); }
