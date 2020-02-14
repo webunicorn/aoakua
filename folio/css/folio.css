@@ -22,7 +22,6 @@ a:active { color:#3366cc; text-decoration:none; }
 a:hover { color:#2850a2; text-decoration:none; }
 body,table,th,td,input,select,textarea,div {font-family:'Noto Sans KR', sans-serif; color: #333; font-style: normal; line-height:18px; margin:0; word-spacing:-1pt; word-break:break-all;}
 
-/*** main ***/
 html {font-size:10px; min-width:320px;}
 h2 {font-family: 'Roboto', sans-serif; font-size:3rem; padding:5rem 0 3rem 2rem; font-weight:300; letter-spacing:-1px; }
 .clear::after {content:''; display:block; clear:both;}
@@ -83,7 +82,6 @@ h2 {font-family: 'Roboto', sans-serif; font-size:3rem; padding:5rem 0 3rem 2rem;
 } 
 #main .intro .job {font-size:2.5rem; line-height:2.5rem; color:#fff; text-align:center; font-weight:200; padding-top:2rem; position: relative; z-index:1;}
 #main .intro .svg_box {position: absolute; top:15rem; left:50%; margin-left:-35rem;}
-
 /*
 #main .intro .svg_box .svg {width:700px; height:500px;}
 #main .intro .svg_box .bg_vedio {width:700px; height:400px; position: absolute; top:60px; left:0; z-index:-1;}
@@ -99,13 +97,13 @@ h2 {font-family: 'Roboto', sans-serif; font-size:3rem; padding:5rem 0 3rem 2rem;
 #main .work .work_list li .title .device {font-size:1.2rem; color:#828282; letter-spacing:0.3px; float:right; font-weight:400;}
 #main .work .work_list.effect li a img {-webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); -webkit-transition: .5s ease-in-out; -moz-transition: .5s ease-in-out; -o-transition: .5s ease-in-out; transition: .5s ease-in-out; }
 #main .work .work_list.effect li a:hover img {-webkit-filter: grayscale(0%); -moz-filter: grayscale(0%); -o-filter: grayscale(0%); filter: grayscale(0%);}
-#main .contact {width:100%; border-top: 1px solid #eaeaea; margin:5rem 0 3rem 0; }
-#main .contact .inner {max-width:1500px; position: relative; margin:0 auto;}
-#main .contact h2 {padding-top:3rem;}
-#main .contact .contact_list {font-size:1.6rem; line-height: 1.6rem; padding-left:2rem; color:#333;}
-#main .contact .contact_list li {padding:0 0 1rem 0; color:#121215 !important;}
-#main .contact .contact_list li::before {content:'\22C5'; display:inline-block; padding-right:0.4rem;}
-#main .contact .slogan {font-family:'Oleo Script', cursive; font-size:1.7rem; font-weight: 100; position: absolute; right:3rem; bottom:0.3rem;}
+#footer {width:100%; border-top: 1px solid #eaeaea; margin:5rem 0 3rem 0; }
+#footer .inner {max-width:1500px; position: relative; margin:0 auto;}
+#footer h2 {padding-top:3rem;}
+#footer .contact_list {font-size:1.6rem; line-height: 1.6rem; padding-left:2rem; color:#333;}
+#footer .contact_list li {padding:0 0 1rem 0; color:#121215 !important;}
+#footer .contact_list li::before {content:'\22C5'; display:inline-block; padding-right:0.4rem;}
+#footer .slogan {font-family:'Oleo Script', cursive; font-size:1.7rem; font-weight: 100; position: absolute; right:3rem; bottom:0.3rem;}
 
 /*** animation ***/
 /* rotate */
@@ -165,7 +163,7 @@ to {
     #main .intro .name {display:block; font-size: 7.5rem; line-height: 7.5rem;}
     #main .work .work_list li {padding-bottom:5rem;}
     #main .work .work_list li .title .device {font-size:1.5rem;}
-    #main .contact .contact_list li {font-size: 1.8rem;}
+    #footer .contact_list li {font-size: 1.8rem;}
 }
 
 @media only screen and (max-width : 360px) {
@@ -176,5 +174,5 @@ to {
     #main .intro .name {display:block; font-size: 8rem; line-height: 8rem;}
     #main .work .work_list li {padding-bottom:5rem;}
     #main .work .work_list li .title .device {font-size:1.5rem;}
-    #main .contact .contact_list li {font-size: 1.8rem;}
+    #footer .contact_list li {font-size: 1.8rem;}
 }
