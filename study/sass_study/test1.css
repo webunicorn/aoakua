@@ -1,0 +1,59 @@
+body { background: #111; color: orange; }
+
+.list { border: 1px solid orange; }
+.list:after { content: ''; display: block; clear: both; }
+.list > li { border: 1px solid #111; float: left; }
+.list > li a { color: red; }
+.list > li a:hover { color: #ddd; }
+.list > li a.second { font-size: 26px; }
+.list > li .second { color: blue; }
+.list > li:last-child { border: 1px dotted coral; }
+
+span { display: inline-block; }
+
+.btn1 { border: 1px solid red; width: 200px; height: 200px; }
+
+.btn2 { border: 1px solid blue; }
+
+.btn3 { border: 1px solid cyan; }
+
+.content { display: inline-block; border-left: 2px solid red; border-right: 5px solid red; }
+
+.icon_list > li { color: burlywood; }
+
+.icon_list > li.ico1 { background: url(images/bg1.jpg) no-repeat 0 0; }
+
+.icon_list > li.ico2 { background: url(images/bg2.jpg) no-repeat 0 0; }
+
+.icon_list > li.ico3 { background: url(images/bg3.jpg) no-repeat 0 0; }
+
+.icon_list > li.ico4 { background: url(images/bg4.jpg) no-repeat 0 0; }
+
+.ico_book { background: url(images/book.jpg); }
+
+.ico_zoom { background: url(images/zoom.jpg); }
+
+.ico_phone { background: url(images/phone.jpg); }
+
+h1 { font-size: 30px; }
+
+h2 { font-size: 20px; }
+
+h3 { font-size: 15px; }
+
+.cnt1 div, .cnt2 div, .cnt3 div { width: 1200px; margin: 0 auto; }
+
+.cnt1 { height: 300px; background: red; }
+.cnt1 div { height: 300px; background: rgba(0, 0, 0, 0.5); }
+
+.cnt2 { height: 500px; background: yellow; }
+.cnt2 div { height: 500px; background: rgba(0, 0, 0, 0.5); }
+
+.cnt3 { height: 100px; background: pink; }
+.cnt3 div { height: 100px; background: rgba(0, 0, 0, 0.5); }
+
+.btn11 { display: inline-block; background: pink; color: #111; height: 30px; line-height: 30px; font-size: 14px; text-aling: center; border-radius: 20px; }
+
+.align { position: absolute; left: 50%; z-index: 2; -webkit-transform: translateY(-50%); transform: translateY(-50%); background: gray; width: 200px; height: 200px; }
+
+/*# sourceMappingURL=test1.css.map */

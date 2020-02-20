@@ -1,0 +1,96 @@
+$color : #111;
+$color2 : orange;
+
+@mixin clear {
+    &:after {content:''; display: block; clear: both;}
+}
+@mixin border($color){ //인자를 통해 color값을 변경할 수 있음
+    border:1px solid $color;
+}
+@mixin box($w, $h) { //인자를 여러개로 설정 할 수도 있음
+    width:$w; height:$h;
+}
+@mixin line($position, $wid, $color){ //선택자에도 변수를 지정해서 변경할 수 있음 #{}안에 변수명을 넣어주는 형태 (문자보간이라고 함)
+   border-#{$position} :$wid solid $color;
+}
+
+body {background:$color; color:$color2;}
+.list {border:1px solid $color2; @include clear;
+    > li {border:1px solid $color; float:left;
+        a {color:red;
+            &:hover {color:#ddd;}
+            &.second {font-size:26px;} //li a 클래스 second에만 적용
+        }
+        .second {color:blue;} //li 자손 클래스 second에 일괄 적용
+        &:last-child {border:1px dotted coral;}
+    }
+}
+span {display:inline-block;}
+
+.btn1 {@include border(red); @include box(200px, 200px);}
+.btn2 {@include border(blue);}
+.btn3 {@include border(cyan);}
+
+.content {
+    display: inline-block; 
+    @include line(left, 2px, red); 
+    @include line(right, 5px, red);
+}
+
+.icon_list {
+    > li {color:burlywood;}
+}
+@for $i from 1 to 5{ //for문 , 1부터 5미만 (미만이라서 해당 숫자보다 +1 처리
+    .icon_list > li.ico#{$i} {background:url(images/bg#{$i}.jpg) no-repeat 0 0;}
+}
+
+@each $var in book, zoom, phone { //each문을 이용해서 class명을 변수명에 넣어 활용가능
+    .ico_#{$var} {background:url(images/#{$var}.jpg);}
+}
+
+//heading변수에 배열형태로 요소를 넣고 each문을 통해 heading에 있는 요소를 가져오는 형태
+$heading : (
+    h1:30px,
+    h2:20px,
+    h3:15px
+);
+@each $ele, $fs in $heading {
+    #{$ele} {font-size:$fs;}
+}
+
+//extend를 이용하면 .cnt1, .cnt2, .cnt3 {} 이런식으로 묶여서 설정이 가능하다. 능숙하지 않으면 사용하는 걸 자제하기
+%m0auto {width:1200px; margin:0 auto;}
+.cnt1 {height:300px; background:red;
+    div {@extend %m0auto; height:300px; background:rgba(0, 0, 0, 0.5);}
+}
+.cnt2 {height:500px; background:yellow;
+    div {@extend %m0auto; height:500px; background:rgba(0, 0, 0, 0.5);}
+}
+.cnt3 {height:100px; background:pink;
+    div {@extend %m0auto;height:100px; background:rgba(0, 0, 0, 0.5);}
+}
+
+//조건문을 이용하여 true, false값을 조정할 수 있음
+@mixin btn_radius($h, $radius:true) { display:inline-block; background:pink; color:#111; height:$h; line-height: $h; font-size:14px; text-aling:center;
+    @if $radius{ //true
+        border-radius: $h / 1.5;
+    }@else{ //false
+        border:1px solid red;
+    }
+}
+
+.btn11 {@include btn_radius(30px, true)} //false값을 넣으면 border-radius는 적용X , border가 red로 변경
+
+//조건문을 활용하여 포지션값 잡기
+@mixin center($x, $y, $z) { position: absolute; top:$x; left:$y; z-index:$z;
+    @if $x == 50% and $y == 50%{ //top,left값이 둘다 50%일때
+        transform: translate(-50%, -50%);
+    }@else if $x == 50%{ //top값이 50%일때 x축만 가운데 정렬
+        tranform: translateX(-50%);
+    }@else if $y == 50%{ //left값이 50%일때 y축만 가운데 정렬
+        transform: translateY(-50%);
+    }
+}
+
+//null값으로 인자값 넘겨주지 X
+.align {@include center(null , 50%, 2); background:gray; width:200px; height:200px;}
