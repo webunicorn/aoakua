@@ -91,16 +91,19 @@ h3 {font-family: 'Roboto', sans-serif; font-size: 1.9rem; font-weight: 600; lett
 #main .intro .svg_box .masked {mask:url("#mask_layer");}
 */
 #main .about {max-width:1500px; margin:0 auto; }
-#main .about .about_box {padding:2rem 4rem;}
-#main .about .about_box > div {padding-top:3rem;}
+#main .about .about_box {padding:2rem 0 2rem 4rem;}
+#main .about .about_box > div {float:left;}
 #main .about .about_box > div:first-child {padding-top:0;}
+#main .about .about_box .profile {width:28%;}
 #main .about .about_box .profile dl {padding-bottom:0.6rem;}
 #main .about .about_box .profile dt {float:left; font-size: 1.3rem; color: #636466; letter-spacing: 0.5px; font-weight: 300; display:inline-block; min-width:7rem;}
 #main .about .about_box .profile dd {display:inline-block; padding-left:2rem;; font-size: 1.4em; color:#333; font-weight:400;}
+#main .about .about_box .career {width:42%;}
 #main .about .about_box .career li {padding-bottom:2rem;}
 #main .about .about_box .career .title {font-size:1.4rem; font-weight:500; }
 #main .about .about_box .career .period {display:block; font-size:1.1rem; color:#4e66a7; padding-top:5px;}
 #main .about .about_box .career p {font-size:1.3rem; color:#636466;}
+#main .about .about_box .skill {}
 #main .about .about_box .skill li {font-size:1.4rem; font-weight:300; padding-bottom:10px;}
 #main .about .about_box .skill li::before {content:'\263E'; display:inline-block; padding-right:.5rem; color:#4e66a7;}
 #main .work {max-width:1500px; margin:0 auto;}
@@ -160,6 +163,9 @@ to {
 
 /*** media query ***/
 @media only screen and (max-width : 992px) {
+    #main .about .about_box > div {float:unset; padding-top:3rem;}
+    #main .about .about_box .profile {width:100%;}
+    #main .about .about_box .career {width:100%;}
     #main .work .work_list li {width:auto;}
     #main .work .work_list li {padding-bottom:5rem;}
 }
