@@ -82,11 +82,6 @@ $(function() {
         $('.cosmo2').css('left',(1-k2)*posX+'px')
         $('.cosmo2').css('top',(1-k2)*posY+'px')
     });
-
-    $(window).resize(function(){
-      
-    });
-
     
 });
 
