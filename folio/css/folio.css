@@ -209,7 +209,7 @@ to {
     #main .work .work_list li {padding-bottom:5rem;}
     #main .about .about_box .history ul {display: flex; justify-content:flex-start; flex-direction: column-reverse;}
     #main .about .about_box .history ul::after {display:none;}
-    #main .about .about_box .history ul li {position:relative; display:inline-block; padding:2rem; margin: 0 auto 3rem auto; border: 1px solid #dedede; float:unset; width:100%; min-height:auto; border-radius:none; -webkit-box-shadow: 3px 8px 11px -3px rgba(0, 0, 0, 0.1); -moz-box-shadow: 3px 8px 11px -3px rgba(0, 0, 0, 0.1); -ms-box-shadow: 3px 8px 11px -3px rgba(0, 0, 0, 0.1); -o-box-shadow: 3px 8px 11px -3px rgba(0, 0, 0, 0.1); box-shadow: 3px 8px 11px -3px rgba(0, 0, 0, 0.1);}
+    #main .about .about_box .history ul li {position:relative; display:inline-block; padding:2rem; margin: 0 auto 3rem auto; border: 1px solid #dedede; float:unset; width:100%; min-height:auto; border-radius:none; box-sizing:border-box; -webkit-box-shadow: 3px 8px 11px -3px rgba(0, 0, 0, 0.1); -moz-box-shadow: 3px 8px 11px -3px rgba(0, 0, 0, 0.1); -ms-box-shadow: 3px 8px 11px -3px rgba(0, 0, 0, 0.1); -o-box-shadow: 3px 8px 11px -3px rgba(0, 0, 0, 0.1); box-shadow: 3px 8px 11px -3px rgba(0, 0, 0, 0.1); }
     #main .about .about_box .history ul li:first-child {margin-bottom:0;}
     #main .about .about_box .history ul li:nth-child(2n) {margin-top:0;}
     #main .about .about_box .history ul li::before {display: none;}
