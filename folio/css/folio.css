@@ -198,7 +198,7 @@ to {
     #main .work .work_list li {padding-bottom:5rem;}
     #main .about .about_box .history ul {display: flex; justify-content:flex-start; flex-direction: column-reverse;}
     #main .about .about_box .history ul::after {display:none;}
-    #main .about .about_box .history ul li {position:relative; display:inline-block; padding:2rem; margin: 0 auto 3rem auto; border: 1px solid #dedede; float:unset; width:calc(100% - 5rem); min-height:auto; border-radius:none; box-shadow:3px 8px 11px -3px rgba(0, 0, 0, 0.1); box-sizing:border-box;}
+    #main .about .about_box .history ul li {position:relative; display:inline-block; padding:2rem; margin: 0 auto 3rem auto; border: 1px solid #dedede; float:unset; width:100%; min-height:auto; border-radius:none; box-shadow:3px 8px 11px -3px rgba(0, 0, 0, 0.1); box-sizing:border-box;}
     #main .about .about_box .history ul li:first-child {margin-bottom:0;}
     #main .about .about_box .history ul li:nth-child(2n) {margin-top:0;}
     #main .about .about_box .history ul li::before {display: none;}
@@ -219,6 +219,8 @@ to {
     #main .work .work_list li {padding-bottom:5rem;}
     #main .work .work_list li .title .device {font-size:1.5rem;}
     #footer .contact_list li {font-size: 1.8rem;}
+    #main .about .about_box .history {margin: 5rem 0;}
+    #main .about .about_box .skill .main_skill li canvas {width:15rem !important; height:15rem !important;}
 }
 
 @media only screen and (max-width : 360px) {
