@@ -48,8 +48,8 @@
     </div>
     <!-- //header -->
 
-    <div class="cosmo1"></div>
-    <div class="cosmo2"></div>
+    <div class="cosmo1" id="cosmos11"></div>
+    <div class="cosmo2" id="cosmos22"></div>
     <div id="main">
         <div class="intro">
             <div class="inner">
@@ -196,19 +196,19 @@
         function deviceCheck(){
             const pcDevice   = "win16|win32|win64|mac|macintel",
                   thisDevice = navigator.platform;
-            var workList = document.querySelector("#main .work .work_list"),
-                cosmos = document.querySelector(".cosmos1, .cosmos2");
+            var workList = document.querySelector("#main .work .work_list");
 
             if(thisDevice){
                 if(pcDevice.indexOf(navigator.platform.toLowerCase()) < 0){
                     //mobile
                     workList.classList.remove("effect");
-                    cosmos.style.display = 'none';
-
+                    console.log('test1');
                 }else if(navigator.userAgent.match(/iPad/i)||navigator.userAgent.match(/Tablet/i)||navigator.userAgent.match(/Android/i)||navigator.userAgent.match(/iPhone|iPod/i) ){
                     //tablet
                     workList.classList.remove("effect");
-                    cosmos.style.display = 'none';
+                    document.querySelector(".cosmo1").classList.add("none");
+                    document.querySelector(".cosmo2").classList.add("none");
+                    console.log('test2');
                 }else{
                     //pc
                 }
@@ -216,7 +216,7 @@
         }
 
         function init(){
-            
+
             //reload
             var logo = document.querySelector(".logo"),
                 gnb  = document.querySelector(".gnb li a");
