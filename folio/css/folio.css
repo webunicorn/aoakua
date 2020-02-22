@@ -23,8 +23,8 @@ a:hover { color:#2850a2; text-decoration:none; }
 body,table,th,td,input,select,textarea,div {font-family:'Noto Sans KR', sans-serif; color: #333; font-style: normal; line-height:18px; margin:0; word-spacing:-1pt; word-break:break-all;}
 
 html {font-size:10px; min-width:320px;}
-h2 {font-family: 'Roboto', sans-serif; font-size:3rem; padding:5rem 0 3rem 2rem; font-weight:300; letter-spacing:-1px; }
-h3 {font-family: 'Roboto', sans-serif; font-size: 1.9rem; font-weight: 600; letter-spacing: -0.5px; padding-bottom:2rem; margin-left:-1rem;}
+h2 {font-family: 'Roboto', sans-serif; font-size:3.2rem; padding:5rem 0 3rem 2rem; font-weight:300; letter-spacing:-1px; }
+h3 {font-family: 'Roboto', sans-serif; font-size: 2.2rem; font-weight: 600; letter-spacing: -0.5px; margin-bottom:3rem; padding-bottom:0.6rem; display:inline-block; border-bottom:1px solid #333;}
 .clear::after {content:''; display:block; clear:both;}
 .roboto {font-family: 'Roboto', sans-serif;}
 #header {position: relative;}
@@ -90,24 +90,36 @@ h3 {font-family: 'Roboto', sans-serif; font-size: 1.9rem; font-weight: 600; lett
 @-moz-document url-prefix() { #main .intro .svg_box .svg_name { font-weight:700;}}
 #main .intro .svg_box .masked {mask:url("#mask_layer");}
 */
-#main .about {max-width:1500px; margin:0 auto; }
-#main .about .about_box {padding:2rem 0 2rem 3rem;}
-#main .about .about_box > div {float:left;}
-#main .about .about_box > div:first-child {padding-top:0;}
-#main .about .about_box .profile {width:28%;}
-#main .about .about_box .profile dl {padding-bottom:0.6rem;}
-#main .about .about_box .profile dt {float:left; font-size: 1.3rem; color: #636466; letter-spacing: 0.5px; font-weight: 300; display:inline-block; min-width:7rem;}
-#main .about .about_box .profile dd {display:inline-block; padding-left:2rem;; font-size: 1.4em; color:#333; font-weight:400;}
-#main .about .about_box .career {width:42%;}
-#main .about .about_box .career li {padding-bottom:2rem;}
-#main .about .about_box .career .title {font-size:1.4rem; font-weight:500; }
-#main .about .about_box .career .period {display:block; font-size:1.1rem; color:#4e66a7; padding-top:5px;}
-#main .about .about_box .career p {font-size:1.3rem; color:#636466;}
+#main .about {max-width:1200px; margin:0 auto; }
+#main .about .about_box {padding:2rem;}
+#main .about .about_box .img_profile {width:30%; display:inline-block; float:left; padding-top:1rem;}
+#main .about .about_box .img_profile img {width:100%;}
+#main .about .about_box .profile {width:65%; float:right;}
+#main .about .about_box .profile dl {padding-bottom:1rem;}
+#main .about .about_box .profile dt {font-size: 1.1rem; color: #ababab; letter-spacing: 0.5px; font-weight: 400; display:block;}
+#main .about .about_box .profile dd {display:inline-block; font-size: 1.4rem; color:#333; font-weight:400; line-height:2.2rem; letter-spacing:0.5px;}
+#main .about .about_box .history {position:relative; margin:10rem 0;}
+#main .about .about_box .history ul {position:relative; margin-top:2rem;}
+#main .about .about_box .history ul::after {content:''; display:block; width:100%; height:2px; background:#ddd; position:absolute; top:153px;}
+#main .about .about_box .history ul li {position:relative; display:inline-block; padding-bottom:2rem; border:1px solid #dedede; float:left; width:17%; min-height:8rem; border-radius:1rem; padding:1%; box-shadow: 3px 8px 11px -3px rgba(0, 0, 0, 0.1);}
+#main .about .about_box .history ul li:nth-child(2n) {margin-top:23rem;}
+#main .about .about_box .history ul li::before {content:''; display:block; position:absolute; bottom:-9px; left:50%; margin-left:-4px; width:0px; height:0px; border-top:8px solid #dedede; border-bottom:none; border-right: 8px solid transparent; border-left: 8px solid  transparent;}
+#main .about .about_box .history ul li::after {content:''; display:block; position:absolute; top:147px; left:50%; margin-left:-4px; width:8px; height:8px; background:#e8e8e8; border:2px solid #788fff; border-radius:50%; z-index:2;}
+#main .about .about_box .history ul li:nth-child(2n)::after {top:-83px;}
+#main .about .about_box .history ul li:nth-child(2n)::before {top:-9px; border-top:none; border-bottom:8px solid #dedede; border-right: 8px solid transparent; border-left: 8px solid  transparent;}
+#main .about .about_box .history .title {font-size:1.4rem; font-weight:500; letter-spacing: -0.5px;}
+#main .about .about_box .history .title > span {display:block; font-weight:400; font-size:1.2rem; color:#828282;}
+#main .about .about_box .history .period {display:block; font-size:1.1rem; color:#4e66a7;}
+#main .about .about_box .history p {font-size:1.2rem; color:#636466; letter-spacing:-0.5px;}
 #main .about .about_box .skill {}
-#main .about .about_box .skill li {font-size:1.4rem; font-weight:300; padding-bottom:10px;}
-#main .about .about_box .skill li::before {content:'\263E'; display:inline-block; padding-right:.5rem; color:#4e66a7;}
-#main .work {max-width:1500px; margin:0 auto;}
-#main .work .work_list li {width:calc(50% - 4rem); float:left; padding:2rem 2rem 3rem 2rem;}
+#main .about .about_box .skill .main_skill {width:100%; text-align: center;}
+#main .about .about_box .skill .main_skill li {position: relative; display: inline-block; color: #999; font-size: 1.4rem; text-align: center; width:24%;}
+#main .about .about_box .skill .main_skill li span {position:absolute; top:45%; left:50%; min-width:100px; margin-left:-50px;}
+#main .about .about_box .skill .etc_skill {padding:5rem 2rem 0 2rem;}
+#main .about .about_box .skill .etc_skill li {font-size:1.4rem; font-weight:300; padding-bottom:10px;}
+#main .about .about_box .skill .etc_skill li::before {content:'\263E'; display:inline-block; padding-right:.5rem; color:#4e66a7;}
+#main .work {max-width:1200px; margin:5rem auto 0 auto;}
+#main .work .work_list li {width:calc(50% - 4rem); float:left; padding:2rem 2rem 5rem 2rem;}
 #main .work .work_list li a {display:block; position: relative;}
 #main .work .work_list li a img {max-width:100%; height:auto; vertical-align: top; }
 #main .work .work_list li .title {padding-bottom:10px; font-size:1.9rem; font-family: 'Roboto', sans-serif; font-weight:600; letter-spacing:-0.5px; padding-top:1.8rem;}
@@ -119,7 +131,7 @@ h3 {font-family: 'Roboto', sans-serif; font-size: 1.9rem; font-weight: 600; lett
 #main .work .work_list.effect li a img {-webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); -webkit-transition: .5s ease-in-out; -moz-transition: .5s ease-in-out; -o-transition: .5s ease-in-out; transition: .5s ease-in-out; }
 #main .work .work_list.effect li a:hover img {-webkit-filter: grayscale(0%); -moz-filter: grayscale(0%); -o-filter: grayscale(0%); filter: grayscale(0%);}
 #footer {width:100%; border-top: 1px solid #eaeaea; margin:5rem 0 3rem 0; }
-#footer .inner {max-width:1500px; position: relative; margin:0 auto;}
+#footer .inner {max-width:1200px; position: relative; margin:0 auto;}
 #footer h2 {padding-top:3rem;}
 #footer .contact_list {font-size:1.6rem; line-height: 1.6rem; padding-left:2rem; color:#333;}
 #footer .contact_list li {padding:0 0 1rem 0; color:#121215 !important;}
@@ -164,23 +176,42 @@ to {
 /*** media query ***/
 @media only screen and (max-width : 992px) {
     #main .about .about_box > div {float:unset; padding-top:3rem;}
-    #main .about .about_box .profile {width:100%;}
     #main .about .about_box .career {width:100%;}
     #main .work .work_list li {width:auto;}
     #main .work .work_list li {padding-bottom:5rem;}
 }
 
+@media only screen and (max-width : 890px) {
+    #main .about .about_box .skill .main_skill li {width:50%; float:left; margin:3rem 0;}
+    
+}
+
 @media only screen and (max-width : 768px){
-    html {font-size:9px;}
+    html {font-size:10px;}
     #header .gnb a {font-weight:300;}
     .svg_box {display: none;}
+    #main .about .about_box .profile {width:100%;}
+    #main .about .about_box .img_profile {width:auto; float:unset; display:block; text-align:center; padding-bottom:4rem;}
+    #main .about .about_box .img_profile img {width:auto; display:inline;}
     #main .intro .name {display:block; font-size: 11rem; line-height: 11rem; /* background: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db); -webkit-background-clip: text; -webkit-text-fill-color: transparent;*/}
     #main .intro .job {padding-top:1rem;}
     #main .work .work_list li {padding-bottom:5rem;}
+    #main .about .about_box .history ul {display: flex; justify-content:flex-start; flex-direction: column-reverse;}
+    #main .about .about_box .history ul::after {display:none;}
+    #main .about .about_box .history ul li {position:relative; display:inline-block; padding:2rem; margin: 0 auto 3rem auto; border: 1px solid #dedede; float:unset; width:calc(100% - 5rem); min-height:auto; border-radius:none; box-shadow:3px 8px 11px -3px rgba(0, 0, 0, 0.1); box-sizing:border-box;}
+    #main .about .about_box .history ul li:first-child {margin-bottom:0;}
+    #main .about .about_box .history ul li:nth-child(2n) {margin-top:0;}
+    #main .about .about_box .history ul li::before {display: none;}
+    #main .about .about_box .history ul li::after {display: none;}
+    #main .about .about_box .history ul li:nth-child(2n)::after {display:none;}
+    #main .about .about_box .history ul li:nth-child(2n)::before {display:none;}
+    #main .about .about_box .history .title {font-size:1.5rem;}
+    #main .about .about_box .history .period {font-size:1.3rem;}
+    #main .about .about_box .history p {font-size:1.3rem;}
 }
 
 @media only screen and (max-width : 560px) {
-    html {font-size:8px;}
+    html {font-size:9px;}
     #header .gnb {top:8.5rem;}
     #header .gnb a {font-weight:300; font-size:1.7rem;}
     #main .intro {height:100vh;}
@@ -191,7 +222,7 @@ to {
 }
 
 @media only screen and (max-width : 360px) {
-    html {font-size:7px;}
+    html {font-size:8px;}
     #header .gnb {top:9.5rem;}
     #header .gnb a {font-weight:300; font-size:1.8rem;}
     #main .intro {height:100vh;}

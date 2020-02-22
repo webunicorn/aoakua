@@ -7,7 +7,20 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="favicon" href="img/favi.ico">
     <link rel="shortcut icon" href="img/favi.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.0/dist/aos.css">
     <link type="text/css" rel="stylesheet" href="css/folio.css"/>
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.easypiechart.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script type="text/javascript" src="js/folio.js"></script>
+    <script>
+        $(function(){
+            AOS.init({
+                duration: 1200,
+            })
+        });
+    </script>
+    
     <title>ChoiJinA Portfolio</title>
 </head>
 <body>
@@ -45,87 +58,115 @@
         <!-- //intro -->
         
         <div class="about" id="cont1">
-            <h2>About&#8600;</h2>
-            <div class="about_box clear">
-                <div class="profile">
-                    <h3>Profile</h3>
-                    <dl>
-                        <dt>Name</dt>
-                        <dd>최진아</dd>
-                    </dl>
-                    <dl>
-                        <dt>Number</dt>
-                        <dd>010-3089-8316</dd>
-                    </dl>
-                    <dl>
-                        <dt>E-mail</dt>
-                        <dd>wuuzuuoo@gmail.com</dd>
-                    </dl>
+            <h2 data-aos="fade-up">About&#8600;</h2>
+            <div class="about_box clear" >
+                <div class="profile_wrap clear" >
+                    <span class="img_profile" data-aos="zoom-in" data-aos-offset="250"><img src="img/profile.png" alt="최진아 프로필 사진"/></span>
+                    <div class="profile" data-aos="fade-left" data-aos-offset="250">
+                        <h3>Profile</h3>
+                        <dl>
+                            <dt>Name</dt>
+                            <dd>최진아</dd>
+                        </dl>
+                        <dl>
+                            <dt>Birth</dt>
+                            <dd>1989.08.31</dd>
+                        </dl>
+                        <dl>
+                            <dt>Like</dt>
+                            <dd>독서/게임/베이킹</dd>
+                        </dl>
+                        <dl>
+                            <dt>License</dt>
+                            <dd>일본어 JLPT N1</dd>
+                        </dl>
+                        <dl>
+                            <dt>Life</dt>
+                            <dd>
+                                웹 개발로 IT업계에 발을 내디뎠지만, html과 CSS로 화면 단이 그려지는 재미에 이끌려 웹 퍼블리셔로 전향하게 되었습니다.<br>
+                                <strong>호기심</strong>이 많은 성격이라 끊임없이 변하는 IT업계의 신기술들을 배우는 것을 두려워하지 않습니다.<br>
+                                현재도 javascript와 vue.js를 공부하고 있으며, 안주하지 않고 <strong>발전</strong>하는 사람이 되겠습니다.<br>
+                                <strong>일체유심조 [一切唯心造]</strong> 라는 단어를 좋아하는데 '모든 것은 오로지 마음이 지어내는 것'이라는 뜻을 내포하고 있습니다.<br>
+                                이 뜻처럼 어떤 상황에 놓여있더라도 <strong>마음가짐</strong>을 제대로 하면 극복 할 수 있다는 것이 제 삶의 가치관입니다.<br>
+                            </dd>
+                        </dl>
+                        
+                
+                    </div>
                 </div>
-
-                <div class="career">
-                    <h3>Career</h3>
+                <div class="history clear" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="250">
+                    <h3>History</h3>
                     <ul>
                         <li>
-                            <span class="title">엔에이치엔고도</span>
-                            <span class="period">2017.01 ~ 2019.11</span>
-                            <p>사내 사이트와 기타 운영 페이지의 마크업을 담당. [UI 개발]</p>
+                            <span class="title"><span>[한국직업전문학교]</span> 웹표준퍼블리셔 전문가 교육수료</span>
+                            <span class="period">2012.07 ~ 2012.08</span>
+                            <p>HTML,CSS,Javascript,jquery,웹표준</p>
                         </li>
                         <li>
-                            <span class="title">엠게임</span>
-                            <span class="period">2015.12 ~ 2016.12</span>
-                            <p>빌링 시스템 개발 작업과 사내 게임 사이트 페이지의 마크업을 담당. [웹개발+UI개발]</p>
+                            <span class="title"><span>[쌍용교육센터]</span>Hybrid Web App 개발자 교육수료</span>
+                            <span class="period">2013.02 ~ 2013.07</span>
+                            <p>JAVA,JSP,Oracle,Spring,Javascript</p>
                         </li>
                         <li>
                             <span class="title">소리소아이앤씨</span>
                             <span class="period">2014.06 ~ 2015.07</span>
-                            <p>아파치 환경에서 여러 사이트 페이지 개발과 유지보수를 담당. [웹개발+UI개발]</p>
+                            <p>아파치 환경에서 사이트 개발 및 유지보수</p>
+                        </li>
+                        <li>
+                            <span class="title">엠게임</span>
+                            <span class="period">2015.12 ~ 2016.12</span>
+                            <p>빌링 시스템 개발, 사내 게임 사이트 마크업</p>
+                        </li>
+                        <li>
+                            <span class="title">엔에이치엔고도</span>
+                            <span class="period">2017.01 ~ 2019.11</span>
+                            <p>사내 사이트 및 프로모션, 기타 운영 마크업</p>
                         </li>
                     </ul>
                 </div>
 
-                <div class="skill">
+                <div class="skill" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="250">
                     <h3>Skill</h3>
-                    <ul>
-                        <li>HTML5, CSS3, SASS(SCSS)</li>
-                        <li>jQuery, javascript</li>
-                        <li>웹표준, 시멘틱웹, 크로스브라우징, 반응형웹</li>
+                    <ul class="main_skill container">
+                        <li class="chart1" data-percent="95"><span>HTML5</span></li>
+                        <li class="chart2" data-percent="85"><span>CSS3</span></li>
+                        <li class="chart3" data-percent="70"><span>jQuery</span></li>
+                        <li class="chart4" data-percent="20"><span>javascript</span></li>
+                    </ul>
+                    <ul class="etc_skill">
+                        <li>SASS(SCSS), 웹표준, 시맨틱 웹, 크로스 브라우징, 반응형 웹</li>
                         <li>Git, Zeplin, Adobe Photoshop</li>
                     </ul>
-                </div>
+                </ul>
             </div>
         </div>
         <!-- //about -->
 
-        <div class="work clear" id="cont2">
-            <h2>Recent &nbsp;Work&#8600;</h2>
+        <div class="work clear" id="cont2" >
+            <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100">Recent &nbsp;Work&#8600;</h2>
             <ul class="work_list effect">
-                <li>
+                <li data-aos="fade-up" data-aos-duration="1200" data-aos-offset="150">
                     <a href="https://edu.godo.co.kr/" target="_blank"><img src="img/work1.jpg" alt="아카데미"/></a>
                     <p class="title">고도 아카데미 <span class="en_title">Academy</span></p>
                     <p class="rate">- <span>기여도</span> 100%</p>
-                    <p class="work_cont">- 다양한 jQuery 플러그인을 활용하여 페이지에 동적인 요소를 부여함</p>
                     <p class="skill">- HTML,CSS,SVG,jQuery,크로스브라우징,웹표준</p>
                 </li>
-                <li>
+                <li data-aos="fade-up" data-aos-duration="1200"  data-aos-offset="250">
                     <a href="https://www.godo.co.kr/shopby/main.gd" target="_blank"><img src="img/work2.jpg" alt="샵바이 메인"/></a>
                     <p class="title">샵바이 <span class="en_title">Shop by</span> <span class="device">pc/mobile</span></p>
                     <p class="rate"><span>- 기여도</span> 100%</p>
-                    <p class="work_cont">- 사내에서 사용하지 않았던 기술들을 적용하여 비쥬얼 효과를 극대화 시켰음 </p>
                     <p class="skill">- HTML,CSS,SVG,jQuery,javascript,크로스브라우징,웹표준</p>
                 </li>
-                <li>
+                <li data-aos="fade-up" data-aos-duration="1200" data-aos-offset="150">
                     <a href="https://webunicorn.github.io/aoakua/cloudconsole/html/mypage.html" target="_blank"><img src="img/work3.jpg" alt="클라우드 콘솔"/></a>
                     <p class="title">클라우드 콘솔 <span class="en_title">Cloud Console</span></p>
                     <p class="rate">- <span>기여도</span> 100%</p>
-                    <p class="work_cont">- 유지보수의 편리성을 위해 모듈화 작업함.</p>
                     <p class="skill">- HTML,CSS,jQuery,javascript,크로스브라우징,웹표준</p>
                 </li>
-                <li>
+                <li data-aos="fade-up" data-aos-duration="1200" data-aos-offset="250">
                     <a href="https://www.godo.co.kr/promotion/hae-dream.gd" target="_blank"><img src="img/work4.jpg" alt="해드림"/></a>
                     <p class="title">해드림 <span class="en_title">Haedream</span><span class="device">pc/mobile</span></p>
                     <p class="rate">- <span>기여도</span> 100%</p>
-                    <p class="work_cont">- CSS animation을 사용하여 오브젝트들의 부드러움을 강조함.</p>
                     <p class="skill">- HTML,CSS,SVG,jQuery,크로스브라우징,웹표준</p>
                 </li>
             </ul>
@@ -146,6 +187,7 @@
         </div>
     </div>
     <!-- //footer -->
-    <script src="js/folio.js" type="text/javascript"></script>
+
+    
 </body>
 </html>
