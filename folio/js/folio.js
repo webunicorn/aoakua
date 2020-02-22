@@ -57,7 +57,7 @@ $(function() {
     
 
     //star
-    var a = $(window).width();
+    var a = 2000;
     var b = $(window).height();
     var f = a*b/6000;
 
