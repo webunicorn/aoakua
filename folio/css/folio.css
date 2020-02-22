@@ -196,8 +196,8 @@ to {
     #header .gnb a {font-weight:300;}
     .svg_box {display: none;}
     #main .about .about_box .profile {width:100%;}
-    #main .about .about_box .img_profile {width:auto; float:unset; display:block; text-align:center; padding-bottom:4rem;}
-    #main .about .about_box .img_profile img {width:auto; display:inline;}
+    #main .about .about_box .img_profile {width:calc(100% - 5rem); margin:0 auto; float:unset; display:block; text-align:center; padding-bottom:4rem;}
+    #main .about .about_box .img_profile img {width:100%; display:inline;}
     #main .intro .name {display:block; font-size: 11rem; line-height: 11rem; /* background: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db); -webkit-background-clip: text; -webkit-text-fill-color: transparent;*/}
     #main .intro .job {padding-top:1rem;}
     #main .work .work_list li {padding-bottom:5rem;}
