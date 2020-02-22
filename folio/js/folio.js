@@ -1,7 +1,6 @@
 
 
 
-
 $(function() {
     var chartCont = function(){
         $('.chart1').easyPieChart({
@@ -71,7 +70,7 @@ $(function() {
     }
 
     var k1=1.5;
-    var k2=1.8*k1;
+    var k2=1.5*k1;
     star('cosmo1',f,k1,1);
     star('cosmo2',f*0.1,k2,2);
 
@@ -84,12 +83,10 @@ $(function() {
         $('.cosmo2').css('top',(1-k2)*posY+'px')
     });
 
-    
     $(window).resize(function(){
-        
+      
     });
 
     
 });
-
 

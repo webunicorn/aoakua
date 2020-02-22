@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="format-detection" content="telephone=no">
+    <title>ChoiJinA Portfolio</title>
     <link rel="favicon" href="img/favi.ico">
     <link rel="shortcut icon" href="img/favi.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.0/dist/aos.css">
@@ -20,8 +21,6 @@
             })
         });
     </script>
-    
-    <title>ChoiJinA Portfolio</title>
 </head>
 <body>
     <div id="header">
@@ -47,8 +46,9 @@
         </ul>
     </div>
     <!-- //header -->
-    <div class='cosmo1'></div>
-    <div class='cosmo2'></div>
+
+    <div class="cosmo1"></div>
+    <div class="cosmo2"></div>
     <div id="main">
         <div class="intro">
             <div class="inner">
@@ -189,6 +189,42 @@
         </div>
     </div>
     <!-- //footer -->
-    
+    <script>
+        //device check
+        function deviceCheck(){
+            const pcDevice   = "win16|win32|win64|mac|macintel",
+                  thisDevice = navigator.platform;
+            var workList = document.querySelector("#main .work .work_list"),
+                cosmos = document.querySelector(".cosmos1, .cosmos2");
+
+            if(thisDevice){
+                if(pcDevice.indexOf(navigator.platform.toLowerCase()) < 0){
+                    //mobile
+                    workList.classList.remove("effect");
+                    cosmos.style.display = 'none';
+
+                }else if(navigator.userAgent.match(/iPad/i)||navigator.userAgent.match(/Tablet/i)||navigator.userAgent.match(/Android/i)||navigator.userAgent.match(/iPhone|iPod/i) ){
+                    //tablet
+                    workList.classList.remove("effect");
+                    cosmos.style.display = 'none';
+                }else{
+                    //pc
+                }
+            }
+        }
+
+
+        function init(){
+            //reload
+            var logo = document.querySelector(".logo"),
+                gnb  = document.querySelector(".gnb li a");
+            logo.addEventListener("click", function(){
+                location.reload();
+            });
+
+            deviceCheck();
+        }
+        init();
+    </script>
 </body>
 </html>
