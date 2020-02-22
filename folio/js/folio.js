@@ -10,7 +10,7 @@ $(function() {
             barColor: '#9d64c1',
             trackColor:	"#ecf0f1",
             size: 200,
-            animate: 1000,
+            animate: 1400,
             scaleLength: 0
         });
         $('.chart2').easyPieChart({
@@ -20,7 +20,7 @@ $(function() {
             barColor: '#4e66a7',
             trackColor:	"#ecf0f1",
             size: 200,
-            animate: 1000,
+            animate: 1400,
             scaleLength: 0
         });
         $('.chart3').easyPieChart({
@@ -30,7 +30,7 @@ $(function() {
             barColor: '#4ea78e',
             trackColor:	"#ecf0f1",
             size: 200,
-            animate: 1000,
+            animate: 1400,
             scaleLength: 0
         });
         $('.chart4').easyPieChart({
@@ -40,7 +40,7 @@ $(function() {
             barColor: '#e8c496',
             trackColor:	"#ecf0f1",
             size: 200,
-            animate: 1000,
+            animate: 1400,
             scaleLength: 0
         });
     }
