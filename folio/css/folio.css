@@ -193,6 +193,7 @@ to {
 
 @media only screen and (max-width : 768px){
     html {font-size:10px;}
+    html, body {max-width: 100%; overflow-x: hidden;}
     #header .gnb a {font-weight:300;}
     .svg_box {display: none;}
     #main .about .about_box .profile {width:100%;}
@@ -217,6 +218,7 @@ to {
 
 @media only screen and (max-width : 560px) {
     html {font-size:9px;}
+    html, body {max-width: 100%; overflow-x: hidden;}
     #header .gnb {top:8.5rem;}
     #header .gnb a {font-weight:300; font-size:1.7rem;}
     #main .intro {height:100vh;}
@@ -230,6 +232,7 @@ to {
 
 @media only screen and (max-width : 360px) {
     html {font-size:8px;}
+    html, body {max-width: 100%; overflow-x: hidden;}
     #header .gnb {top:9.5rem;}
     #header .gnb a {font-weight:300; font-size:1.8rem;}
     #main .intro {height:100vh;}
