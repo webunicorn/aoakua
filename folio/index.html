@@ -202,13 +202,13 @@
                 if(pcDevice.indexOf(navigator.platform.toLowerCase()) < 0){
                     //mobile
                     workList.classList.remove("effect");
-                    console.log('test1');
+                    document.querySelector(".cosmo1").classList.add("none");
+                    document.querySelector(".cosmo2").classList.add("none");
                 }else if(navigator.userAgent.match(/iPad/i)||navigator.userAgent.match(/Tablet/i)||navigator.userAgent.match(/Android/i)||navigator.userAgent.match(/iPhone|iPod/i) ){
                     //tablet
                     workList.classList.remove("effect");
                     document.querySelector(".cosmo1").classList.add("none");
                     document.querySelector(".cosmo2").classList.add("none");
-                    console.log('test2');
                 }else{
                     //pc
                 }
