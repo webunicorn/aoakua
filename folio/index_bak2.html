@@ -7,7 +7,12 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="favicon" href="img/favi.ico">
     <link rel="shortcut icon" href="img/favi.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.0/dist/aos.css">
     <link type="text/css" rel="stylesheet" href="css/folio.css"/>
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.easypiechart.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script type="text/javascript" src="js/folio.js"></script>
     <title>ChoiJinA Portfolio</title>
 </head>
 <body>
@@ -34,6 +39,29 @@
         </ul>
     </div>
     <!-- //header -->
+
+    <style>
+        .star {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        background: #fff
+        }
+        .cosmo1 {
+        position: absolute;
+        top: -10%;
+        left: -10%;
+        opacity: .8;
+        }
+        .cosmo2 {
+        position: absolute;
+        top: -22%;
+        left: -22%;
+        }
+    </style>
+    <div class='cosmo1'></div>
+    <div class='cosmo2'></div>
     <div id="main">
         <div class="intro">
             <div class="inner">
@@ -146,6 +174,6 @@
         </div>
     </div>
     <!-- //footer -->
-    <script src="js/folio.js" type="text/javascript"></script>
+   
 </body>
 </html>

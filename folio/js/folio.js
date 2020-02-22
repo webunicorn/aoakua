@@ -1,4 +1,7 @@
 
+
+
+
 $(function() {
     var chartCont = function(){
         $('.chart1').easyPieChart({
@@ -51,7 +54,41 @@ $(function() {
             chartCont();
         }
     });
+
     
+
+    //star
+    var a = $(window).width();
+    var b = $(window).height();
+    var f = a*b/6000;
+
+    function star(obj, frequency, k, size) {
+        for (var i=0;i<frequency;i++) {
+            var x = Math.random()*a*k;
+            var y = Math.random()*b*k;
+            $('.'+obj).append('<div class="star" style="left:'+x+'px;top:'+y+'px;transform:scale('+size+')"></div>')
+        }
+    }
+
+    var k1=1.5;
+    var k2=1.8*k1;
+    star('cosmo1',f,k1,1);
+    star('cosmo2',f*0.1,k2,2);
+
+    $(document).mousemove(function(e) {
+        var posX = e.pageX;
+        var posY = e.pageY;
+        $('.cosmo1').css('left',(1-k1)*posX+'px')
+        $('.cosmo1').css('top',(1-k1)*posY+'px')
+        $('.cosmo2').css('left',(1-k2)*posX+'px')
+        $('.cosmo2').css('top',(1-k2)*posY+'px')
+    });
+
+    
+    $(window).resize(function(){
+        
+    });
+
     
 });
 
