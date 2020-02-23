@@ -130,8 +130,8 @@ h3 {font-family: 'Roboto', sans-serif; font-size: 2.2rem; font-weight: 600; lett
 #main .work .work_list li .rate {font-size:1.3rem; color:#636466; letter-spacing:0.5px; font-weight:300; line-height:2rem;}
 #main .work .work_list li .work_cont {font-size:1.3rem; color:#636466; font-weight:300; line-height:2rem;}
 #main .work .work_list li .skill {font-size:1.3rem; color:#636466; letter-spacing:0.5px; font-weight:300; line-height:2rem;}
-#main .work .work_list.effect li a img {-webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); -webkit-transition: .5s ease-in-out; -moz-transition: .5s ease-in-out; -o-transition: .5s ease-in-out; transition: .5s ease-in-out; }
-#main .work .work_list.effect li a:hover img {-webkit-filter: grayscale(0%); -moz-filter: grayscale(0%); -o-filter: grayscale(0%); filter: grayscale(0%);}
+#main .work .work_list.effect li a img {-webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -o-filter: grayscale(100%); -ms-filter: grayscale(100%); filter: grayscale(100%); -webkit-transition: .5s ease-in-out; -moz-transition: .5s ease-in-out; -o-transition: .5s ease-in-out; transition: .5s ease-in-out; }
+#main .work .work_list.effect li a:hover img {-webkit-filter: grayscale(0%); -moz-filter: grayscale(0%); -o-filter: grayscale(0%); -ms-filter: grayscale(0%); filter: grayscale(0%);}
 #footer {width:100%; border-top: 1px solid #eaeaea; margin:5rem 0 3rem 0; }
 #footer .inner {max-width:1200px; position: relative; margin:0 auto;}
 #footer h2 {padding-top:3rem;}
