@@ -1,7 +1,12 @@
 
 
-
 $(function() {
+    //AOS.js
+    AOS.init({
+        duration: 1200,
+    })
+
+    //easypiechart.js
     var chartCont = function(){
         $('.chart1').easyPieChart({
             scaleColor: "#ecf0f1",
@@ -45,16 +50,11 @@ $(function() {
         });
     }
 
-    
     $(window).scroll(function(){
-        var skill = $('#main .about .about_box .skill');
-
-        if($(this).scrollTop() > skill.offset().top -650){
+        if($(this).scrollTop() > $('#main .about .about_box .skill').offset().top -650){
             chartCont();
         }
     });
-
-    
 
     //star
     var a = 2000;
@@ -84,3 +84,29 @@ $(function() {
     });
     
 });
+
+//device check
+const pcDevice   = "win16|win32|win64|mac|macintel",
+      thisDevice = navigator.platform;
+var workList = document.querySelector("#main .work .work_list");
+
+if(thisDevice){
+    if(pcDevice.indexOf(navigator.platform.toLowerCase()) < 0){
+        //mobile
+        workList.classList.remove("effect");
+        document.querySelector(".cosmo1").classList.add("none");
+        document.querySelector(".cosmo2").classList.add("none");
+    }else if(navigator.userAgent.match(/iPad/i)||navigator.userAgent.match(/Tablet/i)||navigator.userAgent.match(/Android/i)||navigator.userAgent.match(/iPhone|iPod/i) ){
+        //tablet
+        workList.classList.remove("effect");
+        document.querySelector(".cosmo1").classList.add("none");
+        document.querySelector(".cosmo2").classList.add("none");
+    }else{
+        //pc
+    }
+}
+
+document.querySelector(".logo").addEventListener("click", function(){
+    location.reload();
+});
+

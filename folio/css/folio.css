@@ -85,13 +85,6 @@ h3 {font-family: 'Roboto', sans-serif; font-size: 2.2rem; font-weight: 600; lett
 } 
 #main .intro .job {font-size:2.5rem; line-height:2.5rem; color:#fff; text-align:center; font-weight:200; padding-top:2rem; position: relative; z-index:1;}
 #main .intro .svg_box {position: absolute; top:15rem; left:50%; margin-left:-35rem;}
-/*
-#main .intro .svg_box .svg {width:700px; height:500px;}
-#main .intro .svg_box .bg_vedio {width:700px; height:400px; position: absolute; top:60px; left:0; z-index:-1;}
-#main .intro .svg_box .svg_name {font-size:13rem; line-height: 13rem; color:#fff; text-align:center; font-weight:800;}
-@-moz-document url-prefix() { #main .intro .svg_box .svg_name { font-weight:700;}}
-#main .intro .svg_box .masked {mask:url("#mask_layer");}
-*/
 #main .about {max-width:1200px; margin:0 auto; }
 #main .about .about_box {padding:2rem;}
 #main .about .about_box .img_profile {width:30%; display:inline-block; float:left; padding-top:1rem;}
@@ -139,7 +132,6 @@ h3 {font-family: 'Roboto', sans-serif; font-size: 2.2rem; font-weight: 600; lett
 #footer .contact_list li {padding:0 0 1rem 0; color:#121215 !important;}
 #footer .contact_list li::before {content:'\22C5'; display:inline-block; padding-right:0.4rem;}
 #footer .slogan {font-family:'Oleo Script', cursive; font-size:1.7rem; font-weight: 100; position: absolute; right:3rem; bottom:0.3rem;}
-/* star */
 .star {position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #fff}
 .cosmo1 {position: absolute; top: -10%; left: -10%; opacity: .8;}
 .cosmo2 {position: absolute; top: -22%; left: -22%;}
@@ -194,11 +186,7 @@ to {
 @media only screen and (max-width : 768px){
     html {font-size:10px;}
     html, body {max-width: 100%; overflow-x: hidden;}
-    body{overflow: hidden;
-        width: 100%;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;}
+    body{overflow: hidden; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
     #header .gnb a {font-weight:300;}
     .svg_box {display: none;}
     #main .about .about_box .profile {width:100%;}
@@ -224,11 +212,7 @@ to {
 @media only screen and (max-width : 560px) {
     html {font-size:9px;}
     html, body {max-width: 100%; overflow-x: hidden;}
-    body{overflow: hidden;
-        width: 100%;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;}
+    body{overflow: hidden; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
     #header .gnb {top:8.5rem;}
     #header .gnb a {font-weight:300; font-size:1.7rem;}
     #main .intro {height:100vh;}
@@ -243,11 +227,7 @@ to {
 @media only screen and (max-width : 360px) {
     html {font-size:8px;}
     html, body {max-width: 100%; overflow-x: hidden;}
-    body{overflow: hidden;
-        width: 100%;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;}
+    body{overflow: hidden; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
     #header .gnb {top:9.5rem;}
     #header .gnb a {font-weight:300; font-size:1.8rem;}
     #main .intro {height:100vh;}
