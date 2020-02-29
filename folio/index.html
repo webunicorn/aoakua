@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/folio.css"/>
 </head>
 <body>
-    <div id="header">
+    <header>
         <div class="circle_box">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="150px" height="150px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
                 <defs>
@@ -28,62 +28,63 @@
             </svg>
             <span class="logo"></span>
         </div>
-        <ul class="gnb">
-            <li><a href="#cont1">about</a></li>
-            <li><a href="#cont2">work</a></li>
-            <li><a href="#footer">contact</a></li>
-        </ul>
-    </div>
+        <nav>
+            <ul>
+                <li><a href="#cont1">about</a></li>
+                <li><a href="#cont2">work</a></li>
+                <li><a href="#footer">contact</a></li>
+            </ul>
+        </nav>
+    </header>
     <!-- //header -->
 
     <div class="cosmo1" id="cosmos11"></div>
     <div class="cosmo2" id="cosmos22"></div>
-    <div id="main">
-        <div class="intro">
+    <article id="main">
+        <article class="intro">
             <div class="inner">
                 <p class="name">CHOI JIN A</p>
                 <p class="name_ie">CHOI JIN A</p>
                 <p class="job roboto">Web Publisher</p>
             </div>
-        </div>    
+        </article>    
         <!-- //intro -->
         
-        <div class="about" id="cont1">
+        <article class="about" id="cont1">
             <h2 data-aos="fade-up">About&#8600;</h2>
-            <div class="about_box clear" >
-                <div class="profile_wrap clear" >
+            <div class="about_box clear">
+                <div class="profile_wrap clear">
                     <span class="img_profile" data-aos="zoom-in" data-aos-offset="250" data-aos-duration="1500" ><img src="img/profile.png" alt="최진아 프로필 사진"/></span>
                     <div class="profile">
                         <h3 data-aos="fade-left" data-aos-offset="250">Profile</h3>
                         <div data-aos="fade-left" data-aos-offset="280">
-                        <dl>
-                            <dt>Name</dt>
-                            <dd>최진아</dd>
-                        </dl>
-                        <dl>
-                            <dt>Birth</dt>
-                            <dd>1989.08.31</dd>
-                        </dl>
-                        <dl>
-                            <dt>Like</dt>
-                            <dd>독서/게임/베이킹</dd>
-                        </dl>
-                        <dl>
-                            <dt>License</dt>
-                            <dd>일본어 JLPT N1</dd>
-                        </dl>
-                        <dl>
-                            <dt>Life</dt>
-                            <dd>
-                                웹 개발로 IT업계에 발을 내디뎠지만, html과 CSS로 화면 단이 그려지는 재미에 이끌려 웹 퍼블리셔로 전향하게 되었습니다.<br>
-                                <strong>호기심</strong>이 많은 성격이라 끊임없이 변하는 IT업계의 신기술들을 배우는 것을 두려워하지 않습니다.<br>
-                                현재도 javascript와 vue.js를 공부하고 있으며, 안주하지 않고 <strong>발전</strong>하는 사람이 되겠습니다.<br>
-                                <strong>일체유심조 [一切唯心造]</strong> 라는 단어를 좋아하는데 '모든 것은 오로지 마음이 지어내는 것'이라는 뜻을 내포하고 있습니다.<br>
-                                이 뜻처럼 어떤 상황에 놓여있더라도 <strong>마음가짐</strong>을 제대로 하면 극복 할 수 있다는 것이 제 삶의 가치관입니다.<br>
-                            </dd>
-                        </dl>
-                    </div>
-                
+                            <dl>
+                                <dt>Name</dt>
+                                <dd>최진아</dd>
+                            </dl>
+                            <dl>
+                                <dt>Birth</dt>
+                                <dd>1989.08.31</dd>
+                            </dl>
+                            <dl>
+                                <dt>Like</dt>
+                                <dd>독서/게임/베이킹</dd>
+                            </dl>
+                            <dl>
+                                <dt>License</dt>
+                                <dd>일본어 JLPT N1</dd>
+                            </dl>
+                            <dl>
+                                <dt>Life</dt>
+                                <dd>
+                                    웹 개발로 IT업계에 발을 내디뎠지만, html과 CSS로 화면 단이 그려지는 재미에 이끌려 웹 퍼블리셔로 전향하게 되었습니다.<br>
+                                    <strong>호기심</strong>이 많은 성격이라 끊임없이 변하는 IT업계의 신기술들을 배우는 것을 두려워하지 않습니다.<br>
+                                    현재도 javascript와 vue.js를 공부하고 있으며, 안주하지 않고 <strong>발전</strong>하는 사람이 되겠습니다.<br>
+                                    <strong>일체유심조 [一切唯心造]</strong> 라는 단어를 좋아하는데 '모든 것은 오로지 마음이 지어내는 것'이라는 뜻을 내포하고 있습니다.<br>
+                                    이 뜻처럼 어떤 상황에 놓여있더라도 <strong>마음가짐</strong>을 제대로 하면 극복 할 수 있다는 것이 제 삶의 가치관입니다.<br>
+                                </dd>
+                            </dl>
+                        </div>
                     </div>
                 </div>
                 <div class="history clear">
@@ -116,7 +117,6 @@
                         </li>
                     </ul>
                 </div>
-
                 <div class="skill">
                     <h3 data-aos="fade-up" data-aos-duration="1000">Skill</h3>
                     <ul class="main_skill container clear"  data-aos="fade-up" data-aos-duration="1000" data-aos-offset="250">
@@ -129,12 +129,12 @@
                         <li>SASS(SCSS), 웹표준, 시맨틱 웹, 크로스 브라우징, 반응형 웹</li>
                         <li>Git, Zeplin, Adobe Photoshop</li>
                     </ul>
-                </ul>
+                </div>
             </div>
-        </div>
+        </article>
         <!-- //about -->
 
-        <div class="work clear" id="cont2" >
+        <article class="work clear" id="cont2" >
             <h2 data-aos="fade-up">Recent &nbsp;Work&#8600;</h2>
             <ul class="work_list effect">
                 <li data-aos="fade-up" data-aos-duration="1200" data-aos-offset="250">
@@ -162,13 +162,12 @@
                     <p class="skill">- HTML,CSS,SVG,jQuery,크로스브라우징,웹표준</p>
                 </li>
             </ul>
-        </div>
+        </article>
         <!-- //work -->
-        
-    </div>
+    </section>
     <!-- //main -->
 
-    <div id="footer" id="cont3">
+    <footer id="cont3">
         <div class="inner">
             <h2>Contact&#8600;</h2>
             <ul class="contact_list">
@@ -177,9 +176,9 @@
             </ul>
             <span class="slogan roboto">Never be Ordinary!</span>
         </div>
-    </div>
+    </footer>
     <!-- //footer -->
-    
+
     <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="../js/jquery.easypiechart.js"></script>
     <script type="text/javascript" src="https://unpkg.com/aos@next/dist/aos.js"></script>

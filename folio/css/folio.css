@@ -29,11 +29,11 @@ h3 {font-family: 'Roboto', sans-serif; font-size: 2.2rem; font-weight: 600; lett
 .clear::after {content:''; display:block; clear:both;}
 .roboto {font-family: 'Roboto', sans-serif;}
 .none {display: none;}
-#header {position: relative;}
-#header .logo {position:absolute; top:62px; left:42px; display:inline-block; width:40px; height:40px; border-radius:50px; cursor:pointer; background: #1f1e1e;  /*background: linear-gradient(90deg, #aea4e3, #d3ffe8);*/}
-#header .circle_box { position: absolute; width:150px; height:150px; overflow: hidden;}
-#header .circle_box text {font-size: 18.2px; font-weight:300;}
-#header .circle_box svg { position: absolute; left: -13px; top: 7px; width: 150px; height: 150px;
+header {position: relative;}
+header .logo {position:absolute; top:62px; left:42px; display:inline-block; width:40px; height:40px; border-radius:50px; cursor:pointer; background: #1f1e1e;  /*background: linear-gradient(90deg, #aea4e3, #d3ffe8);*/}
+header .circle_box { position: absolute; width:150px; height:150px; overflow: hidden;}
+header .circle_box text {font-size: 18.2px; font-weight:300;}
+header .circle_box svg { position: absolute; left: -13px; top: 7px; width: 150px; height: 150px;
   -webkit-animation-name: rotate;
      -moz-animation-name: rotate;
       -ms-animation-name: rotate;
@@ -55,9 +55,9 @@ h3 {font-family: 'Roboto', sans-serif; font-size: 2.2rem; font-weight: 600; lett
        -o-animation-timing-function: linear;
           animation-timing-function: linear;
 }
-#header .gnb {position:absolute; top:7.5rem; right:4rem;}
-#header .gnb li {float:left; padding-left:3rem;}
-#header .gnb a {font-size:1.4rem; color:#fff; letter-spacing: 1px; font-weight:100;}
+header nav {position:absolute; top:7.5rem; right:4rem;}
+header nav li {float:left; padding-left:3rem;}
+header nav a {font-size:1.4rem; color:#fff; letter-spacing: 1px; font-weight:100;}
 #main .intro {width:100%; height:900px; background-color:#121215; position: relative; z-index:-1; background-attachment: fixed;}
 #main .intro .inner {padding-top:39rem;}
 #main .intro .name {font-size:13rem; line-height: 13rem; color:#fff; text-align:center; font-weight:800;
@@ -125,13 +125,13 @@ h3 {font-family: 'Roboto', sans-serif; font-size: 2.2rem; font-weight: 600; lett
 #main .work .work_list li .skill {font-size:1.3rem; color:#636466; letter-spacing:0.5px; font-weight:300; line-height:2rem;}
 #main .work .work_list.effect li a img {-webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -o-filter: grayscale(100%); -ms-filter: grayscale(100%); filter: grayscale(100%); -webkit-transition: .5s ease-in-out; -moz-transition: .5s ease-in-out; -o-transition: .5s ease-in-out; transition: .5s ease-in-out; }
 #main .work .work_list.effect li a:hover img {-webkit-filter: grayscale(0%); -moz-filter: grayscale(0%); -o-filter: grayscale(0%); -ms-filter: grayscale(0%); filter: grayscale(0%);}
-#footer {width:100%; border-top: 1px solid #eaeaea; margin:5rem 0 3rem 0; }
-#footer .inner {max-width:1200px; position: relative; margin:0 auto;}
-#footer h2 {padding-top:3rem;}
-#footer .contact_list {font-size:1.6rem; line-height: 1.6rem; padding-left:2rem; color:#333;}
-#footer .contact_list li {padding:0 0 1rem 0; color:#121215 !important;}
-#footer .contact_list li::before {content:'\22C5'; display:inline-block; padding-right:0.4rem;}
-#footer .slogan {font-family:'Oleo Script', cursive; font-size:1.7rem; font-weight: 100; position: absolute; right:3rem; bottom:0.3rem;}
+footer {width:100%; border-top: 1px solid #eaeaea; margin:5rem 0 3rem 0; }
+footer .inner {max-width:1200px; position: relative; margin:0 auto;}
+footer h2 {padding-top:3rem;}
+footer .contact_list {font-size:1.6rem; line-height: 1.6rem; padding-left:2rem; color:#333;}
+footer .contact_list li {padding:0 0 1rem 0; color:#121215 !important;}
+footer .contact_list li::before {content:'\22C5'; display:inline-block; padding-right:0.4rem;}
+footer .slogan {font-family:'Oleo Script', cursive; font-size:1.7rem; font-weight: 100; position: absolute; right:3rem; bottom:0.3rem;}
 .star {position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #fff}
 .cosmo1 {position: absolute; top: -10%; left: -10%; opacity: .8;}
 .cosmo2 {position: absolute; top: -22%; left: -22%;}
@@ -187,7 +187,7 @@ to {
     html {font-size:10px;}
     html, body {max-width: 100%; overflow-x: hidden;}
     body{overflow: hidden; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
-    #header .gnb a {font-weight:300;}
+    header nav a {font-weight:300;}
     .svg_box {display: none;}
     #main .about .about_box .profile {width:100%;}
     #main .about .about_box .img_profile {width:calc(100% - 5rem); margin:0 auto; float:unset; display:block; text-align:center; padding-bottom:4rem;}
@@ -213,26 +213,27 @@ to {
     html {font-size:9px;}
     html, body {max-width: 100%; overflow-x: hidden;}
     body{overflow: hidden; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
-    #header .gnb {top:8.5rem;}
-    #header .gnb a {font-weight:300; font-size:1.7rem;}
+    header nav {top:8.5rem;}
+    header nav a {font-weight:300; font-size:1.7rem;}
     #main .intro {height:100vh;}
     #main .intro .name {display:block; font-size: 7.5rem; line-height: 7.5rem;}
     #main .work .work_list li {padding-bottom:5rem;}
     #main .work .work_list li .title .device {font-size:1.5rem;}
-    #footer .contact_list li {font-size: 1.8rem;}
     #main .about .about_box .history {margin: 5rem 0 5rem 0;}
     #main .about .about_box .skill .main_skill li canvas {width:15rem !important; height:15rem !important;}
+    footer .contact_list li {font-size: 1.8rem;}
+    
 }
 
 @media only screen and (max-width : 360px) {
     html {font-size:8px;}
     html, body {max-width: 100%; overflow-x: hidden;}
     body{overflow: hidden; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
-    #header .gnb {top:9.5rem;}
-    #header .gnb a {font-weight:300; font-size:1.8rem;}
+    header nav {top:9.5rem;}
+    header nav a {font-weight:300; font-size:1.8rem;}
     #main .intro {height:100vh;}
     #main .intro .name {display:block; font-size: 8rem; line-height: 8rem;}
     #main .work .work_list li {padding-bottom:5rem;}
     #main .work .work_list li .title .device {font-size:1.5rem;}
-    #footer .contact_list li {font-size: 1.8rem;}
+    footer .contact_list li {font-size: 1.8rem;}
 }
