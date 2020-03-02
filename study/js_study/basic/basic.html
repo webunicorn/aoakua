@@ -25,14 +25,18 @@
     </div>
      -->
 
-    <!-- 지뢰찾기 -->
+    <!-- 지뢰찾기 
     <style>
         table {border-collapse: collapse;}
-        td {border:1px solid black; width:20px; height:20px; text-align: center;}
+        td {border:1px solid black; width:30px; height:30px; text-align: center; background:#444; border:1px solid #ddd;}
+        td.opened {background:#fff;}
+        td.flag {background:red;}
+        td.question {background:orange;}
+
     </style>
     <input type="number" id="hor" value="10" placeholder="가로"/>
     <input type="number" id="ver" value="10" placeholder="세로"/>
-    <input type="number" id="mine" placeholder="지뢰"/>
+    <input type="number" id="mine" value="20" placeholder="지뢰"/>
     <button id="exec">실행</button>
     <table id="table">
         <thead>
@@ -42,7 +46,18 @@
         </thead>
         <tbody></tbody>
     </table>
+    <div id="result"></div>
+    -->
 
-    <script src="basic4.js"></script>
+    <!-- 반응속도 -->
+    <style>
+        #screen {width:300px; height:200px; text-align: center; user-select: none;}
+        #screen.waiting {background:cyan;}
+        #screen.ready {background:red;}
+        #screen.now {background:greenyellow;}
+    </style>
+    <div id="screen" class="waiting">클릭해서 시작하세요</div>
+
+    <script src="basic5.js"></script>
 </body>
 </html>
