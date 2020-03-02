@@ -16,10 +16,10 @@ ol,ul,li {list-style: none;}
 button {border:0 none;padding:0;margin:0;background:transparent;*overflow:visible;cursor:pointer;}
 button::-moz-focus-inner {border:0;padding:0;}
 a[href^=tel] {text-decoration:inherit; color: inherit;}
-a:link { color:#3366cc; text-decoration:none; }
-a:visited { color:#3366cc; text-decoration:none; }
-a:active { color:#3366cc; text-decoration:none; }
-a:hover { color:#2850a2; text-decoration:none; }
+a:link { color:#fff; text-decoration:none; }
+a:visited { color:#fff; text-decoration:none; }
+a:active { color:#fff; text-decoration:none; }
+a:hover { color:#fff; text-decoration:underline; }
 body,table,th,td,input,select,textarea,div {font-family:'Noto Sans KR', sans-serif; color: #333; font-style: normal; line-height:18px; margin:0; word-spacing:-1pt; word-break:break-all;}
 
 html {font-size:10px; min-width:320px;}
