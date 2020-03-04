@@ -30,8 +30,6 @@ function addTodoList(){
     });
 }
 
-
-
 btnAdd.addEventListener('click', addTodoList);
 
 inputText.addEventListener('keyup',function(e){
@@ -40,19 +38,3 @@ inputText.addEventListener('keyup',function(e){
         addTodoList();
     }
 });
-
-/*
-function getTime(){
-    const date = new Date();
-    const hour = date.getHours();
-    const minutes = date.getMinutes();
-    const seconds = date.getSeconds();
-    
-    today.innerText = `${hour < 10 ? `0${hour}` : hour}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
-}
-
-getTime();
-setInterval(getTime, 1000);
-
-*/
-
