@@ -34,10 +34,11 @@ h1 > span {font-weight: 800; font-size:1.3em; color:#f2c7cc; letter-spacing:-8px
 .todo_list li .delete {float:right; display:inline-block; cursor:pointer; width:23px; height:23px; text-align: center; font-size:23px;}
 .todo_list li .delete:hover {color:#f09392;}
 .add_box {position: relative;}
-.add_box .input_text {border:2px solid #f09392; border-radius:3px; width:100%; padding:15px 50px 15px 15px; margin-bottom:10px; box-sizing:border-box; font-size:15px; outline:none;}
+.add_box .input_text {border:2px solid #f09392; border-radius:3px; width:100%; padding:15px 50px 15px 15px; margin-bottom:10px; box-sizing:border-box; font-size:15px; outline:none; -webkit-transition:.2s all ease-out; -moz-transition:.2s all ease-out; -ms-transition:.2s all ease-out; transition:.2s all ease-out;}
 .add_box .input_text::placeholder {color:#ccc;}
 .add_box .input_text::-moz-placeholder {color:#ccc;}
 .add_box .input_text::-webkit-input-placeholder {color:#ccc;}
+.add_box .input_text:focus {-webkit-box-shadow: 0px 0px 11px -1px rgba(255, 42, 42, 0.3); -moz-box-shadow: 0px 0px 11px -1px rgba(255, 42, 42, 0.3); -ms-box-shadow: 0px 0px 11px -1px rgba(255, 42, 42, 0.3); box-shadow: 0px 0px 11px -1px rgba(255, 42, 42, 0.3);}
 .add_box .btn_add {position:absolute; right:2.5%; top:24%; font-size:0; text-indent: -99999px; width:20px; height:20px;}
 .add_box .btn_add::before {position:absolute; left:0; top:50%; content:''; display:inline-block; width:20px; height:2px; background:#f09392;}
 .add_box .btn_add::after {position:absolute; left:0; top:50%; content:''; display:inline-block; width:20px; height:2px; background:#f09392; transform:rotate(90deg);}
