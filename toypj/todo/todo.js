@@ -1,10 +1,10 @@
-var today = document.querySelector('.today');
-var inputText = document.querySelector('.input_text');
-var btnAdd = document.querySelector('.js-add');
-var todoList = document.querySelector('.todo_list');
+const today = document.querySelector('.today');
+const inputText = document.querySelector('.input_text');
+const btnAdd = document.querySelector('.js-add');
+const todoList = document.querySelector('.todo_list');
 
 //complete
-todoList.addEventListener('click', function(e){
+todoList.addEventListener('click', e => {
     if(e.target.tagName === 'LI'){
         e.target.classList.toggle('complete');
     }
@@ -15,13 +15,13 @@ function addTodoList(){
         return;
     }
     //add list
-    var list = document.createElement('li');
+    const list = document.createElement('li');
     list.innerHTML = inputText.value;
     todoList.insertBefore(list, todoList.firstChild);
     inputText.value = '';
 
     //delete
-    var del = document.createElement('span');
+    const del = document.createElement('span');
     del.textContent = '\u00D7';
     list.appendChild(del);
     del.classList.add('delete');
@@ -32,9 +32,9 @@ function addTodoList(){
 
 btnAdd.addEventListener('click', addTodoList);
 
-inputText.addEventListener('keyup',function(e){
+inputText.addEventListener('keyup', e => {
     if(e.keyCode === 13){
         e.preventDefault();
         addTodoList();
     }
-});
+})

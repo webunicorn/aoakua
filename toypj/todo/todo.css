@@ -29,7 +29,7 @@ h1 > span {font-weight: 800; font-size:1.3em; color:#f2c7cc; letter-spacing:-8px
 .todo_cont {max-width:650px; margin:20px auto 80px auto; text-align:center; padding:0 20px;}
 .today {color:#ccc; padding:30px 0 0 0; display: block; font-size:12px;}
 .todo_list li {text-align:left; background:#fff; padding:15px 15px 15px 17px; margin:10px 0; border-radius:3px; -webkit-box-shadow: 0px 2px 7px -1px rgba(0,0,0,0.2); -moz-box-shadow: 0px 2px 7px -1px rgba(0,0,0,0.2); box-shadow: 0px 2px 7px -1px rgba(0,0,0,0.2); -webkit-transition: .3s all ease; -moz-transition: .3s all ease; -ms-transition: .3s all ease; transition: .3s all ease;}
-.todo_list li:hover {background:#f7f7f7;}
+.todo_list li:hover {background:#efefef;}
 .todo_list li.complete {text-decoration: line-through; color:#ccc; box-shadow: none; transition: .2s all ease;}
 .todo_list li .delete {float:right; display:inline-block; cursor:pointer; width:23px; height:23px; text-align: center; font-size:23px;}
 .todo_list li .delete:hover {color:#f09392;}
