@@ -135,7 +135,7 @@ footer .slogan {font-family:'Oleo Script', cursive; font-size:1.7rem; font-weigh
 .star {position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #fff}
 .cosmo1 {position: absolute; top: -10%; left: -10%; opacity: .8;}
 .cosmo2 {position: absolute; top: -22%; left: -22%;}
-
+ 
 /*** animation ***/
 /* rotate */
 @-webkit-keyframes rotate {

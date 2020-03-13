@@ -5,7 +5,7 @@ const indicater = document.querySelectorAll('.slider_indicater li');
 const sWid = slides[0].offsetWidth;
 let index = 0;
 let currentX;
-
+ 
 
 /*** slider ***/
 function prevSlide(){ 

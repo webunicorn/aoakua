@@ -17,7 +17,7 @@ a[href^=tel] {text-decoration:inherit; color: inherit;}
 a {text-decoration: none; color:#333;}
 body,table,th,td,input,select,textarea,div {font-family:'Noto Sans KR', sans-serif; color: #333; font-style: normal; line-height:18px; margin:0; word-break:break-all; outline:none;}
 
-/*** slider ***/
+/*** slider ***/ 
 section {max-width:1400px; margin:150px auto 200px auto;}
 section h3 {font-size:37px; line-height: 37px; color:#000; text-align: center; font-weight:600; letter-spacing: -1px;}
 .slider_wrap {position: relative;}
