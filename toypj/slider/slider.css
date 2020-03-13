@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+/*** font ***/
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean');
+
+/*** reset ***/
+body {margin:0;padding:0;}
+hr {display:none;clear:both;}
+img,fieldset {border:0 none;}
+h1,h2,h3,h4,h5,dl,dt,dd,ul,li,ol,th,td,p,blockquote,form,fieldset,legend {margin:0;padding:0;}
+table {border-collapse:collapse;border:0 none;}
+form, p {margin: 0px; }
+ol,ul,li {list-style: none;}
+button {border:0 none;padding:0;margin:0;background:transparent;*overflow:visible;cursor:pointer;outline:none;}
+button::-moz-focus-inner {border:0;padding:0;}
+a[href^=tel] {text-decoration:inherit; color: inherit;}
+a {text-decoration: none; color:#333;}
+body,table,th,td,input,select,textarea,div {font-family:'Noto Sans KR', sans-serif; color: #333; font-style: normal; line-height:18px; margin:0; word-break:break-all; outline:none;}
+
+/*** slider ***/
+section {max-width:1400px; margin:117px auto 0 auto;}
+section h3 {font-size:37px; line-height: 37px; color:#000; text-align: center; font-weight:500; letter-spacing: -1px;}
+.slider_wrap {position: relative;}
+.slider_wrap .slider_list {width:1200px; height:720px; overflow: hidden; margin:0 auto; position: relative;}
+.slider_wrap .slider_list li {transform: translateX(0); width:100%; height:100%; position:absolute; transition: all 1s ease;}
+.slider_indicater {padding:38px 0 67px 0; text-align: center;}
+.slider_indicater li {position:relative; display:inline-block; cursor:pointer; font-size:18px; line-height:18px; font-weight:600; margin:0 23px;}
+.slider_indicater li.active {color:#3dceba;}
+.slider_indicater li.active::after {content:''; display:inline-block; position:absolute; left:0; bottom:-4px; width:100%; height:2px; background:#3dceba;}
+.slider_btn button {display:block; position:absolute; top:50%; width:56px; height:56px; border:1px solid #979797; border-radius:50%; font-size:0; text-indent: -9999px; background:url('images/icon_slider_arrow.png') no-repeat center;}
+.slider_btn .btn_prev {left:0;}
+.slider_btn .btn_next {right:0; transform: rotate(180deg);}
