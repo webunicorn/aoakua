@@ -59,6 +59,8 @@ nextBtn.addEventListener('click',function(){
     nextSlide();
 });
 
+
+
 function init(){
     for(let i=0; i<slides.length; i++){
         slides[i].style.left = i*sWid + 'px';
@@ -68,5 +70,19 @@ function init(){
 
 init();
 
+//device check
+const pcDevice   = "win16|win32|win64|mac|macintel",
+      thisDevice = navigator.platform;
+const sliderBtn = document.querySelector(".slider_btn");
 
-
+if(thisDevice){
+    if(pcDevice.indexOf(navigator.platform.toLowerCase()) < 0){
+        //mobile
+        sliderBtn.classList.add("none");
+    }else if(navigator.userAgent.match(/iPad/i)||navigator.userAgent.match(/Tablet/i)||navigator.userAgent.match(/Android/i)||navigator.userAgent.match(/iPhone|iPod/i) ){
+        //tablet
+        sliderBtn.classList.add("none");
+    }else{
+        //pc
+    }
+}

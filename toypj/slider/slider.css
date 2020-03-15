@@ -31,3 +31,8 @@ section h3 {font-size:37px; line-height: 37px; color:#000; text-align: center; f
 .slider_btn button {display:block; position:absolute; top:50%; width:56px; height:56px; border:1px solid #979797; border-radius:50%; font-size:0; text-indent: -9999px; background:#fff url('images/icon_slider_arrow.png') no-repeat center;}
 .slider_btn .btn_prev {left:0;}
 .slider_btn .btn_next {right:0; transform: rotate(180deg);}
+.slider_btn.none {display: none;}
+
+@media only screen and (max-width : 560px) {
+    .slider_indicater li {font-size:12px; margin:0 10px;}
+}

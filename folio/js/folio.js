@@ -88,7 +88,7 @@ $(function() {
 //device check
 const pcDevice   = "win16|win32|win64|mac|macintel",
       thisDevice = navigator.platform;
-var workList = document.querySelector("#main .work .work_list");
+const workList = document.querySelector("#main .work .work_list");
 
 if(thisDevice){
     if(pcDevice.indexOf(navigator.platform.toLowerCase()) < 0){
