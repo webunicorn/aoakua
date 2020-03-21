@@ -15,6 +15,7 @@ function addTodoList(){
         return;
     }
     //add list
+    
     const list = document.createElement('li');
     list.innerHTML = inputText.value;
     todoList.insertBefore(list, todoList.firstChild);
