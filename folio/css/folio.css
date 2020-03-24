@@ -107,10 +107,10 @@ header nav a {font-size:1.4rem; color:#fff; letter-spacing: 1px; font-weight:100
 #main .about .about_box .history .period {display:block; font-size:1.1rem; color:#4e66a7;}
 #main .about .about_box .history p {font-size:1.2rem; color:#636466; letter-spacing:-0.5px;}
 #main .about .about_box .skill .main_skill {width:100%; text-align: center;}
-#main .about .about_box .skill .main_skill li {position: relative; display: inline-block; color: #999; font-size: 1.4rem; text-align: center; width:24%;}
-#main .about .about_box .skill .main_skill li span {position:absolute; top:45%; left:50%; min-width:100px; margin-left:-50px;}
+#main .about .about_box .skill .main_skill > li {position: relative; display: inline-block; color: #999; font-size: 1.4rem; text-align: center; width:24%;}
+#main .about .about_box .skill .main_skill > li span {position:absolute; top:45%; left:50%; min-width:100px; margin-left:-50px;}
 #main .about .about_box .skill .etc_skill {padding:5rem 2rem 0 2rem;}
-#main .about .about_box .skill .etc_skill li {font-size:1.4rem; font-weight:300; padding-bottom:10px;}
+#main .about .about_box .skill .etc_skill li {font-size:1.4rem; font-weight:300; padding-bottom:10px; text-align: left;}
 #main .about .about_box .skill .etc_skill li::before {content:'\263E'; display:inline-block; padding-right:.5rem; color:#4e66a7;}
 #main .work {max-width:1200px; margin:5rem auto 0 auto;}
 #main .work .work_list li {width:calc(50% - 4rem); float:left; padding:4rem 2rem 5rem 2rem;}
@@ -180,7 +180,7 @@ to {
 }
 
 @media only screen and (max-width : 890px) {
-    #main .about .about_box .skill .main_skill li {width:50%; float:left; margin:3rem 0;}
+    #main .about .about_box .skill .main_skill > li {width:50%; float:left; margin:3rem 0;}
 }
 
 @media only screen and (max-width : 768px){
