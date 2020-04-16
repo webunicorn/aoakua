@@ -124,6 +124,8 @@ header nav a {font-size:1.4rem; color:#fff; letter-spacing: 1px; font-weight:100
 #main .work .work_list li .skill {font-size:1.3rem; color:#636466; letter-spacing:0.5px; font-weight:300; line-height:2rem;}
 #main .work .work_list.effect li a img {-webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -o-filter: grayscale(100%); -ms-filter: grayscale(100%); filter: grayscale(100%); -webkit-transition: .5s ease-in-out; -moz-transition: .5s ease-in-out; -o-transition: .5s ease-in-out; transition: .5s ease-in-out; }
 #main .work .work_list.effect li a:hover img {-webkit-filter: grayscale(0%); -moz-filter: grayscale(0%); -o-filter: grayscale(0%); -ms-filter: grayscale(0%); filter: grayscale(0%);}
+#main .work .work_list li .btn_github {display:inline-block; position:relative; margin-top:1rem; color:#333; font-size:1.2rem; border:1px solid #ddd; border-radius:4px; padding: .8rem 1.3rem .8rem 3rem; background: #fff url('../img/icon_github.png') no-repeat 1rem center; background-size:1.5rem; transition: all .4s ease-in-out;}
+#main .work .work_list li .btn_github:hover {background-color:#eee; text-decoration: none;}
 #main .work .more_info {font-size:1.2rem; font-weight: 300; padding-left:2rem; margin-top:-17px; color:#737373;}
 footer {width:100%; border-top: 1px solid #eaeaea; margin:5rem 0 3rem 0; }
 footer .inner {max-width:1200px; position: relative; margin:0 auto;}
