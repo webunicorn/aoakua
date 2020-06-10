@@ -4,7 +4,7 @@ $color2 : orange;
 @mixin clear {
     &:after {content:''; display: block; clear: both;}
 }
-@mixin border($color){ //인자를 통해 color값을 변경할 수 있음
+@mixin border($color){ //인자를 통해 color값을 변경할 수 있음   
     border:1px solid $color;
 }
 @mixin box($w, $h) { //인자를 여러개로 설정 할 수도 있음
