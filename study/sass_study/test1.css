@@ -1,59 +1,181 @@
-body { background: #111; color: orange; }
+body {
+  background: #111;
+  color: orange;
+}
 
-.list { border: 1px solid orange; }
-.list:after { content: ''; display: block; clear: both; }
-.list > li { border: 1px solid #111; float: left; }
-.list > li a { color: red; }
-.list > li a:hover { color: #ddd; }
-.list > li a.second { font-size: 26px; }
-.list > li .second { color: blue; }
-.list > li:last-child { border: 1px dotted coral; }
+.list {
+  border: 1px solid orange;
+}
 
-span { display: inline-block; }
+.list:after {
+  content: '';
+  display: block;
+  clear: both;
+}
 
-.btn1 { border: 1px solid red; width: 200px; height: 200px; }
+.list > li {
+  border: 1px solid #111;
+  float: left;
+}
 
-.btn2 { border: 1px solid blue; }
+.list > li a {
+  color: red;
+}
 
-.btn3 { border: 1px solid cyan; }
+.list > li a:hover {
+  color: #ddd;
+}
 
-.content { display: inline-block; border-left: 2px solid red; border-right: 5px solid red; }
+.list > li a.second {
+  font-size: 26px;
+}
 
-.icon_list > li { color: burlywood; }
+.list > li .second {
+  color: blue;
+}
 
-.icon_list > li.ico1 { background: url(images/bg1.jpg) no-repeat 0 0; }
+.list > li:last-child {
+  border: 1px dotted coral;
+}
 
-.icon_list > li.ico2 { background: url(images/bg2.jpg) no-repeat 0 0; }
+span {
+  display: inline-block;
+}
 
-.icon_list > li.ico3 { background: url(images/bg3.jpg) no-repeat 0 0; }
+.btn1 {
+  border: 1px solid red;
+  width: 200px;
+  height: 200px;
+}
 
-.icon_list > li.ico4 { background: url(images/bg4.jpg) no-repeat 0 0; }
+.btn2 {
+  border: 1px solid blue;
+}
 
-.ico_book { background: url(images/book.jpg); }
+.btn3 {
+  border: 1px solid cyan;
+}
 
-.ico_zoom { background: url(images/zoom.jpg); }
+.content {
+  display: inline-block;
+  border-left: 2px solid red;
+  border-right: 5px solid red;
+}
 
-.ico_phone { background: url(images/phone.jpg); }
+.icon_list > li {
+  color: burlywood;
+}
 
-h1 { font-size: 30px; }
+.icon_list > li.ico1 {
+  background: url(images/bg1.jpg) no-repeat 0 0;
+}
 
-h2 { font-size: 20px; }
+.icon_list > li.ico2 {
+  background: url(images/bg2.jpg) no-repeat 0 0;
+}
 
-h3 { font-size: 15px; }
+.icon_list > li.ico3 {
+  background: url(images/bg3.jpg) no-repeat 0 0;
+}
 
-.cnt1 div, .cnt2 div, .cnt3 div { width: 1200px; margin: 0 auto; }
+.icon_list > li.ico4 {
+  background: url(images/bg4.jpg) no-repeat 0 0;
+}
 
-.cnt1 { height: 300px; background: red; }
-.cnt1 div { height: 300px; background: rgba(0, 0, 0, 0.5); }
+.ico_book {
+  background: url(images/book.jpg);
+}
 
-.cnt2 { height: 500px; background: yellow; }
-.cnt2 div { height: 500px; background: rgba(0, 0, 0, 0.5); }
+.ico_zoom {
+  background: url(images/zoom.jpg);
+}
 
-.cnt3 { height: 100px; background: pink; }
-.cnt3 div { height: 100px; background: rgba(0, 0, 0, 0.5); }
+.ico_phone {
+  background: url(images/phone.jpg);
+}
 
-.btn11 { display: inline-block; background: pink; color: #111; height: 30px; line-height: 30px; font-size: 14px; text-aling: center; border-radius: 20px; }
+h1 {
+  font-size: 30px;
+}
 
-.align { position: absolute; left: 50%; z-index: 2; -webkit-transform: translateY(-50%); transform: translateY(-50%); background: gray; width: 200px; height: 200px; }
+h2 {
+  font-size: 20px;
+}
 
+h3 {
+  font-size: 15px;
+}
+
+.cnt1 div, .cnt2 div, .cnt3 div {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.cnt1 {
+  height: 300px;
+  background: red;
+}
+
+.cnt1 div {
+  height: 300px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.cnt2 {
+  height: 500px;
+  background: yellow;
+}
+
+.cnt2 div {
+  height: 500px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.cnt3 {
+  height: 100px;
+  background: pink;
+}
+
+.cnt3 div {
+  height: 100px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.btn11 {
+  display: inline-block;
+  background: pink;
+  color: #111;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  text-aling: center;
+  border-radius: 20px;
+}
+
+.align {
+  position: absolute;
+  left: 50%;
+  z-index: 2;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: gray;
+  width: 200px;
+  height: 200px;
+}
+
+.new_box {
+  color: #ff0000;
+  background-color: #00ff00;
+  border-color: #0000ff;
+  width: 400px;
+  height: 500px;
+}
+
+.new_box1 {
+  color: #00ff00;
+  background-color: #ff0000;
+  border-color: #0000ff;
+  width: 400px;
+  height: 500px;
+}
 /*# sourceMappingURL=test1.css.map */
