@@ -8,7 +8,7 @@ $color2 : orange;
     border:1px solid $color;   
 }
 @mixin box($w, $h) { //인자를 여러개로 설정 할 수도 있음
-    width:$w; height:$h;
+    width:$w; height:$h;  
 }
 @mixin line($position, $wid, $color){ //선택자에도 변수를 지정해서 변경할 수 있음 #{}안에 변수명을 넣어주는 형태 (문자보간이라고 함)
    border-#{$position} :$wid solid $color;
