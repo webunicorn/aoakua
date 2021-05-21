@@ -13,7 +13,7 @@
 	.contents {width: 800px; margin: 0 auto; height: auto; background-color: #e0e0e0; padding: 20px;}
 	.contents img {float: left; padding: 30px;}	
 
-	#banner { position: absolute; font-size: 8pt; top: 5px; left: 0; z-index: 10; background:#f1f1f1; padding:5px; border:1px solid #CCCCCC; text-align:center;}
+	#banner { position: absolute; font-size: 8pt; top: 5px; left: 0; z-index: 10; background:#f1f1f1; padding:5px; border:1px solid #CCCCCC; text-align:center; transition: top .3s ease;}
 	#banner > span {margin-bottom: 10px; display: block;}
 	.banner_contents {min-height: 200px; background-color: #c0c0c0; padding: 5px;}
 
@@ -23,7 +23,7 @@
 <script language="JavaScript">
 
 	$(window).scroll(function() { 
-		$('#banner').animate({top:$(window).scrollTop()+"px" },{queue: false, duration: 500});
+		$('#banner').animate({top:$(window).scrollTop()+"px" },{queue: false, duration: 300});
 	}); 
 
 
@@ -36,7 +36,7 @@
 <div id="" class="contents">
 
 	<!-- 배너 -->
-	<div style="position:relative;float:right;width:90px;top:-15px;right:-115px;"> 
+	<div style="position:relative;float:right;width:90px;top: calc(100vh - 300px);right:-115px;"> 
 		<div id="banner">
 			<span>최근에 본 상품</span>
 			<div id="" class="banner_contents">

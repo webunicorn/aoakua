@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*modal*/
+        .modal {
+            display: none;
+        }
+        .modal_wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .modal_inner {
+            overflow: hidden;
+            overflow-y: auto;
+            position: relative;
+            z-index: 10;
+            max-height: 100vh;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-40px);
+            /* transition: all .5s cubic-bezier(0.165, 0.840, 0.440, 1.000); */
+            /* transition: all .5s cubic-bezier(0.165, 0.840, 0.440, 1.000); */
+            /* transition: all .5s cubic-bezier(0.165, 0.840, 0.440, 1.000); */
+            transition: all .3s ease;
+        }
+        .modal.on .modal_inner {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .modal_dimmed {
+            content: '';
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease;
+        }
+        .modal.on .modal_dimmed {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal .modal_wrap{
+            z-index: 1500;
+        }
+        .modal .modal_content {
+            position: relative;
+            width: 432px;
+            max-width: 100%;
+            background: #fff;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .modal .modal_title_box {
+            min-height: 192px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 48px;
+            box-sizing: border-box;
+        }
+        .modal .modal_title {
+            font-size: 19px;
+            color: #222222;
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            line-height: 1.42;
+        }
+        .modal .modal_description {
+            font-size: 15px;
+            line-height: 1.47;
+            color: #999;
+            font-weight: 400;
+            margin-top: 3px;
+        }
+        .modal .modal_button_box {
+            display: flex;
+            justify-content: center;
+            height: 48px;
+        }
+        .modal .modal_button_box button {
+            width: 100%;
+            min-width: auto;
+            font-size: 16px;
+            height: inherit;
+            line-height: inherit;
+        }
+        .modal .modal_button_box .btn_base.disabled {
+            color: #aaaaaa;
+            background: #f2f2fc;
+        }
+
+        .modal .video_box.hidden {
+            opacity: 0;
+            /* transition: .2s opacity ease */
+        }
+        .modal.video .modal_content {
+            max-width: 600px;
+            width: 100% !important
+        }
+        .modal.video .modal_title_box {
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button class="btn_modal">모달 열기</button>
+    </div>
+    <div>
+        <button class="btn_video_modal">video 모달 열기</button>
+    </div>
+    
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/WMweEpGlu_U" 
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+    <!-- <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/WMweEpGlu_U?autoplay=1&origin=http://example.com" frameborder="0"></iframe> -->
+    <!--alert modal-->
+    <div class="modal alert" style="display: none" >
+        <div class="modal_wrap">
+            <span class="modal_dimmed"></span>
+            <div class="modal_inner">
+                <div class="modal_content">
+                    <div class="modal_title_box">
+                        <h4 class="modal_title">
+                            길드 / 파티 홍보 게시판은<br>
+                            1일 5회까지만 글쓰기가 가능합니다.
+                        </h4>
+                        <div class="modal_description">
+                            매일 00시 초기화됩니다.
+                        </div>
+                    </div>
+                    <div class="modal_button_box">
+                        <button class="btn_base disabled btn_modal_close">취소</button>
+                        <button class="btn_base">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal video" style="display: none" >
+        <div class="modal_wrap">
+            <span class="modal_dimmed"></span>
+            <div class="modal_inner">
+                <div class="modal_content">
+                    <div class="modal_title_box">
+                        <div id="ytplayer" class="video_box"></div>
+                        <!-- <iframe type="text/html" width="640" height="360" src="https://www.youtube.com/embed/WMweEpGlu_U?autoplay=1&origin=http://example.com" frameborder="0"></iframe> -->
+                    </div>
+                    <!-- <div class="modal_button_box">
+                        <button class="btn_base disabled btn_modal_close">취소</button>
+                        <button class="btn_base">확인</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        // youtube
+            // Load the IFrame Player API code asynchronously.
+            var tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/player_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            // Replace the 'ytplayer' element with an <iframe> and
+            // YouTube player after the API code downloads.
+            var player;
+            function onYouTubePlayerAPIReady() {
+                player = new YT.Player('ytplayer', {
+                    //height: '360',
+                    //width: '640',
+                    videoId: 'WMweEpGlu_U',
+                    playerVars : {
+                        //'controls': 0, //플레이어 컨드롤러 표시여부
+                        'rel': 0, //관련 동영상
+                    },
+                    // events: {
+                    //     'onReady': onPlayerReady,//로딩중에 이벤트 실행한다
+                        
+                    // }
+                });
+            }
+            function onPlayerReady() {
+                //로딩된 후에 실행될 동작을 작성한다(소리 크기,동영상 속도를 미리 지정하는 것등등...)
+                player.playVideo();//자동재생
+            }
+            // var done = false;
+            // function onPlayerStateChange(event) {
+            //     if (event.data == YT.PlayerState.PLAYING && !done) {
+            //     setTimeout(stopVideo, 6000);
+            //     done = true;
+            //     }
+            // }
+            function pauseVideo() {
+                player.pauseVideo();
+            }
+            function stopVideo() {
+                player.stopVideo();
+            }
+
+
+            
+        $(document).ready(function() {
+
+    //         $('.modal-wrapper').toggleClass('open');
+    // $('.page-wrapper').toggleClass('blur-it');
+    //  return false;
+
+            $('.btn_modal').on({
+                'click' : function (e) {
+                    e.preventDefault();
+                    $('.alert').show();
+                    setTimeout(function(){ 
+                        $('.modal').addClass('on')
+                    }, 50);
+
+                }
+            });
+
+            // $('.alert .btn_modal_close, .alert .modal_dimmed').on({
+            //     'click' : function (e) {
+            //         e.preventDefault();
+            //         $('.modal').removeClass('on');
+            //         setTimeout(function(){ 
+            //             $('.modal').hide();
+            //         }, 200);
+            //     }
+            // });
+
+            $('.btn_video_modal').on({
+                'click' : function (e) {
+                    e.preventDefault();
+                    $('.video_box').removeClass('hidden');
+                    $('.video').show();
+                    setTimeout(function(){ 
+                        $('.modal').addClass('on')
+                    }, 50);
+                    onPlayerReady();   
+                }
+            });
+
+            $('.btn_modal_close, .modal_dimmed').on({
+                'click' : function (e) {
+                    e.preventDefault();
+                    $('.video_box').addClass('hidden');
+                    pauseVideo();
+                    $('.modal').removeClass('on');
+                    setTimeout(function(){ 
+                        $('.modal').hide();
+                        setTimeout(function(){ 
+                            stopVideo();
+                        }, 100);
+                    }, 200);
+                    
+                    
+                }
+            });
+
+            
+
+            
+        });
+    </script>
+</body>
+</html>
