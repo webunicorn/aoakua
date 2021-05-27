@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="../css/magnific-popup.css"/>
+</head>
+<body>
+    <button class="button" style="padding:20px;">Open popup</button>
+
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script src="https://d1frx8jamwrfqo.cloudfront.net/member_dev/pc/js/lib/jquery.min.js"></script>
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.button').magnificPopup({
+                items: {
+                        src: 'https://www.youtube.com/watch?v=WMweEpGlu_U'
+                },
+                type: 'iframe',
+                iframe: {
+                    markup: '<div class="mfp-iframe-scaler">'+
+                            '<div class="mfp-close"></div>'+
+                            '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
+                            '</div>', 
+                    patterns: {
+                    youtube: {
+                        index: 'youtube.com/', 
+                        id: 'v=', 
+                        src: '//www.youtube.com/embed/%id%?autoplay=1' 
+                        }
+                    },
+                    srcAction: 'iframe_src', 
+                }
+            });
+        });
+    </script>
+</body>
+</html>

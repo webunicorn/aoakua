@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="../css/flickity.css"/>
+    <style>
+
+        /* mobile */
+        .main-carousel {
+            width: 100%;
+            transition: .2s all ease-out;
+        }
+        .main-carousel .carousel-cell {
+            width: 66%;
+        }
+        .main-carousel .carousel-cell div{
+            width: 100%;
+            height: 100px;
+        }
+        
+        .carousel:after {
+            content: 'flickity';
+            display: none; /* hide :after */
+        }
+
+        /* pc */
+        @media screen and ( min-width: 768px ) {
+            .main-carousel {
+                width: 700px;
+                margin: 0 auto;
+            }
+            .main-carousel .carousel-cell {
+                width: auto;
+            }
+            .main-carousel .carousel-cell div {
+                width: 200px;
+                height: 100px;
+                float: left;
+            }
+            .carousel:after {
+                content: '';
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="carousel main-carousel">
+            <div class="carousel-cell">
+                <div style="background-color: plum;">1</div>
+                <div style="background-color: rgb(60, 192, 120);">2</div>
+            </div>
+            <div class="carousel-cell">
+                <div style="background-color: rgb(187, 173, 93);">3</div>
+                <div style="background-color: rgb(211, 46, 46);">4</div>
+            </div>
+            <div class="carousel-cell">
+                <div style="background-color: rgb(83, 134, 136);">5</div>
+                <div style="background-color: rgb(161, 113, 81);">6</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://d1frx8jamwrfqo.cloudfront.net/member_dev/pc/js/lib/jquery.min.js"></script>
+    <script src="../js/flickity.pkgd.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $('.main-carousel').flickity({
+                // options
+                wrapAround: true,
+                watchCSS: true
+            });
+
+        });
+    </script>
+</body>
+</html>

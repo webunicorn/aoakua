@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="../css/flickity.css"/>
+    <style>
+        /*modal*/
+        .modal {
+            display: none;
+        }
+        .modal_wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .modal_inner {
+            overflow: hidden;
+            overflow-y: auto;
+            position: relative;
+            z-index: 10;
+            max-height: 100vh;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-40px);
+            /* transition: all .5s cubic-bezier(0.165, 0.840, 0.440, 1.000); */
+            /* transition: all .5s cubic-bezier(0.165, 0.840, 0.440, 1.000); */
+            /* transition: all .5s cubic-bezier(0.165, 0.840, 0.440, 1.000); */
+            transition: all .3s ease;
+        }
+        .modal.on .modal_inner {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .modal_dimmed {
+            content: '';
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            visibility: hidden;
+            transition: all .2s ease;
+        }
+        .modal.on .modal_dimmed {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal .modal_wrap{
+            z-index: 1500;
+        }
+        .modal .modal_content {
+            position: relative;
+            width: 432px;
+            max-width: 100%;
+            background: #fff;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .modal .modal_title_box {
+            min-height: 192px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 48px;
+            box-sizing: border-box;
+        }
+        .modal .modal_title {
+            font-size: 19px;
+            color: #222222;
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            line-height: 1.42;
+        }
+        .modal .modal_description {
+            font-size: 15px;
+            line-height: 1.47;
+            color: #999;
+            font-weight: 400;
+            margin-top: 3px;
+        }
+        .modal .modal_button_box {
+            display: flex;
+            justify-content: center;
+            height: 48px;
+        }
+        .modal .modal_button_box button {
+            width: 100%;
+            min-width: auto;
+            font-size: 16px;
+            height: inherit;
+            line-height: inherit;
+        }
+        .modal .modal_button_box .btn_base.disabled {
+            color: #aaaaaa;
+            background: #f2f2fc;
+        }
+
+        .modal .video_box.hidden {
+            opacity: 0;
+            /* transition: .2s opacity ease */
+        }
+        .modal.video .modal_content, .modal.normal_video .modal_content {
+            max-width: 600px;
+            width: 100% !important
+        }
+        .modal.video .modal_title_box, .modal.normal_video .modal_title_box {
+            padding:0;
+        }
+        .main-carousel {
+            width: 100%;
+            transition: .2s all ease-out;
+        }
+        .main-carousel .carousel-cell {
+            width: 66%;
+        }
+        .main-carousel .carousel-cell div{
+            width: 100%;
+            height: 100px;
+        }
+      
+    </style>
+</head>
+<body>
+    <div>
+        <button class="btn_modal">모달 열기</button>
+    </div>
+    <!-- <div>
+        <button class="btn_video_modal">video 모달 열기</button>
+    </div> -->
+    <div>
+        <button class="btn_video_normal_modal">일반 video 모달 열기</button>
+    </div>
+    
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/WMweEpGlu_U" 
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+    <!-- <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/WMweEpGlu_U?autoplay=1&origin=http://example.com" frameborder="0"></iframe> -->
+    <!--alert modal-->
+    <div class="modal alert" style="display: none" >
+        <div class="modal_wrap">
+            <span class="modal_dimmed"></span>
+            <div class="modal_inner">
+                <div class="modal_content">
+                    <div class="modal_title_box">
+                        <div class="carousel main-carousel">
+                            <div class="carousel-cell">
+                                <div style="background-color: plum;">1</div>
+                                <div style="background-color: rgb(60, 192, 120);">2</div>
+                            </div>
+                            <div class="carousel-cell">
+                                <div style="background-color: rgb(187, 173, 93);">3</div>
+                                <div style="background-color: rgb(211, 46, 46);">4</div>
+                            </div>
+                            <div class="carousel-cell">
+                                <div style="background-color: rgb(83, 134, 136);">5</div>
+                                <div style="background-color: rgb(161, 113, 81);">6</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="modal_button_box">
+                        <button class="btn_base disabled btn_modal_close">취소</button>
+                        <button class="btn_base">확인</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    <div class="modal video" style="display: none" >
+        <div class="modal_wrap">
+            <span class="modal_dimmed"></span>
+            <div class="modal_inner">
+                <div class="modal_content">
+                    <div class="modal_title_box">
+                        <div id="ytplayer" class="video_box"></div>
+                    </div>
+                    <div class="modal_button_box">
+                        <button class="btn_base disabled btn_modal_close">취소</button>
+                        <button class="btn_base">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    
+    <div class="modal normal_video" style="display: none" >
+        <div class="modal_wrap">
+            <span class="modal_dimmed"></span>
+            <div class="modal_inner">
+                <div class="modal_content">
+                    <div class="modal_title_box">
+                        <!-- <div id="ytplayer" class="video_box"></div> -->
+                        <!-- <iframe type="text/html" width="640" height="360" 
+                        src="https://www.youtube.com/embed/WMweEpGlu_U?autoplay=0&origin=http://example.com" frameborder="0"></iframe> -->
+                        <div class="video_box">
+                            <iframe id="youtube" width="960" height="540" src="https://www.youtube.com/embed/WMweEpGlu_U?autoplay=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <!-- <div class="modal_button_box">
+                        <button class="btn_base disabled btn_modal_close">취소</button>
+                        <button class="btn_base">확인</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script src="https://d1frx8jamwrfqo.cloudfront.net/member_dev/pc/js/lib/jquery.min.js"></script>
+    <script src="../js/flickity.pkgd.min.js"></script>
+    <script>
+        
+    </script>
+    <script>
+            
+        $(document).ready(function() {
+
+            var $carousel = $('.main-carousel').flickity({
+                // options
+                wrapAround: true,
+            });
+
+           
+
+            // $('.alert .btn_modal_close, .alert .modal_dimmed').on({
+            //     'click' : function (e) {
+            //         e.preventDefault();
+            //         $('.modal').removeClass('on');
+            //         setTimeout(function(){ 
+            //             $('.modal').hide();
+            //         }, 200);
+            //     }
+            // });
+
+
+   
+
+            $('.btn_modal').on({
+                'click' : function (e) {
+                    e.preventDefault();
+                    
+                    $('.alert').show();
+                    setTimeout(function(){ 
+                        $('.modal').addClass('on')
+                    }, 50);
+                    $carousel.show().flickity('resize');    
+                       
+                }
+            });
+
+            $('.btn_modal_close, .modal_dimmed').on({
+                'click' : function (e) {
+                    e.preventDefault();
+                    const video = $('#youtube').attr('src');
+                    //$('#youtube').attr('src', video.replace('&autoplay=1',''));  // removing autoplay to the URL
+                    $('#youtube').attr('src', video.replace('autoplay=1','autoplay=0'));  // removing autoplay to the URL
+                    $('.modal').removeClass('on');
+                    $('.video_box').addClass('hidden');
+                    setTimeout(function(){ 
+                        $('.modal').hide();
+                    }, 100);
+                }
+            });
+
+         
+         
+        });
+    </script>
+</body>
+</html>

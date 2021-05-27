@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*modal*/
+        .modal {
+            display: none;
+        }
+        .modal_wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .modal_inner {
+            overflow: hidden;
+            overflow-y: auto;
+            position: relative;
+            z-index: 10;
+            max-height: 100vh;
+            
+             /* transform: translateY(-40px); */
+            /* transition: all .5s cubic-bezier(0.165, 0.840, 0.440, 1.000); */
+            /* transition: all .5s cubic-bezier(0.165, 0.840, 0.440, 1.000); */
+            /* transition: all .5s cubic-bezier(0.165, 0.840, 0.440, 1.000); */
+            
+        }
+        
+        .modal_dimmed {
+            content: '';
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            visibility: hidden;
+            transition: all .2s ease;
+        }
+        .modal_dimmed.on {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal .modal_wrap{
+        
+        }
+        .modal .modal_content {
+            position: relative;
+            width: 960px;
+            max-width: 100%;
+            background: #000;
+            box-sizing: border-box;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .2s ease;
+        }
+        .modal.on .modal_content {
+            opacity: 1;
+            visibility: visible;
+             /* transform: translateY(0);  */
+        }
+        .modal .modal_title_box {
+            min-height: 192px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 48px;
+            box-sizing: border-box;
+        }
+        .modal .modal_title {
+            font-size: 19px;
+            color: #222222;
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            line-height: 1.42;
+        }
+        .modal .modal_description {
+            font-size: 15px;
+            line-height: 1.47;
+            color: #999;
+            font-weight: 400;
+            margin-top: 3px;
+        }
+        .modal .modal_button_box {
+            display: flex;
+            justify-content: center;
+            height: 48px;
+        }
+        .modal .modal_button_box button {
+            width: 100%;
+            min-width: auto;
+            font-size: 16px;
+            height: inherit;
+            line-height: inherit;
+        }
+        .modal .modal_button_box .btn_base.disabled {
+            color: #aaaaaa;
+            background: #f2f2fc;
+        }
+
+        .modal .video_box.hidden {
+            opacity: 0;
+            /* transition: .2s opacity ease */
+        }
+        .modal.video .modal_content, .modal.normal_video .modal_content {
+            max-width: 600px;
+            width: 100% !important
+        }
+        .modal.video .modal_title_box, .modal.normal_video .modal_title_box {
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button class="btn_modal" data-video-id="WMweEpGlu_U">모달 열기</button>
+        <button class="btn_modal" data-video-id="9NT8fnQByZ0">모달 열기</button>
+    </div>
+
+    
+    <div class="modal alert" style="display: none" >
+        
+        <div class="modal_wrap">
+            <div class="modal_inner">
+                <div class="modal_content">
+                    
+                    <!-- <iframe id="youtube" width="960" height="540" src="https://www.youtube.com/embed/WMweEpGlu_U?autoplay=0&showinfo=0" frameborder="0" allowfullscreen></iframe> -->
+                    <!-- <div class="modal_button_box">
+                        <button class="btn_base disabled btn_modal_close">취소</button>
+                        <button class="btn_base">확인</button>
+                    </div> -->
+                </div>
+                <!-- <button class="btn_base disabled btn_modal_close">취소</button> -->
+            </div>
+        </div>
+    </div>
+    <span class="modal_dimmed"></span>
+    
+
+    <script src="https://d1frx8jamwrfqo.cloudfront.net/member_dev/pc/js/lib/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function videoContainer(videoId) { 
+                return '<iframe id="youtube" frameborder="0" allowfullscreen="1" title="YouTube video player" width="960" height="390" src="//www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0" frameborder="0"></iframe></div>'; 
+            };
+
+            function modalClose() {
+                $('.modal').removeClass('on');
+                setTimeout(function(){ 
+                    $('.modal').hide();
+                    $('.modal_content').empty();
+                    $('.modal_dimmed').removeClass('on');
+                }, 100);
+            }
+
+            $('.btn_modal').on({
+                'click' : function () {
+                    const videoId = $(this).data('videoId');
+                    $(videoContainer(videoId)).appendTo($('.modal_content'));
+                    $('.modal_dimmed').addClass('on');
+                    $('.modal').show();
+                    setTimeout(function(){ 
+                        $('.modal').addClass('on');
+                    }, 100);
+                }
+            });
+
+            $('.btn_modal_close').on({
+                'click' : function () {
+                    modalClose();
+                }
+            });
+
+            $(document).on({
+                'click': function(e){
+                    if ($(e.target).hasClass('modal_wrap')) {
+                        modalClose();
+                    }
+            }});
+            
+        });
+
+    </script>
+</body>
+</html>
