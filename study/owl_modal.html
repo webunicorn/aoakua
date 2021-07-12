@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+body {
+  background: #333;
+  font-family: "Open Sans", sans-serif;
+}
+
+.pen-title {
+  color: #FFFFFF;
+  margin-bottom: 0;
+  text-align: center;
+  text-shadow: 1px 1px 0 #000;
+}
+
+.pen-description {
+  color: #FFFFFF;
+  margin-bottom: 3rem;
+  text-align: center;
+  text-shadow: 1px 1px 0 #000;
+}
+.pen-description a {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+.wrap {
+  max-width: 85.375rem;
+  margin: 0 auto;
+}
+
+.image-as-background {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.screen-reader-text {
+  height: auto;
+  width: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+}
+.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
+  height: auto;
+  width: auto;
+  background-color: #000000;
+  border-radius: 2px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #FFFFFF;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  left: 0.3125rem;
+  line-height: normal;
+  padding: 0.9375rem 1.4375rem 0.875rem;
+  text-decoration: none;
+  top: 0.3125rem;
+  z-index: 100000;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  overflow: hidden;
+  z-index: 1050;
+}
+.modal::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.modal.modal-open {
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.modal .modal-dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+}
+.modal .modal-content {
+  background-clip: padding-box;
+  background-color: #FFFFFF;
+  border-radius: 0.1875rem;
+  box-shadow: 0 0 0.625rem 0.1875rem rgba(0, 0, 0, 0.5);
+  outline: 0;
+  padding: 0.625rem;
+  position: relative;
+}
+.modal .modal-content .modal-header {
+  text-align: center;
+}
+.modal .modal-content .modal-header .close {
+  margin: 0;
+  padding: 0;
+  height: 1.875rem;
+  width: 1.875rem;
+  position: absolute;
+  top: -0.9375rem;
+  right: -0.9375rem;
+  background: #000000;
+  border: 0.1875rem solid #FFFFFF;
+  border-radius: 50%;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 1.875rem;
+  line-height: 0;
+  outline: none;
+  padding: 0;
+}
+.modal .modal-content .modal-header .close:after::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.modal .modal-content .modal-body {
+  position: relative;
+}
+.fluid-media {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+@media screen and (min-width: 85.375rem) {
+  .fluid-media {
+    padding-bottom: 49%;
+  }
+}
+.fluid-media embed,
+.fluid-media object,
+.fluid-media iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  overflow: hidden;
+  z-index: 1050;
+}
+.modal::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.modal.modal-open {
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.modal .modal-dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-height: 90%;
+  max-width: 100%;
+  transform: translate(-50%, -50%);
+  width: auto;
+}
+@media screen and (min-width: 768px) {
+  .modal .modal-dialog {
+    max-width: 90%;
+  }
+}
+.modal .modal-content {
+  height: auto;
+  width: 59.375rem;
+  background-clip: padding-box;
+  background-color: #FFFFFF;
+  border-radius: 0.1875rem;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.5);
+  left: 50%;
+  max-height: 90%;
+  max-width: 90%;
+  outline: 0;
+  padding: 0.625rem;
+  position: relative;
+  transform: translateX(-50%);
+}
+@media screen and (min-width: 1024px) {
+  .modal .modal-content {
+    max-width: none;
+  }
+}
+.modal .modal-content .modal-header {
+  text-align: center;
+}
+.modal .modal-content .modal-header .close {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: -0.9375rem;
+  right: -0.9375rem;
+  height: 1.875rem;
+  width: 1.875rem;
+  background: #000000;
+  border: 3px solid #FFFFFF;
+  border-radius: 50%;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 1.875rem;
+  line-height: 0;
+  min-width: 0;
+  outline: none;
+}
+.modal .modal-content .modal-header .close::after::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.modal .modal-content .modal-body {
+  position: relative;
+}
+.modal .fluid-embed embed,
+.modal .fluid-embed object,
+.modal .fluid-embed iframe {
+  border: none;
+}
+
+.modal .social-icons {
+  margin: 1rem 0;
+}
+
+.modal .modal-title {
+  font-size: 1.25rem;
+}
+@media screen and (min-width: 48rem) {
+  .modal .modal-title {
+    font-size: 1.75rem;
+  }
+}
+.modal .gallery-card-title {
+  font-size: 1.125rem;
+}
+@media screen and (min-width: 48rem) {
+  .modal .gallery-card-title {
+    font-size: 1.625rem;
+  }
+}
+
+.owl-carousel.owl-drag .owl-item {
+  max-width: 100%;
+  opacity: 0.25;
+  text-align: center;
+}
+.owl-carousel.owl-drag .owl-item.center {
+  opacity: 1;
+}
+
+.modal-content.has-carousel {
+  padding: 0.625rem 3.125rem 1.875rem;
+}
+.modal-content.has-carousel .owl-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+}
+.modal-content.has-carousel .owl-prev,
+.modal-content.has-carousel .owl-next {
+  height: 3.125rem;
+  width: 3.125rem;
+  background: transparent;
+  border: none;
+  color: #929292;
+  font-size: 6.25rem;
+  line-height: 2.5rem;
+  min-width: 0;
+  padding: 0;
+  position: relative;
+}
+.modal-content.has-carousel .owl-prev:hover, .modal-content.has-carousel .owl-prev:focus,
+.modal-content.has-carousel .owl-next:hover,
+.modal-content.has-carousel .owl-next:focus {
+  background: transparent;
+  color: #111111;
+}
+.modal-content.has-carousel .owl-prev {
+  float: left;
+  transform: translateX(-3.125rem);
+}
+.modal-content.has-carousel .owl-next {
+  float: right;
+  text-align: right;
+  transform: translateX(3.125rem);
+}
+    </style>
+</head>
+<body>
+    <!-- PHOTO GRID -->
+<div class="grid-container">
+    <a href="https://s3.amazonaws.com/cs-vimn/983474877BJRY/6a975be7-32c9-4ad4-9345-46adc4c68e22_large.jpg" class="modal-trigger" data-index="0" data-target="#modal-gallery">
+          <img class="gallery-item" src="http://res.cloudinary.com/vimnpress/image/fetch/w_300,h_300,c_fill,g_faces/https://s3.amazonaws.com/cs-vimn/983474877BJRY/6a975be7-32c9-4ad4-9345-46adc4c68e22_large.jpg" alt="Click to view larger.">
+    </a>
+      <a href="https://s3.amazonaws.com/cs-vimn/983474877BJRY/7aa9286d-4385-4f6d-8102-6aaefe6bcdb3_large.jpg" class="modal-trigger" data-index="1" data-target="#modal-gallery">
+        <img class="gallery-item" src="http://res.cloudinary.com/vimnpress/image/fetch/w_300,h_300,c_fill,g_faces/https://s3.amazonaws.com/cs-vimn/983474877BJRY/7aa9286d-4385-4f6d-8102-6aaefe6bcdb3_large.jpg" alt="Click to view larger.">
+      </a>
+      <a href="https://s3.amazonaws.com/cs-vimn/983474877BJRY/75e46451-a398-4ff7-8619-e4f162585ac4_large.jpg" class="modal-trigger" data-index="2" data-target="#modal-gallery">
+          <img class="gallery-item" src="http://res.cloudinary.com/vimnpress/image/fetch/w_300,h_300,c_fill,g_faces/https://s3.amazonaws.com/cs-vimn/983474877BJRY/75e46451-a398-4ff7-8619-e4f162585ac4_large.jpg" alt="Click to view larger.">
+      </a>
+      <a href="https://s3.amazonaws.com/cs-vimn/983474877BJRY/de506200-b2da-41dc-80c8-9a2f80167f7e_large.jpg" class="modal-trigger" data-index="3" data-target="#modal-gallery">
+          <img class="gallery-item" src="http://res.cloudinary.com/vimnpress/image/fetch/w_300,h_300,c_fill,g_faces/https://s3.amazonaws.com/cs-vimn/983474877BJRY/de506200-b2da-41dc-80c8-9a2f80167f7e_large.jpg" alt="Click to view larger.">
+      </a>
+  </div>
+    
+  <!-- MODAL -->
+  <div class="modal" id="modal-gallery" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content has-carousel">
+  
+        <div class="modal-header">
+          <button class="close" data-target="#modal-gallery" aria-label="Close">
+            <span aria-hidden="true" class="screen-reader-text">×</span>
+          </button>
+        </div><!-- .modal-header -->
+  
+        <div class="modal-body">
+          <div class="owl-carousel">
+            <div>	
+              <h2 class="gallery-card-title">MTV Red Carpet 077</h2>
+  
+              <div class="item">
+                <img class="owl-lazy" data-src="http://res.cloudinary.com/vimnpress/image/fetch/w_850,h_508,c_fill,g_faces/https://s3.amazonaws.com/cs-vimn/983474877BJRY/6a975be7-32c9-4ad4-9345-46adc4c68e22_large.jpg" alt="">
+              </div>
+            </div>
+            <div>
+              <h2 class="gallery-card-title">MTV Red Carpet 076</h2>
+  
+              <div class="item">
+                <img class="owl-lazy" data-src="http://res.cloudinary.com/vimnpress/image/fetch/w_850,h_508,c_fill,g_faces/https://s3.amazonaws.com/cs-vimn/983474877BJRY/7aa9286d-4385-4f6d-8102-6aaefe6bcdb3_large.jpg" alt="">
+              </div>
+            </div>
+            <div>
+              <h2 class="gallery-card-title">MTV Red Carpet 080</h2>
+  
+              <div class="item">
+                <img class="owl-lazy" data-src="http://res.cloudinary.com/vimnpress/image/fetch/w_850,h_508,c_fill,g_faces/https://s3.amazonaws.com/cs-vimn/983474877BJRY/75e46451-a398-4ff7-8619-e4f162585ac4_large.jpg" alt="">
+              </div>
+            </div>
+            <div>
+              <h2 class="gallery-card-title">MTV Red Carpet 079</h2>
+  
+              <div class="item">
+                <img class="owl-lazy" data-src="http://res.cloudinary.com/vimnpress/image/fetch/w_850,h_508,c_fill,g_faces/https://s3.amazonaws.com/cs-vimn/983474877BJRY/de506200-b2da-41dc-80c8-9a2f80167f7e_large.jpg" alt="">
+              </div>
+            </div>
+          </div><!-- .owl-carousel -->
+        </div><!-- modal-body -->
+        <div class="modal-footer"></div>
+      </div><!-- .modal-content -->
+    </div><!-- .modal-dialog -->
+  </div><!-- .modal -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+  <script>
+      /**
+ * File modal.js
+ *
+ * Deal with multiple modals and their media.
+ */
+window.wdsModal = {};
+(function (window, $, app) {
+  let $modalToggle,
+    $focusableChildren,
+    $player,
+    $tag = document.createElement("script"),
+    $firstScriptTag = document.getElementsByTagName("script")[0],
+    YT;
+
+  // Constructor.
+  app.init = function () {
+    app.cache();
+
+    if (app.meetsRequirements()) {
+      $firstScriptTag.parentNode.insertBefore($tag, $firstScriptTag);
+      app.bindEvents();
+    }
+  };
+
+  // Cache all the things.
+  app.cache = function () {
+    app.$c = {
+      window: $(window),
+      body: $("body")
+    };
+  };
+
+  // Do we meet the requirements?
+  app.meetsRequirements = function () {
+    return $(".modal-trigger").length;
+  };
+
+  // Combine all events.
+  app.bindEvents = function () {
+    // Trigger a modal to open.
+    app.$c.body.on("click touchend", ".modal-trigger", app.openModal);
+
+    // Trigger the close button to close the modal.
+    app.$c.body.on("click touchend", ".close", app.closeModal);
+
+    // Allow the user to close the modal by hitting the esc key.
+    app.$c.body.on("keydown", app.escKeyClose);
+
+    // Allow the user to close the modal by clicking outside of the modal.
+    app.$c.body.on("click touchend", "div.modal-open", app.closeModalByClick);
+
+    // Listen to tabs, trap keyboard if we need to
+    app.$c.body.on("keydown", app.trapKeyboardMaybe);
+  };
+
+  // Open the modal.
+  app.openModal = function (event) {
+    event.preventDefault();
+
+    // Store the modal toggle element
+    $modalToggle = $(this);
+
+    // Figure out which modal we're opening and store the object.
+    let $modal = $($(this).data("target")),
+      index = $(this).data("index");
+
+    // Display the modal.
+    $modal.addClass("modal-open");
+
+    // Add body class.
+    app.$c.body.addClass("modal-open");
+
+    // Find the focusable children of the modal.
+    // This list may be incomplete, really wish jQuery had the :focusable pseudo like jQuery UI does.
+    // For more about :input see: https://api.jquery.com/input-selector/
+    $focusableChildren = $modal.find("a, :input, [tabindex]");
+
+    // Ideally, there is always one (the close button), but you never know.
+    if (0 < $focusableChildren.length) {
+      // Shift focus to the first focusable element.
+      $focusableChildren[0].focus();
+    }
+
+    // Trigger modal open event.
+    $modal.trigger("modal-open", [index]);
+  };
+
+  // Close the modal.
+  app.closeModal = function (event) {
+    event.preventDefault();
+
+    // Figure the opened modal we're closing and store the object.
+    let $modal = $($("div.modal-open .close").data("target")),
+      // Find the iframe in the $modal object.
+      $iframe = $modal.find("iframe"),
+      // Find any video tags.
+      $videos = $modal.find("video");
+
+    // Only do this if there are any iframes.
+    if ($iframe.length) {
+      // Get the iframe src URL.
+      let url = $iframe.attr("src");
+
+      // Removing/Readding the URL will effectively break the YouTube API.
+      // So let's not do that when the iframe URL contains the enablejsapi parameter.
+      if (!url.includes("enablejsapi=1")) {
+        // Remove the source URL, then add it back, so the video can be played again later.
+        $iframe.attr("src", "").attr("src", url);
+      } else {
+        // Use the YouTube API to stop the video.
+        $player.stopVideo();
+      }
+    }
+
+    // Kill any videos that may be in this modal.
+    if ($videos.length) {
+      $videos.each(function () {
+        $(this).get(0).pause();
+      });
+    }
+
+    // Finally, hide the modal.
+    $modal.removeClass("modal-open");
+
+    // Remove the body class.
+    app.$c.body.removeClass("modal-open");
+
+    $modal.trigger("modal-close");
+
+    // Revert focus back to toggle element
+    $modalToggle.focus();
+  };
+
+  // Close if "esc" key is pressed.
+  app.escKeyClose = function (event) {
+    if (27 === event.keyCode) {
+      app.closeModal(event);
+    }
+  };
+
+  // Close if the user clicks outside of the modal
+  app.closeModalByClick = function (event) {
+    // If the parent container is NOT the modal dialog container, close the modal
+    if (!$(event.target).parents("div").hasClass("modal-dialog")) {
+      app.closeModal(event);
+    }
+  };
+
+  // Trap the keyboard into a modal when one is active.
+  app.trapKeyboardMaybe = function (event) {
+    // We only need to do stuff when the modal is open and tab is pressed.
+    if (9 === event.which && 0 < $(".modal-open").length) {
+      let $focused = $(":focus"),
+        focusIndex = $focusableChildren.index($focused);
+
+      if (0 === focusIndex && event.shiftKey) {
+        // If this is the first focusable element, and shift is held when pressing tab, go back to last focusable element.
+        $focusableChildren[$focusableChildren.length - 1].focus();
+        event.preventDefault();
+      } else if (
+        !event.shiftKey &&
+        focusIndex === $focusableChildren.length - 1
+      ) {
+        // If this is the last focusable element, and shift is not held, go back to the first focusable element.
+        $focusableChildren[0].focus();
+        event.preventDefault();
+      }
+    }
+  };
+
+  // Hook into YouTube <iframe>.
+  app.onYouTubeIframeAPIReady = function () {
+    let $modal = $("div.modal"),
+      $iframeid = $modal.find("iframe").attr("id");
+
+    $player = new YT.Player($iframeid, {
+      events: {
+        onReady: app.onPlayerReady,
+        onStateChange: app.onPlayerStateChange
+      }
+    });
+  };
+
+  // Do something on player ready.
+  app.onPlayerReady = function () {};
+
+  // Do something on player state change.
+  app.onPlayerStateChange = function () {
+    // Set focus to the first focusable element inside of the modal the player is in.
+    $(event.target.a)
+      .parents(".modal")
+      .find("a, :input, [tabindex]")
+      .first()
+      .focus();
+  };
+
+  // Engage!
+  $(app.init);
+})(window, jQuery, window.wdsModal);
+
+/**
+ * File owl-carousel.js
+ *
+ * Initiate Owl Carousels
+ */
+window.wdsOwlCarousels = {};
+(function (window, $, app) {
+  let carouselOptions = {
+    lazyLoad: true,
+    center: true,
+    loop: true,
+    items: 1,
+    margin: 25,
+    nav: true,
+    navElement: "button",
+    startPosition: 0,
+    navText: ["&lsaquo;", "&rsaquo;"],
+    autoWidth: false,
+    video: false,
+    responsiveClass: true,
+    responsive: {
+      1024: {
+        autowidth: true
+      }
+    }
+  };
+
+  // Constructor.
+  app.init = function () {
+    app.cache();
+
+    if (app.meetsRequirements()) {
+      app.bindEvents();
+    }
+  };
+
+  // Cache all the things.
+  app.cache = function () {
+    app.$c = {
+      window: $(window),
+      modals: $(".modal"),
+      carousels: $(".owl-carousel")
+    };
+  };
+
+  // Combine all events.
+  app.bindEvents = function () {
+    app.$c.modals.on("modal-open", app.initializeCarouselMaybe); // This is a custom event triggered in modal.js
+    app.$c.modals.on("modal-close", app.destroyCarousel);
+  };
+
+  // Do we meet the requirements?
+  app.meetsRequirements = function () {
+    return app.$c.carousels.length;
+  };
+
+  // Initialize Carousel.
+  app.initializeCarouselMaybe = function (event, index) {
+    const $modalCarousel = $(this).find(".owl-carousel");
+
+    if (0 === $modalCarousel.length) {
+      return;
+    }
+
+    if (0 <= index) {
+      carouselOptions.startPosition = parseInt(index, 10);
+    }
+
+    $modalCarousel.owlCarousel(carouselOptions);
+  };
+
+  // Burn the carousel down when the modal closes. 🔥
+  app.destroyCarousel = function () {
+    const $modal = $(this),
+      $carousel = $modal.find(".owl-carousel");
+
+    $carousel.trigger("destroy.owl.carousel");
+  };
+
+  // Engage!
+  $(app.init);
+})(window, jQuery, window.wdsOwlCarousels);
+
+  </script>
+</body>
+</html>
