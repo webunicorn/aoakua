@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        /* type1 */
+        .obj1 {
+            overflow: hidden;
+            position: relative;
+            width: 800px;
+            height: 500px;
+            background:url('../../images/planet.jpg') no-repeat 0 0/cover;
+        }
+        .obj1::before {
+            content:'';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            bottom: 0;
+            mix-blend-mode: multiply;
+            background-color: rgb(255, 70, 86);
+            transform: translateX(-120%) skewX(-10deg);
+            transition: transform .3s cubic-bezier(.215,.61,.355,1);
+            z-index: 1;
+        }
+        _:-ms-fullscreen, :root .obj1::before { /*ie는 multiply가 안 됨*/
+            background-color: rgba(255, 70, 85, 0.3);
+        }
+        .obj1:hover::before {
+            transform: translateX(0) skewX(0deg);
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div>
+        <div class="obj1"> 
+            <!-- 이미지를 넣을 수도 백그라운드를 넣을 수도 있음 -->
+            <!-- <img src="../../images/planet.jpg"/> -->
+        </div>
+    </div>
+    <script>
+
+    </script>
+</body>
+</html>

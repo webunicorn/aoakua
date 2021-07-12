@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* obj1 */
+        .obj1 {
+            overflow: hidden;
+        }
+        .obj1 span {
+            display: inline-block;
+            font-size: 20px;
+            color: #000;
+            font-weight: bold;
+            transform: translateY(115%);
+            transition: transform .4s cubic-bezier(.25,.46,.45,.94);
+        }
+        .obj1.on span {
+            transform: translateY(0);
+        }
+
+        /* obj2 */
+        .obj2 {
+            transition: transform 1.4s cubic-bezier(0.165, 0.84, 0.44, 1) 0.18s, opacity 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.18s;
+            animation: anmation1 12.4s cubic-bezier(0.445, 0.05, 0.55, 0.95) 1.2s infinite alternate none running;
+        }
+        .obj2 img {
+            display: inline-block;
+            width: 21%;
+        }
+
+        @keyframes anmation1 {
+            0% {
+                transform: none;
+            }
+            25% {
+                transform: translate3d(0px, -3.5%, 0px);
+            }
+            50% {
+                transform: translate3d(2%, 0px, 0px);
+            }
+            75% {
+                transform: translate3d(0px, -3.5%, 0px);
+            }
+            100% {
+                transform: translate3d(-2%, 0px, 0px);
+            }
+        }
+
+
+        /* obj3 */
+        .obj3 {
+            font-size: 50px;
+            font-weight: bold;
+        }
+        .obj3.on {
+            animation: anmation2 2s cubic-bezier(0.165, 0.84, 0.44, 1) .3s backwards;
+        }
+
+        @keyframes anmation2 {
+            0% {
+                clip-path: polygon(0% 0%, 0% 0%, 0% 0%);
+            }
+            100% {
+                clip-path: polygon(0% 0%, 200% 0%, 0% 200%);
+            }
+        }
+
+        /* obj4 */
+        .obj4 {
+            font-size: 50px;
+            font-weight: bold;
+        }
+        .obj4.on {
+            animation: anmation3 2s cubic-bezier(0.165, 0.84, 0.44, 1) .3s backwards;
+        }
+
+        @keyframes anmation3 {
+            0% {
+                clip-path: polygon(100% 100%, 100% 100%, 100% 100%);
+            }
+            100% {
+                clip-path: polygon(100% 100%, -200% 100%, 100% -200%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="obj1">
+            <span>안녕하세요</span>
+        </div>
+
+        <div class="obj2">
+            <img src="../../images/hauntling.png" alt="">
+        </div>
+
+        <div class="obj3">
+           <span>텍스트</span>
+        </div>
+
+        <div class="obj4">
+            <span>거꾸로 텍스트</span>
+         </div>
+    </div>
+    <script>
+        setTimeout(() => {
+            document.querySelector('.obj1').classList.add('on');
+            document.querySelector('.obj3').classList.add('on');
+            document.querySelector('.obj4').classList.add('on');
+        }, 200);
+    </script>
+</body>
+</html>

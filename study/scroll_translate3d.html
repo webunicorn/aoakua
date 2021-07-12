@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+        .test {
+            width: 500px;
+            height: 1000px;
+            background-color: powderblue;
+        }
+        .object {
+            width: 500px;
+            height: 500px;
+            /* background: plum; */
+            transition: all 0.8s ease-out;
+            font-size: 30px;
+            position: relative;
+            top: -500px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="test">
+testtesttesttesttesttesttesttesttesttest
+
+
+    </div>
+    <div class="object">
+웰스만의 좋은 콘텐츠를 사용자가 쉽게 이용할 수 있도록 구조를 변경하고
+    사용자가 쉽게 접근할 수 있도록 메인과 별도 메뉴로 그룹핑하였습니다.
+    </div>
+
+    <script src="https://d1frx8jamwrfqo.cloudfront.net/member_dev/pc/js/lib/jquery.min.js"></script>
+    <script>
+        $(window).scroll(function() {
+
+            var st = $(this).scrollTop() /50;
+            console.log(st);
+            $(".object").css({
+                "transform" : "translate3d(0px, " + st  + "%, .01px)"
+            });
+        
+        });
+    </script>
+</body>
+</html>
