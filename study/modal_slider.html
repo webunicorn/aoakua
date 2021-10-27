@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.3.15/slick.css"> 
+    <link rel="stylesheet" type="text/css" href="../css/slick.css"> 
     <title>Document</title>
     <style>
         .slick_container {
@@ -15,43 +15,229 @@
             width: 500px;
             border: 1px solid red;
         }
-        ul {
+        .box {
             display: flex;
         }
-        ul li {
+        .box li a {
+            display: inline-block;
             border: 1px solid blue;
             width: 300px;
             height: 300px;
+        }
+
+        .slick_container {
+            width: 500px !important;
+        }
+        /*modal*/
+        .modal {
+            display: none;
+        }
+        .modal_wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .modal_inner {
+            overflow: hidden;
+            overflow-y: auto;
+            position: relative;
+            z-index: 10;
+            max-height: 100vh;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-40px);
+            /* transition: all .5s cubic-bezier(0.165, 0.840, 0.440, 1.000); */
+            /* transition: all .5s cubic-bezier(0.165, 0.840, 0.440, 1.000); */
+            /* transition: all .5s cubic-bezier(0.165, 0.840, 0.440, 1.000); */
+            transition: all .3s ease;
+        }
+        .modal.on .modal_inner {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .modal_dimmed {
+            content: '';
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            visibility: hidden;
+            transition: all .2s ease;
+        }
+        .modal.on .modal_dimmed {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal .modal_wrap{
+            z-index: 1500;
+        }
+        .modal .modal_content {
+            position: relative;
+            width: 432px;
+            max-width: 100%;
+            background: #fff;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .modal .modal_title_box {
+            min-height: 192px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 48px;
+            box-sizing: border-box;
+        }
+        .modal .modal_title {
+            font-size: 19px;
+            color: #222222;
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            line-height: 1.42;
+        }
+        .modal .modal_description {
+            font-size: 15px;
+            line-height: 1.47;
+            color: #999;
+            font-weight: 400;
+            margin-top: 3px;
+        }
+        .modal .modal_button_box {
+            display: flex;
+            justify-content: center;
+            height: 48px;
+        }
+        .modal .modal_button_box button {
+            width: 100%;
+            min-width: auto;
+            font-size: 16px;
+            height: inherit;
+            line-height: inherit;
+        }
+        .modal .modal_button_box .btn_base.disabled {
+            color: #aaaaaa;
+            background: #f2f2fc;
+        }
+        img {
+            width: 100%;
         }
     </style>
 </head>
 <body>
     
     <div>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
+        <ul class="box">
+            <li><a href="" data-slide="1">1<img src="../images/planet.jpg"/></a></li>
+            <li><a href="" data-slide="2">2<img src="../images/planet2.png"/></a></li>
+            <li><a href="" data-slide="3">3</a></li>
+            <li><a href="" data-slide="4">4</a></li>
+            <li><a href="" data-slide="5">5</a></li>
+            <li><a href="" data-slide="6">6</a></li>
         </ul>
-        <div class="slick_container">
-            <div>your content1</div>
-            <div>your content2</div>
-            <div>your content3</div>
-          </div>
+
+        <div class="modal alert" style="display: none" >
+            <div class="modal_wrap">
+                <span class="modal_dimmed"></span>
+                <div class="modal_inner">
+                    <div class="modal_content">
+                        <div class="modal_title_box">
+                            <div class="slick_container">
+                                <div>your content1<img src="../images/planet.jpg"/></div>
+                                <div>your content2<img src="../images/planet2.png"/></div>
+                                <div>your content3</div>
+                                <div>your content4</div>
+                                <div>your content5</div>
+                                <div>your content6</div>
+                            </div>
+                        </div>
+                        <div class="modal_button_box">
+                            <button class="btn_base disabled btn_modal_close">취소</button>
+                            <button class="btn_base">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
-    <script type="text/javascript" src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
     <script>
         $(document).ready(function () {
+            
+            
+            var initialSlide;
+
             $('.slick_container').slick({
                 infinite: true,
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                dots: true,
+                dots: false,
+                arrows: true,
+                initialSlide: initialSlide
             });
+
+            $('.box li a[data-slide]').click(function(e) {
+                e.preventDefault();
+                var slideno = $(this).data('slide');
+                $('.slick_container').slick('slickGoTo', slideno - 1);
+                initialSlide = slideno - 1;
+
+                $('.alert').show();
+                setTimeout(function(){ 
+                    $('.modal').addClass('on')
+                }, 50);
+                
+            });
+                      
+          
+            $('.btn_modal_close, .modal_dimmed').on({
+                'click' : function (e) {
+                    e.preventDefault();
+                    $('.modal').removeClass('on');
+                    $('.video_box').addClass('hidden');
+                    setTimeout(function(){ 
+                        $('.modal').hide();
+                    }, 100);
+                }
+            });
+
+
+          
+           
+            // $(".box li a").click(function(e){
+            //     e.preventDefault();
+            //     slideIndex = $(this).index();
+            //     console.log(slideIndex);
+            //     $('.slick_container').slick('slickGoTo', slideIndex);
+            // });
+
+            // $(".box li a").on('click', function(event){
+            //     event.preventDefault();
+                
+            //     slide_active = $(this).data("slide-num");
+            //     console.log(slide_active);
+            //     $('.slick_container').slick('slickGoTo', slide_active);	
+
+	        // });
+
+            // $('.slick_container').on('beforeChange', function(event, slick, currentSlide, nextSlide){		
+            //     $( ".ul-slider-nav li a" ).each(function( index ) {		  	
+            //         $('.ul-slider-nav li a').removeClass('active');
+            //         $('.ul-slider-nav li a').eq( nextSlide ).addClass('active');
+            //     });
+
+            // });
         });
     </script>
 </body>
