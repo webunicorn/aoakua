@@ -246,8 +246,12 @@ to {
     padding-bottom: 10px;
 }
 
-_::-webkit-:not(:root:root), .safari_test {
-    color:#0000FF; 
-    background-color:#CCCCCC; 
-    padding-bottom: 0;
-}
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) {
+	/* 이 안에 Safari(10.1 이상)에서만 적용할 스타일 작성 */
+    .safari_test {
+        color:#0000FF; 
+        background-color:#CCCCCC; 
+        padding-bottom: 0;
+    }
+}}
